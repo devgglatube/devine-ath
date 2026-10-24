@@ -7,8 +7,38 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.45;font-variant-numeric:tabular-nums}
-main{max-width:440px;margin:0 auto;padding-block:16px 32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.app{display:grid;grid-template-columns:268px minmax(0,1fr);min-height:100vh}
+main{width:100%;max-width:1060px;margin:0 auto;padding-block:20px 40px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.top{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;min-height:32px}
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--card);border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:10px}
+.side .logo{padding:0 10px 4px;font-size:1.3rem}
+.side .acct{align-self:flex-start;margin-left:10px}
+.mh{padding:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mh b{font-size:1.05rem;overflow-wrap:anywhere}#mr{font-weight:800;font-size:.8rem;margin-left:8px}
+.nav{display:flex;flex-direction:column;gap:2px;flex:1}
+.side button[data-a]{display:block;text-align:left;background:none;color:var(--ink);border-radius:12px;padding:11px 12px;font-size:.95rem;width:100%}
+.side button[data-a]:hover{background:var(--card2)}
+.side button[data-a].on{background:var(--card2);box-shadow:inset 3px 0 var(--up)}
+.side button[data-a] small{display:block;color:var(--muted);font-weight:600;font-size:.75rem}
+.side button[data-a]:disabled{opacity:.45;cursor:not-allowed}
+.langs{display:flex;gap:6px;align-items:center;padding:8px 10px 0}.langs .k{margin-right:auto}.langs button{width:auto;padding:5px 10px;font-size:.78rem;border-radius:99px;background:var(--card2);color:var(--ink)}.langs button.on{background:var(--up);color:var(--on-up)}
+#game{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:14px 20px;align-items:start}
+#game>.card:first-child{grid-row:1 / span 2}
+#game .card,#end{margin-bottom:0}
+#end{max-width:560px;margin:0 auto}
+@media (min-width:900px){.sh{align-items:center}.pn{border-radius:24px;max-width:540px}}
+@media (max-width:899px){
+  .app{display:block}
+  .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;padding:12px max(12px,env(safe-area-inset-left,0px));border-right:0;border-bottom:1px solid var(--line)}
+  .side .logo{padding:0;font-size:1.05rem}.side .acct{margin-left:0;align-self:center}
+  .mh,.side button[data-a] small,.side .langs .k{display:none}
+  .nav{flex-direction:row;flex-wrap:wrap;flex:1 1 100%;order:3;gap:6px}
+  .side button[data-a]{width:auto;padding:8px 12px;font-size:.82rem;background:var(--card2)}
+  .side button[data-a].on{box-shadow:inset 0 -3px var(--up)}
+  .langs{padding:0;margin-left:auto}
+  main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  #game{display:block}#game .card{margin-bottom:12px}
+}
 .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.02em;white-space:nowrap}
 .pill{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.85rem;font-weight:700;white-space:nowrap}
 .pill b{color:var(--up)}
@@ -52,26 +82,17 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-of
 .verdict{font-weight:700;margin:14px 2px 0;color:var(--muted)}
 .pts{font-size:3rem;font-weight:800;letter-spacing:-.03em;color:var(--up);margin:2px 0 12px}
 .big{font-size:3.4rem;font-weight:800;letter-spacing:-.03em;margin:4px 0}
-.acct{width:auto;flex:none;padding:6px 11px;border-radius:99px;background:var(--card);color:var(--ink);border:1px solid var(--line);font-size:.78rem;font-weight:700}
+.acct{width:auto;flex:none;padding:6px 11px;border-radius:99px;background:var(--card2);color:var(--ink);border:1px solid var(--line);font-size:.78rem;font-weight:700}
 .acct.on{color:var(--up)}
-.logo{margin-right:auto}
+
 @media (max-width:430px){.top{gap:5px}.logo{font-size:.92rem}.pill{padding:5px 8px;font-size:.74rem}.acct{padding:6px 8px;font-size:.72rem}.rt{gap:5px}}
 #rdy{text-align:center}#rdy p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
 .ca{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:8px 10px;margin:10px 0;min-width:0}.ca code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.78rem}.ca button{width:auto;flex:none;padding:6px 10px;font-size:.78rem;border-radius:10px}.ca a{flex:none;font-size:.78rem;color:var(--up);font-weight:700}
 .stat{background:var(--card2);border-radius:14px;padding:12px;font-size:.9rem;display:grid;gap:6px}.stat b{color:var(--up)}.stat svg{width:100%;height:46px}
 .code{background:var(--card2);border-radius:12px;padding:10px;font-size:.72rem;line-height:1.45;overflow-x:auto;white-space:pre;margin:6px 0;color:var(--ink)}
 .row2{display:flex;gap:8px}.row2 button{font-size:.85rem;padding:12px}.alt{background:var(--card2);color:var(--ink)}
-.rt{display:flex;gap:8px;align-items:center;position:relative}
-.mbtn{width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--line);padding:0;display:grid;place-items:center;color:var(--ink)}
-.mbtn i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px currentColor,0 5px currentColor}
-.menu{position:absolute;right:0;top:48px;width:min(290px,calc(100vw - 32px));background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px;z-index:20;box-shadow:0 12px 40px #000a}
 .mh{padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .mh b{font-size:1.05rem;overflow-wrap:anywhere}#mr{font-weight:800;font-size:.8rem;margin-left:8px}
-.menu button{display:block;text-align:left;background:none;color:var(--ink);border-radius:12px;padding:10px 12px;font-size:.95rem}
-.menu button:hover{background:var(--card2)}
-.menu button small{display:block;color:var(--muted);font-weight:600;font-size:.75rem}
-.menu .langs{display:flex;gap:6px;align-items:center;padding:8px 12px 4px}.menu .langs .k{margin-right:auto}.menu .langs button{display:inline-block;width:auto;padding:5px 10px;font-size:.78rem;border-radius:99px;background:var(--card2)}.menu .langs button.on{background:var(--up);color:var(--on-up)}
-.menu button:disabled{opacity:.45;cursor:not-allowed}
 .tag{font-style:normal;font-size:.68rem;font-weight:800;letter-spacing:.04em;background:var(--down);color:#fff;border-radius:6px;padding:2px 6px}
 .net{font-size:.72rem;font-weight:700;margin-top:2px}.net.on{color:var(--up)}.net.off{color:var(--muted)}
 .sh{position:fixed;inset:0;background:#000a;display:flex;align-items:flex-end;justify-content:center;z-index:30}
@@ -113,18 +134,22 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 #sharetext{width:100%;margin-top:8px;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px;font:inherit;font-size:.85rem}
 @media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
 </style>
+<div class="app">
+<aside class="side" id="menu" role="navigation">
+  <div class="logo">devine l’ATH</div>
+  <button class="acct" id="acct" aria-label="Connexion"><span id="acl">Connexion</span></button>
+  <div class="mh"><b id="mn"></b><span id="mr"></span><div class="k" id="mp"></div><div class="net off" id="mnet"></div></div>
+  <nav class="nav">
+    <button data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
+    <button data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
+    <button data-a="scores">Classement et scores</button>
+    <button data-a="ranks">Rangs et profil</button>
+    <button data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
+  </nav>
+  <div class="langs" id="langs"><span class="k">Langue</span><button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
+</aside>
 <main>
-<div class="top"><button class="acct" id="acct" aria-label="Connexion"><span id="acl">Connexion</span></button><div class="logo">devine l’ATH</div><div class="rt"><div class="pill" id="meta"></div>
-  <button class="mbtn" id="mb" aria-haspopup="menu" aria-expanded="false" aria-label="Menu"><i></i></button>
-  <div class="menu" id="menu" role="menu" hidden>
-    <div class="mh"><b id="mn"></b><span id="mr"></span><div class="k" id="mp"></div><div class="net off" id="mnet"></div></div>
-    <button role="menuitem" data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
-    <button role="menuitem" data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
-    <button role="menuitem" data-a="scores">Classement et scores</button>
-    <button role="menuitem" data-a="ranks">Rangs et profil</button>
-    <button role="menuitem" data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
-    <div class="langs" id="langs"><span class="k">Langue</span><button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
-  </div></div></div>
+<div class="top"><div class="pill" id="meta"></div></div>
 <div class="bar"><i id="pg"></i></div>
 
 <section id="game">
@@ -213,6 +238,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 </div></div>
 <div id="toast" role="status" hidden></div>
 </main>
+</div>
 
 <script>
 // Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
@@ -331,7 +357,7 @@ function pick(){
   return out;
 }
 function start(m){
-  mode=m||"casual";sheet(0);gen++;
+  mode=m||"casual";sheet(0);gen++;document.querySelectorAll("#menu [data-a=casual],#menu [data-a=ranked]").forEach(b=>b.classList.toggle("on",b.dataset.a===mode));
   deck=pick();
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
@@ -580,18 +606,16 @@ function drawRanks(){
 }
 
 // ----- événements -----
-const openMenu=o=>{$("menu").hidden=!o;$("mb").setAttribute("aria-expanded",o)};
+const openMenu=()=>{};
 $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
 $("go").addEventListener("click",()=>{if(busy)return;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
 $("cw").addEventListener("click",()=>{skip=true});
 $("next").addEventListener("click",next);
 $("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
-$("mb").addEventListener("click",e=>{e.stopPropagation();openMenu($("menu").hidden)});
-document.addEventListener("click",e=>{if(!$("menu").contains(e.target))openMenu(false)});
 addEventListener("keydown",e=>{
   if(e.key==="Escape"){openMenu(false);sheet(0);return}
-  if(e.key!=="Enter"||e.repeat||!$("sh").hidden||!$("menu").hidden)return;
+  if(e.key!=="Enter"||e.repeat||!$("sh").hidden)return;
   const a=document.activeElement;if(a&&(a.tagName==="BUTTON"||a.tagName==="INPUT"&&a.type!=="range"))return;
   if(!$("game").hidden){if(!$("input").hidden)validate();else if(!$("out").hidden)next()}
 });
