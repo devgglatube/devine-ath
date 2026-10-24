@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,9 +25,9 @@ jobs:
       - name: Chercher de nouveaux coins
         run: |
           N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.ceil(n/6)+2))')
-          node fetch-coins.mjs $N || true
+          timeout 25m node fetch-coins.mjs $N || true
       - name: Télécharger les logos
-        run: node images.mjs || true
+        run: timeout 8m node images.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
