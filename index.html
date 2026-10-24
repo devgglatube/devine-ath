@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322E27A'/%3E%3Cpath d='M6 22 L13 13 L18 18 L26 8' fill='none' stroke='%2306150C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Devine l’ATH</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Mise en page : une colonne type app mobile, fond noir, cartes arrondies, vert pour les gains */
+:root{--bg:#09090B;--card:#141417;--card2:#1B1B20;--line:#26262C;--ink:#F5F5F7;--muted:#8B8B96;--up:#22E27A;--down:#FF4F64;--on-up:#06150C;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.45;font-variant-numeric:tabular-nums}
+main{max-width:440px;margin:0 auto;padding-block:16px 32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.02em;white-space:nowrap}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.85rem;font-weight:700;white-space:nowrap}
+.pill b{color:var(--up)}
+.bar{height:4px;background:var(--card);border-radius:4px;margin-bottom:14px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--up);border-radius:4px;transition:width .5s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin-bottom:12px}
+.coin{display:flex;gap:14px;align-items:center}
+#im{width:68px;height:68px;border-radius:20px;object-fit:cover;background:var(--card2);flex:none}
+h2{margin:0;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;min-width:0;overflow-wrap:anywhere}
+h2 em{font-style:normal;color:var(--muted);font-size:1rem;font-weight:600;margin-left:6px}
+.desc{color:var(--muted);font-size:.9rem;margin:12px 2px 0}
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.chips div{background:var(--card2);border-radius:14px;padding:10px 12px;min-width:0}
+.chips small{display:block;color:var(--muted);font-size:.72rem;font-weight:600}
+.chips b{font-size:.95rem;overflow-wrap:anywhere}
+.ch-head{display:flex;justify-content:space-between;align-items:baseline}
+.k{color:var(--muted);font-size:.8rem;font-weight:600}
+#cv{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+#cv.up{color:var(--up)}
+.cw{position:relative;margin-top:6px;border-radius:14px;overflow:hidden;background:var(--card2)}
+svg{display:block;width:100%;height:auto}
+.lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:700;font-size:.9rem;background:repeating-linear-gradient(135deg,#1B1B20 0 12px,#202026 12px 24px);transition:opacity .4s}
+.lock::before{content:"";width:34px;height:34px;border-radius:50%;border:2px dashed var(--muted);animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cw.open .lock{opacity:0;pointer-events:none}
+.lbl{font-size:.8rem;font-weight:700;fill:var(--ink)}
+.pulse{animation:pulse 1.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(3.2);opacity:0}}
+.guess{font-size:2.3rem;font-weight:800;letter-spacing:-.03em;text-align:center;margin:4px 0 10px;color:var(--up)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:8px;background:var(--card2);outline:none;margin:6px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--up);border:4px solid var(--bg);box-shadow:0 0 0 2px var(--up)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--up);border:4px solid var(--bg);box-shadow:0 0 0 2px var(--up)}
+.ticks{display:flex;justify-content:space-between;color:var(--muted);font-size:.75rem;font-weight:600;margin-bottom:14px}
+button{font:inherit;font-weight:800;font-size:1.05rem;background:var(--up);color:var(--on-up);border:0;border-radius:16px;padding:16px;width:100%;cursor:pointer;transition:transform .12s}
+button:active{transform:scale(.98)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ghost{background:var(--card2);color:var(--ink);margin-top:8px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmp div{background:var(--card2);border-radius:14px;padding:12px}
+.cmp b{display:block;font-size:1.25rem;font-weight:800}
+.verdict{font-weight:700;margin:14px 2px 0;color:var(--muted)}
+.pts{font-size:3rem;font-weight:800;letter-spacing:-.03em;color:var(--up);margin:2px 0 12px}
+.big{font-size:3.4rem;font-weight:800;letter-spacing:-.03em;margin:4px 0}
+.acct{width:auto;flex:none;padding:6px 11px;border-radius:99px;background:var(--card);color:var(--ink);border:1px solid var(--line);font-size:.78rem;font-weight:700}
+.acct.on{color:var(--up)}
+.logo{margin-right:auto}
+@media (max-width:430px){.top{gap:5px}.logo{font-size:.92rem}.pill{padding:5px 8px;font-size:.74rem}.acct{padding:6px 8px;font-size:.72rem}.rt{gap:5px}}
+#rdy{text-align:center}#rdy p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
+.ca{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:8px 10px;margin:10px 0;min-width:0}.ca code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.78rem}.ca button{width:auto;flex:none;padding:6px 10px;font-size:.78rem;border-radius:10px}.ca a{flex:none;font-size:.78rem;color:var(--up);font-weight:700}
+.stat{background:var(--card2);border-radius:14px;padding:12px;font-size:.9rem;display:grid;gap:6px}.stat b{color:var(--up)}.stat svg{width:100%;height:46px}
+.code{background:var(--card2);border-radius:12px;padding:10px;font-size:.72rem;line-height:1.45;overflow-x:auto;white-space:pre;margin:6px 0;color:var(--ink)}
+.row2{display:flex;gap:8px}.row2 button{font-size:.85rem;padding:12px}.alt{background:var(--card2);color:var(--ink)}
+.rt{display:flex;gap:8px;align-items:center;position:relative}
+.mbtn{width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--line);padding:0;display:grid;place-items:center;color:var(--ink)}
+.mbtn i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px currentColor,0 5px currentColor}
+.menu{position:absolute;right:0;top:48px;width:min(290px,calc(100vw - 32px));background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px;z-index:20;box-shadow:0 12px 40px #000a}
+.mh{padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.mh b{font-size:1.05rem;overflow-wrap:anywhere}#mr{font-weight:800;font-size:.8rem;margin-left:8px}
+.menu button{display:block;text-align:left;background:none;color:var(--ink);border-radius:12px;padding:10px 12px;font-size:.95rem}
+.menu button:hover{background:var(--card2)}
+.menu button small{display:block;color:var(--muted);font-weight:600;font-size:.75rem}
+.menu .langs{display:flex;gap:6px;align-items:center;padding:8px 12px 4px}.menu .langs .k{margin-right:auto}.menu .langs button{display:inline-block;width:auto;padding:5px 10px;font-size:.78rem;border-radius:99px;background:var(--card2)}.menu .langs button.on{background:var(--up);color:var(--on-up)}
+.menu button:disabled{opacity:.45;cursor:not-allowed}
+.tag{font-style:normal;font-size:.68rem;font-weight:800;letter-spacing:.04em;background:var(--down);color:#fff;border-radius:6px;padding:2px 6px}
+.net{font-size:.72rem;font-weight:700;margin-top:2px}.net.on{color:var(--up)}.net.off{color:var(--muted)}
+.sh{position:fixed;inset:0;background:#000a;display:flex;align-items:flex-end;justify-content:center;z-index:30}
+.pn{width:100%;max-width:440px;max-height:85vh;overflow:auto;background:var(--card);border-radius:24px 24px 0 0;padding:18px;padding-bottom:max(18px,env(safe-area-inset-bottom,0px))}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:1.2rem}
+#sx{width:36px;height:36px;padding:0;border-radius:50%;background:var(--card2);color:var(--ink);font-size:1rem}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs button{width:auto;padding:8px 14px;border-radius:99px;background:var(--card2);color:var(--muted);font-size:.85rem}
+.tabs button.on{background:var(--up);color:var(--on-up)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{color:var(--muted);text-align:left;font-weight:600;font-size:.75rem}
+td,th{padding:9px 6px;border-bottom:1px solid var(--line)}
+td:last-child,th:last-child{text-align:right}
+td.n{max-width:140px;overflow-wrap:anywhere}
+td.v{font-weight:800;color:var(--up)}
+tr.me td{background:var(--card2)}
+tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
+.rk{font-size:.75rem;font-weight:800;margin-left:6px}
+.note{color:var(--muted);font-size:.8rem;margin:10px 0 0}
+#pn{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px;font:inherit;margin:6px 0 14px}
+#ladder{list-style:none;padding:0;margin:12px 0}
+#ladder li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:var(--muted);font-size:.9rem}
+#ladder li i{width:10px;height:10px;border-radius:50%;flex:none}
+#ladder li b{color:var(--ink);flex:1}
+#ladder li.me{background:var(--card2)}
+#tm{margin-bottom:12px;align-items:center;gap:10px;display:flex}
+.tbar{flex:1;height:8px;background:var(--card2);border-radius:8px;overflow:hidden}
+.tbar i{display:block;height:100%;width:100%;background:var(--down)}
+#ts{font-weight:800;min-width:48px;text-align:right;color:var(--down)}
+.sum{display:grid;gap:6px;margin:10px 0 16px;font-weight:600;color:var(--muted)}
+.sum b{color:var(--ink)}
+.pos,.up{color:var(--up)!important}.neg{color:var(--down)!important}
+.pole{stroke-dasharray:26;animation:pole .3s ease-out both}
+@keyframes pole{from{stroke-dashoffset:26}to{stroke-dashoffset:0}}
+.pen{transform-box:fill-box;transform-origin:0 50%;animation:unf .3s .25s ease-out both,wave 1s .6s ease-in-out infinite}
+@keyframes unf{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes wave{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.82) skewY(8deg)}}
+#toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);color:var(--ink);padding:10px 16px;border-radius:14px;font-weight:700;font-size:.9rem;z-index:40;width:max-content;max-width:calc(100vw - 32px);text-align:center}
+#sharetext{width:100%;margin-top:8px;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px;font:inherit;font-size:.85rem}
+@media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+
+<main>
+<div class="top"><button class="acct" id="acct" aria-label="Connexion"><span id="acl">Connexion</span></button><div class="logo">devine l’ATH</div><div class="rt"><div class="pill" id="meta"></div>
+  <button class="mbtn" id="mb" aria-haspopup="menu" aria-expanded="false" aria-label="Menu"><i></i></button>
+  <div class="menu" id="menu" role="menu" hidden>
+    <div class="mh"><b id="mn"></b><span id="mr"></span><div class="k" id="mp"></div><div class="net off" id="mnet"></div></div>
+    <button role="menuitem" data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
+    <button role="menuitem" data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
+    <button role="menuitem" data-a="scores">Classement et scores</button>
+    <button role="menuitem" data-a="ranks">Rangs et profil</button>
+    <button role="menuitem" data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
+    <div class="langs" id="langs"><span class="k">Langue</span><button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
+  </div></div></div>
+<div class="bar"><i id="pg"></i></div>
+
+<section id="game">
+  <article class="card">
+    <div class="coin">
+      <img id="im" alt="Logo du coin">
+      <h2><span id="n"></span><em id="t"></em></h2>
+    </div>
+    <p class="desc" id="d"></p>
+    <div class="chips">
+      <div><small>Holders</small><b id="ho"></b></div>
+      <div><small>Chaîne</small><b id="c"></b></div>
+      <div><small>Lancement</small><b id="l"></b></div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="ch-head"><span class="k">Market cap</span><span class="k" id="ck"></span></div>
+    <div id="cv">???</div>
+    <div class="cw" id="cw">
+      <svg id="svg" viewBox="0 0 360 200" role="img" aria-label="Chart du market cap">
+        <defs>
+          <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22E27A" stop-opacity=".35"/><stop offset="1" stop-color="#22E27A" stop-opacity="0"/></linearGradient>
+          <clipPath id="cp"><rect id="cr" x="0" y="0" width="0" height="200"/></clipPath>
+        </defs>
+        <path id="area" fill="url(#gr)" clip-path="url(#cp)"/>
+        <path id="line" fill="none" stroke="#22E27A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle id="head" r="4.5" fill="#22E27A" cx="-10" cy="-10"/>
+        <g id="peak" hidden><circle class="pulse" r="5" fill="#22E27A"/><circle r="5" fill="#22E27A"/><line class="pole" x1="0" y1="-5" x2="0" y2="-30" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round"/><path class="pen" d="M1 -30 L19 -24 L1 -18Z" fill="#22E27A"/><text class="lbl" text-anchor="middle" y="-38" id="pl"></text></g>
+      </svg>
+      <div class="lock">Chart masqué</div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div id="input">
+      <div id="tm" hidden><div class="tbar"><i id="tb"></i></div><span id="ts"></span></div>
+      <div class="k" style="text-align:center">Ton ATH (market cap max)</div>
+      <div class="guess" id="g"></div>
+      <input type="range" id="s" min="0" max="1000" value="500" aria-label="Prédiction du market cap maximum">
+      <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
+      <button id="ok">Valider ma prédiction</button>
+    </div>
+    <div id="rdy" hidden><p>Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><button id="go">Lancer la manche</button></div>
+    <div id="out" hidden>
+      <div class="cmp"><div><span class="k">Ta prédiction</span><b id="mg"></b></div><div><span class="k">ATH réel</span><b id="ma"></b></div></div>
+      <div class="verdict" id="msg"></div>
+      <div class="pts" id="pts"></div>
+      <div class="ca" id="ca" hidden><span class="k">CA</span><code id="cav"></code><button id="cac" class="alt" aria-label="Copier le CA">Copier</button><a id="cad" target="_blank" rel="noopener noreferrer">Dexscreener</a></div>
+      <button id="next"></button>
+    </div>
+  </article>
+</section>
+
+<section id="end" class="card" hidden>
+  <div class="k">Score final</div>
+  <div class="big" id="total"></div>
+  <p class="verdict" id="verdict"></p>
+  <div class="sum" id="sum"></div>
+  <button id="again">Rejouer</button>
+  <button id="share" class="ghost">Partager mon score</button>
+  <input id="sharetext" readonly hidden aria-label="Texte à copier">
+</section>
+
+<div class="sh" id="sh" hidden><div class="pn" role="dialog" aria-modal="true" aria-labelledby="sh-t">
+  <div class="ph"><b id="sh-t"></b><button id="sx" aria-label="Fermer">✕</button></div>
+  <div id="sc-v">
+    <div class="tabs" id="tabs"><button data-t="board">Classement</button><button data-t="mine">Mes parties</button></div>
+    <table><thead id="sc-h"></thead><tbody id="sc-b"></tbody></table>
+    <p class="note" id="sc-n"></p>
+  </div>
+  <div id="bot-v" hidden>
+    <p class="note" style="margin-top:0">Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.</p>
+    <div class="k">Stats de tes bots</div><div id="bot-s" class="stat"></div>
+    <div class="k" style="margin-top:12px">Pour le bot (console du navigateur ou userscript)</div>
+    <pre id="bot-c" class="code"></pre>
+    <div class="row2"><button id="bot-cc" class="alt">Copier le code</button><button id="bot-cd" class="alt">Copier le dataset JSON</button></div>
+    <p class="note" id="bot-n"></p>
+  </div>
+  <div id="rk-v" hidden>
+    <label class="k" for="pn">Pseudo</label><input id="pn" maxlength="14" autocomplete="off">
+    <div class="k" id="rp-t"></div><div class="bar" style="margin-top:8px"><i id="rp-b"></i></div>
+    <ul id="ladder"></ul>
+    <p class="note">KOL demande 1 400 RP et une place dans le top 500. Drainer demande 2 200 RP et une place dans le top 100. Hors ligne, seuls les RP comptent.</p>
+  </div>
+</div></div>
+<div id="toast" role="status" hidden></div>
+</main>
+
+<script>
+// Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
+let COINS=[
+{n:"Bonk",t:"BONK",img:"",ho:900000,c:"Solana",l:"25 décembre 2022",d:"Distribué gratuitement à la communauté Solana pour relancer l’écosystème.",ath:2.8e9},
+{n:"dogwifhat",t:"WIF",img:"",ho:200000,c:"Solana",l:"Novembre 2023",d:"Un chien Shiba avec un bonnet tricoté rose, devenu viral sur Solana.",ath:4.8e9},
+{n:"Popcat",t:"POPCAT",img:"",ho:100000,c:"Solana",l:"Décembre 2023",d:"Inspiré d’une vidéo virale de chat, popularisé par un site où l’on clique pour faire « pop ».",ath:1.5e9}
+];
+const ROUNDS=10, LO=4, SPAN=Math.log10(150e6)-4; // curseur : de 10 K$ à 150 M$ (échelle logarithmique)
+const $=id=>document.getElementById(id);
+// ===== Langues : le français est la source, T() traduit à l’affichage =====
+const LANGS={fr:"Français",en:"English",es:"Español"};
+let LANG="en";
+try{const s=localStorage.getItem("dath.lang"),n=(navigator.language||"").slice(0,2).toLowerCase();LANG=LANGS[s]?s:LANGS[n]?n:"en"}catch(e){}
+const DICT={
+en:{
+"devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
+"Classement et scores":"Leaderboard and scores","Rangs et profil":"Ranks and profile","Entraîner mon bot":"Train my bot","Données et API pour tes bots":"Data and API for your bots","Langue":"Language",
+"Chaîne":"Chain","Lancement":"Launch","Chart du market cap":"Market cap chart","Chart masqué":"Chart hidden","Ton ATH (market cap max)":"Your ATH (max market cap)","Prédiction du market cap maximum":"Maximum market cap guess",
+"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Lancer la manche":"Start the round",
+"Lancer la manche {0}/{1}":"Start round {0}/{1}","Ta prédiction":"Your guess","ATH réel":"Real ATH","Copier le CA":"Copy the CA","Copier":"Copy","Score final":"Final score","Rejouer":"Play again",
+"Partager mon score":"Share my score","Texte à copier":"Text to copy","Fermer":"Close","Classement":"Leaderboard","Mes parties":"My games",
+"Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Your bot can play here to learn: it asks for a coin (without the ATH), answers with its guess, and gets the real ATH and its score. Bot games don’t count on the leaderboard.",
+"Stats de tes bots":"Your bots’ stats","Pour le bot (console du navigateur ou userscript)":"For the bot (browser console or userscript)","Copier le code":"Copy the code","Copier le dataset JSON":"Copy the JSON dataset","Pseudo":"Nickname",
+"KOL demande 1 400 RP et une place dans le top 500. Drainer demande 2 200 RP et une place dans le top 100. Hors ligne, seuls les RP comptent.":"KOL needs 1,400 RP and a spot in the top 500. Drainer needs 2,200 RP and a spot in the top 100. Offline, only RP count.",
+"Manche":"Round","En ligne":"Online","En ligne (lecture seule)":"Online (read-only)","Hors ligne":"Offline",
+"Mise {0} pts ({1}) · 6 s par manche · 10 manches":"Stake {0} pts ({1}) · 6 s per round · 10 rounds","Il te faut {0} pts (gagne-en en classique)":"You need {0} pts (earn them in classic mode)",
+"Lecture seule : demande l’accès Contributeur pour apparaître au classement.":"Read-only: ask for Contributor access to appear on the leaderboard.","Connecté : ton score est en ligne.":"Signed in: your score is online.",
+"Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur).":"Sign-in isn’t possible here: open the game from your claude.ai account (shared link, Contributor access).",
+"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Leaving a ranked game loses your stake. Press again to confirm.","CA copié.":"CA copied.","Code copié.":"Code copied.","Dataset copié.":"Dataset copied.","Sélectionné : copie avec Ctrl/Cmd+C.":"Selected: copy with Ctrl/Cmd+C.",
+"Quasiment pile !":"Almost spot on!","Tu étais ×{0} trop haut":"You were ×{0} too high","Tu étais ×{0} trop bas":"You were ×{0} too low","Manche suivante":"Next round","Voir mon score":"See my score",
+"Tu sens le marché.":"You can feel the market.","Pas mal, tu es dans le bon ordre de grandeur.":"Not bad, you’re in the right ballpark.","Les memecoins restent imprévisibles. Retente ta chance.":"Memecoins stay unpredictable. Try again.",
+"Points gagnés":"Points earned","Nouveau rang : {0} !":"New rank: {0}!","Rang perdu : {0}":"Rank lost: {0}","Rejouer en ranked ({0} pts)":"Play ranked again ({0} pts)","Pas assez de points : mode classique":"Not enough points: classic mode",
+"Joueur":"Player","Points de rang":"Rank points","Partie":"Game","Score":"Score","Le classement en ligne n’est pas disponible ici.":"The online leaderboard isn’t available here.",
+"Ouvre le jeu depuis son lien en étant connecté à claude.ai pour apparaître au classement.":"Open the game from its link while signed in to claude.ai to appear on the leaderboard.","Chargement…":"Loading…",
+"Ton score arrive : envoi en cours.":"Your score is on its way: sending.","Ton score arrive : lecture seule, pas d’envoi.":"Your score is on its way: read-only, nothing sent.",
+"Personne au classement pour l’instant. Joue une partie ranked pour ouvrir la liste.":"Nobody on the leaderboard yet. Play a ranked game to open the list.",
+"{0} joueur classé":"{0} player ranked","{0} joueurs classés":"{0} players ranked"," · tu es en lecture seule":" · you are read-only","Aucune partie pour l’instant.":"No games yet.",
+"Moyenne : {0} % sur {1} partie · 10 dernières : {2} %":"Average: {0}% over {1} game · last 10: {2}%","Moyenne : {0} % sur {1} parties · 10 dernières : {2} %":"Average: {0}% over {1} games · last 10: {2}%",
+"Tes meilleures parties sur cet appareil, sur 5 000.":"Your best games on this device, out of 5,000.","Évolution du score moyen en pourcentage":"Average score trend in percent",
+"{0} coins disponibles pour l’entraînement. Les stats restent sur cet appareil.":"{0} coins available for training. Stats stay on this device.","Parties de bot : {0} · moyenne {1} % · 10 dernières {2} %":"Bot games: {0} · average {1}% · last 10 {2}%","Aucune partie de bot pour l’instant.":"No bot games yet.",
+"// Exemple : un bot qui devine toujours 1 M$ puis apprend":"// Example: a bot that always guesses $1M, then learns","// à toi de faire mieux":"// your turn to do better","ATH réel :":"Real ATH:",
+"// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner":"// DevineBot.dataset(): all the data with the ATH, for training","// DevineBot.stats()   : moyenne en % de tes bots":"// DevineBot.stats(): your bots’ average in %",
+"place {0}":"rank #{0}","prochain rang à {0} RP":"next rank at {0} RP","rang max":"max rank","départ":"start","mise {0}":"stake {0}","top {0}":"top {0}",
+"J’ai fait {0} / {1} sur Devine l’ATH":"I scored {0} / {1} on Guess the ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". Can you beat me?","Copié ✓":"Copied ✓"
+},
+es:{
+"devine l’ATH":"adivina el ATH","Connexion":"Iniciar sesión","Connecté":"Conectado","Menu":"Menú","Mode classique":"Modo clásico","Gratuit · sans limite de temps":"Gratis · sin límite de tiempo","Mode ranked":"Modo ranked",
+"Classement et scores":"Clasificación y puntuaciones","Rangs et profil":"Rangos y perfil","Entraîner mon bot":"Entrenar mi bot","Données et API pour tes bots":"Datos y API para tus bots","Langue":"Idioma",
+"Chaîne":"Cadena","Lancement":"Lanzamiento","Chart du market cap":"Gráfico del market cap","Chart masqué":"Gráfico oculto","Ton ATH (market cap max)":"Tu ATH (market cap máx.)","Prédiction du market cap maximum":"Predicción del market cap máximo",
+"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Lancer la manche":"Empezar la ronda",
+"Lancer la manche {0}/{1}":"Empezar la ronda {0}/{1}","Ta prédiction":"Tu predicción","ATH réel":"ATH real","Copier le CA":"Copiar el CA","Copier":"Copiar","Score final":"Puntuación final","Rejouer":"Jugar de nuevo",
+"Partager mon score":"Compartir mi puntuación","Texte à copier":"Texto para copiar","Fermer":"Cerrar","Classement":"Clasificación","Mes parties":"Mis partidas",
+"Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Tu bot puede jugar aquí para aprender: pide una moneda (sin el ATH), responde con su predicción y recibe el ATH real y su puntuación. Las partidas de bots no cuentan en la clasificación.",
+"Stats de tes bots":"Estadísticas de tus bots","Pour le bot (console du navigateur ou userscript)":"Para el bot (consola del navegador o userscript)","Copier le code":"Copiar el código","Copier le dataset JSON":"Copiar el dataset JSON","Pseudo":"Apodo",
+"KOL demande 1 400 RP et une place dans le top 500. Drainer demande 2 200 RP et une place dans le top 100. Hors ligne, seuls les RP comptent.":"KOL requiere 1.400 RP y un puesto en el top 500. Drainer requiere 2.200 RP y un puesto en el top 100. Sin conexión, solo cuentan los RP.",
+"Manche":"Ronda","En ligne":"En línea","En ligne (lecture seule)":"En línea (solo lectura)","Hors ligne":"Sin conexión",
+"Mise {0} pts ({1}) · 6 s par manche · 10 manches":"Apuesta {0} pts ({1}) · 6 s por ronda · 10 rondas","Il te faut {0} pts (gagne-en en classique)":"Necesitas {0} pts (gánalos en modo clásico)",
+"Lecture seule : demande l’accès Contributeur pour apparaître au classement.":"Solo lectura: pide acceso de Colaborador para aparecer en la clasificación.","Connecté : ton score est en ligne.":"Conectado: tu puntuación está en línea.",
+"Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur).":"No se puede iniciar sesión aquí: abre el juego desde tu cuenta de claude.ai (enlace compartido, acceso de Colaborador).",
+"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Abandonar una partida ranked pierde tu apuesta. Pulsa de nuevo para confirmar.","CA copié.":"CA copiado.","Code copié.":"Código copiado.","Dataset copié.":"Dataset copiado.","Sélectionné : copie avec Ctrl/Cmd+C.":"Seleccionado: copia con Ctrl/Cmd+C.",
+"Quasiment pile !":"¡Casi exacto!","Tu étais ×{0} trop haut":"Te pasaste ×{0}","Tu étais ×{0} trop bas":"Te quedaste ×{0} corto","Manche suivante":"Siguiente ronda","Voir mon score":"Ver mi puntuación",
+"Tu sens le marché.":"Sientes el mercado.","Pas mal, tu es dans le bon ordre de grandeur.":"Nada mal, estás en el orden de magnitud correcto.","Les memecoins restent imprévisibles. Retente ta chance.":"Los memecoins siguen siendo impredecibles. Inténtalo de nuevo.",
+"Points gagnés":"Puntos ganados","Nouveau rang : {0} !":"¡Nuevo rango: {0}!","Rang perdu : {0}":"Rango perdido: {0}","Rejouer en ranked ({0} pts)":"Jugar ranked otra vez ({0} pts)","Pas assez de points : mode classique":"Puntos insuficientes: modo clásico",
+"Joueur":"Jugador","Points de rang":"Puntos de rango","Partie":"Partida","Score":"Puntuación","Le classement en ligne n’est pas disponible ici.":"La clasificación en línea no está disponible aquí.",
+"Ouvre le jeu depuis son lien en étant connecté à claude.ai pour apparaître au classement.":"Abre el juego desde su enlace con tu sesión de claude.ai para aparecer en la clasificación.","Chargement…":"Cargando…",
+"Ton score arrive : envoi en cours.":"Tu puntuación está en camino: enviando.","Ton score arrive : lecture seule, pas d’envoi.":"Tu puntuación está en camino: solo lectura, sin envío.",
+"Personne au classement pour l’instant. Joue une partie ranked pour ouvrir la liste.":"Nadie en la clasificación todavía. Juega una partida ranked para abrir la lista.",
+"{0} joueur classé":"{0} jugador clasificado","{0} joueurs classés":"{0} jugadores clasificados"," · tu es en lecture seule":" · estás en solo lectura","Aucune partie pour l’instant.":"Aún no hay partidas.",
+"Moyenne : {0} % sur {1} partie · 10 dernières : {2} %":"Media: {0} % en {1} partida · últimas 10: {2} %","Moyenne : {0} % sur {1} parties · 10 dernières : {2} %":"Media: {0} % en {1} partidas · últimas 10: {2} %",
+"Tes meilleures parties sur cet appareil, sur 5 000.":"Tus mejores partidas en este dispositivo, sobre 5.000.","Évolution du score moyen en pourcentage":"Evolución de la puntuación media en porcentaje",
+"{0} coins disponibles pour l’entraînement. Les stats restent sur cet appareil.":"{0} monedas disponibles para entrenar. Las estadísticas se quedan en este dispositivo.","Parties de bot : {0} · moyenne {1} % · 10 dernières {2} %":"Partidas de bot: {0} · media {1} % · últimas 10 {2} %","Aucune partie de bot pour l’instant.":"Aún no hay partidas de bot.",
+"// Exemple : un bot qui devine toujours 1 M$ puis apprend":"// Ejemplo: un bot que siempre adivina 1 M$ y luego aprende","// à toi de faire mieux":"// te toca mejorarlo","ATH réel :":"ATH real:",
+"// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner":"// DevineBot.dataset(): todos los datos con el ATH, para entrenar","// DevineBot.stats()   : moyenne en % de tes bots":"// DevineBot.stats(): media en % de tus bots",
+"place {0}":"puesto {0}","prochain rang à {0} RP":"siguiente rango a {0} RP","rang max":"rango máx.","départ":"inicio","mise {0}":"apuesta {0}","top {0}":"top {0}",
+"J’ai fait {0} / {1} sur Devine l’ATH":"Hice {0} / {1} en Adivina el ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". ¿Puedes superarme?","Copié ✓":"Copiado ✓"
+}};
+const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
+// retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
+const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
+const hasKey=s=>s in DICT.en||s in REV;
+const frOf=s=>s in DICT.en?s:REV[s];
+function i18nDom(){
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+  while(n=w.nextNode()){const m=n.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/);if(m[2]&&hasKey(m[2])){const nv=m[1]+T(frOf(m[2]))+m[3];if(nv!==n.nodeValue)n.nodeValue=nv}}
+  document.querySelectorAll("[aria-label]").forEach(e=>{const a=e.getAttribute("aria-label");if(hasKey(a))e.setAttribute("aria-label",T(frOf(a)))});
+  document.documentElement.lang=LANG;
+}
+const decSep=()=>LANG==="en"?".":",";
+
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let deck,i,total,skip,busy,mode="casual",timer=0,zero=false,gen=0;
+
+const fmt=v=>v>=1e9?(v/1e9).toFixed(1).replace(".",decSep())+(LANG==="fr"?" Md$":" B$"):v>=1e6?(v/1e6).toFixed(v>=1e7?0:1).replace(".",decSep())+" M$":v>=1e3?Math.round(v/1e3)+" K$":Math.round(v)+" $";
+const val=()=>Math.pow(10,LO+($("s").value/1000)*SPAN);
+const num=n=>n.toLocaleString({fr:"fr-FR",en:"en-US",es:"es-ES"}[LANG]);
+const esc=t=>String(t).replace(/[&<>"']/g,c=>"&#"+c.charCodeAt(0)+";");
+const avatar=k=>"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><rect width="96" height="96" fill="#22E27A"/><text x="48" y="60" font-size="34" font-weight="800" text-anchor="middle" fill="#06150C" font-family="sans-serif">'+k.t.slice(0,2)+'</text></svg>');
+// Courbe fictive pour les coins de démo qui n’ont pas de vrai historique
+const fake=a=>{const o=[],pk=14;for(let j=0;j<60;j++){const r=j<=pk?Math.pow(j/pk,2.2):Math.exp(-(j-pk)/9);o.push(Math.max(a*.02,a*(.03+.97*r)*(j===pk?1:.93+Math.random()*.14)))}return o};
+let toastT=0;
+function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true},3500)}
+
+// ===== Tirage : pas de répétition, tailles de coins mélangées =====
+const seenKey=k=>k.t+"|"+k.n;
+function pick(){
+  let seen=[];try{seen=JSON.parse(localStorage.getItem("dath.seen")||"[]")}catch(e){}
+  let pool=COINS.filter(k=>!seen.includes(seenKey(k)));
+  if(pool.length<ROUNDS){seen=[];pool=[...COINS]}
+  const g={};
+  pool.sort(()=>Math.random()-.5).forEach(k=>{const b=k.b==null?"x":k.b;(g[b]=g[b]||[]).push(k)});
+  const keys=Object.keys(g).sort(()=>Math.random()-.5),out=[];
+  while(out.length<ROUNDS&&keys.some(b=>g[b].length))for(const b of keys){if(g[b].length&&out.length<ROUNDS)out.push(g[b].pop())}
+  out.sort(()=>Math.random()-.5);
+  try{localStorage.setItem("dath.seen",JSON.stringify(seen.concat(out.map(seenKey)).slice(-200)))}catch(e){}
+  return out;
+}
+function start(m){
+  mode=m||"casual";sheet(0);gen++;
+  deck=pick();
+  i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
+}
+function show(){
+  const k=deck[i];busy=false;skip=false;
+  $("im").onerror=()=>{$("im").onerror=null;$("im").src=avatar(k)};
+  $("im").src=IMGMAP[k.t+"|"+k.n]||k.img||avatar(k);
+  $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;
+  $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=k.l;
+  meta();
+  const nx=deck[i+1];if(nx&&nx.img&&!IMGMAP[nx.t+"|"+nx.n])new Image().src=nx.img;
+  $("pg").style.width=(i/deck.length*100)+"%";
+  $("cw").className="cw";$("cv").textContent="???";$("cv").className="";$("ck").textContent="";
+  $("line").style.strokeDasharray="";$("line").removeAttribute("d");$("area").removeAttribute("d");
+  $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
+  $("out").hidden=true;$("s").value=500;upd();
+  if(mode==="ranked"){$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  else{$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
+}
+function upd(){$("g").textContent=fmt(val())}
+
+function animate(ch,ath,done){
+  const my=gen,W=360,H=200,P=16,T=62,mx=Math.max(...ch);
+  const x=j=>P+(W-2*P)*j/(ch.length-1), y=v=>H-P-(H-P-T)*v/mx;
+  const d=ch.map((v,j)=>(j?"L":"M")+x(j).toFixed(1)+" "+y(v).toFixed(1)).join("");
+  const line=$("line"),area=$("area"),mi=ch.indexOf(mx),px=x(mi),py=y(mx);let planted=false;
+  const plant=()=>{planted=true;$("peak").removeAttribute("hidden");$("peak").setAttribute("transform","translate("+px+" "+py+")");$("pl").textContent="ATH "+fmt(ath);$("pl").setAttribute("x",Math.max(-px+44,Math.min(W-px-44,0)));try{navigator.vibrate&&navigator.vibrate(25)}catch(e){}};
+  line.setAttribute("d",d);area.setAttribute("d",d+"L"+x(ch.length-1)+" "+(H-P)+"L"+x(0)+" "+(H-P)+"Z");
+  const len=line.getTotalLength();
+  line.style.strokeDasharray=len;line.style.strokeDashoffset=len;
+  const dur=reduce?1:3000,t0=performance.now();
+  const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+  (function f(now){
+    if(my!==gen)return;
+    const p=skip?1:Math.min(1,(now-t0)/dur),e=ease(p);
+    line.style.strokeDashoffset=len*(1-e);
+    const pt=line.getPointAtLength(len*e);
+    $("head").setAttribute("cx",pt.x);$("head").setAttribute("cy",pt.y);
+    $("cr").setAttribute("width",pt.x);if(!planted&&pt.x>=px-.5)plant();
+    const fi=e*(ch.length-1),a=Math.floor(fi),b=Math.min(ch.length-1,a+1);
+    $("cv").textContent=fmt(ch[a]+(ch[b]-ch[a])*(fi-a));
+    if(p<1)return requestAnimationFrame(f);
+    if(!planted)plant();
+    $("cv").textContent=fmt(ath);$("cv").className="up";$("ck").textContent="ATH";
+    done();
+  })(t0);
+}
+function countUp(el,to,ms,pre){
+  const t0=performance.now();
+  (function f(n){const p=reduce?1:Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
+}
+let CAMAP={},IMGMAP={},DESC={};
+// rug pull : effondrement quasi total ou chute brutale juste après le sommet (une mort lente reste un coin « nul » valable)
+function isRug(ch){
+  if(!Array.isArray(ch)||ch.length<3)return false;
+  const mx=Math.max(...ch),j=ch.indexOf(mx);
+  return ch[ch.length-1]/mx<0.01||Math.min(...ch.slice(j,j+3))/mx<0.15;
+}
+const dec=t=>String(t==null?"":t).replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,"\"").replace(/&#39;/g,"'");
+const descOf=k=>{const m=DESC[k.t+"|"+k.n];return dec(m&&m[LANG]?m[LANG]:k.d||"")};
+const caOf=k=>k.id||CAMAP[k.t+"|"+k.n]||"";
+function validate(){
+  if(busy)return;busy=true;stopTimer();
+  const k=deck[i],g=val();
+  const pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)));zero=false;
+  total+=pts;
+  $("input").hidden=true;$("rdy").hidden=true;$("cw").className="cw open";
+  animate(k.ch||fake(k.ath),k.ath,()=>{
+    $("mg").textContent=fmt(g);$("ma").textContent=fmt(k.ath);
+    const r=g>k.ath?g/k.ath:k.ath/g;
+    $("msg").textContent=r<1.1?T("Quasiment pile !"):T(g>k.ath?"Tu étais ×{0} trop haut":"Tu étais ×{0} trop bas",r.toFixed(1).replace(".",decSep()));
+    $("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
+    $("out").hidden=false;countUp($("pts"),pts,900,"+");
+    const ca=caOf(k);$("ca").hidden=!ca;if(ca){$("cav").textContent=ca;$("cav").title=ca;$("cad").href="https://dexscreener.com/solana/"+ca;$("cac").onclick=()=>copyTxt(ca,T("CA copié."))}
+    meta();
+    $("pg").style.width=((i+1)/deck.length*100)+"%";
+  });
+}
+function next(){
+  i++;
+  if(i<deck.length){show();return}
+  $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;
+  countUp($("total"),total,1200,"");settle();
+  const p=total/(deck.length*1000);
+  $("verdict").textContent=T(p>.8?"Tu sens le marché.":p>.5?"Pas mal, tu es dans le bon ordre de grandeur.":"Les memecoins restent imprévisibles. Retente ta chance.");
+}
+
+// ===== Points, rangs, profil (sauvegardés ici, et en ligne quand c’est possible) =====
+const RANKS=[["Exit Liquidity",0,"#8B8B96"],["Paper Hands",150,"#7DB8FF"],["Degen",400,"#22E27A"],["Sniper",800,"#FFC53D"],["KOL",1400,"#FF8A3D"],["Drainer",2200,"#FF4F64"]];
+const TOP={4:500,5:100}; // KOL = top 500, Drainer = top 100 du classement en ligne
+const COSTS=[100,150,200,300,450,700]; // mise ranked selon le rang : Exit Liquidity … Drainer
+const costNow=()=>COSTS[rankOf(S.rp,myPos())];
+let stake=0;
+const TIME=6000, TIMEOUT_ZERO=false; // TIMEOUT_ZERO=true : 0 point si les 6 s sont écoulées (sinon la prédiction est validée là où est le curseur)
+let S={name:"Anon",pts:500,rp:0,best:0,games:0,scores:[]},tab="board";
+try{Object.assign(S,JSON.parse(localStorage.getItem("dath.v1")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("dath.v1",JSON.stringify(S))}catch(e){}};
+const rankIdx=rp=>RANKS.reduce((b,r,j)=>rp>=r[1]?j:b,0);
+// rang affiché : seuil de RP, plus la place dans le classement quand il est connu (pos = null hors ligne)
+function rankOf(rp,pos){let j=rankIdx(rp);while(j>0&&TOP[j]&&pos!=null&&pos>TOP[j])j--;return j}
+
+// ----- en ligne : base partagée de l’artifact (absente en local, le jeu marche alors seul) -----
+let DB=null,UID=null,online=false,canWrite=true,board=[],boardReady=false,pushing=false,pushAgain=false;
+const myPos=()=>{if(!online||!boardReady)return null;const x=board.findIndex(p=>p.id===UID);return x<0?501:x+1};
+const estPos=rp=>{if(!online||!boardReady)return null;return board.filter(p=>p.id!==UID&&(p.rp||0)>rp).length+1};
+async function push(){
+  if(!online||!canWrite)return;
+  if(pushing){pushAgain=true;return}
+  pushing=true;
+  try{await DB.doc("players/"+UID).set({name:S.name,rp:S.rp,pts:S.pts,best:S.best||0,games:S.games||0,t:Date.now()})}
+  catch(e){if(e&&e.code==="invalid_argument"){canWrite=false;toast(T("Lecture seule : demande l’accès Contributeur pour apparaître au classement."))}}
+  pushing=false;
+  if(pushAgain){pushAgain=false;push()}
+}
+async function goOnline(){
+  try{
+    if(online)return;const C=window.claude;if(!C||!C.use)return;
+    const [db,user]=await Promise.all([C.use("db"),C.use("user")]);
+    if(!db||!user)return;
+    const id=await user.id();if(!id)return;
+    DB=db;UID=id;
+    const idle=$("game").hidden||mode!=="ranked";
+    const snap=await DB.doc("players/"+UID).get();
+    if(snap.exists&&idle){const r=snap.data();S.name=r.name||S.name;if(typeof r.rp==="number")S.rp=r.rp;if(typeof r.pts==="number")S.pts=r.pts;S.best=r.best||0;S.games=r.games||0;save()}
+    online=true;
+    DB.collection("players").orderBy("rp","desc").limit(500).onSnapshot(s=>{
+      board=s.docs.map(d=>Object.assign({id:d.id},d.data()));boardReady=true;refresh();
+      if(!$("sh").hidden)sheet(shown);
+    },()=>{boardReady=false});
+    refresh();
+  }catch(e){online=false}
+}
+
+function acct(){const b=$("acct");b.classList.toggle("on",online);$("acl").textContent=online?"● "+(S.name||T("Connecté")):T("Connexion")}
+$("acct").addEventListener("click",async()=>{
+  if(online){sheet("ranks");return}
+  await goOnline();
+  if(online){acct();toast(T("Connecté : ton score est en ligne."))}
+  else toast(T("Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur)."));
+});
+function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
+function refresh(){
+  const j=rankOf(S.rp,myPos()),r=RANKS[j];
+  $("mn").textContent=S.name;$("mr").textContent=r[0];$("mr").style.color=r[2];
+  $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
+  $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
+  const C=costNow();$("mrk").disabled=S.pts<C;acct();
+  $("msub").textContent=S.pts>=C?T("Mise {0} pts ({1}) · 6 s par manche · 10 manches",C,r[0]):T("Il te faut {0} pts (gagne-en en classique)",C);
+}
+function startTimer(){
+  stopTimer();$("tm").hidden=mode!=="ranked";if(mode!=="ranked")return;
+  const t0=performance.now();
+  (function f(n){const l=Math.max(0,TIME-(n-t0));$("tb").style.width=(l/TIME*100)+"%";$("ts").textContent=(l/1000).toFixed(1)+" s";
+    if(l<=0){timer=0;zero=TIMEOUT_ZERO;validate();return}timer=requestAnimationFrame(f)})(t0);
+}
+function stopTimer(){cancelAnimationFrame(timer);timer=0}
+let armedAt=0;
+function launch(m){
+  const inGame=!$("game").hidden&&deck&&!busy;
+  if(m==="ranked"&&S.pts<costNow())return;
+  if(inGame&&mode==="ranked"&&Date.now()-armedAt>4000){armedAt=Date.now();toast(T("Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer."));return}
+  if(m==="ranked"){stake=costNow();S.pts-=stake;save();refresh();push()}
+  start(m);
+}
+function settle(){
+  const p=total/(deck.length*1000),gp=Math.round(p*(mode==="ranked"?(stake||200)*1.5:500));
+  let h="<div>"+T("Points gagnés")+" <b class='pos'>+"+gp+" pts</b></div>";S.pts+=gp;
+  S.games=(S.games||0)+1;const sc=Math.round(p*5000);if(mode==="ranked"&&sc>(S.best||0))S.best=sc;
+  if(mode==="ranked"){
+    const old=S.rp,d=Math.max(-60,Math.min(125,Math.round((p*5000-2500)/20)));
+    const o=rankOf(old,estPos(old));
+    S.rp=Math.max(0,old+d);const n=rankOf(S.rp,estPos(S.rp));
+    h+="<div>Rank points <b class='"+(d>=0?"pos":"neg")+"'>"+(d>=0?"+":"")+d+" RP</b></div>";
+    if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RANKS[n][0])+"</div>";
+  }
+  S.scores.push({m:mode,s:sc,t:Date.now()});S.scores=S.scores.slice(-300);save();push();
+  $("sum").innerHTML=h;
+  $("again").textContent=mode==="ranked"?(S.pts>=costNow()?T("Rejouer en ranked ({0} pts)",costNow()):T("Pas assez de points : mode classique")):T("Rejouer");
+  refresh();
+}
+
+// ----- fenêtres : classement, parties, rangs et profil -----
+let shown=0;
+function sheet(w){
+  shown=w;$("sh").hidden=!w;if(!w)return;
+  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":"Rangs et profil");
+  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";
+  w==="scores"?drawScores():w==="bot"?drawBot():drawRanks();
+}
+function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
+function drawScores(){
+  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
+  if(tab==="board"){
+    $("sc-h").innerHTML="<tr><th>#</th><th>"+T("Joueur")+"</th><th>"+T("Points de rang")+"</th></tr>";
+    if(!online){$("sc-b").innerHTML='<tr><td colspan="3" class="k">'+T("Le classement en ligne n’est pas disponible ici.")+'</td></tr>';$("sc-n").textContent=T("Ouvre le jeu depuis son lien en étant connecté à claude.ai pour apparaître au classement.");return}
+    if(!boardReady){$("sc-b").innerHTML='<tr><td colspan="3" class="k">'+T("Chargement…")+'</td></tr>';$("sc-n").textContent="";return}
+    const top=board.slice(0,25);let h=top.map((p,x)=>rowBoard(p,x+1)).join("");
+    const mx=board.findIndex(p=>p.id===UID);
+    if(mx>=25)h+='<tr class="gap"><td colspan="3">⋯</td></tr>'+rowBoard(board[mx],mx+1);
+    if(mx<0&&S.games)h+='<tr class="gap"><td colspan="3">'+T(canWrite?"Ton score arrive : envoi en cours.":"Ton score arrive : lecture seule, pas d’envoi.")+"</td></tr>";
+    $("sc-b").innerHTML=h||'<tr><td colspan="3" class="k">'+T("Personne au classement pour l’instant. Joue une partie ranked pour ouvrir la liste.")+'</td></tr>';
+    $("sc-n").textContent=T(board.length>1?"{0} joueurs classés":"{0} joueur classé",board.length)+(canWrite?"":T(" · tu es en lecture seule"));
+  }else{
+    $("sc-h").innerHTML="<tr><th>#</th><th>"+T("Partie")+"</th><th>"+T("Score")+"</th></tr>";
+    const rows=S.scores.map(x=>x).sort((a,b)=>b.s-a.s).slice(0,12);
+    $("sc-b").innerHTML=rows.length?rows.map((x,j)=>"<tr><td>"+(j+1)+"</td><td>"+new Date(x.t).toLocaleDateString({fr:"fr-FR",en:"en-US",es:"es-ES"}[LANG],{day:"2-digit",month:"2-digit"})+(x.m==="ranked"?' <i class="tag">RANKED</i>':"")+"</td><td class='v'>"+num(x.s)+"</td></tr>").join(""):'<tr><td colspan="3" class="k">'+T("Aucune partie pour l’instant.")+'</td></tr>';
+    const pc=S.scores.map(x=>x.s/50),avg=a=>a.length?Math.round(a.reduce((u,v)=>u+v,0)/a.length):0;
+    const st=pc.length?T(pc.length>1?"Moyenne : {0} % sur {1} parties · 10 dernières : {2} %":"Moyenne : {0} % sur {1} partie · 10 dernières : {2} %",avg(pc),pc.length,avg(pc.slice(-10))):"";
+    $("sc-n").innerHTML=esc(st)+(pc.length>1?spark(pc.slice(-40)):"")+"<br>"+esc(T("Tes meilleures parties sur cet appareil, sur 5 000."));
+  }
+}
+function spark(a){
+  const W=300,H=44,n=a.length,pts=a.map((v,j)=>(n>1?j/(n-1)*W:0).toFixed(1)+","+(H-4-(H-8)*Math.max(0,Math.min(100,v))/100).toFixed(1)).join(" ");
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-label="'+T("Évolution du score moyen en pourcentage")+'"><polyline points="'+pts+'" fill="none" stroke="#22E27A" stroke-width="2" stroke-linejoin="round"/></svg>';
+}
+// ----- API pour les bots -----
+S.bot=S.bot||{games:0,hist:[]};
+const botCoins=()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l}));
+window.DevineBot={
+  version:1,
+  range:[1e4,1.5e8], // ATH entre 10 K$ et 150 M$ (guess dans cette plage)
+  coins:botCoins,
+  next(){const k=Math.floor(Math.random()*COINS.length);return botCoins()[k]},
+  answer(id,guess){
+    const k=COINS[id];if(!k||!(guess>0))return null;
+    const sc=Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(guess/k.ath))/2)));
+    S.bot.games++;S.bot.hist.push(sc/10);S.bot.hist=S.bot.hist.slice(-200);save();if(!$("sh").hidden&&shown==="bot")drawBot();
+    return {ath:k.ath,score:sc,percent:sc/10,ratio:guess/k.ath};
+  },
+  dataset:()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l,ath:k.ath,ca:caOf(k)||null,chart:k.ch||null})),
+  stats:()=>({games:S.bot.games,avgPercent:S.bot.hist.length?S.bot.hist.reduce((a,b)=>a+b,0)/S.bot.hist.length:0})
+};
+const botCode=()=>T("// Exemple : un bot qui devine toujours 1 M$ puis apprend")+"\nconst c = DevineBot.next();\nconst guess = 1e6;            "+T("// à toi de faire mieux")+"\nconst r = DevineBot.answer(c.id, guess);\nconsole.log(c.name, r.score, r.percent + \" %\", \""+T("ATH réel :")+"\", r.ath);\n"+T("// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner")+"\n"+T("// DevineBot.stats()   : moyenne en % de tes bots");
+function drawBot(){
+  const h=S.bot.hist,avg=a=>a.length?Math.round(a.reduce((u,v)=>u+v,0)/a.length):0;
+  $("bot-s").innerHTML=h.length?"<div>"+T("Parties de bot : {0} · moyenne {1} % · 10 dernières {2} %","<b>"+S.bot.games+"</b>","<b>"+avg(h)+"</b>","<b>"+avg(h.slice(-10))+"</b>")+"</div>"+(h.length>1?spark(h.slice(-60)):""):"<div>"+T("Aucune partie de bot pour l’instant.")+"</div>";
+  $("bot-c").textContent=botCode();
+  $("bot-n").textContent=T("{0} coins disponibles pour l’entraînement. Les stats restent sur cet appareil.",COINS.length);
+}
+function drawRanks(){
+  const ps=myPos(),j=rankOf(S.rp,ps),nx=RANKS[j+1];
+  $("pn").value=S.name;
+  $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
+  $("rp-b").style.width=(nx?Math.max(0,Math.min(100,(S.rp-RANKS[j][1])/(nx[1]-RANKS[j][1])*100)):100)+"%";
+  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+T("mise {0}",COSTS[k])+"</span></li>").join("");
+}
+
+// ----- événements -----
+const openMenu=o=>{$("menu").hidden=!o;$("mb").setAttribute("aria-expanded",o)};
+$("s").addEventListener("input",upd);
+$("ok").addEventListener("click",validate);
+$("go").addEventListener("click",()=>{if(busy)return;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
+$("cw").addEventListener("click",()=>{skip=true});
+$("next").addEventListener("click",next);
+$("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
+$("mb").addEventListener("click",e=>{e.stopPropagation();openMenu($("menu").hidden)});
+document.addEventListener("click",e=>{if(!$("menu").contains(e.target))openMenu(false)});
+addEventListener("keydown",e=>{
+  if(e.key==="Escape"){openMenu(false);sheet(0);return}
+  if(e.key!=="Enter"||e.repeat||!$("sh").hidden||!$("menu").hidden)return;
+  const a=document.activeElement;if(a&&(a.tagName==="BUTTON"||a.tagName==="INPUT"&&a.type!=="range"))return;
+  if(!$("game").hidden){if(!$("input").hidden)validate();else if(!$("out").hidden)next()}
+});
+$("menu").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b||b.disabled)return;openMenu(false);const a=b.dataset.a;if(a==="casual"||a==="ranked")launch(a);else{if(a==="scores")tab="board";sheet(a)}});
+function copyTxt(t,ok){const done=()=>toast(ok),fb=()=>{$("sharetext").hidden=false;$("sharetext").value=t;$("sharetext").select();toast(T("Sélectionné : copie avec Ctrl/Cmd+C."))};
+  try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}}
+$("bot-cc").addEventListener("click",()=>copyTxt(botCode(),T("Code copié.")));
+$("bot-cd").addEventListener("click",()=>copyTxt(JSON.stringify(DevineBot.dataset()),T("Dataset copié.")));
+$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){tab=b.dataset.t;drawScores()}});
+$("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#sx"))sheet(0)});
+$("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
+$("pn").addEventListener("change",()=>push());
+$("share").addEventListener("click",async()=>{
+  const t=T("J’ai fait {0} / {1} sur Devine l’ATH",num(total),num(deck.length*1000))+(mode==="ranked"?T(" (ranked, {0})",RANKS[rankOf(S.rp,myPos())][0]):"")+T(". Tu fais mieux ?");
+  try{await navigator.clipboard.writeText(t);$("share").textContent=T("Copié ✓")}
+  catch(e){const f=$("sharetext");f.value=t;f.hidden=false;f.focus();f.select()}
+  setTimeout(()=>$("share").textContent=T("Partager mon score"),2000);
+});
+
+function applyLang(){
+  try{localStorage.setItem("dath.lang",LANG)}catch(e){}
+  i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
+  document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i])$("d").textContent=descOf(deck[i]);meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  if($("sh")&&!$("sh").hidden)sheet(shown);
+}
+$("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
+applyLang();
+refresh();
+goOnline();
+// Charge coins.json s’il existe (créé par fetch-coins.mjs), sinon garde les coins de démo.
+const local=/^(localhost|127\.)|github\.io$/.test(location.hostname);
+fetch("coins.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(Array.isArray(d)){const ok=d.filter(k=>!isRug(k.ch));if(ok.length>=ROUNDS)COINS=ok}}).catch(()=>{}).then(()=>fetch("coins-img.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")IMGMAP=m}).catch(()=>{}))
+.then(()=>fetch("coins-i18n.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")DESC=m}).catch(()=>{}))
+.then(()=>fetch("ca-map.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")CAMAP=m}).catch(()=>{})).finally(()=>start("casual"));
+</script>
+
+</body>
+</html>

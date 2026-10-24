@@ -1,0 +1,29 @@
+name: Mise à jour des coins
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: coins
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Chercher de nouveaux coins
+        run: |
+          N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(60,Math.ceil(n/6)+2))')
+          node fetch-coins.mjs $N || true
+      - name: Enregistrer si quelque chose a changé
+        run: |
+          git config user.name "coins-bot"
+          git config user.email "coins-bot@users.noreply.github.com"
+          git add coins.json
+          git diff --cached --quiet || (git commit -m "Nouveaux coins" && git push)
