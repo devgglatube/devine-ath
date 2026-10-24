@@ -31,7 +31,7 @@ jobs:
           node-version: 20
       - name: Chercher de nouveaux coins
         run: |
-          N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.ceil(n/6)+2))')
+          N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.max(20,Math.ceil(n/6)+2)))')
           timeout 20m node fetch-coins.mjs $N || true
       - name: Télécharger les logos
         run: timeout 8m node images.mjs || true
