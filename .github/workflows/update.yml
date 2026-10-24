@@ -25,7 +25,7 @@ jobs:
       - name: Chercher de nouveaux coins
         run: |
           N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.ceil(n/6)+2))')
-          timeout 25m node fetch-coins.mjs $N || true
+          timeout 20m node fetch-coins.mjs $N || true
       - name: Télécharger les logos
         run: timeout 8m node images.mjs || true
       - name: Enregistrer si quelque chose a changé
@@ -33,4 +33,7 @@ jobs:
           git config user.name "coins-bot"
           git config user.email "coins-bot@users.noreply.github.com"
           git add coins.json artifact/coins-img.json
-          git diff --cached --quiet || (git commit -m "Nouveaux coins" && git push)
+          git diff --cached --quiet && echo "rien de nouveau" && exit 0
+          git commit -m "Nouveaux coins"
+          git pull --rebase origin main
+          git push
