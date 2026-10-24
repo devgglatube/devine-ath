@@ -10,7 +10,6 @@ on:
       - "images.mjs"
       - "pairs.mjs"
       - "fees.mjs"
-      - "tweets.mjs"
 permissions:
   contents: write
 concurrency:

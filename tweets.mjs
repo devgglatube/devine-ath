@@ -1,5 +1,5 @@
 // Trouve le tweet (ou à défaut le compte X) associé à chaque coin et l'enregistre dans artifact/tweets.json.
-// Sources : métadonnées du token sur la blockchain (champ "twitter"), puis réseaux sociaux DexScreener ; contenu via FxTwitter.
+// Sources : métadonnées du token sur la blockchain (Metaplex ou extension Token-2022, champ "twitter"), puis réseaux sociaux DexScreener ; contenu via FxTwitter.
 // Les images (avatar, photo du tweet) sont réduites et intégrées au fichier (la version claude.ai bloque les images externes).
 import { readFile, writeFile } from "node:fs/promises";
 const DS = process.env.DS_BASE || "https://api.dexscreener.com";
@@ -63,41 +63,87 @@ for (let i = 0; i < todo.length && left() > 0; i += 30) {
   } catch (e) { console.log("dexscreener ignoré :", String(e.message || e)); }
   await wait(400);
 }
-// 2) Métadonnées du token (Metaplex) : le champ "twitter" est souvent le lien du tweet d'origine
+// 2) Métadonnées du token : extension Token-2022 portée par le mint (tokens récents) ou compte Metaplex (anciens tokens).
+//    Le JSON pointé contient souvent le lien du tweet d'origine dans "twitter".
 const metaLinks = {};
 if (web3) {
   const { PublicKey } = web3;
   const MPL = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
+  const T22 = "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb";
   const str = (buf, o) => { const n = buf.readUInt32LE(o); return [buf.subarray(o + 4, o + 4 + n).toString("utf8").replace(/\0+$/, ""), o + 4 + n]; };
+  // Token-2022 : 82 octets de mint, remplissage jusqu'à 165, type de compte, puis extensions (type, longueur, valeur). Type 19 = métadonnées.
+  function uri22(buf) {
+    let o = 166;
+    while (o + 4 <= buf.length) {
+      const type = buf.readUInt16LE(o), len = buf.readUInt16LE(o + 2); o += 4;
+      if (type === 19) { let x; [x, o] = str(buf, o + 64); [x, o] = str(buf, o); [x, o] = str(buf, o); return x; }
+      o += len;
+    }
+    return "";
+  }
+  async function accounts(addrs) {
+    for (let a = 0; a < 3; a++) {
+      try {
+        const r = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getMultipleAccounts", params: [addrs, { encoding: "base64" }] }), signal: AbortSignal.timeout(20000) });
+        if (r.ok) { const v = (await r.json()).result?.value; if (Array.isArray(v)) return v; }
+      } catch (e) { console.log("rpc ignoré :", String(e.message || e)); }
+      await wait(2500 * (a + 1));
+    }
+    return [];
+  }
   const need = todo.filter((c) => !(dexLinks[mintOf(c)] || []).some((u) => parseLink(u)?.type === "tweet"));
   const uris = {};
   for (let i = 0; i < need.length && left() > 0; i += 50) {
     const b = need.slice(i, i + 50);
-    try {
-      const pdas = b.map((c) => PublicKey.findProgramAddressSync([Buffer.from("metadata"), MPL.toBuffer(), new PublicKey(mintOf(c)).toBuffer()], MPL)[0].toBase58());
-      const r = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getMultipleAccounts", params: [pdas, { encoding: "base64" }] }), signal: AbortSignal.timeout(20000) });
-      const vals = (await r.json()).result?.value || [];
-      vals.forEach((v, k) => {
-        if (!v) return;
-        try { const buf = Buffer.from(v.data[0], "base64"); let o = 65, x; [x, o] = str(buf, o); [x, o] = str(buf, o); [x, o] = str(buf, o); if (/^https?:\/\//.test(x)) uris[mintOf(b[k])] = x; } catch {}
-      });
-    } catch (e) { console.log("rpc ignoré :", String(e.message || e)); }
+    const mv = await accounts(b.map(mintOf));
+    b.forEach((c, k) => {
+      const v = mv[k];
+      if (!v || v.owner !== T22) return;
+      try { const u = uri22(Buffer.from(v.data[0], "base64")); if (/^https?:\/\//.test(u)) uris[mintOf(c)] = u; } catch {}
+    });
     await wait(1200);
+    const rest = b.filter((c) => !uris[mintOf(c)]);
+    if (rest.length) {
+      let pdas = [];
+      try { pdas = rest.map((c) => PublicKey.findProgramAddressSync([Buffer.from("metadata"), MPL.toBuffer(), new PublicKey(mintOf(c)).toBuffer()], MPL)[0].toBase58()); } catch (e) { console.log("pda ignoré :", String(e.message || e)); }
+      const pv = pdas.length ? await accounts(pdas) : [];
+      rest.forEach((c, k) => {
+        const v = pv[k];
+        if (!v) return;
+        try { const buf = Buffer.from(v.data[0], "base64"); let o = 65, x; [x, o] = str(buf, o); [x, o] = str(buf, o); [x, o] = str(buf, o); if (/^https?:\/\//.test(x)) uris[mintOf(c)] = x; } catch {}
+      });
+      await wait(1200);
+    }
   }
   await pool(Object.entries(uris), 6, async ([m, uri]) => {
     const cid = uri.match(/ipfs\/([^/?#]+)/)?.[1];
     for (const u of [uri, cid && `https://ipfs.io/ipfs/${cid}`, cid && `https://gateway.pinata.cloud/ipfs/${cid}`].filter(Boolean)) {
-      try { const r = await fetch(u, { signal: AbortSignal.timeout(10000) }); if (!r.ok) continue; const j = await r.json(); if (j.twitter) metaLinks[m] = j.twitter; return; } catch {}
+      try {
+        const r = await fetch(u, { signal: AbortSignal.timeout(10000) }); if (!r.ok) continue;
+        const j = await r.json();
+        metaLinks[m] = [j.twitter, j.extensions?.twitter, j.website].filter((x) => typeof x === "string" && parseLink(x.trim())).map((x) => x.trim());
+        return;
+      } catch {}
     }
   });
 }
 
 // ---- contenu via FxTwitter + images ----
 async function fx(path) {
-  const r = await fetch(FX + path, { headers: { "user-agent": "Mozilla/5.0 (compatible; devine-ath)" }, signal: AbortSignal.timeout(15000) });
-  if (r.status === 404) return null;
-  if (!r.ok) throw new Error("fxtwitter " + r.status);
-  return r.json();
+  for (let a = 0; a < 3; a++) {
+    let r;
+    try { r = await fetch(FX + path, { headers: { "user-agent": "Mozilla/5.0 (compatible; devine-ath)" }, signal: AbortSignal.timeout(15000) }); }
+    catch (e) { if (a === 2) throw e; await wait(1500 * (a + 1)); continue; }
+    if (r.ok) return r.json();
+    if (r.status === 429 || r.status >= 500) { // limite de débit ou panne passagère : on patiente puis on réessaie
+      if (a === 2) throw new Error("fxtwitter " + r.status);
+      const ra = Number(r.headers.get("retry-after"));
+      await wait(Math.min(10000, ra > 0 ? ra * 1000 : 1500 * (a + 1)));
+      continue;
+    }
+    return null; // 404 et autres refus définitifs : compte ou tweet introuvable
+  }
+  return null;
 }
 async function img(url, w, h, q) {
   if (!sharp || !url) return null;
@@ -137,15 +183,22 @@ async function build(link) {
 }
 
 let done = 0;
-await pool(todo, 4, async (c) => {
-  const m = mintOf(c), key = keyOf(c);
-  const cands = [metaLinks[m], ...(dexLinks[m] || [])].map(parseLink).filter(Boolean);
-  const link = cands.find((x) => x.type === "tweet") || cands[0];
-  let entry = null;
-  if (link) {
-    try { entry = await build(link); } catch (e) { console.log("échec", c.t, String(e.message || e)); if (map[key]) return; }
-    await wait(500);
+await pool(todo, 3, async (c) => {
+  const m = mintOf(c), key = keyOf(c), seen = new Set();
+  // tweets d'abord (l'origine du coin), puis comptes ; sans doublon
+  const cands = [...(metaLinks[m] || []), ...(dexLinks[m] || [])].map(parseLink).filter((x) => {
+    if (!x) return false;
+    const id = `${x.type}:${x.user.toLowerCase()}:${x.id || ""}`;
+    if (seen.has(id)) return false;
+    seen.add(id); return true;
+  }).sort((p, q) => (p.type === "tweet" ? 0 : 1) - (q.type === "tweet" ? 0 : 1));
+  let entry = null, failed = false;
+  for (const link of cands) {
+    try { entry = await build(link); } catch (e) { failed = true; console.log("échec", c.t, String(e.message || e)); continue; }
+    await wait(600);
+    if (entry) break;
   }
+  if (!entry && failed) { console.log(c.t, "→ panne passagère, on réessaiera au prochain passage"); return; }
   map[key] = entry ? { ...entry, f: Date.now() } : { k: "none", f: Date.now() };
   console.log(c.t, "→", map[key].k, map[key].ah ? "@" + map[key].ah : "");
   if (++done % 10 === 0) await writeFile("artifact/tweets.json", JSON.stringify(map));
