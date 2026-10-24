@@ -230,7 +230,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
       <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
       <button id="ok">Valider ma prédiction</button>
     </div>
-    <div id="rdy" hidden><p>Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><button id="go">Lancer la manche</button></div>
+    <div id="rdy" hidden><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
     <div id="out" hidden>
       <div class="cmp"><div><span class="k">Ta prédiction</span><b id="mg"></b></div><div><span class="k">ATH réel</span><b id="ma"></b></div></div>
       <div class="verdict" id="msg"></div>
@@ -295,7 +295,7 @@ en:{
 "devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
 "Classement et scores":"Leaderboard and scores","Rangs et profil":"Ranks and profile","Entraîner mon bot":"Train my bot","Données et API pour tes bots":"Data and API for your bots","Langue":"Language",
 "Chaîne":"Chain","Lancement":"Launch","Chart du market cap":"Market cap chart","Chart masqué":"Chart hidden","Ton ATH (market cap max)":"Your ATH (max market cap)","Prédiction du market cap maximum":"Maximum market cap guess",
-"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Lancer la manche":"Start the round",
+"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Classic mode: no time limit, the coin appears when you press.","Lancer la manche":"Start the round",
 "Lancer la manche {0}/{1}":"Start round {0}/{1}","Ta prédiction":"Your guess","ATH réel":"Real ATH","Copier le CA":"Copy the CA","Copier":"Copy","Score final":"Final score","Rejouer":"Play again",
 "Partager mon score":"Share my score","Texte à copier":"Text to copy","Fermer":"Close","Classement":"Leaderboard","Mes parties":"My games",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Your bot can play here to learn: it asks for a coin (without the ATH), answers with its guess, and gets the real ATH and its score. Bot games don’t count on the leaderboard.",
@@ -326,7 +326,7 @@ es:{
 "devine l’ATH":"adivina el ATH","Connexion":"Iniciar sesión","Connecté":"Conectado","Menu":"Menú","Mode classique":"Modo clásico","Gratuit · sans limite de temps":"Gratis · sin límite de tiempo","Mode ranked":"Modo ranked",
 "Classement et scores":"Clasificación y puntuaciones","Rangs et profil":"Rangos y perfil","Entraîner mon bot":"Entrenar mi bot","Données et API pour tes bots":"Datos y API para tus bots","Langue":"Idioma",
 "Chaîne":"Cadena","Lancement":"Lanzamiento","Chart du market cap":"Gráfico del market cap","Chart masqué":"Gráfico oculto","Ton ATH (market cap max)":"Tu ATH (market cap máx.)","Prédiction du market cap maximum":"Predicción del market cap máximo",
-"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Lancer la manche":"Empezar la ronda",
+"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Modo clásico: sin límite de tiempo, la moneda aparece cuando pulsas.","Lancer la manche":"Empezar la ronda",
 "Lancer la manche {0}/{1}":"Empezar la ronda {0}/{1}","Ta prédiction":"Tu predicción","ATH réel":"ATH real","Copier le CA":"Copiar el CA","Copier":"Copiar","Score final":"Puntuación final","Rejouer":"Jugar de nuevo",
 "Partager mon score":"Compartir mi puntuación","Texte à copier":"Texto para copiar","Fermer":"Cerrar","Classement":"Clasificación","Mes parties":"Mis partidas",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Tu bot puede jugar aquí para aprender: pide una moneda (sin el ATH), responde con su predicción y recibe el ATH real y su puntuación. Las partidas de bots no cuentan en la clasificación.",
@@ -420,9 +420,8 @@ function show(){
   $("line").style.strokeDasharray="";$("line").removeAttribute("d");$("area").removeAttribute("d");
   $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
   $("out").hidden=true;$("s").value=500;upd();
-  $("cc").hidden=mode==="ranked";
-  if(mode==="ranked"){$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
-  else{$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
+  $("cc").hidden=true;$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;
+  $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode==="ranked";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
 }
 function upd(){$("g").textContent=fmt(val())}
 
@@ -756,7 +755,7 @@ $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
 $("go").addEventListener("click",()=>{if(busy)return;
   if(mode==="ranked"&&!paid){if(S.pts<stake){toast(T("Il te faut {0} pts (gagne-en en classique)",stake));return}paid=true;S.pts-=stake;save();refresh();push()}
-  $("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
+  $("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}});
 $("cw").addEventListener("click",()=>{skip=true});
 $("next").addEventListener("click",next);
 $("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
@@ -791,7 +790,7 @@ function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
   i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
-  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
