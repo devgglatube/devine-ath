@@ -132,6 +132,40 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 @keyframes wave{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.82) skewY(8deg)}}
 #toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);color:var(--ink);padding:10px 16px;border-radius:14px;font-weight:700;font-size:.9rem;z-index:40;width:max-content;max-width:calc(100vw - 32px);text-align:center}
 #sharetext{width:100%;margin-top:8px;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px;font:inherit;font-size:.85rem}
+/* Carte du tweet associé au coin : même contenu que l’aperçu d’Axiom (couleurs relevées sur la capture) */
+.tw{--tw-bg:#222C36;--tw-line:#4B5C6C;--tw-mut:#919DAA;--tw-ink:#E7E7E7;--tw-gold:#FFD903;--tw-like:#E34285;--tw-rt:#00BD83;--tw-rp:#4AAFE6;--tw-link:#74CCFB;
+  margin-top:14px;background:var(--tw-bg);border:1px solid var(--tw-line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;color:var(--tw-ink)}
+.tw-hd{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.tw-av{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#2F3B47;flex:none}
+.tw-who{flex:1;min-width:0;padding-top:2px}
+.tw-nm{display:flex;align-items:center;gap:6px;font-weight:800;font-size:1.05rem;line-height:1.25;min-width:0}
+.tw-nm>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tw-vb{width:17px;height:17px;flex:none}
+.tw-hn{color:var(--tw-mut);font-size:.9rem;line-height:1.35;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tw-xr{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+.tw-x{width:20px;height:20px;fill:var(--tw-ink)}
+.tw-age{font-size:.82rem;font-weight:800;line-height:1}
+.tw-jn{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 12px;padding-bottom:10px;border-bottom:1px solid var(--tw-line);color:var(--tw-mut);font-size:.84rem;font-weight:500}
+.tw-ic{display:inline-block;width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tw-jl,.tw-m,.tw-fo{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.tw-fo b{color:var(--tw-gold);font-weight:800}
+.tw-tx{margin:0;font-size:1.05rem;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.tw-ph{position:relative;border:1px solid var(--tw-line);border-radius:12px;overflow:hidden;background:#161D25;line-height:0}
+.tw-ph img{display:block;width:100%;height:auto;max-height:300px;object-fit:cover}
+.tw-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.tw-play i{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.55);border:2px solid #fff;display:flex;align-items:center;justify-content:center}
+.tw-play svg{width:22px;height:22px;fill:#fff}
+.tw-ft{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 12px;color:var(--tw-mut);font-size:.84rem;font-weight:500}
+.tw-dv{padding-bottom:12px;border-bottom:1px solid var(--tw-line)}
+.tw-ms{display:inline-flex;gap:14px}
+.tw-bm{fill:currentColor;stroke-width:1.5}
+.tw-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.tw-st span{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:var(--tw-mut);font-weight:600;font-size:.95rem;min-width:0}
+.tw-st .tw-ic{width:20px;height:20px}
+.tw-lk{color:var(--tw-like)}.tw-rt{color:var(--tw-rt)}.tw-rp{color:var(--tw-rp)}
+.tw-more{display:block;text-align:center;border:1px solid var(--tw-line);border-radius:99px;padding:9px 12px;font-size:.92rem;font-weight:700;color:var(--tw-link);text-decoration:none}
+.tw-more:hover{border-color:var(--tw-link)}
+@media (max-width:899px){.tw-ph img{max-height:240px}}
 @media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
 </style>
 <div class="app">
@@ -159,6 +193,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
       <h2><span id="n"></span><em id="t"></em></h2>
     </div>
     <p class="desc" id="d"></p>
+    <div class="tw" id="tw" data-nt hidden></div>
     <div class="chips">
       <div><small>Holders</small><b id="ho"></b></div>
       <div><small>Chaîne</small><b id="c"></b></div>
@@ -285,7 +320,7 @@ en:{
 "// Exemple : un bot qui devine toujours 1 M$ puis apprend":"// Example: a bot that always guesses $1M, then learns","// à toi de faire mieux":"// your turn to do better","ATH réel :":"Real ATH:",
 "// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner":"// DevineBot.dataset(): all the data with the ATH, for training","// DevineBot.stats()   : moyenne en % de tes bots":"// DevineBot.stats(): your bots’ average in %",
 "place {0}":"rank #{0}","prochain rang à {0} RP":"next rank at {0} RP","rang max":"max rank","départ":"start","mise {0}":"stake {0}","top {0}":"top {0}",
-"J’ai fait {0} / {1} sur Devine l’ATH":"I scored {0} / {1} on Guess the ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". Can you beat me?","Copié ✓":"Copied ✓"
+"J’ai fait {0} / {1} sur Devine l’ATH":"I scored {0} / {1} on Guess the ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". Can you beat me?","Copié ✓":"Copied ✓","Inscrit en {0}":"Joined {0}","abonnés":"followers","Lire la suite sur X":"Read more on X","Voir le compte sur X":"View account on X","Compte vérifié":"Verified account","Image du tweet":"Tweet image","à l’instant":"now"
 },
 es:{
 "devine l’ATH":"adivina el ATH","Connexion":"Iniciar sesión","Connecté":"Conectado","Menu":"Menú","Mode classique":"Modo clásico","Gratuit · sans limite de temps":"Gratis · sin límite de tiempo","Mode ranked":"Modo ranked",
@@ -316,7 +351,7 @@ es:{
 "// Exemple : un bot qui devine toujours 1 M$ puis apprend":"// Ejemplo: un bot que siempre adivina 1 M$ y luego aprende","// à toi de faire mieux":"// te toca mejorarlo","ATH réel :":"ATH real:",
 "// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner":"// DevineBot.dataset(): todos los datos con el ATH, para entrenar","// DevineBot.stats()   : moyenne en % de tes bots":"// DevineBot.stats(): media en % de tus bots",
 "place {0}":"puesto {0}","prochain rang à {0} RP":"siguiente rango a {0} RP","rang max":"rango máx.","départ":"inicio","mise {0}":"apuesta {0}","top {0}":"top {0}",
-"J’ai fait {0} / {1} sur Devine l’ATH":"Hice {0} / {1} en Adivina el ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". ¿Puedes superarme?","Copié ✓":"Copiado ✓"
+"J’ai fait {0} / {1} sur Devine l’ATH":"Hice {0} / {1} en Adivina el ATH"," (ranked, {0})":" (ranked, {0})",". Tu fais mieux ?":". ¿Puedes superarme?","Copié ✓":"Copiado ✓","Inscrit en {0}":"Se unió en {0}","abonnés":"seguidores","Lire la suite sur X":"Leer más en X","Voir le compte sur X":"Ver cuenta en X","Compte vérifié":"Cuenta verificada","Image du tweet":"Imagen del tweet","à l’instant":"ahora"
 }};
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
@@ -325,7 +360,7 @@ const hasKey=s=>s in DICT.en||s in REV;
 const frOf=s=>s in DICT.en?s:REV[s];
 function i18nDom(){
   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
-  while(n=w.nextNode()){const m=n.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/);if(m[2]&&hasKey(m[2])){const nv=m[1]+T(frOf(m[2]))+m[3];if(nv!==n.nodeValue)n.nodeValue=nv}}
+  while(n=w.nextNode()){if(n.parentNode&&n.parentNode.closest&&n.parentNode.closest("[data-nt]"))continue;const m=n.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/);if(m[2]&&hasKey(m[2])){const nv=m[1]+T(frOf(m[2]))+m[3];if(nv!==n.nodeValue)n.nodeValue=nv}}
   document.querySelectorAll("[aria-label]").forEach(e=>{const a=e.getAttribute("aria-label");if(hasKey(a))e.setAttribute("aria-label",T(frOf(a)))});
   document.documentElement.lang=LANG;
 }
@@ -368,6 +403,7 @@ function show(){
   $("im").onerror=()=>{$("im").onerror=null;$("im").src=avatar(k)};
   $("im").src=IMGMAP[k.t+"|"+k.n]||k.img||avatar(k);
   $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;
+  renderTweet(k);
   $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=k.l;
   meta();
   const nx=deck[i+1];if(nx&&nx.img&&!IMGMAP[nx.t+"|"+nx.n])new Image().src=nx.img;
@@ -411,7 +447,7 @@ function countUp(el,to,ms,pre){
   const t0=performance.now();
   (function f(n){const p=reduce?1:Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
 }
-let CAMAP={},IMGMAP={},DESC={},WTAG={};
+let CAMAP={},IMGMAP={},DESC={},WTAG={},TW={};
 // rug pull : effondrement quasi total ou chute brutale juste après le sommet (une mort lente reste un coin « nul » valable)
 function isRug(ch){
   if(!Array.isArray(ch)||ch.length<3)return false;
@@ -423,6 +459,89 @@ const descOf=k=>{const m=DESC[k.t+"|"+k.n];return dec(m&&m[LANG]?m[LANG]:k.d||""
 const DEXN={pumpswap:"PumpSwap","pump-fun":"pump.fun",raydium:"Raydium",meteora:"Meteora",orca:"Orca",pumpfun:"pump.fun",fluxbeam:"FluxBeam"};
 const dexName=d=>DEXN[d]||String(d||"DEX").replace(/(^|-)(\w)/g,(m,x,y)=>(x?" ":"")+y.toUpperCase());
 const caOf=k=>k.id||CAMAP[k.t+"|"+k.n]||"";
+
+// ===== Carte du tweet (ou du compte X) associé au coin, sur le modèle de l’aperçu d’Axiom =====
+// Les données viennent de tweets.json (robot) : tout est écrit avec textContent, les images doivent être des data:image.
+const twEl=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null&&txt!=="")e.textContent=txt;return e};
+const twSv=(inner,cls)=>{const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("aria-hidden","true");if(cls)s.setAttribute("class",cls);s.innerHTML=inner;return s};
+const TWI={
+  cal:'<rect x="4" y="5.5" width="16" height="14.5" rx="2.2"/><path d="M8 3.5v4M16 3.5v4M4 10h16"/>',
+  bm:'<path d="M7 4.5h10a1 1 0 0 1 1 1V20l-6-4.2L6 20V5.5a1 1 0 0 1 1-1z"/>',
+  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>',
+  lk:'<path d="M12 20.3S3.6 15.4 3.6 9.3A4.7 4.7 0 0 1 12 6.6a4.7 4.7 0 0 1 8.4 2.7C20.4 15.4 12 20.3 12 20.3z"/>',
+  rt:'<path d="M16.5 3.5L20 7l-3.5 3.5M4 11V9.5A2.5 2.5 0 0 1 6.5 7H20M7.5 20.5L4 17l3.5-3.5M20 13v1.5a2.5 2.5 0 0 1-2.5 2.5H4"/>',
+  rp:'<path d="M20.5 11.3a8.2 8.2 0 0 1-11.9 7.3L3.6 20l1.4-4.6a8.2 8.2 0 1 1 15.5-4.1z"/>',
+  x:'<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>',
+  play:'<path d="M9 6.5l9 5.5-9 5.5z"/>'
+};
+// 3 chiffres significatifs comme sur Axiom : 39, 5.72K, 225K, 1.14M
+const twK=n=>{n=Number(n);if(!isFinite(n)||n<0)return"";if(n<1000)return String(Math.round(n));let v=n,u=-1;do{v/=1000;u++}while(v>=999.5&&u<2);
+  return(v>=99.95?v.toFixed(0):v>=9.995?v.toFixed(1):v.toFixed(2)).replace(".",decSep())+"KMB"[u]};
+const twFmt=(ms,o)=>{try{return new Intl.DateTimeFormat({fr:"fr-FR",en:"en-US",es:"es-ES"}[LANG],o).format(ms)}catch(e){return""}};
+// âge du tweet : « 5m », « 3h », « 2d », « 4mo », « 2yr »
+function twAge(ms){
+  const s=Math.max(0,(Date.now()-ms)/1e3),m=s/60,h=m/60,d=h/24,y=d/365.25,L=LANG;
+  const f=(n,en,fr1,frN,es1,esN)=>{n=Math.floor(n);return n+(L==="en"?en:" "+(L==="fr"?(n>1?frN:fr1):(n>1?esN:es1)))};
+  return s<60?T("à l’instant"):m<60?f(m,"m","min","min","min","min"):h<24?f(h,"h","h","h","h","h"):d<30?f(d,"d","j","j","d","d"):y<1?f(Math.max(1,d/30.44),"mo","mois","mois","mes","meses"):f(y,"yr","an","ans","año","años");
+}
+// récent = vert, moins d’un jour = orange, plus ancien = rouge (comme le « 2yr » rouge d’Axiom)
+const twAgeCol=ms=>{const d=Date.now()-ms;return d<36e5?"#00BD83":d<864e5?"#FFC53D":"#E8444D"};
+const twInit=e=>{const c=(Array.from(String(e.an||e.ah||"?").trim())[0]||"?").toUpperCase();
+  return"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><rect width="96" height="96" fill="#2F3B47"/><text x="48" y="63" font-size="42" font-weight="800" text-anchor="middle" fill="#919DAA" font-family="sans-serif">'+esc(c)+'</text></svg>')};
+// badge « compte vérifié » : bleu = personne, or = organisation, gris = gouvernement
+function twSeal(vf){
+  const c=vf===2?"#E3BB25":vf===3?"#829AAB":"#1D9BF0",k=vf===2?"#222C36":"#fff";
+  let p='<circle cx="12" cy="12" r="8.6" fill="'+c+'"/>';
+  for(let a=0;a<8;a++){const t=a*Math.PI/4;p+='<circle cx="'+(12+7.5*Math.cos(t)).toFixed(2)+'" cy="'+(12+7.5*Math.sin(t)).toFixed(2)+'" r="3.3" fill="'+c+'"/>'}
+  const s=twSv(p+'<path d="M7.7 12.3l3 3 5.7-6.1" fill="none" stroke="'+k+'" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>',"tw-vb");
+  s.removeAttribute("aria-hidden");s.setAttribute("role","img");s.setAttribute("aria-label",T("Compte vérifié"));return s;
+}
+function renderTweet(k){
+  const box=$("tw"),e=k?TW[k.t+"|"+k.n]:null;
+  box.textContent="";
+  if(!e||(e.k!=="tweet"&&e.k!=="profile")||!e.ah){box.hidden=true;return}
+  const isT=e.k==="tweet",isImg=u=>/^data:image\//.test(u||"");
+  // en-tête : avatar, nom + badge, @compte ; à droite le logo X et l’âge du tweet
+  const hd=twEl("div","tw-hd"),av=twEl("img","tw-av");av.alt="";av.src=isImg(e.av)?e.av:twInit(e);hd.appendChild(av);
+  const who=twEl("div","tw-who"),nm=twEl("div","tw-nm");nm.appendChild(twEl("span","",dec(e.an||e.ah)));
+  if(e.vf>0&&e.vf<4)nm.appendChild(twSeal(e.vf));
+  who.appendChild(nm);who.appendChild(twEl("div","tw-hn","@"+e.ah));hd.appendChild(who);
+  const xr=twEl("div","tw-xr");xr.appendChild(twSv(TWI.x,"tw-x"));
+  if(isT&&e.ts>0){const a=twEl("span","tw-age",twAge(e.ts));a.style.color=twAgeCol(e.ts);xr.appendChild(a)}
+  hd.appendChild(xr);box.appendChild(hd);
+  // inscription + abonnés
+  const jd=e.jd>0?twFmt(e.jd,{month:"short",year:"numeric"}):"",fo=e.fo!=null?twK(e.fo):"";
+  if(jd||fo){
+    const jn=twEl("div","tw-jn"),jl=twEl("span","tw-jl");
+    if(jd){jl.appendChild(twSv(TWI.cal,"tw-ic"));jl.appendChild(document.createTextNode(T("Inscrit en {0}",jd)))}
+    jn.appendChild(jl);
+    if(fo){const f=twEl("span","tw-fo");f.appendChild(twEl("b","",fo));f.appendChild(document.createTextNode(T("abonnés")));jn.appendChild(f)}
+    box.appendChild(jn);
+  }
+  // texte du tweet (ou description du compte)
+  const tx=dec(e.tx||"").trim();if(tx)box.appendChild(twEl("p","tw-tx",tx));
+  if(isT){
+    // image (ou miniature de la vidéo)
+    if(isImg(e.ph)){
+      const w=twEl("div","tw-ph"),im=twEl("img");im.alt=T("Image du tweet");im.src=e.ph;if(e.pw>0&&e.pg>0){im.width=e.pw;im.height=e.pg}
+      w.appendChild(im);
+      if(e.vid){const p=twEl("span","tw-play"),b=twEl("i");b.appendChild(twSv(TWI.play,""));p.appendChild(b);w.appendChild(p)}
+      box.appendChild(w);
+    }
+    // heure, enregistrements, vues
+    const st=[["lk","tw-lk",e.lk],["rt","tw-rt",e.rt],["rp","tw-rp",e.rp]],hasSt=st.some(x=>x[2]!=null);
+    const tm=e.ts>0?twFmt(e.ts,{hour:"numeric",minute:"2-digit"})+" · "+twFmt(e.ts,{day:"numeric",month:"short",year:"numeric"}):"",ms=twEl("span","tw-ms");
+    [["bm",e.bm],["eye",e.vw]].forEach(([ic,v])=>{if(v==null)return;const s=twEl("span","tw-m");s.appendChild(twSv(TWI[ic],"tw-ic"+(ic==="bm"?" tw-bm":"")));s.appendChild(document.createTextNode(twK(v)));ms.appendChild(s)});
+    if(tm||ms.childNodes.length){const ft=twEl("div","tw-ft"+(hasSt?" tw-dv":""));ft.appendChild(twEl("span","",tm));ft.appendChild(ms);box.appendChild(ft)}
+    // j’aime, retweets, réponses
+    if(hasSt){const row=twEl("div","tw-st");st.forEach(([ic,cl,v])=>{const s=twEl("span");s.appendChild(twSv(TWI[ic],"tw-ic "+cl));s.appendChild(document.createTextNode(v==null?"—":twK(v)));row.appendChild(s)});box.appendChild(row)}
+  }
+  const url=/^https:\/\/(?:x|twitter)\.com\/\w+(?:\/status\/\d+)?\/?$/.test(e.u||"")?e.u:"";
+  if(url){const a=twEl("a","tw-more",T(isT?"Lire la suite sur X":"Voir le compte sur X"));a.href=url;a.target="_blank";a.rel="noopener noreferrer";box.appendChild(a)}
+  box.hidden=false;
+}
+// signaux du tweet pour les bots (sans les images)
+const twData=k=>{const e=TW[k.t+"|"+k.n];return e&&(e.k==="tweet"||e.k==="profile")&&e.ah?{kind:e.k,handle:e.ah,verified:e.vf||0,followers:e.fo==null?null:e.fo,joined:e.jd||null,text:e.tx||"",time:e.ts||null,likes:e.lk==null?null:e.lk,retweets:e.rt==null?null:e.rt,replies:e.rp==null?null:e.rp,views:e.vw==null?null:e.vw,bookmarks:e.bm==null?null:e.bm}:null};
 function validate(){
   if(busy)return;busy=true;stopTimer();
   const k=deck[i],g=val();
@@ -600,7 +719,7 @@ window.DevineBot={
     S.bot.games++;S.bot.hist.push(sc/10);S.bot.hist=S.bot.hist.slice(-200);save();if(!$("sh").hidden&&shown==="bot")drawBot();
     return {ath:k.ath,score:sc,percent:sc/10,ratio:guess/k.ath};
   },
-  dataset:()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l,ath:k.ath,ca:caOf(k)||null,pairs:k.pr||null,fees:k.fs||null,chart:k.ch||null})),
+  dataset:()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l,ath:k.ath,ca:caOf(k)||null,pairs:k.pr||null,fees:k.fs||null,tweet:twData(k),chart:k.ch||null})),
   stats:()=>({games:S.bot.games,avgPercent:S.bot.hist.length?S.bot.hist.reduce((a,b)=>a+b,0)/S.bot.hist.length:0})
 };
 const botCode=()=>T("// Exemple : un bot qui devine toujours 1 M$ puis apprend")+"\nconst c = DevineBot.next();\nconst guess = 1e6;            "+T("// à toi de faire mieux")+"\nconst r = DevineBot.answer(c.id, guess);\nconsole.log(c.name, r.score, r.percent + \" %\", \""+T("ATH réel :")+"\", r.ath);\n"+T("// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner")+"\n"+T("// DevineBot.stats()   : moyenne en % de tes bots");
@@ -657,7 +776,7 @@ function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
   i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
-  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i])$("d").textContent=descOf(deck[i]);meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);renderTweet(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
@@ -670,11 +789,12 @@ const local=/^(localhost|127\.)|github\.io$/.test(location.hostname);
 const GH="https://raw.githubusercontent.com/devgglatube/devine-ath/main/";
 const bust=local?"?v="+Date.now():"";
 const getJ=(f,gh)=>fetch(f+bust).then(r=>r.ok?r.json():Promise.reject()).catch(()=>fetch(GH+gh+"?v="+Math.floor(Date.now()/600000)).then(r=>r.ok?r.json():Promise.reject())).catch(()=>null);
-Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coins-img.json"),getJ("coins-i18n.json","artifact/coins-i18n.json"),getJ("ca-map.json","artifact/ca-map.json"),getJ("wallet-tags.json","artifact/wallet-tags.json")]).then(([d,im,ds,ca,wt])=>{
+Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coins-img.json"),getJ("coins-i18n.json","artifact/coins-i18n.json"),getJ("ca-map.json","artifact/ca-map.json"),getJ("wallet-tags.json","artifact/wallet-tags.json"),getJ("tweets.json","artifact/tweets.json")]).then(([d,im,ds,ca,wt,tw])=>{
   if(Array.isArray(d)){const ok=d.filter(k=>!isRug(k.ch));if(ok.length>=ROUNDS)COINS=ok}
   if(im&&typeof im==="object")IMGMAP=im;
   if(ds&&typeof ds==="object")DESC=ds;
   if(ca&&typeof ca==="object")CAMAP=ca;
   if(wt&&typeof wt==="object")WTAG=wt;
+  if(tw&&typeof tw==="object"&&!Array.isArray(tw))TW=tw;
 }).finally(()=>start("casual"));
 </script>
