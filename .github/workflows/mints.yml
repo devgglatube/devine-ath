@@ -1,6 +1,11 @@
 name: Adresses des anciens coins
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Coins à refaire même s'ils ont déjà une adresse (TICKER|Nom, séparés par des virgules)"
+        required: false
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -22,6 +27,8 @@ jobs:
         with:
           node-version: 20
       - name: Chercher l'adresse des coins qui n'en ont pas
+        env:
+          FORCE_KEYS: ${{ github.event.inputs.force }}
         run: timeout 14m node mints.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
