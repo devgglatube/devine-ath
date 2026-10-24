@@ -7,7 +7,8 @@ import { readFile, writeFile } from "node:fs/promises";
 const GT = process.env.GT_BASE || "https://api.geckoterminal.com/api/v2";
 const DS = process.env.DS_BASE || "https://api.dexscreener.com";
 const DELAY = Number(process.env.DELAY_MS ?? 2500); // GeckoTerminal : environ 30 appels par minute
-const MAX_CHECKS = 10; // vérifications de logo par coin
+const MAX_CHECKS = 30; // vérifications de logo par coin (seulement pour les candidats sans logo connu)
+const PAGES = 8; // pages de recherche GeckoTerminal par requête (20 pools par page)
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const dec = (s) => String(s || "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&");
 const norm = (s) => dec(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
@@ -60,7 +61,7 @@ for (const c of todo) {
 
   // 1) GeckoTerminal : recherche de pools (3 pages par requête)
   for (const q of [...new Set([dec(c.t), dec(c.n)])].filter(Boolean)) {
-    for (let p = 1; p <= 3; p++) {
+    for (let p = 1; p <= PAGES; p++) {
       try {
         const r = await getJson(`${GT}/search/pools?query=${encodeURIComponent(q)}&network=solana&include=base_token&page=${p}`);
         const inc = new Map((r.included || []).filter((x) => x.type === "token").map((x) => [x.id, x.attributes || {}]));
@@ -71,7 +72,7 @@ for (const c of todo) {
           add(id.replace(/^solana_/, ""), t.name, sym, Date.parse(pool.attributes?.pool_created_at || "") || 0, t.image_url);
         }
         rep.queries.push(`gt ${q} p${p}: ${(r.data || []).length}`);
-        if (!(r.data || []).length) break;
+        if ((r.data || []).length < 20) break;
       } catch (e) {
         rep.queries.push(`gt ${q} p${p}: ${e.message}`);
         break;
@@ -100,7 +101,7 @@ for (const c of todo) {
   let hit = null;
   if (imgKey(c.img)) {
     for (const k of list) if (k.image && imgKey(k.image) === imgKey(c.img) && k.nameOk) { hit = { ...k, how: "logo (recherche)" }; break; }
-    for (const k of hit ? [] : list.slice(0, MAX_CHECKS)) {
+    for (const k of hit ? [] : list.filter((x) => !x.image).slice(0, MAX_CHECKS)) {
       try {
         const a = (await getJson(`${GT}/networks/solana/tokens/${k.mint}/info`)).data.attributes;
         const same = imgKey(a.image_url) === imgKey(c.img), nm = !!nN && norm(a.name) === nN;
@@ -125,8 +126,9 @@ for (const c of todo) {
   } else {
     console.log(`introuvable : ${key} (${list.length} candidat(s))`);
   }
+  // sauvegarde après chaque coin (le délai de la tâche peut couper le script)
+  if (found) await writeFile("artifact/ca-map.json", JSON.stringify(camap, null, 1) + "\n");
+  await writeFile("mints-report.json", JSON.stringify(report, null, 1));
 }
 
-if (found) await writeFile("artifact/ca-map.json", JSON.stringify(camap, null, 1) + "\n");
-await writeFile("mints-report.json", JSON.stringify(report, null, 1));
 console.log(`${found} adresse(s) trouvée(s) sur ${todo.length}`);

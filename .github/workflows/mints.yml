@@ -9,7 +9,7 @@ concurrency:
 jobs:
   mints:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
       - name: Chercher l'adresse des coins qui n'en ont pas
-        run: timeout 8m node mints.mjs || true
+        run: timeout 14m node mints.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
