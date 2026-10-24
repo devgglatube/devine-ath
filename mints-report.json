@@ -7,79 +7,29 @@
    "gt TRUMP p1: 20",
    "gt TRUMP p2: 20",
    "gt TRUMP p3: 20",
+   "gt TRUMP p4: 20",
+   "gt TRUMP p5: 20",
+   "gt TRUMP p6: 20",
+   "gt TRUMP p7: 20",
+   "gt TRUMP p8: 20",
    "gt Trump Coin p1: 20",
    "gt Trump Coin p2: 20",
    "gt Trump Coin p3: 20",
-   "ds TRUMP: 16",
+   "gt Trump Coin p4: 20",
+   "gt Trump Coin p5: 20",
+   "gt Trump Coin p6: 20",
+   "gt Trump Coin p7: 20",
+   "gt Trump Coin p8: 20",
+   "ds TRUMP: 15",
    "ds Trump Coin: 26"
   ],
-  "cands": 38,
+  "cands": 79,
   "checks": [
-   "E3rc7S TRUMP logo≠ nom=",
-   "3PsjL5 TRUMP logo≠ nom=",
-   "J9eSo1 TRUMPCOIN logo≠ nom=",
-   "G7rUZb TRUMP logo≠ nom=",
-   "4QTAC9 TRUMP logo≠ nom=",
-   "3kFzLs TRUMPCOIN logo≠ nom=",
-   "3ExwDk TRUMP logo≠ nom=",
-   "DYNTSB TRUMP logo≠ nom=",
-   "nVNE9Q TRUMP logo≠ nom=",
-   "ADigX3 TRUMP logo≠ nom="
+   "9asdvo TRUMP logo≠ nom=",
+   "2zXGkB TRUMP logo≠ nom=",
+   "6MAYAL TRUMP logo≠ nom=",
+   "HVCX2j TRUMP logo= nom="
   ],
-  "result": "aucun"
- },
- {
-  "key": "VIRTUAL|Virtual Trade",
-  "img": "https://coin-images.coingecko.com/coins/images/102179734/large/hcude85eyqe8k55uf5uxnvb3zr62.",
-  "launch": "22 octobre 2026",
-  "queries": [
-   "gt VIRTUAL p1: 20",
-   "gt VIRTUAL p2: 20",
-   "gt VIRTUAL p3: 20",
-   "gt Virtual Trade p1: 20",
-   "gt Virtual Trade p2: 9",
-   "gt Virtual Trade p3: 0",
-   "ds VIRTUAL: 3",
-   "ds Virtual Trade: 8"
-  ],
-  "cands": 24,
-  "checks": [],
-  "result": "HqaUT1abZq6WkeRpCYD7yHNdcxgu6biXejNkeJUNpump (logo (recherche))"
- },
- {
-  "key": "TRUTH|terminal of truths",
-  "img": "https://assets.geckoterminal.com/6nhzpxmk1at5vxwj8saqijdtdjun",
-  "launch": "23 octobre 2026",
-  "queries": [
-   "gt TRUTH p1: 20",
-   "gt TRUTH p2: 20",
-   "gt TRUTH p3: 20",
-   "gt terminal of truths p1: 20",
-   "gt terminal of truths p2: 20",
-   "gt terminal of truths p3: 20",
-   "ds TRUTH: 7",
-   "ds terminal of truths: 11"
-  ],
-  "cands": 49,
-  "checks": [],
-  "result": "6bW6xsZxYqcvqabk9rRgQwgjPNwe8SACPusx5o1wpump (logo (recherche))"
- },
- {
-  "key": "Cash Cat|cashcat_token",
-  "img": "https://assets.geckoterminal.com/5b5o4septl8j5ehs0m2h37n2lg0i",
-  "launch": "23 octobre 2026",
-  "queries": [
-   "gt Cash Cat p1: 20",
-   "gt Cash Cat p2: 20",
-   "gt Cash Cat p3: 20",
-   "gt cashcat_token p1: 20",
-   "gt cashcat_token p2: 20",
-   "gt cashcat_token p3: 20",
-   "ds Cash Cat: 2",
-   "ds cashcat_token: 10"
-  ],
-  "cands": 25,
-  "checks": [],
-  "result": "9TZi5bLunusTCAvR15DkDS8toAuCJdWefaGBARwdUEYc (logo (recherche))"
+  "result": "HVCX2j4mch83a1sxtC2gjLeamGp3Z6bD8j8b2kqTG8ZA (logo (fiche))"
  }
 ]
