@@ -187,12 +187,14 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 <div class="bar"><i id="pg"></i></div>
 
 <section id="game">
-  <article class="card">
+  <article class="card" id="cc">
     <div class="coin">
       <img id="im" alt="Logo du coin">
       <h2><span id="n"></span><em id="t"></em></h2>
     </div>
     <p class="desc" id="d"></p>
+    <div class="ca" id="pr" hidden><span class="k">Paires</span><span class="prl" id="prl"></span></div>
+    <div class="ca" id="fs" hidden><span class="k">Fees partagés</span><span class="prl" id="fsl"></span></div>
     <div class="tw" id="tw" data-nt hidden></div>
     <div class="chips">
       <div><small>Holders</small><b id="ho"></b></div>
@@ -234,8 +236,6 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
       <div class="verdict" id="msg"></div>
       <div class="pts" id="pts"></div>
       <div class="ca" id="ca" hidden><span class="k">CA</span><code id="cav"></code><button id="cac" class="alt" aria-label="Copier le CA">Copier</button><a id="cad" target="_blank" rel="noopener noreferrer">Dexscreener</a></div>
-      <div class="ca" id="pr" hidden><span class="k">Paires</span><span class="prl" id="prl"></span></div>
-      <div class="ca" id="fs" hidden><span class="k">Fees partagés</span><span class="prl" id="fsl"></span></div>
       <button id="next"></button>
     </div>
   </article>
@@ -398,12 +398,20 @@ function start(m){
   deck=pick();
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
+function fillInfo(k){
+  const prs=Array.isArray(k.pr)?k.pr:[];$("pr").hidden=!prs.length;$("prl").textContent="";
+  prs.forEach(p=>{const a=document.createElement("a");a.target="_blank";a.rel="noopener noreferrer";a.href="https://dexscreener.com/solana/"+encodeURIComponent(p.a);a.textContent=(p.q||"?")+" · "+dexName(p.d);$("prl").appendChild(a)});
+  const fsd=k.fs&&k.fs.s&&Array.isArray(k.fs.sh)?k.fs.sh:[];$("fs").hidden=!fsd.length;$("fsl").textContent="";
+  fsd.forEach(([w,bp])=>{const a=document.createElement("a");a.target="_blank";a.rel="noopener noreferrer";a.href="https://solscan.com/account/"+encodeURIComponent(w);
+    const tg=String(WTAG[w]||"").toLowerCase(),lab=tg==="holders"?T("Holders"):tg==="charity"?T("Charité"):w.slice(0,4)+"…"+w.slice(-4);
+    a.textContent=(bp/100).toString().replace(".",decSep())+" % → "+lab;$("fsl").appendChild(a)});
+}
 function show(){
   const k=deck[i];busy=false;skip=false;
   $("im").onerror=()=>{$("im").onerror=null;$("im").src=avatar(k)};
   $("im").src=IMGMAP[k.t+"|"+k.n]||k.img||avatar(k);
   $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;
-  renderTweet(k);
+  renderTweet(k);fillInfo(k);
   $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=launchOf(k.l);
   meta();
   const nx=deck[i+1];if(nx&&nx.img&&!IMGMAP[nx.t+"|"+nx.n])new Image().src=nx.img;
@@ -412,6 +420,7 @@ function show(){
   $("line").style.strokeDasharray="";$("line").removeAttribute("d");$("area").removeAttribute("d");
   $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
   $("out").hidden=true;$("s").value=500;upd();
+  $("cc").hidden=mode==="ranked";
   if(mode==="ranked"){$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   else{$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
 }
@@ -565,12 +574,6 @@ function validate(){
     $("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
     $("out").hidden=false;countUp($("pts"),pts,900,"+");
     const ca=caOf(k);$("ca").hidden=!ca;if(ca){$("cav").textContent=ca;$("cav").title=ca;$("cad").href="https://dexscreener.com/solana/"+ca;$("cac").onclick=()=>copyTxt(ca,T("CA copié."))}
-    const prs=Array.isArray(k.pr)?k.pr:[];$("pr").hidden=!prs.length;$("prl").textContent="";
-    prs.forEach(p=>{const a=document.createElement("a");a.target="_blank";a.rel="noopener noreferrer";a.href="https://dexscreener.com/solana/"+encodeURIComponent(p.a);a.textContent=(p.q||"?")+" · "+dexName(p.d);$("prl").appendChild(a)});
-    const fsd=k.fs&&k.fs.s&&Array.isArray(k.fs.sh)?k.fs.sh:[];$("fs").hidden=!fsd.length;$("fsl").textContent="";
-    fsd.forEach(([w,bp])=>{const a=document.createElement("a");a.target="_blank";a.rel="noopener noreferrer";a.href="https://solscan.com/account/"+encodeURIComponent(w);
-      const tg=String(WTAG[w]||"").toLowerCase(),lab=tg==="holders"?T("Holders"):tg==="charity"?T("Charité"):w.slice(0,4)+"…"+w.slice(-4);
-      a.textContent=(bp/100).toString().replace(".",decSep())+" % → "+lab;$("fsl").appendChild(a)});
     meta();
     $("pg").style.width=((i+1)/deck.length*100)+"%";
   });
@@ -751,7 +754,7 @@ function drawRanks(){
 const openMenu=()=>{};
 $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
-$("go").addEventListener("click",()=>{if(busy)return;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
+$("go").addEventListener("click",()=>{if(busy)return;$("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
 $("cw").addEventListener("click",()=>{skip=true});
 $("next").addEventListener("click",next);
 $("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
@@ -786,7 +789,7 @@ function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
   i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
-  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
