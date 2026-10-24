@@ -1,693 +1,897 @@
 {
- "n": 37,
+ "n": 30,
+ "rpc": [
+  200
+ ],
  "coins": {
-  "WETH|Wrapped Ether (Wormhole)": {
-   "mint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "",
-    "json": "uri non http"
-   },
-   "links": []
-  },
   "CRCLx|Circle xStock": {
    "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 679,
    "meta": {
-    "account": false
+    "name": "Circle xStock",
+    "symbol": "CRCLx",
+    "uri": "https://xstocks-metadata.backed.fi/tokens/Solana/CRCLx/metadata.json",
+    "extra": [],
+    "types": [
+     18,
+     12,
+     6,
+     25,
+     26,
+     4,
+     14,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "terms"
+    ]
+   }
   },
   "CATE|Catecoin": {
    "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-   "dex": {
-    "pairs": 1,
-    "info": 1,
-    "socials": [
-     {
-      "url": "https://x.com/i/communities/2004330768022004131",
-      "type": "twitter"
-     },
-     {
-      "url": "https://t.me/catecoin_telegram",
-      "type": "telegram"
-     }
-    ],
-    "websites": [
-     {
-      "url": "https://cate.meme/",
-      "label": "Website"
-     }
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 366,
+   "meta": {
+    "name": "Catecoin",
+    "symbol": "CATE",
+    "uri": "https://m.rapidlaunch.io/m/Tsg4I9WHC",
+    "extra": [],
+    "types": [
+     18,
+     19
     ]
    },
-   "meta": {
-    "account": false
-   },
-   "links": [
-    "https://x.com/i/communities/2004330768022004131"
-   ],
-   "fx": {
-    "status": 404,
-    "code": 404,
-    "message": "User not found"
+   "json": {
+    "twitter": "https://x.com/thedevrrrrrrr/status/2081414045689852002",
+    "website": "https://www.instagram.com/stories/kabosumama/3949880202595208008/",
+    "keys": [
+     "name",
+     "symbol",
+     "showName",
+     "image",
+     "twitter",
+     "website"
+    ]
    }
   },
   "DJT|Trump Media &amp; Technology Group Corp. Common Stock - Backpack Securities": {
    "mint": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 720,
    "meta": {
-    "account": false
+    "name": "Trump Media & Technology Group Corp. Common Stock - Backpack Securities",
+    "symbol": "DJT",
+    "uri": "https://metadata.backpack.exchange/stocks/djt.us.json",
+    "extra": [],
+    "types": [
+     18,
+     12,
+     6,
+     26,
+     4,
+     14,
+     25,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "terms"
+    ]
+   }
   },
   "HYPEST|Hypest": {
    "mint": "Db71Qcd8YKmMXiRSTpg4crNb1DSmAUz2yJUJoJ4spump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 410,
    "meta": {
-    "account": false
+    "name": "Hypest",
+    "symbol": "Hypest",
+    "uri": "https://ipfs.io/ipfs/bafkreidomtpt36gat7zcityhawjkbvgjsklmlmh46n4jjspbly47xaxrwi",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/hypestgg",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "coin_community"
+    ]
+   }
   },
   "ANDURL|Anduril PreStocks": {
    "mint": "PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 905,
    "meta": {
-    "account": false
+    "name": "Anduril PreStocks",
+    "symbol": "ANDURIL",
+    "uri": "https://prestocks.com/metadata/anduril.json",
+    "extra": [],
+    "types": [
+     12,
+     6,
+     1,
+     4,
+     16,
+     14,
+     25,
+     18,
+     26,
+     19
+    ]
    },
-   "links": []
-  },
-  "HYPE|HYPE": {
-   "mint": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "https://arweave.net/nhnR5WErzQVpPTy4jZsFGwlISmvnmp5j9eioV4pP_C4",
-    "json": {
-     "keys": [
-      "name",
-      "symbol",
-      "description",
-      "image"
-     ]
-    }
-   },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "external_url",
+     "terms"
+    ]
+   }
   },
   "REMUS|Remus": {
    "mint": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
-   "dex": {
-    "pairs": 1,
-    "info": 1,
-    "socials": [
-     {
-      "url": "https://x.com/remusfamily",
-      "type": "twitter"
-     }
-    ],
-    "websites": [
-     {
-      "url": "https://remus.family",
-      "label": "Website"
-     }
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 408,
+   "meta": {
+    "name": "Remus",
+    "symbol": "REMUS",
+    "uri": "https://ipfs.io/ipfs/bafkreiawt3jeiqan7hztqiyoxgj3k6dli7zay7l2ai5bsmhqayifvm2xbm",
+    "extra": [],
+    "types": [
+     18,
+     19
     ]
    },
-   "meta": {
-    "account": false
-   },
-   "links": [
-    "https://x.com/remusfamily"
-   ],
-   "fx": {
-    "status": 200,
-    "code": 200,
-    "message": "OK",
-    "user": "RemusFamily"
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn"
+    ]
    }
   },
   "HUG|Monkey Hug": {
    "mint": "DEL3KmMovmE57YmwzFYFkMuNDs3PZyi3qMvP9Jyfpump",
-   "dex": {
-    "pairs": 1,
-    "info": 1,
-    "socials": [
-     {
-      "url": "https://x.com/MonkeyHugOnSol",
-      "type": "twitter"
-     },
-     {
-      "url": "https://www.instagram.com/reel/De126DXssLn/?obrf=MXpiZHdvNzgzd3A4",
-      "type": "instagram"
-     }
-    ],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 398,
    "meta": {
-    "account": false
+    "name": "Monkey Hug",
+    "symbol": "HUG",
+    "uri": "https://ipfs.io/ipfs/QmZCXyMh7dZ1SRMkbWWGsgcK13kWiZZUUYDSzhx4BBHaZR",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": [
-    "https://x.com/MonkeyHugOnSol"
-   ],
-   "fx": {
-    "status": 200,
-    "code": 200,
-    "message": "OK",
-    "user": "MonkeyHugOnSol"
-   }
-  },
-  "EBOT|evmbot": {
-   "mint": "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "https://ipfs.io/ipfs/QmQUuB8KhXwwHLEy8Xrx28C5VFKfnPU3uyYCXnTMVaA3YX",
-    "json": {
-     "twitter": "https://x.com/evmbot",
-     "website": "",
-     "telegram": "",
-     "keys": [
-      "name",
-      "symbol",
-      "description",
-      "image",
-      "website",
-      "twitter",
-      "telegram",
-      "attributes",
-      "properties"
-     ]
-    }
-   },
-   "links": [
-    "https://x.com/evmbot"
-   ],
-   "fx": {
-    "status": 404,
-    "code": 404,
-    "message": "User not found"
+   "json": {
+    "twitter": "https://x.com/bujaeyo/status/2113898927741345968",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "showName",
+     "image",
+     "createdOn",
+     "twitter"
+    ]
    }
   },
   "John|John Doe": {
    "mint": "7tU6swBiSvo9RNYJG65VzCofEHBYWSGhwc7XHcd6o9kK",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 410,
    "meta": {
-    "account": false
+    "name": "John Doe",
+    "symbol": "John",
+    "uri": "https://ipfs.io/ipfs/bafkreicaeso6ipgaav5sakw4esadqxbfyco2mq7lnei6i2unrfk4f6aua4",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/CoachPatNFT/status/2113856817449070872",
+    "website": "https://otcdesks.cash/coin/B7cX5wW3wxHhRzSYTpM56YgMo8pesJjJk6ehz8aXpump",
+    "telegram": "",
+    "keys": [
+     "name",
+     "symbol",
+     "image",
+     "description",
+     "website",
+     "twitter",
+     "telegram",
+     "tags",
+     "extensions"
+    ]
+   }
   },
   "DESSA|DESSA": {
    "mint": "GZYL4JVHikj6H71a7mTdWay1q7DwsWdJFEhkQCsYz4WT",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 395,
    "meta": {
-    "account": false
+    "name": "DESSA",
+    "symbol": "DESSA",
+    "uri": "https://ipfs.io/ipfs/QmQwjCFBFB4NAm9BsXePoPUgKRZpNc5Ctobt1fDSPjw6CH",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/jack/status/2113697902916751661",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter"
+    ]
+   }
   },
   "TTWO|Take-Two Interactive Software - Backpack Securities": {
    "mint": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 710,
    "meta": {
-    "account": false
+    "name": "Take-Two Interactive Software - Backpack Securities",
+    "symbol": "TTWO",
+    "uri": "https://trek-labs.github.io/heart-metadata/stocks/ttwo.us.json",
+    "extra": [],
+    "types": [
+     18,
+     12,
+     6,
+     26,
+     4,
+     14,
+     25,
+     19
+    ]
    },
-   "links": []
-  },
-  "SO|Soul Labs": {
-   "mint": "B68DmS6KsYcNpEifba6mptE8rgSV5s6Uuaeo3piND2pY",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "https://ipfs.io/ipfs/QmeNyR2D9bjSPMuKHmnUPywfawhNE5YwTCQpKgRdKvnH94",
-    "json": {
-     "twitter": "https://x.com/0xSoulProtocol",
-     "keys": [
-      "name",
-      "symbol",
-      "description",
-      "image",
-      "showName",
-      "extensions",
-      "twitter"
-     ]
-    }
-   },
-   "links": [
-    "https://x.com/0xSoulProtocol"
-   ],
-   "fx": {
-    "status": 200,
-    "code": 200,
-    "message": "OK",
-    "user": "0xSoulProtocol"
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "terms"
+    ]
    }
-  },
-  "NODF|NODF": {
-   "mint": "DAwy9AjZRm8cq5yp57qagEvihgj7H9idNHLWf3qoYRFp",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "https://turbo-gateway.com/N4iUBpgkGrPlyLxn2Nw7xnwl_lkVPEulgEbXB5RExLg?ext=json",
-    "json": {
-     "website": "https://nodf.site/",
-     "telegram": "https://telegram.me/Trumpupup",
-     "keys": [
-      "name",
-      "symbol",
-      "image",
-      "description",
-      "website",
-      "telegram"
-     ]
-    }
-   },
-   "links": []
   },
   "FI|Finance Inu": {
    "mint": "CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 385,
    "meta": {
-    "account": false
+    "name": "Finance Inu",
+    "symbol": "FI",
+    "uri": "https://metadata.j7tracker.io/metadata/iVcXaOfANf.json",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/toly/status/2114030153299009820",
+    "website": "https://otcdesks.cash/coin/CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "PHPNET|phpnet.xyz": {
    "mint": "DEf2ciwJmKNkTj1p85XNSbCFZ2XMQyVtF4JTxqwopump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 414,
    "meta": {
-    "account": false
+    "name": "phpnet.xyz",
+    "symbol": "PHPNET",
+    "uri": "https://ipfs.io/ipfs/bafkreia5bmtzg4fzhbqwen344dxd5hjopwy2hh2gdj6xgm7cvgrcw3kewu",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/entropynet_/status/2113987298899718536?s=46",
+    "website": "https://www.phpnet.xyz/",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "poppi|poppi was here": {
    "mint": "52oTymEKXPupp4apCCacNw2Jeag81TgeuQWsoopApump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 391,
    "meta": {
-    "account": false
+    "name": "poppi was here",
+    "symbol": "poppi",
+    "uri": "https://metadata.j7tracker.io/metadata/pyT1hPJgGr.json",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/dashcrypto_/status/2113899252212551928",
+    "website": "https://www.instagram.com/reel/DezajRjhyY1/?cplk=cGowMWxwN3Z4MG9i",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "Utangi|우땅이": {
    "mint": "3r69Zny16GetBHASjmiQVWm3rqbpb721HNsCrAyJpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 413,
    "meta": {
-    "account": false
+    "name": "우땅이",
+    "symbol": "Utangi",
+    "uri": "https://ipfs.io/ipfs/bafkreidaqycgb7kxgkyb5yfmx3djdrccpdcklfqcqp7hri2sz52yngxume",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/Utangco/status/2113577252491571261?s=20",
+    "website": "https://x.com/Utangco",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "website",
+     "coin_community"
+    ]
+   }
   },
   "MOVEMBER|Movember": {
    "mint": "81EpzKJzgckhZNYvV4vu16Mjb5V3tMPohKcNjr7kpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 376,
    "meta": {
-    "account": false
+    "name": "Movember",
+    "symbol": "MOVEMBER",
+    "uri": "https://metadata.j7tracker.io/m/Swujl2omez",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/TheHandOfThanos/status/2113777966874239090",
+    "website": "https://movember.com/",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "RAMATOU|Justice For Ramatou D": {
    "mint": "GH6nAJUCv3x8vEvmsSuo9GW8w2U8XcDiMj7jEyDnpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 400,
    "meta": {
-    "account": false
-   },
-   "links": []
-  },
-  "BMT|Bubblemaps": {
-   "mint": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
-   "dex": {
-    "pairs": 1,
-    "info": 1,
-    "socials": [
-     {
-      "url": "https://twitter.com/bubblemaps",
-      "type": "twitter"
-     },
-     {
-      "url": "https://t.me/bubblemaps",
-      "type": "telegram"
-     },
-     {
-      "url": "https://discord.gg/bubblemaps",
-      "type": "discord"
-     }
-    ],
-    "websites": [
-     {
-      "url": "https://bubblemaps.io",
-      "label": "Website"
-     },
-     {
-      "url": "https://wiki.bubblemaps.io",
-      "label": "Docs"
-     }
+    "name": "Justice For Ramatou D",
+    "symbol": "RAMATOU",
+    "uri": "https://metadata.j7tracker.io/metadata/xoKwgWkYgo.json",
+    "extra": [],
+    "types": [
+     18,
+     19
     ]
    },
-   "meta": {
-    "account": true,
-    "uri": "https://storage.googleapis.com/bubblemaps-metadata/bmt/metadata.json",
-    "json": {
-     "keys": [
-      "name",
-      "symbol",
-      "description",
-      "image",
-      "extensions"
-     ]
-    }
-   },
-   "links": [
-    "https://twitter.com/bubblemaps"
-   ],
-   "fx": {
-    "status": 200,
-    "code": 200,
-    "message": "OK",
-    "user": "bubblemaps"
+   "json": {
+    "twitter": "https://x.com/terrythedevv/status/2113896027652800661",
+    "website": "https://x.com/search?q=kevin&src=typed_query&f=live",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
    }
   },
   "P&amp;T|PILLS &amp; THRILLS": {
    "mint": "5AFgATAvqYtaXYVubj43Rz36d2ckp1vhnMjBnHe7pump",
-   "dex": {
-    "pairs": 1,
-    "info": 1,
-    "socials": [
-     {
-      "url": "https://x.com/plllsandthrllls?s=11",
-      "type": "twitter"
-     }
-    ],
-    "websites": [
-     {
-      "url": "https://thecolosseum.win/",
-      "label": "Website"
-     }
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 416,
+   "meta": {
+    "name": "PILLS & THRILLS",
+    "symbol": "P&T",
+    "uri": "https://ipfs.io/ipfs/bafkreicdmmccidg42ac64k7gcx3eybuw6a3dtzi7m2x2zgvoat2y4j2hxa",
+    "extra": [],
+    "types": [
+     18,
+     19
     ]
    },
-   "meta": {
-    "account": false
-   },
-   "links": [
-    "https://x.com/plllsandthrllls?s=11"
-   ],
-   "fx": {
-    "status": 404,
-    "code": 404,
-    "message": "User not found"
+   "json": {
+    "twitter": "https://x.com/plllsandthrllls?s=11",
+    "website": "https://thecolosseum.win/",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "website",
+     "coin_community"
+    ]
    }
   },
   "Attention|Attention Coin": {
    "mint": "367aW3KAJkYwAFdrfTqPRofzCwdr7SzXiRPmvgPXpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 421,
    "meta": {
-    "account": false
+    "name": "Attention Coin",
+    "symbol": "Attention",
+    "uri": "https://ipfs.io/ipfs/bafkreigy4htxndnz5gu4ff3ndqy4ykewzn5k3wsvvlovgc5w6wtw2k77tq",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/robtmb1/status/2113762276322824454?s=20",
+    "website": "https://www.tiktok.com/@robdamaster",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "Shift|The Shift": {
    "mint": "EDqML4vnQSkkL6UktQVxPX2Nh32aaBGwTzwxyBvApump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 374,
    "meta": {
-    "account": false
+    "name": "The Shift",
+    "symbol": "Shift",
+    "uri": "https://metadata.j7tracker.io/m/t5yyEkk4iJ",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/thegoat195923/status/2113774702929838448",
+    "website": "https://x.com/i/lists/1658863438997729280",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "XTO|XTO": {
    "mint": "D35x555XCejXLQ8wvUUEXj8Lw2PPp6eG2Xk6jgffpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 495,
    "meta": {
-    "account": false
+    "name": "XTO",
+    "symbol": "XTO",
+    "uri": "https://pub-7f44ca74ee814c7e8b057d3c8cf44474.r2.dev/solana-metadata-clones/20261023163623-coin337456356457519452/D35x555XCejXLQ8wvUUEXj8Lw2PPp6eG2Xk6jgffpump/metadata.json",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "",
+    "website": "https://xtruthoil.website/",
+    "telegram": "",
+    "keys": [
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "showName",
+     "symbol",
+     "telegram",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "Uni|Unicorn": {
    "mint": "Uni86XoVtpDBfrLQF3qEfprv2uYVmBYTVLQEc2qUiwA",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 399,
    "meta": {
-    "account": false
+    "name": "Unicorn",
+    "symbol": "Uni",
+    "uri": "https://meta.notrandom.fun/2jiXM8tmMkwuLZ91HJUcTYw6TUYCEMSCKFmfy5TGcQiL",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/PumpFun711/status/2113791450056212578",
+    "website": "https://unicorn-uni.live/",
+    "telegram": "https://t.me/UnicornOnSolana",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "twitter",
+     "telegram",
+     "website"
+    ]
+   }
   },
   "Foodslop|TigerPrawnJacketPotatoCatFish": {
    "mint": "BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 415,
    "meta": {
-    "account": false
+    "name": "TigerPrawnJacketPotatoCatFish",
+    "symbol": "Foodslop",
+    "uri": "https://metadata.j7tracker.io/metadata/040eed5467ca4076.json",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://twitter.com/Stally_P/status/2113765130706018663",
+    "website": "https://otcdesks.cash/coin/BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump",
+    "keys": [
+     "coin_community",
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "symbol",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "Volta|Volta": {
    "mint": "2qX8fcbdLMNBR1PWo2ak7YiUvnC24CTFuCW7zsfHpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 364,
    "meta": {
-    "account": false
+    "name": "Volta",
+    "symbol": "Volta",
+    "uri": "https://m.rapidlaunch.io/m/te7AKAGat",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/MarioPrezldente/status/2114023246190555271",
+    "website": "https://otcdesks.cash/coin/26DetwMNXcmguHwecpqWtrcbru7qsH4wVKRuYfAUtWkW",
+    "keys": [
+     "name",
+     "symbol",
+     "showName",
+     "image",
+     "description",
+     "createdOn",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "USDF|US Dividend Fund (USDF)🔥": {
    "mint": "H4Xf9LysARXsMLx5YeQoA3JNq8zbXU4SqvfeYzdpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 416,
    "meta": {
-    "account": false
+    "name": "US Dividend Fund (USDF)🔥",
+    "symbol": "USDF",
+    "uri": "https://ipfs.io/ipfs/QmX6cWtDZGzwLAWg8WjJ5Svbw7z1kLx8hPWaWC7LGRhMwc",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "",
+    "website": "https://usdf.live/",
+    "telegram": "",
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "website",
+     "twitter",
+     "telegram",
+     "attributes",
+     "properties"
+    ]
+   }
   },
   "LEGO|LEGO": {
    "mint": "yJvmnWZqJiJj19TnU1FcbbvnCiLX1ocBAHczggbpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 393,
    "meta": {
-    "account": false
+    "name": "LEGO",
+    "symbol": "LEGO",
+    "uri": "https://ipfs.io/ipfs/QmXZE7yFpD3VNC7Z3tAWmuTEoya54Ww5e2rCkqc9eT9Y77",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
-  },
-  "Hercules|Lockheed C-130 Hercules": {
-   "mint": "9hjSCywae6zRxpu4ahFyULEQvPApfwgR4955Y8JB9A9",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
-   "meta": {
-    "account": true,
-    "uri": "https://coffee-tragic-silverfish-214.mypinata.cloud/ipfs/bafkreicsr6rsowswfhip53cvizaht2vagbyv3g4p5an6j76ah5nroc4kji/metadata.json",
-    "json": {
-     "twitter": "",
-     "website": "",
-     "telegram": "",
-     "keys": [
-      "name",
-      "symbol",
-      "description",
-      "image",
-      "twitter",
-      "telegram",
-      "website",
-      "attributes",
-      "properties",
-      "extensions"
-     ]
-    }
-   },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn"
+    ]
+   }
   },
   "NODF|National Oil Dividend Fund": {
    "mint": "akRhNAuqczoExHHa6B6PmvutTPpjAnGUF3JDf3npump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 519,
    "meta": {
-    "account": false
+    "name": "National Oil Dividend Fund",
+    "symbol": "NODF",
+    "uri": "https://pub-7f44ca74ee814c7e8b057d3c8cf44474.r2.dev/solana-metadata-clones/20261024142153-coin3259824605230903643/akRhNAuqczoExHHa6B6PmvutTPpjAnGUF3JDf3npump/metadata.json",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "twitter": "https://x.com/search?q=%24NODF&src=typed_query",
+    "website": "https://nodf.site/",
+    "telegram": "https://telegram.me/Trumpupup",
+    "keys": [
+     "createdOn",
+     "description",
+     "image",
+     "name",
+     "showName",
+     "symbol",
+     "telegram",
+     "twitter",
+     "website"
+    ]
+   }
   },
   "AOP|American Overwatch Protocol": {
    "mint": "GK1Vxw9529MWwvGEwKQfVP4GAtpn1tWa7ec44bmFpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 428,
    "meta": {
-    "account": false
+    "name": "American Overwatch Protocol",
+    "symbol": "AOP",
+    "uri": "https://ipfs.io/ipfs/bafkreif5tywsgcrghfqxmhpttetl3lnzatrj6r6mmva34hlttfwlkryaym",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "properties",
+     "extensions"
+    ]
+   }
   },
   "NOTF|National Oil Trust Fund🔥": {
    "mint": "FBcrTWLEVTxKuc67eBqk1QhyhsCiALsELGz96xNspump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 429,
    "meta": {
-    "account": false
+    "name": "National Oil Trust Fund🔥",
+    "symbol": "NOTF",
+    "uri": "https://ipfs.io/ipfs/bafkreiaimfcuvimtsssfyzow4rjbem4ioogw7vsyczueodsdl6tp3wpg7a",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "properties",
+     "extensions"
+    ]
+   }
   },
   "theranos|Theranos": {
    "mint": "4pkRAiy5WQNbfG7JigDHBm3aXqA6fR87a3TPu1yypump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 414,
    "meta": {
-    "account": false
+    "name": "Theranos",
+    "symbol": "theranos",
+    "uri": "https://ipfs.io/ipfs/bafkreihprfpqvecbl6k4li2geaezf6ialwg3r7dm34k3dql6cy4t6vsrzi",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "image",
+     "showName",
+     "createdOn",
+     "coin_community"
+    ]
+   }
   },
   "billy|billy": {
    "mint": "5egBPNw6CKrQrRPnwukBFyTxjpscvPj4LNaW1oBRpump",
-   "dex": {
-    "pairs": 1,
-    "info": 0,
-    "socials": [],
-    "websites": []
-   },
+   "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+   "token22": true,
+   "len": 396,
    "meta": {
-    "account": false
+    "name": "billy",
+    "symbol": "billy ",
+    "uri": "https://ipfs.io/ipfs/QmRdGs5RFw5KCYuWRAPACMBg41rpARUHm7hFnEkEzj5Lni",
+    "extra": [],
+    "types": [
+     18,
+     19
+    ]
    },
-   "links": []
+   "json": {
+    "keys": [
+     "name",
+     "symbol",
+     "description",
+     "showName",
+     "image",
+     "createdOn"
+    ]
+   }
   }
- },
- "dexStatus": [
-  200,
-  200
- ],
- "rpcStatus": [
-  200
- ]
+ }
 }
