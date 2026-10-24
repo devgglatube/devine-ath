@@ -1,0 +1,693 @@
+{
+ "n": 37,
+ "coins": {
+  "WETH|Wrapped Ether (Wormhole)": {
+   "mint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "",
+    "json": "uri non http"
+   },
+   "links": []
+  },
+  "CRCLx|Circle xStock": {
+   "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "CATE|Catecoin": {
+   "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
+   "dex": {
+    "pairs": 1,
+    "info": 1,
+    "socials": [
+     {
+      "url": "https://x.com/i/communities/2004330768022004131",
+      "type": "twitter"
+     },
+     {
+      "url": "https://t.me/catecoin_telegram",
+      "type": "telegram"
+     }
+    ],
+    "websites": [
+     {
+      "url": "https://cate.meme/",
+      "label": "Website"
+     }
+    ]
+   },
+   "meta": {
+    "account": false
+   },
+   "links": [
+    "https://x.com/i/communities/2004330768022004131"
+   ],
+   "fx": {
+    "status": 404,
+    "code": 404,
+    "message": "User not found"
+   }
+  },
+  "DJT|Trump Media &amp; Technology Group Corp. Common Stock - Backpack Securities": {
+   "mint": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "HYPEST|Hypest": {
+   "mint": "Db71Qcd8YKmMXiRSTpg4crNb1DSmAUz2yJUJoJ4spump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "ANDURL|Anduril PreStocks": {
+   "mint": "PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "HYPE|HYPE": {
+   "mint": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://arweave.net/nhnR5WErzQVpPTy4jZsFGwlISmvnmp5j9eioV4pP_C4",
+    "json": {
+     "keys": [
+      "name",
+      "symbol",
+      "description",
+      "image"
+     ]
+    }
+   },
+   "links": []
+  },
+  "REMUS|Remus": {
+   "mint": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
+   "dex": {
+    "pairs": 1,
+    "info": 1,
+    "socials": [
+     {
+      "url": "https://x.com/remusfamily",
+      "type": "twitter"
+     }
+    ],
+    "websites": [
+     {
+      "url": "https://remus.family",
+      "label": "Website"
+     }
+    ]
+   },
+   "meta": {
+    "account": false
+   },
+   "links": [
+    "https://x.com/remusfamily"
+   ],
+   "fx": {
+    "status": 200,
+    "code": 200,
+    "message": "OK",
+    "user": "RemusFamily"
+   }
+  },
+  "HUG|Monkey Hug": {
+   "mint": "DEL3KmMovmE57YmwzFYFkMuNDs3PZyi3qMvP9Jyfpump",
+   "dex": {
+    "pairs": 1,
+    "info": 1,
+    "socials": [
+     {
+      "url": "https://x.com/MonkeyHugOnSol",
+      "type": "twitter"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De126DXssLn/?obrf=MXpiZHdvNzgzd3A4",
+      "type": "instagram"
+     }
+    ],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": [
+    "https://x.com/MonkeyHugOnSol"
+   ],
+   "fx": {
+    "status": 200,
+    "code": 200,
+    "message": "OK",
+    "user": "MonkeyHugOnSol"
+   }
+  },
+  "EBOT|evmbot": {
+   "mint": "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://ipfs.io/ipfs/QmQUuB8KhXwwHLEy8Xrx28C5VFKfnPU3uyYCXnTMVaA3YX",
+    "json": {
+     "twitter": "https://x.com/evmbot",
+     "website": "",
+     "telegram": "",
+     "keys": [
+      "name",
+      "symbol",
+      "description",
+      "image",
+      "website",
+      "twitter",
+      "telegram",
+      "attributes",
+      "properties"
+     ]
+    }
+   },
+   "links": [
+    "https://x.com/evmbot"
+   ],
+   "fx": {
+    "status": 404,
+    "code": 404,
+    "message": "User not found"
+   }
+  },
+  "John|John Doe": {
+   "mint": "7tU6swBiSvo9RNYJG65VzCofEHBYWSGhwc7XHcd6o9kK",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "DESSA|DESSA": {
+   "mint": "GZYL4JVHikj6H71a7mTdWay1q7DwsWdJFEhkQCsYz4WT",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "TTWO|Take-Two Interactive Software - Backpack Securities": {
+   "mint": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "SO|Soul Labs": {
+   "mint": "B68DmS6KsYcNpEifba6mptE8rgSV5s6Uuaeo3piND2pY",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://ipfs.io/ipfs/QmeNyR2D9bjSPMuKHmnUPywfawhNE5YwTCQpKgRdKvnH94",
+    "json": {
+     "twitter": "https://x.com/0xSoulProtocol",
+     "keys": [
+      "name",
+      "symbol",
+      "description",
+      "image",
+      "showName",
+      "extensions",
+      "twitter"
+     ]
+    }
+   },
+   "links": [
+    "https://x.com/0xSoulProtocol"
+   ],
+   "fx": {
+    "status": 200,
+    "code": 200,
+    "message": "OK",
+    "user": "0xSoulProtocol"
+   }
+  },
+  "NODF|NODF": {
+   "mint": "DAwy9AjZRm8cq5yp57qagEvihgj7H9idNHLWf3qoYRFp",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://turbo-gateway.com/N4iUBpgkGrPlyLxn2Nw7xnwl_lkVPEulgEbXB5RExLg?ext=json",
+    "json": {
+     "website": "https://nodf.site/",
+     "telegram": "https://telegram.me/Trumpupup",
+     "keys": [
+      "name",
+      "symbol",
+      "image",
+      "description",
+      "website",
+      "telegram"
+     ]
+    }
+   },
+   "links": []
+  },
+  "FI|Finance Inu": {
+   "mint": "CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "PHPNET|phpnet.xyz": {
+   "mint": "DEf2ciwJmKNkTj1p85XNSbCFZ2XMQyVtF4JTxqwopump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "poppi|poppi was here": {
+   "mint": "52oTymEKXPupp4apCCacNw2Jeag81TgeuQWsoopApump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Utangi|우땅이": {
+   "mint": "3r69Zny16GetBHASjmiQVWm3rqbpb721HNsCrAyJpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "MOVEMBER|Movember": {
+   "mint": "81EpzKJzgckhZNYvV4vu16Mjb5V3tMPohKcNjr7kpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "RAMATOU|Justice For Ramatou D": {
+   "mint": "GH6nAJUCv3x8vEvmsSuo9GW8w2U8XcDiMj7jEyDnpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "BMT|Bubblemaps": {
+   "mint": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
+   "dex": {
+    "pairs": 1,
+    "info": 1,
+    "socials": [
+     {
+      "url": "https://twitter.com/bubblemaps",
+      "type": "twitter"
+     },
+     {
+      "url": "https://t.me/bubblemaps",
+      "type": "telegram"
+     },
+     {
+      "url": "https://discord.gg/bubblemaps",
+      "type": "discord"
+     }
+    ],
+    "websites": [
+     {
+      "url": "https://bubblemaps.io",
+      "label": "Website"
+     },
+     {
+      "url": "https://wiki.bubblemaps.io",
+      "label": "Docs"
+     }
+    ]
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://storage.googleapis.com/bubblemaps-metadata/bmt/metadata.json",
+    "json": {
+     "keys": [
+      "name",
+      "symbol",
+      "description",
+      "image",
+      "extensions"
+     ]
+    }
+   },
+   "links": [
+    "https://twitter.com/bubblemaps"
+   ],
+   "fx": {
+    "status": 200,
+    "code": 200,
+    "message": "OK",
+    "user": "bubblemaps"
+   }
+  },
+  "P&amp;T|PILLS &amp; THRILLS": {
+   "mint": "5AFgATAvqYtaXYVubj43Rz36d2ckp1vhnMjBnHe7pump",
+   "dex": {
+    "pairs": 1,
+    "info": 1,
+    "socials": [
+     {
+      "url": "https://x.com/plllsandthrllls?s=11",
+      "type": "twitter"
+     }
+    ],
+    "websites": [
+     {
+      "url": "https://thecolosseum.win/",
+      "label": "Website"
+     }
+    ]
+   },
+   "meta": {
+    "account": false
+   },
+   "links": [
+    "https://x.com/plllsandthrllls?s=11"
+   ],
+   "fx": {
+    "status": 404,
+    "code": 404,
+    "message": "User not found"
+   }
+  },
+  "Attention|Attention Coin": {
+   "mint": "367aW3KAJkYwAFdrfTqPRofzCwdr7SzXiRPmvgPXpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Shift|The Shift": {
+   "mint": "EDqML4vnQSkkL6UktQVxPX2Nh32aaBGwTzwxyBvApump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "XTO|XTO": {
+   "mint": "D35x555XCejXLQ8wvUUEXj8Lw2PPp6eG2Xk6jgffpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Uni|Unicorn": {
+   "mint": "Uni86XoVtpDBfrLQF3qEfprv2uYVmBYTVLQEc2qUiwA",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Foodslop|TigerPrawnJacketPotatoCatFish": {
+   "mint": "BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Volta|Volta": {
+   "mint": "2qX8fcbdLMNBR1PWo2ak7YiUvnC24CTFuCW7zsfHpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "USDF|US Dividend Fund (USDF)🔥": {
+   "mint": "H4Xf9LysARXsMLx5YeQoA3JNq8zbXU4SqvfeYzdpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "LEGO|LEGO": {
+   "mint": "yJvmnWZqJiJj19TnU1FcbbvnCiLX1ocBAHczggbpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "Hercules|Lockheed C-130 Hercules": {
+   "mint": "9hjSCywae6zRxpu4ahFyULEQvPApfwgR4955Y8JB9A9",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": true,
+    "uri": "https://coffee-tragic-silverfish-214.mypinata.cloud/ipfs/bafkreicsr6rsowswfhip53cvizaht2vagbyv3g4p5an6j76ah5nroc4kji/metadata.json",
+    "json": {
+     "twitter": "",
+     "website": "",
+     "telegram": "",
+     "keys": [
+      "name",
+      "symbol",
+      "description",
+      "image",
+      "twitter",
+      "telegram",
+      "website",
+      "attributes",
+      "properties",
+      "extensions"
+     ]
+    }
+   },
+   "links": []
+  },
+  "NODF|National Oil Dividend Fund": {
+   "mint": "akRhNAuqczoExHHa6B6PmvutTPpjAnGUF3JDf3npump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "AOP|American Overwatch Protocol": {
+   "mint": "GK1Vxw9529MWwvGEwKQfVP4GAtpn1tWa7ec44bmFpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "NOTF|National Oil Trust Fund🔥": {
+   "mint": "FBcrTWLEVTxKuc67eBqk1QhyhsCiALsELGz96xNspump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "theranos|Theranos": {
+   "mint": "4pkRAiy5WQNbfG7JigDHBm3aXqA6fR87a3TPu1yypump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  },
+  "billy|billy": {
+   "mint": "5egBPNw6CKrQrRPnwukBFyTxjpscvPj4LNaW1oBRpump",
+   "dex": {
+    "pairs": 1,
+    "info": 0,
+    "socials": [],
+    "websites": []
+   },
+   "meta": {
+    "account": false
+   },
+   "links": []
+  }
+ },
+ "dexStatus": [
+  200,
+  200
+ ],
+ "rpcStatus": [
+  200
+ ]
+}
