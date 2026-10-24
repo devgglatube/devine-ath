@@ -19,11 +19,13 @@ jobs:
           node-version: 20
       - name: Chercher de nouveaux coins
         run: |
-          N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(60,Math.ceil(n/6)+2))')
+          N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.ceil(n/6)+2))')
           node fetch-coins.mjs $N || true
+      - name: Télécharger les logos
+        run: node images.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
           git config user.email "coins-bot@users.noreply.github.com"
-          git add coins.json
+          git add coins.json artifact/coins-img.json
           git diff --cached --quiet || (git commit -m "Nouveaux coins" && git push)
