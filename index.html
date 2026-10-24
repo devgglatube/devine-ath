@@ -431,9 +431,10 @@ function show(){
   $("line").style.strokeDasharray="";$("line").removeAttribute("d");$("area").removeAttribute("d");
   $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
   $("out").hidden=true;$("s").value=500;upd();
-  $("cc").hidden=true;$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;
+  const gate=i===0;$("cc").hidden=gate;$("input").hidden=gate;$("rdy").hidden=!gate;$("tm").hidden=true;
   $("cnt").hidden=!(mode!=="ranked"&&i===0);if(!$("cnt").hidden){$("cn").value=deck.length;$("cnv").textContent=deck.length}
   $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode==="ranked";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
+  if(!gate){startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
 }
 function upd(){$("g").textContent=fmt(val())}
 
