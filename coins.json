@@ -277,7 +277,14 @@
    104364,
    106197
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6k43eMUd7tuLJRGGYtDrBzJcy5D5mTzCGULSFuNSudEH"
+   }
+  ]
  },
  {
   "n": "Aura Final Boss",
@@ -686,7 +693,14 @@
    289247,
    264843
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "MFsvPTXCy6eiT1qMpMGKJf6a8K8fdj7YKUFPKDeEXEX"
+   }
+  ]
  },
  {
   "n": "terminal of truths",
@@ -759,7 +773,14 @@
    40110,
    42027
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "GUkDEvSyoJJ5yFHUYKuePjwTTAZYLBmWsHQ2fYaCMKYm"
+   }
+  ]
  },
  {
   "n": "mil",
@@ -867,7 +888,14 @@
    136078,
    19742342
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "Mo1t4o631DSsYokp5NtXFB6MthTqrAxBTouGi2njy2d"
+   }
+  ]
  },
  {
   "n": "Circle xStock",
@@ -6209,6 +6237,219 @@
     "d": "pumpswap",
     "q": "SOL",
     "a": "WvHNACjNgZ1oBx8FRqfjnNuTiytXRgiLJuNu1gW2j1k"
+   }
+  ]
+ },
+ {
+  "id": "FuX4Pwc66aBnM4bX3zyvXGsXHE5wsjHgXuAeqQBnpump",
+  "n": "Global Oil Institution Fund",
+  "t": "GOIF",
+  "img": "https://assets.geckoterminal.com/qc65dd2jrub1z3i72oca9ufuwv21",
+  "ho": 2668,
+  "c": "Solana",
+  "l": "22 octobre 2026",
+  "d": "Global Oil Institution Fund (GOIF)",
+  "ath": 96286226,
+  "ch": [
+   53915298,
+   54564532,
+   55622370,
+   56340577,
+   57614458,
+   58705930,
+   59570646,
+   60820636,
+   61526817,
+   62293213,
+   63367004,
+   64387233,
+   64815295,
+   65931387,
+   66402700,
+   66852574,
+   68032327,
+   68765935,
+   69925089,
+   70569361,
+   70957635,
+   72020356,
+   72936019,
+   73339911,
+   73698922,
+   74836609,
+   75367518,
+   75239238,
+   76418078,
+   76834999,
+   78033095,
+   79014649,
+   79832301,
+   80734020,
+   81367573,
+   81982930,
+   82492245,
+   83289371,
+   83245137,
+   84740099,
+   85427561,
+   86251588,
+   86971895,
+   87006741,
+   87183854,
+   88745616,
+   89516289,
+   91069506,
+   91667929,
+   92458556,
+   93163191,
+   94653061,
+   96286226
+  ],
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "3QgPRE1yZx3UA6cSPmbNGnU9nrT2vN1Ps754PNyfhVKo"
+   }
+  ]
+ },
+ {
+  "id": "5Dw9h4ySRjRPcED7g23kabJ5KSpReKLitktM9TREpump",
+  "n": "The anti-AI Movie",
+  "t": "WILDWOOD",
+  "img": "https://assets.geckoterminal.com/qh2a1hxcnf1pp91ykh7mzt9bgqs9",
+  "ho": 172,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "",
+  "ath": 385885,
+  "ch": [
+   36944,
+   72655,
+   84134,
+   100817,
+   242174,
+   161575,
+   148464,
+   221354,
+   158158,
+   176993,
+   175852,
+   224420,
+   191432,
+   287635,
+   231145,
+   385885,
+   329083,
+   323835,
+   250385,
+   172956,
+   188444,
+   158159,
+   141466,
+   122964,
+   129224,
+   138468,
+   104944,
+   71497
+  ],
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "9ek7USTgXu1w3cgHYJ5UWUHgFYmT4MbYp1Hgg2LWgB5c"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "5ScTBZDYdUEnswBqqkKfKfPYKHjQG65t5M6jrFoy6m5u",
+     10000
+    ]
+   ]
+  }
+ },
+ {
+  "id": "vRseBFqTy9QLmmo5qGiwo74AVpdqqMTnxPqWoWMpump",
+  "n": "Verse World",
+  "t": "Verse",
+  "img": "https://coin-images.coingecko.com/coins/images/66483/large/image00001.jpeg?1749502715",
+  "ho": 5685,
+  "c": "Solana",
+  "l": "9 juin 2025",
+  "d": "Verse World is a successful VR company with long term clients such as Dubai Police, Toyota, Lexus, BYD or Lionel Messi. They also been building for the last four years with a team of 50+ full-time dev",
+  "ath": 37197751,
+  "ch": [
+   28942369,
+   28180624,
+   27179784,
+   28358457,
+   29432097,
+   29288893,
+   27411608,
+   26396758,
+   26765897,
+   37197751,
+   24797355,
+   24531936,
+   22249425,
+   19442346,
+   20018094,
+   19622786,
+   19598473,
+   19751705,
+   19712561,
+   17917068,
+   18274756,
+   18695115,
+   20425397,
+   20254136,
+   19055708,
+   18925856,
+   18881815,
+   18351828,
+   18826299,
+   17474430,
+   16795181,
+   16873714,
+   16329856,
+   16465867,
+   16645097,
+   16253503,
+   15927495,
+   16038221,
+   17999855,
+   19616797,
+   21489594,
+   19994357,
+   19862393,
+   20274063,
+   20193433,
+   19954004,
+   19956549,
+   19520912,
+   20634188,
+   20993720,
+   22030108,
+   22186397,
+   22777118,
+   22939246,
+   20463393,
+   20794737,
+   19861758,
+   19729269,
+   20163331,
+   19547335
+  ],
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6LtBM9GxMtmff1VY6jEV5U3UrMCSGtSuquhfnwWTmTLi"
    }
   ]
  }
