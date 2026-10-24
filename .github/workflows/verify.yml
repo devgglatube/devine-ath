@@ -1,0 +1,38 @@
+name: Contrôle des adresses (ponctuel)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: verify
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Repartir de la dernière version
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Contrôler les adresses
+        run: timeout 10m node verify-ca.mjs || true
+      - name: Enregistrer le résultat
+        run: |
+          git config user.name "coins-bot"
+          git config user.email "coins-bot@users.noreply.github.com"
+          git add -f ca-verify.json || true
+          if git diff --cached --quiet; then echo "rien"; exit 0; fi
+          git commit -m "Résultat du contrôle des adresses [skip ci]"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1
