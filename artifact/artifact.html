@@ -592,7 +592,7 @@ const RANKS=[["Exit Liquidity",0,"#8B8B96"],["Paper Hands",150,"#7DB8FF"],["Dege
 const TOP={4:500,5:100}; // KOL = top 500, Drainer = top 100 du classement en ligne
 const COSTS=[100,150,200,300,450,700]; // mise ranked selon le rang : Exit Liquidity … Drainer
 const costNow=()=>COSTS[rankOf(S.rp,myPos())];
-let stake=0;
+let stake=0,paid=false;
 const TIME=6000, TIMEOUT_ZERO=false; // TIMEOUT_ZERO=true : 0 point si les 6 s sont écoulées (sinon la prédiction est validée là où est le curseur)
 let S={name:"Anon",pts:500,rp:0,best:0,games:0,scores:[]},tab="board";
 try{Object.assign(S,JSON.parse(localStorage.getItem("dath.v1")||"{}"))}catch(e){}
@@ -660,8 +660,8 @@ let armedAt=0;
 function launch(m){
   const inGame=!$("game").hidden&&deck&&!busy;
   if(m==="ranked"&&S.pts<costNow())return;
-  if(inGame&&mode==="ranked"&&Date.now()-armedAt>4000){armedAt=Date.now();toast(T("Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer."));return}
-  if(m==="ranked"){stake=costNow();S.pts-=stake;save();refresh();push()}
+  if(inGame&&mode==="ranked"&&paid&&Date.now()-armedAt>4000){armedAt=Date.now();toast(T("Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer."));return}
+  paid=false;if(m==="ranked")stake=costNow();
   start(m);
 }
 function settle(){
@@ -754,7 +754,9 @@ function drawRanks(){
 const openMenu=()=>{};
 $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
-$("go").addEventListener("click",()=>{if(busy)return;$("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
+$("go").addEventListener("click",()=>{if(busy)return;
+  if(mode==="ranked"&&!paid){if(S.pts<stake){toast(T("Il te faut {0} pts (gagne-en en classique)",stake));return}paid=true;S.pts-=stake;save();refresh();push()}
+  $("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer()});
 $("cw").addEventListener("click",()=>{skip=true});
 $("next").addEventListener("click",next);
 $("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
