@@ -129,19 +129,17 @@ if (web3) {
 }
 
 // ---- contenu via FxTwitter + images ----
-async function fx(path) {
+async function fx(path, st = {}) {
   for (let a = 0; a < 3; a++) {
     let r;
     try { r = await fetch(FX + path, { headers: { "user-agent": "Mozilla/5.0 (compatible; devine-ath)" }, signal: AbortSignal.timeout(15000) }); }
-    catch (e) { if (a === 2) throw e; await wait(1500 * (a + 1)); continue; }
+    catch (e) { st.s = "reseau"; if (a === 2) throw e; await wait(1500 * (a + 1)); continue; }
+    st.s = r.status;
     if (r.ok) return r.json();
-    if (r.status === 429 || r.status >= 500) { // limite de débit ou panne passagère : on patiente puis on réessaie
-      if (a === 2) throw new Error("fxtwitter " + r.status);
-      const ra = Number(r.headers.get("retry-after"));
-      await wait(Math.min(10000, ra > 0 ? ra * 1000 : 1500 * (a + 1)));
-      continue;
-    }
-    return null; // 404 et autres refus définitifs : compte ou tweet introuvable
+    if ([400, 404, 410, 451].includes(r.status)) return null; // compte ou tweet introuvable : définitif
+    if (a === 2) throw new Error("fxtwitter " + r.status); // limite de débit, accès refusé ou panne : passagers
+    const ra = Number(r.headers.get("retry-after"));
+    await wait(Math.min(10000, ra > 0 ? ra * 1000 : 1500 * (a + 1)));
   }
   return null;
 }
@@ -159,9 +157,9 @@ async function author(a) {
   const av = await img((a.avatar_url || "").replace("_normal.", "_200x200."), 96, 96, 80);
   return { an: String(a.name || "").slice(0, 60), ah: a.screen_name, av: av?.uri || "", vf: verif(a), fo: a.followers ?? null, jd: a.joined ? Date.parse(a.joined) || null : null };
 }
-async function build(link) {
+async function build(link, st = {}) {
   if (link.type === "tweet") {
-    const j = await fx(`/${link.user}/status/${link.id}`);
+    const j = await fx(`/${link.user}/status/${link.id}`, st);
     const t = j?.tweet;
     if (t) {
       const e = { k: "tweet", u: t.url, id: t.id, ...(await author(t.author)), tx: String(t.text || "").slice(0, 700), ts: (t.created_timestamp || 0) * 1000,
@@ -176,7 +174,7 @@ async function build(link) {
     }
     link = { type: "profile", user: link.user }; // tweet supprimé : on retombe sur le compte
   }
-  const j = await fx(`/${link.user}`);
+  const j = await fx(`/${link.user}`, st);
   const u = j?.user;
   if (!u) return null;
   return { k: "profile", u: u.url, ...(await author(u)), tx: String(u.description || "").slice(0, 300) };
@@ -192,14 +190,16 @@ await pool(todo, 3, async (c) => {
     if (seen.has(id)) return false;
     seen.add(id); return true;
   }).sort((p, q) => (p.type === "tweet" ? 0 : 1) - (q.type === "tweet" ? 0 : 1));
-  let entry = null, failed = false;
+  let entry = null, failed = false, why = cands.length ? "" : "aucun lien";
   for (const link of cands) {
-    try { entry = await build(link); } catch (e) { failed = true; console.log("échec", c.t, String(e.message || e)); continue; }
+    const st = {};
+    try { entry = await build(link, st); } catch (e) { failed = true; console.log("échec", c.t, String(e.message || e)); continue; }
     await wait(600);
     if (entry) break;
+    why = `${link.type}:${link.user} introuvable (${st.s})`;
   }
   if (!entry && failed) { console.log(c.t, "→ panne passagère, on réessaiera au prochain passage"); return; }
-  map[key] = entry ? { ...entry, f: Date.now() } : { k: "none", f: Date.now() };
+  map[key] = entry ? { ...entry, f: Date.now() } : { k: "none", f: Date.now(), w: why };
   console.log(c.t, "→", map[key].k, map[key].ah ? "@" + map[key].ah : "");
   if (++done % 10 === 0) await writeFile("artifact/tweets.json", JSON.stringify(map));
 });
