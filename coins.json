@@ -59,7 +59,14 @@
    1321086,
    1316333
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "2ARojTqTTucqd92pfrMKqpknntehxhjUrXq2FCC3JjC5"
+   }
+  ]
  },
  {
   "n": "You Missed Bitches",
@@ -132,7 +139,14 @@
    226835,
    208535
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "orca",
+    "q": "USDC",
+    "a": "7cNUEkwD9PhyGa9hQb1heyTZimnRgn4mX2XJoFMMaDL4"
+   }
+  ]
  },
  {
   "n": "AudaCity",
@@ -205,7 +219,14 @@
    1596003,
    5376601
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "TTWO",
+    "a": "7Te1wXcfeQjKLGHXFvxSCnGZTqunoZ9fxBn7KKjrkNEr"
+   }
+  ]
  },
  {
   "n": "Trump Coin",
@@ -329,7 +350,23 @@
    6891368,
    5995241
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6DNxwecbtdNNstpB5tdnxZsfGe3HmsNgEUZhdue4b1PH"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "Gs5FHwYLrDBmCmiv5VhBLCvyiBmBYfcPedZDqR88GYeX",
+     10000
+    ]
+   ]
+  }
  },
  {
   "n": "BLAZE",
@@ -373,7 +410,14 @@
    132165,
    65825
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "9fCLECD3dMHaEcz7Axod2W57f7oPhqBdncqRpcf1CjFJ"
+   }
+  ]
  },
  {
   "n": "Super Inu",
@@ -446,7 +490,14 @@
    9148172,
    9731203
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "raydium",
+    "q": "NVDAx",
+    "a": "B4VFURUHHzyt8YzBGBV9jiarBvjh1EbMAbRNBnNqaxUD"
+   }
+  ]
  },
  {
   "n": "Wrapped Ether (Wormhole)",
@@ -519,7 +570,14 @@
    111098158,
    107708047
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "orca",
+    "q": "SOL",
+    "a": "HktfL7iwGKT5QHjywQkcDnZXScoh811k7akrMZJkCcEF"
+   }
+  ]
  },
  {
   "n": "Moustache Baby",
@@ -548,7 +606,14 @@
    127563,
    124562
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "orca",
+    "q": "USDC",
+    "a": "9fUfoZDyRXAyAqUrsFjZ7L2mXjx7uhFHLfPUr7gxEaLr"
+   }
+  ]
  },
  {
   "n": "Virtual Trade",
@@ -722,7 +787,14 @@
    181540,
    165453
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "meteora",
+    "q": "SOL",
+    "a": "Ebf8ssrkwuqFtCheCvH4HUHu7cRU6TRZkkUom9VPBQj4"
+   }
+  ]
  },
  {
   "n": "cashcat_token",
@@ -868,7 +940,14 @@
    70715846,
    69699286
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "raydium",
+    "q": "USDC",
+    "a": "GYqHjuDzTiw7i52Xv1qohDE6eJr6eSZpsrBVikGZyaFV"
+   }
+  ]
  },
  {
   "n": "Catecoin",
@@ -941,7 +1020,14 @@
    48380025,
    44260777
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "HMzvsEEmtzHhvZNw9uwbaG85HCTmFnkbhzUx16cy7ca3"
+   }
+  ]
  },
  {
   "n": "Trump Media &amp; Technology Group Corp. Common Stock - Backpack Securities",
@@ -1000,7 +1086,14 @@
    1296443,
    1299488
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "orca",
+    "q": "USDC",
+    "a": "7gkB2D1SqhUYgKrSpDU5cma4tK9efijHouYituABdJcG"
+   }
+  ]
  },
  {
   "n": "Hypest",
@@ -1068,7 +1161,14 @@
    339784,
    4808072
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "A1SDTGtjjBFhkTe6AUy9oao4CEVF2Tjcjjrygt3MrwRD"
+   }
+  ]
  },
  {
   "n": "GTA6CAT",
@@ -1141,7 +1241,14 @@
    5152688,
    3325178
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m"
+   }
+  ]
  },
  {
   "id": "2JSj9dzLQwAi3q1dHYjCPF5Gveg81hBTRy8EeM3Fpump",
@@ -1215,7 +1322,14 @@
    150707,
    159293
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "5SpztG8hdXCG3YWx7hWjHGHF8CYGNRSWZ1smmfQQkAMX"
+   }
+  ]
  },
  {
   "id": "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump",
@@ -1289,7 +1403,18 @@
    33248402,
    28265506
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "5wNu5QhdpRGrL37ffcd6TMMqZugQgxwafgz477rShtHy"
+   }
+  ],
+  "fs": {
+   "s": 0,
+   "sh": []
+  }
  },
  {
   "id": "8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump",
@@ -1363,7 +1488,23 @@
    307003,
    261581
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6KGbV6LxuATyk32jUaRuujgW63jmEJLezgyUxMqFWER7"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump",
@@ -1437,7 +1578,23 @@
    22157,
    31679
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "78TxeedEi2hCvcdd6Aqi2ZeMUscQ7MWnsXvUBUixJaTo"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
@@ -1496,7 +1653,14 @@
    5826448,
    4574874
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "PUMP",
+    "a": "Cb7ZRgPLhji3Th7htXyKEqbXvNjPpeTvckXuWakBUhXu"
+   }
+  ]
  },
  {
   "id": "4nZJvocTBuShVKUpgPf4eKgUcrbxh69FJfkXuNurQd37",
@@ -1644,7 +1808,31 @@
    162310,
    117979
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "AT5FmMzA4an3YW6poso7bvfp8EkuTicwQ1oMF7MkRoyg",
+     3400
+    ],
+    [
+     "8vr8sGuzcorJyVvpyrkaCMdjZ2wHCUM3agGAwvYNdeG2",
+     3300
+    ],
+    [
+     "89GxFXfo9faUPkq9MSsySVEtjgfSgybdXJbm7rntxjUS",
+     3300
+    ]
+   ]
+  }
  },
  {
   "id": "Jd5JX9snSJP1ikWLyriRUpwizof8u3BJP26bvs9quaS",
@@ -1674,7 +1862,14 @@
    126494,
    130680
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "FMqzHYQwRanYVhx4SFWAtitpc4z5d5Ca8eWzXGFWCEb9"
+   }
+  ]
  },
  {
   "id": "PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB",
@@ -1748,7 +1943,14 @@
    1895689,
    1889887
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "meteora",
+    "q": "USDC",
+    "a": "DZwJYn5ZgC3ZzJPjdzLnpufr3YHJ8PveNyXomzoh1Md4"
+   }
+  ]
  },
  {
   "id": "6XGsE9BC6ao712UMnQHs5RBooRGfugkioYoG8cSrPqs",
@@ -1776,7 +1978,14 @@
    123167,
    119545
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "3EeuYGhg6uFvS9SnNts6Ry69k8p8qfXKUt6hu5Tn5RsE"
+   }
+  ]
  },
  {
   "id": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
@@ -1850,7 +2059,14 @@
    56484355,
    52765472
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "meteora",
+    "q": "SOL",
+    "a": "6oQ9wVex4mKZti2GsGCfD8FWTMMC9PLQkztRU5cd6MK8"
+   }
+  ]
  },
  {
   "id": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
@@ -1924,7 +2140,14 @@
    582820,
    646484
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG"
+   }
+  ]
  },
  {
   "id": "DEL3KmMovmE57YmwzFYFkMuNDs3PZyi3qMvP9Jyfpump",
@@ -1998,7 +2221,14 @@
    73607,
    63151
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6DVtcoCyvNzLJHJVX2gCghzE8gmpVdeNBjJ5Uw1LHmWk"
+   }
+  ]
  },
  {
   "id": "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q",
@@ -2036,7 +2266,14 @@
    96405,
    14882216
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "BHk9QL14UzRcx8yJ9BvXdyPZSmTtrbQMicr8G3CMGK6w"
+   }
+  ]
  },
  {
   "id": "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
@@ -2110,7 +2347,23 @@
    2996292,
    3697163
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
@@ -2184,7 +2437,14 @@
    42929405,
    42878816
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "raydium",
+    "q": "USDC",
+    "a": "EUGzX8kKvbLB55idiETEdXm6NZzB3Dz7c1ui6wGhcviR"
+   }
+  ]
  },
  {
   "id": "7tU6swBiSvo9RNYJG65VzCofEHBYWSGhwc7XHcd6o9kK",
@@ -2211,7 +2471,14 @@
    218428,
    216013
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "6mhhjjVWaAt8ghaMRninyJewAYB5LjcTx9Tan4gihsYm"
+   }
+  ]
  },
  {
   "id": "GZYL4JVHikj6H71a7mTdWay1q7DwsWdJFEhkQCsYz4WT",
@@ -2285,7 +2552,14 @@
    140793,
    136451
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "VAzfgUPHpLNnDq5hFzAMeTcHhM3aB7MDqPquJ3Xb8xW"
+   }
+  ]
  },
  {
   "id": "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
@@ -2359,7 +2633,14 @@
    6978972,
    9629405
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "TTWO",
+    "a": "G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b"
+   }
+  ]
  },
  {
   "id": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
@@ -2433,7 +2714,14 @@
    3108607,
    3107349
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "raydium",
+    "q": "USDC",
+    "a": "6PTm7MkUmtsLU7w6dWrMHJAt8PnzoCgcZdKyTKEhUAPL"
+   }
+  ]
  },
  {
   "id": "GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump",
@@ -2507,7 +2795,14 @@
    2524590,
    3250591
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj"
+   }
+  ]
  },
  {
   "id": "B68DmS6KsYcNpEifba6mptE8rgSV5s6Uuaeo3piND2pY",
@@ -2581,7 +2876,14 @@
    1537347,
    1546087
   ],
-  "b": 3
+  "b": 3,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "5mmppFBu7CgXX61dYQdNy53yYFyvoihtsNBk6GTMzq76"
+   }
+  ]
  },
  {
   "id": "Bdmz1BAj5B2YbYVdMyZexWbjX33kfhNonHGDtQjipump",
@@ -2655,7 +2957,23 @@
    141818,
    166709
   ],
-  "b": 1
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "BDFCdXTi8JfCkioHtytKCBfy2axEMmQoUV6j9BoLj2KJ"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "DAwy9AjZRm8cq5yp57qagEvihgj7H9idNHLWf3qoYRFp",
@@ -2715,7 +3033,14 @@
    966968,
    900829
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "F88WRVJjur4cvKdNZAzmPUhp7ETR5fapD1BdGzk6hJib"
+   }
+  ]
  },
  {
   "id": "CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump",
@@ -2767,7 +3092,23 @@
    3669,
    3665
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "4WTwcbu1uMCqww1w7xkeJYraiwyRBb4tw7PuWyXeQ6vk"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "DEf2ciwJmKNkTj1p85XNSbCFZ2XMQyVtF4JTxqwopump",
@@ -2812,7 +3153,14 @@
    3180,
    3175
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "MSFTx",
+    "a": "2uxfPAdjHt1NXSB96oq8FUG932AH98ncktn7CYBT8CLU"
+   }
+  ]
  },
  {
   "id": "52oTymEKXPupp4apCCacNw2Jeag81TgeuQWsoopApump",
@@ -2876,7 +3224,23 @@
    3235,
    3254
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "FsGyBDb8zJCHGz4oqVZawwP6jJFuGaAzMwFNKkrinVNp"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "7XUUe2WudEJcUuhJGX4sxoricB6mVMB1NYVVAwMbnGWd",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "ELVx4N6d2JGsQzoYqM8ofx6JPvF6StkQS7PmPbY2pump",
@@ -2915,7 +3279,23 @@
    35275,
    41429
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "7aBxYhJopScS1oTjZiC1Ghg7rmEpi6wF91vRxPsNNMQw"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "EQhaWze43fPrJp22kzMnXysrMtaUVfadQrQtCaa8vv1W",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "3r69Zny16GetBHASjmiQVWm3rqbpb721HNsCrAyJpump",
@@ -2989,7 +3369,23 @@
    4157,
    4006
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "7DuV3D4o2u2M8Jtr7CqQXJWj7djw4RD5az1WaMmiPKP8"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "EU69Fe1RHxZLEjH91VpKyVqS2siuQtbjZUxMqv7eNwhP",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "81EpzKJzgckhZNYvV4vu16Mjb5V3tMPohKcNjr7kpump",
@@ -3063,7 +3459,14 @@
    2380,
    2557
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "Moustache",
+    "a": "8Up2DtHeDwpoZN3dMDhkgxA711tBJU2RfZZ6pDnfRywj"
+   }
+  ]
  },
  {
   "id": "GH6nAJUCv3x8vEvmsSuo9GW8w2U8XcDiMj7jEyDnpump",
@@ -3119,7 +3522,23 @@
    2839,
    2836
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "8CA5hs7B3Pv8TrffptQ78urdeFFkDTm6xoL5fVpvD4Jz"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "7RDsm2g1v5xGyWfxCv7KeYsvq9mY6dVgjTjk2fCH5fdY",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
@@ -3193,7 +3612,14 @@
    10439362,
    37411378
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "meteora",
+    "q": "USDC",
+    "a": "CcXK5ixHDZ4uxCYqrgKx6VBUR4wACu6fw7KfKUvaZdMY"
+   }
+  ]
  },
  {
   "id": "7qLou7Ng4fHK5wKRxu99kCw4PgJMJDcgjrBm5CCDpump",
@@ -3235,7 +3661,23 @@
    13396,
    13458
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "CsCzd9C7djGbnbwqge6wJs7LGLQwE98uKJCTdMTrjqpq"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "3ZKW6cqTXmZswK4TbsPRVWubnpew5iM7NeaR51gYbjKq",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "BSF4doogWHB7XkmWFngNkpqvgHeXGu3xcwXz3hgGggUY",
@@ -3309,7 +3751,14 @@
    11540,
    11920
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "NTRNDM",
+    "a": "HcaWU49We8mpyQcSEru1MzPbNum91vjDQGBL5DTLLnRz"
+   }
+  ]
  },
  {
   "id": "HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump",
@@ -3383,7 +3832,14 @@
    445834,
    529712
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "9pju7scVfBaH7y6xD9jEvaAXzggu7CQyW5Pq5bxcHaMy"
+   }
+  ]
  },
  {
   "id": "5AFgATAvqYtaXYVubj43Rz36d2ckp1vhnMjBnHe7pump",
@@ -3450,7 +3906,14 @@
    2905,
    2928
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "FJGs8g8Yk63gX3sES4wmUzqZ2t25iuZam8ERS636q3iK"
+   }
+  ]
  },
  {
   "id": "367aW3KAJkYwAFdrfTqPRofzCwdr7SzXiRPmvgPXpump",
@@ -3524,7 +3987,14 @@
    2978,
    2982
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "6UE3bkAZuA6fmyUazg9UL9mhho3yLhf2bZZy36D1Uffb"
+   }
+  ]
  },
  {
   "id": "8rPp52zXm6QdaAebE7UPW9AY7SD2XFCrNJTezJmApump",
@@ -3598,7 +4068,14 @@
    12357,
    12801
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "4mPDk3KkVdJ8nqhWGPN9syfDvz9rJHXJ4N8yqvqKkF7d"
+   }
+  ]
  },
  {
   "id": "EDqML4vnQSkkL6UktQVxPX2Nh32aaBGwTzwxyBvApump",
@@ -3654,7 +4131,14 @@
    2922,
    3378
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "PUMP",
+    "a": "AJX74GgQKcfNE97cX7ebFgqBSvW2wbAdkajV4UgUKm9Q"
+   }
+  ]
  },
  {
   "id": "6SMfgZkr9QRseAyNAJwvYEe7Nk3PDJTFj1srYXLMFCk4",
@@ -3728,7 +4212,14 @@
    3536,
    3519
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "6V4PhKNBhBihdwVcPrdhATSfTTwahDgTVMwWQnjq2mZ4"
+   }
+  ]
  },
  {
   "id": "DmtjsWsH1B9GNZaxwPhJtw6prR8Nu5LEqrCB73wEpump",
@@ -3766,7 +4257,14 @@
    3878,
    3768
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "FJ1xusxxNFhMxeMP1UG4hvBxKyWzMBK4T85Z5tCnWWyh"
+   }
+  ]
  },
  {
   "id": "D35x555XCejXLQ8wvUUEXj8Lw2PPp6eG2Xk6jgffpump",
@@ -3840,7 +4338,14 @@
    57541814,
    58105361
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "6k1X8c1QykXSKFKeM5k3XGBzgZif7QRtBiZs55ehFPE1"
+   }
+  ]
  },
  {
   "id": "FUMMypMwEQqvx2zNXBA5gororx5nEjPtV9WUPxN8kRuu",
@@ -3914,7 +4419,14 @@
    17902,
    16122
   ],
-  "b": 2
+  "b": 2,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "ETvPPimBeoPUy5gEpjiQjUpS8f1TsVzZ2MxUErwaY4vP"
+   }
+  ]
  },
  {
   "id": "Uni86XoVtpDBfrLQF3qEfprv2uYVmBYTVLQEc2qUiwA",
@@ -3981,7 +4493,14 @@
    2983,
    2981
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "G4nBc6RfheBXFLibPt9y3rTcLE38Nfm7X82oxKxFKugV"
+   }
+  ]
  },
  {
   "id": "3qcqSKnw2aYAT6Txbt6en2wJRTNFycrKvk1qPHQapump",
@@ -4055,7 +4574,23 @@
    5353,
    5702
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "De6SoYnFzXAvhhKGnoyjpA7smypk4dUzzkHk8GiNJBVK"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "CnN58qLZr8Ya8gfXhSnseCiZt6zJGs2vgeEcrLcpGGpY",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump",
@@ -4129,7 +4664,23 @@
    6250,
    6236
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "CEWzVoX9UMXMs965hejX1LQvMbmWpxkvnnx1c7p4NAiu"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  },
  {
   "id": "V64uWZCfAfWPzrXqN4CHF2Jy1VFVTTfPLhJmq3Cpump",
@@ -4203,7 +4754,14 @@
    6332,
    6832
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "6gw5yCpxdmzFuSjFLECbcnArrqAV2wHGwpM98Jz4fNWq"
+   }
+  ]
  },
  {
   "id": "2qX8fcbdLMNBR1PWo2ak7YiUvnC24CTFuCW7zsfHpump",
@@ -4263,7 +4821,14 @@
    4004,
    3995
   ],
-  "b": 0
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "TSLAx",
+    "a": "66bFfjYDsvQheraRpHkYZkxtumEeTWgjWbX2xTsQk8gu"
+   }
+  ]
  },
  {
   "id": "C1mBfBoDkwWfd6uTFZp62ARHLjeVp3bDpCDMfMZtPngE",
@@ -4337,7 +4902,14 @@
    810349,
    1535415
   ],
-  "b": 4
+  "b": 4,
+  "pr": [
+   {
+    "d": "meteora",
+    "q": "SOL",
+    "a": "C7r9jXWiVYmBYR2Jj5YSLiEitUGJPjQXWeg7HPU8NwUk"
+   }
+  ]
  },
  {
   "id": "H4Xf9LysARXsMLx5YeQoA3JNq8zbXU4SqvfeYzdpump",
@@ -4411,6 +4983,632 @@
    45013435,
    45435877
   ],
-  "b": 5
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "9RWEmT3UNSgPVk41unVTderFnzrbKEL3s9DULeMWH1G2"
+   }
+  ]
+ },
+ {
+  "id": "yJvmnWZqJiJj19TnU1FcbbvnCiLX1ocBAHczggbpump",
+  "n": "LEGO",
+  "t": "LEGO",
+  "img": "https://assets.geckoterminal.com/l8kn45x89s17r5l8x0qngec017ch",
+  "ho": 20,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "Cataclaws is bringing the play 🐈‍⬛",
+  "ath": 1212234,
+  "ch": [
+   362395,
+   413906,
+   463125,
+   496450,
+   547523,
+   592324,
+   633513,
+   685746,
+   742705,
+   892033,
+   1061779,
+   1191109,
+   1212234
+  ],
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "FrLN2UopUDspyb3cogKWRpk1gMzK3Z1KDRW1QQEovgta"
+   }
+  ]
+ },
+ {
+  "id": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
+  "n": "Flying Tesla Roadster",
+  "t": "FTR",
+  "img": "https://assets.geckoterminal.com/bnwfqrcqstr22g9vxvx80qzniu6b",
+  "ho": 13473,
+  "c": "Solana",
+  "l": "15 octobre 2026",
+  "d": "Flying Tesla Roadster ($FTR) — The Future Has No Roads.**\r\n\r\nFlying Tesla Roadster is a Solana meme coin inspired by Elon Musk's vision of the next-generation Tesla Roadster, a revolutionary electric ",
+  "ath": 7399084,
+  "ch": [
+   232607,
+   376654,
+   615616,
+   1382093,
+   1843544,
+   2179046,
+   4374978,
+   7399084,
+   4841182,
+   4836833,
+   4034745,
+   4524366,
+   3663896,
+   3348948,
+   2709308,
+   3193084,
+   2812960,
+   2364167,
+   2292697,
+   2597693,
+   2499388,
+   1865889,
+   1947252,
+   2296675,
+   1955645,
+   1641829,
+   1471270,
+   1246643,
+   1029580,
+   835293,
+   826978,
+   873830,
+   688094,
+   746023,
+   625131,
+   562604,
+   547006,
+   446363,
+   442146,
+   489963,
+   463745,
+   474374,
+   371633,
+   305708,
+   344234,
+   333277,
+   397462,
+   340955,
+   339122,
+   341476,
+   370198,
+   341546,
+   322189,
+   310060,
+   301317,
+   290222,
+   308990,
+   306229,
+   283103,
+   278240
+  ],
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
+ },
+ {
+  "id": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
+  "n": "Claudia",
+  "t": "CLAUDIA",
+  "img": "https://coin-images.coingecko.com/coins/images/102179377/large/e3d43468-6bc2-4264-9e7a-fa70a8c4f1dd.png?1791650789",
+  "ho": 9800,
+  "c": "Solana",
+  "l": "7 octobre 2026",
+  "d": "Claudia is an AI influencer character and a platform built around that character on Solana, at useclaudia.xyz. Claudia posts on X (@claudia_onchain) and TikTok and comments on the memecoin market. The",
+  "ath": 11612678,
+  "ch": [
+   789333,
+   712180,
+   265231,
+   519792,
+   404155,
+   306074,
+   869861,
+   1066773,
+   970049,
+   1201721,
+   3532943,
+   3838216,
+   3014999,
+   6234302,
+   8798376,
+   11612678,
+   8365633,
+   6767807,
+   5178407,
+   3457383,
+   4548515,
+   4219114,
+   5077280,
+   3728149,
+   6275914,
+   4421634,
+   3567955,
+   3322291,
+   4055453,
+   5570392,
+   5016149,
+   5133265,
+   3822859,
+   4192332,
+   4949578,
+   6147973,
+   9343372,
+   8608080,
+   7298512,
+   7161497,
+   7639093,
+   6506093,
+   5673392,
+   4833202,
+   4873811,
+   5295061,
+   3821786,
+   4088222,
+   3724320,
+   3473776,
+   3230502,
+   3302889,
+   2469675,
+   2389347,
+   2236616,
+   2391910,
+   1857731,
+   2061657,
+   2497843,
+   3052756
+  ],
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr"
+   }
+  ]
+ },
+ {
+  "id": "J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
+  "n": "Tung Tung Tung Sahur",
+  "t": "TripleT",
+  "img": "https://coin-images.coingecko.com/coins/images/102172342/large/TripleT.png?1772991763",
+  "ho": 26121,
+  "c": "Solana",
+  "l": "24 février 2026",
+  "d": "Tung Tung Tung Sahur ($TripleT) is a community-driven memecoin on Solana, launched fairly via pump.fun with no pre-mints. It draws from a viral TikTok \"brainrot\" meme featuring an AI-generated wooden ",
+  "ath": 27152172,
+  "ch": [
+   2861469,
+   3857426,
+   5905577,
+   10262792,
+   8288268,
+   9486323,
+   9626215,
+   7563885,
+   7225808,
+   7497717,
+   6024835,
+   7615680,
+   5905173,
+   4606564,
+   5129448,
+   6770725,
+   6672919,
+   6268916,
+   5378898,
+   8330264,
+   7507315,
+   9885387,
+   17089808,
+   16601623,
+   14680940,
+   22301022,
+   18046757,
+   17441191,
+   19452760,
+   27152172,
+   15373172,
+   13444086,
+   15104350,
+   12570809,
+   12883780,
+   11175240,
+   10058680,
+   9916265,
+   13255443,
+   12929085,
+   13285718,
+   10313560,
+   8896201,
+   9580072,
+   8111347,
+   6669616,
+   7280386,
+   6071761,
+   7482341,
+   7339851,
+   8854482,
+   8281551,
+   7605074,
+   7559618,
+   6502935,
+   6904628,
+   6893413,
+   6350625,
+   5707445,
+   5512951
+  ],
+  "b": 4,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "3KFCgJ5R3zshW8hTDbzjSrrKSRYmKvsMfhc4Vo4iddxD"
+   }
+  ]
+ },
+ {
+  "id": "A75Xx6SeftAmWduv9KGwb2GCjXUAhxozcCUCys9jpump",
+  "n": "Hellhound",
+  "t": "HELL",
+  "img": "https://coin-images.coingecko.com/coins/images/102179568/large/hellhound_logo.png?1792172949",
+  "ho": 2044,
+  "c": "Solana",
+  "l": "13 octobre 2026",
+  "d": "The dog of AMD. Paired with tokenized $AMD on Solana. Hellhound is AMD's strongest line of PowerColor Radeon graphics cards with a dog theme, launched in 2021. Hellhound is rated 4.9/5 stars as one of",
+  "ath": 4830125,
+  "ch": [
+   1341452,
+   1661545,
+   1625646,
+   1675723,
+   1568003,
+   1651004,
+   1757351,
+   1689575,
+   1713615,
+   1472943,
+   1433447,
+   1671580,
+   1873788,
+   1907153,
+   1938204,
+   2345279,
+   2405335,
+   2405700,
+   2255298,
+   2068912,
+   2221503,
+   2298404,
+   2065681,
+   2033735,
+   1953163,
+   1731356,
+   2451752,
+   2033170,
+   1840346,
+   1890583,
+   1999198,
+   1904889,
+   1929683,
+   1732127,
+   1695518,
+   1820677,
+   1656884,
+   1677955,
+   1898346,
+   1792061,
+   1879092,
+   1947398,
+   1692272,
+   1496604,
+   1372935,
+   1313564,
+   1451601,
+   1727315,
+   2061243,
+   1999820,
+   1884514,
+   1880682,
+   2048311,
+   2261402,
+   2123217,
+   2035687,
+   4830125,
+   3112872,
+   2804566,
+   3092209
+  ],
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "AMD",
+    "a": "EwsYHiuznyNqH5f65YpfsoQBLq2KyETuvhm5un7wsfDG"
+   }
+  ]
+ },
+ {
+  "id": "9hjSCywae6zRxpu4ahFyULEQvPApfwgR4955Y8JB9A9",
+  "n": "Lockheed C-130 Hercules",
+  "t": "Hercules",
+  "img": "",
+  "ho": 0,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "",
+  "ath": 126132,
+  "ch": [
+   54054,
+   75296,
+   84029,
+   87912,
+   93743,
+   95432,
+   102434,
+   103166,
+   109239,
+   109605,
+   113738,
+   119750,
+   121033,
+   126132
+  ],
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "36jTpVz3RzQBHqdcgvSLqGQ2D9Bk4ryi4Kpjn8qSqH63"
+   }
+  ]
+ },
+ {
+  "id": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+  "n": "TROLL",
+  "t": "TROLL",
+  "img": "https://coin-images.coingecko.com/coins/images/55282/large/Untitled_design.png?1777015928",
+  "ho": 70014,
+  "c": "Solana",
+  "l": "20 avril 2025",
+  "d": "The TROLL token on the Solana network is a meme coin inspired by internet trolling culture, designed for entertainment and community engagement with no intrinsic value. Built on Solana’s blockchain, i",
+  "ath": 147610701,
+  "ch": [
+   17820302,
+   17018441,
+   51080933,
+   51342053,
+   55489373,
+   103993292,
+   147610701,
+   113246830,
+   116523106,
+   109288756,
+   64049804,
+   84778673,
+   68570302,
+   68076265,
+   77413875,
+   67890836,
+   82015990,
+   68896627,
+   70458242,
+   54070719,
+   54331595,
+   52811997,
+   67220250,
+   59483199,
+   54501686,
+   55110597,
+   47992895,
+   46552640,
+   44485622,
+   38054455,
+   42831560,
+   42680672,
+   38381223,
+   39221485,
+   43430828,
+   36981715,
+   37221449,
+   38837304,
+   48197130,
+   52301034,
+   53544381,
+   47248692,
+   41941002,
+   61400014,
+   52180732,
+   49076758,
+   46811344,
+   43475948,
+   50297204,
+   49239930,
+   49152813,
+   45403027,
+   44412788,
+   42390566,
+   37083558,
+   39610080,
+   37436724,
+   35301968,
+   38054335,
+   30443060
+  ],
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama"
+   }
+  ]
+ },
+ {
+  "id": "3fTTQRfkuRbV9TBcUbtdBLk8QYA75vWn6bHRduGjpump",
+  "n": "Official Moustache Coin",
+  "t": "Moustache",
+  "img": "https://assets.geckoterminal.com/usxigqbqs3pd3a5f9ggn8f0drze2",
+  "ho": 197,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "The moustache is the feature. Official is the claim. $Moustache — the coin with nothing to prove but the ’stache.",
+  "ath": 152264,
+  "ch": [
+   133010,
+   152264,
+   95955,
+   98050,
+   81829,
+   96955,
+   118293,
+   2087,
+   2040,
+   2036,
+   2028,
+   2005,
+   2002,
+   1994,
+   1992,
+   2017,
+   1990,
+   1989,
+   1995,
+   2021,
+   1995,
+   1994,
+   2042,
+   2045,
+   2048
+  ],
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "EWkXjGXTnzbtGEghRfevgwoexTheatn5i1cyXrjFZ9CR"
+   }
+  ]
+ },
+ {
+  "id": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
+  "n": "Infinite Money Glitch",
+  "t": "GLITCH",
+  "img": "https://coin-images.coingecko.com/coins/images/102179577/large/coingecko-logo-200x200.png?1792280150",
+  "ho": 1064,
+  "c": "Solana",
+  "l": "16 octobre 2026",
+  "d": "Infinite Money Glitch ($GLITCH) is a community memecoin on Solana built around the countdown to GTA 6. The mascot is Glitch, a flamingo who found an ATM that won't stop paying out, and the community r",
+  "ath": 3195030,
+  "ch": [
+   57371,
+   102896,
+   104243,
+   149990,
+   165438,
+   496250,
+   280627,
+   286858,
+   1131895,
+   1027532,
+   1020612,
+   925443,
+   1373649,
+   1743613,
+   1482067,
+   1632465,
+   1628075,
+   1757678,
+   2019748,
+   1933709,
+   1753826,
+   1723659,
+   1681881,
+   1706132,
+   1642627,
+   1384557,
+   1684745,
+   1192013,
+   1691634,
+   1639652,
+   1424557,
+   1691035,
+   1604972,
+   1680479,
+   1462139,
+   1458442,
+   1631584,
+   1630958,
+   1824326,
+   1687601,
+   1914031,
+   1997734,
+   1900603,
+   1726492,
+   1742278,
+   1779699,
+   1828228,
+   1829132,
+   1890754,
+   1789832,
+   1865767,
+   1772442,
+   1778882,
+   2057052,
+   2163790,
+   2195246,
+   2674858,
+   3195030,
+   2743162,
+   2370740
+  ],
+  "b": 3,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2Eeirm5K6apXmjUZDcV7jjuBd6KmWYmCe6AL3z95dLin",
+     10000
+    ]
+   ]
+  }
  }
 ]
