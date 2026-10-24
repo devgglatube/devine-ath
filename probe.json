@@ -1,0 +1,816 @@
+{
+ "n": 64,
+ "dex": {
+  "BGpURkQa9NeUp9uJPQnJgzdhmQtDkXesiFWWVDWcKu7P": {
+   "socials": [],
+   "websites": []
+  },
+  "A4cAN66ZhtTWwku6A2941RZgR64tTSV93rcyVoQkyqnF": {
+   "socials": [],
+   "websites": []
+  },
+  "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump": {
+   "socials": [
+    {
+     "url": "https://x.com/dacitycoin_gta",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/DacityCoin_GTA",
+     "type": "telegram"
+    },
+    {
+     "url": "https://www.tiktok.com/@rockstargames",
+     "type": "tiktok"
+    },
+    {
+     "url": "https://www.instagram.com/gtacommunity",
+     "type": "instagram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://www.rockstargames.com/VI",
+     "label": "Website"
+    }
+   ]
+  },
+  "CSocnzcRpgSCr1naKcNTieWZUxb6rABe45j844m7pump": {
+   "socials": [
+    {
+     "url": "https://x.com/kimchi1x",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://pump.fun/profile/Gs5FHwYLrDBmCmiv5VhBLCvyiBmBYfcPedZDqR88GYeX",
+     "label": "Website"
+    }
+   ]
+  },
+  "BLAZEgnrPc5rw1NGPAdUYT3S5AtyoDaPM2WneBk7uYz8": {
+   "socials": [
+    {
+     "url": "https://x.com/blazedfam",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/blazedfamily",
+     "type": "telegram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://blazedfamily.com/",
+     "label": "Website"
+    }
+   ]
+  },
+  "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP": {
+   "socials": [
+    {
+     "url": "https://x.com/superinuog?s=11",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://superinuofficial.com/",
+     "label": "Website"
+    },
+    {
+     "url": "https://t.me/+f_jRz-yK1io4MTJh",
+     "label": "Telegram"
+    }
+   ]
+  },
+  "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs": {
+   "socials": [],
+   "websites": []
+  },
+  "CuXZEv9fv2koW8fBdk4xsHbNRVixp3jJfJ6jEcDz8CXs": {
+   "socials": [],
+   "websites": []
+  },
+  "6Tk3uHQpLDtd4Qob5fduLjfhXxAasWgvdo8hYeswxMiL": {
+   "socials": [
+    {
+     "url": "https://x.com/millioneroex?s=21&t=xauRjKgtsdRIC1QJGfKh-A",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/millioneroofficial",
+     "type": "telegram"
+    },
+    {
+     "url": "https://www.instagram.com/millioneroofficial?igsh=MjY1YXhuanhtY3p4",
+     "type": "instagram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://millionero.com/en",
+     "label": "Website"
+    },
+    {
+     "url": "https://millionero.gitbook.io/millionero-guide/whitepaper/mil-token-whitepaper",
+     "label": "Docs"
+    },
+    {
+     "url": "https://www.linkedin.com/company/millionero/",
+     "label": "Linkeidn"
+    }
+   ]
+  },
+  "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1": {
+   "socials": [],
+   "websites": []
+  },
+  "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump": {
+   "socials": [
+    {
+     "url": "https://x.com/i/communities/2004330768022004131",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/catecoin_telegram",
+     "type": "telegram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://cate.meme/",
+     "label": "Website"
+    }
+   ]
+  },
+  "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF": {
+   "socials": [],
+   "websites": []
+  },
+  "Db71Qcd8YKmMXiRSTpg4crNb1DSmAUz2yJUJoJ4spump": {
+   "socials": [],
+   "websites": []
+  },
+  "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump": {
+   "socials": [
+    {
+     "url": "https://x.com/TheGTA6cat",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://thegta6cat.com/",
+     "label": "Website"
+    }
+   ]
+  },
+  "2JSj9dzLQwAi3q1dHYjCPF5Gveg81hBTRy8EeM3Fpump": {
+   "socials": [
+    {
+     "url": "https://x.com/arctisfun",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/arctisfun",
+     "type": "telegram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://arctis.fun",
+     "label": "Website"
+    }
+   ]
+  },
+  "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump": {
+   "socials": [
+    {
+     "url": "https://x.com/neet_sol",
+     "type": "twitter"
+    },
+    {
+     "url": "https://discord.gg/uaWcc6BFFx",
+     "type": "discord"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://neetcoin.xyz/",
+     "label": "Website"
+    }
+   ]
+  },
+  "8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump": {
+   "socials": [
+    {
+     "url": "https://x.com/imBilngineer/status/2113353187541545094?s=20",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://otcdesks.cash/coin/8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump",
+     "label": "Website"
+    }
+   ]
+  },
+  "9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump": {
+   "socials": [
+    {
+     "url": "https://x.com/CoachPatNFT/status/2113800981783720003",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://otcdesks.cash/coin/9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump",
+     "label": "Website"
+    }
+   ]
+  },
+  "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump": {
+   "socials": [
+    {
+     "url": "https://x.com/baton_meme",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/baton_memes",
+     "type": "telegram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://www.baton.meme/",
+     "label": "Website"
+    }
+   ]
+  },
+  "Cbkg5w7V7W2J2sUmecnyN825CbvwvXwasfhduVtNpump": {
+   "socials": [
+    {
+     "url": "https://x.com/J4ck3LSyN",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://jackalsyn.com/",
+     "label": "Website"
+    },
+    {
+     "url": "https://x.com/Archknight23",
+     "label": "https://x.com/acd421"
+    }
+   ]
+  },
+  "Jd5JX9snSJP1ikWLyriRUpwizof8u3BJP26bvs9quaS": {
+   "socials": [],
+   "websites": []
+  },
+  "PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB": {
+   "socials": [],
+   "websites": []
+  },
+  "6XGsE9BC6ao712UMnQHs5RBooRGfugkioYoG8cSrPqs": {
+   "socials": [],
+   "websites": []
+  },
+  "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": {
+   "socials": [],
+   "websites": []
+  },
+  "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump": {
+   "socials": [
+    {
+     "url": "https://x.com/remusfamily",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://remus.family",
+     "label": "Website"
+    }
+   ]
+  },
+  "DEL3KmMovmE57YmwzFYFkMuNDs3PZyi3qMvP9Jyfpump": {
+   "socials": [
+    {
+     "url": "https://x.com/MonkeyHugOnSol",
+     "type": "twitter"
+    },
+    {
+     "url": "https://www.instagram.com/reel/De126DXssLn/?obrf=MXpiZHdvNzgzd3A4",
+     "type": "instagram"
+    }
+   ],
+   "websites": []
+  },
+  "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q": {
+   "socials": [],
+   "websites": []
+  },
+  "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump": {
+   "socials": [
+    {
+     "url": "https://x.com/dopecoinotc",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/DOPE_OTC",
+     "type": "telegram"
+    },
+    {
+     "url": "https://www.tiktok.com/@dopecoin_?_",
+     "type": "tiktok"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://dopeonotc.lol/",
+     "label": "Website"
+    }
+   ]
+  },
+  "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD": {
+   "socials": [],
+   "websites": []
+  },
+  "7tU6swBiSvo9RNYJG65VzCofEHBYWSGhwc7XHcd6o9kK": {
+   "socials": [],
+   "websites": []
+  },
+  "GZYL4JVHikj6H71a7mTdWay1q7DwsWdJFEhkQCsYz4WT": {
+   "socials": [],
+   "websites": []
+  },
+  "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump": {
+   "socials": [
+    {
+     "url": "https://x.com/dacitygta",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://finance.yahoo.com/markets/crypto/articles/gta-6-trailer-features-dacity-131604628.html",
+     "label": "Website"
+    }
+   ]
+  },
+  "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo": {
+   "socials": [],
+   "websites": []
+  },
+  "GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump": {
+   "socials": [
+    {
+     "url": "https://x.com/JeanPhilMadame",
+     "type": "twitter"
+    },
+    {
+     "url": "https://www.instagram.com/jean_philanthrope/",
+     "type": "instagram"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://jeanphilmadame.com/",
+     "label": "Website"
+    }
+   ]
+  },
+  "B68DmS6KsYcNpEifba6mptE8rgSV5s6Uuaeo3piND2pY": {
+   "socials": [],
+   "websites": []
+  },
+  "Bdmz1BAj5B2YbYVdMyZexWbjX33kfhNonHGDtQjipump": {
+   "socials": [
+    {
+     "url": "https://x.com/zumpsol/status/2112530775501320461",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://otcdesks.cash/coin/Bdmz1BAj5B2YbYVdMyZexWbjX33kfhNonHGDtQjipump",
+     "label": "Website"
+    }
+   ]
+  },
+  "DAwy9AjZRm8cq5yp57qagEvihgj7H9idNHLWf3qoYRFp": {
+   "socials": [],
+   "websites": []
+  },
+  "CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump": {
+   "socials": [],
+   "websites": []
+  },
+  "DEf2ciwJmKNkTj1p85XNSbCFZ2XMQyVtF4JTxqwopump": {
+   "socials": [],
+   "websites": []
+  },
+  "52oTymEKXPupp4apCCacNw2Jeag81TgeuQWsoopApump": {
+   "socials": [],
+   "websites": []
+  },
+  "ELVx4N6d2JGsQzoYqM8ofx6JPvF6StkQS7PmPbY2pump": {
+   "socials": [
+    {
+     "url": "https://x.com/dambo_ddd/status/2113900117870674073",
+     "type": "twitter"
+    }
+   ],
+   "websites": []
+  },
+  "3r69Zny16GetBHASjmiQVWm3rqbpb721HNsCrAyJpump": {
+   "socials": [],
+   "websites": []
+  },
+  "81EpzKJzgckhZNYvV4vu16Mjb5V3tMPohKcNjr7kpump": {
+   "socials": [],
+   "websites": []
+  },
+  "GH6nAJUCv3x8vEvmsSuo9GW8w2U8XcDiMj7jEyDnpump": {
+   "socials": [],
+   "websites": []
+  },
+  "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY": {
+   "socials": [
+    {
+     "url": "https://twitter.com/bubblemaps",
+     "type": "twitter"
+    },
+    {
+     "url": "https://t.me/bubblemaps",
+     "type": "telegram"
+    },
+    {
+     "url": "https://discord.gg/bubblemaps",
+     "type": "discord"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://bubblemaps.io",
+     "label": "Website"
+    },
+    {
+     "url": "https://wiki.bubblemaps.io",
+     "label": "Docs"
+    }
+   ]
+  },
+  "7qLou7Ng4fHK5wKRxu99kCw4PgJMJDcgjrBm5CCDpump": {
+   "socials": [
+    {
+     "url": "https://x.com/encrypted_past/status/2114064553894195572?s=20",
+     "type": "twitter"
+    }
+   ],
+   "websites": []
+  },
+  "BSF4doogWHB7XkmWFngNkpqvgHeXGu3xcwXz3hgGggUY": {
+   "socials": [
+    {
+     "url": "https://x.com/ntrndmguy?s=11",
+     "type": "twitter"
+    }
+   ],
+   "websites": []
+  },
+  "HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump": {
+   "socials": [
+    {
+     "url": "https://x.com/batcatsoi?s=21",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://www.batcatofficial.com/",
+     "label": "Website"
+    },
+    {
+     "url": "https://jup.ag/tokens/HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump",
+     "label": "Jupiter"
+    },
+    {
+     "url": "https://drive.google.com/file/d/1OxDHBQ_v7VbgGFoeF49yabe-zkpE5JC4/view?usp=sharing",
+     "label": "WhitePaper"
+    },
+    {
+     "url": "https://www.coingecko.com/en/coins/batcat-2",
+     "label": "CoinGecko"
+    }
+   ]
+  },
+  "5AFgATAvqYtaXYVubj43Rz36d2ckp1vhnMjBnHe7pump": {
+   "socials": [
+    {
+     "url": "https://x.com/plllsandthrllls?s=11",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://thecolosseum.win/",
+     "label": "Website"
+    }
+   ]
+  },
+  "367aW3KAJkYwAFdrfTqPRofzCwdr7SzXiRPmvgPXpump": {
+   "socials": [],
+   "websites": []
+  },
+  "8rPp52zXm6QdaAebE7UPW9AY7SD2XFCrNJTezJmApump": {
+   "socials": [
+    {
+     "url": "https://x.com/trymatchpredict",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://matchpredict.xyz/",
+     "label": "Website"
+    }
+   ]
+  },
+  "EDqML4vnQSkkL6UktQVxPX2Nh32aaBGwTzwxyBvApump": {
+   "socials": [],
+   "websites": []
+  },
+  "6SMfgZkr9QRseAyNAJwvYEe7Nk3PDJTFj1srYXLMFCk4": {
+   "socials": [
+    {
+     "url": "https://x.com/wearetheretail/status/2113859771195408715",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://otcdesks.cash/coin/6SMfgZkr9QRseAyNAJwvYEe7Nk3PDJTFj1srYXLMFCk4",
+     "label": "Website"
+    }
+   ]
+  },
+  "DmtjsWsH1B9GNZaxwPhJtw6prR8Nu5LEqrCB73wEpump": {
+   "socials": [
+    {
+     "url": "https://x.com/ripedevonchain/status/2114070778807509228",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://x.com/just_kcats/status/2113884697906364918",
+     "label": "Website"
+    }
+   ]
+  },
+  "D35x555XCejXLQ8wvUUEXj8Lw2PPp6eG2Xk6jgffpump": {
+   "socials": [],
+   "websites": []
+  },
+  "FUMMypMwEQqvx2zNXBA5gororx5nEjPtV9WUPxN8kRuu": {
+   "socials": [
+    {
+     "url": "https://x.com/flightxbt/status/2113787939964715117",
+     "type": "twitter"
+    }
+   ],
+   "websites": []
+  },
+  "Uni86XoVtpDBfrLQF3qEfprv2uYVmBYTVLQEc2qUiwA": {
+   "socials": [],
+   "websites": []
+  },
+  "3qcqSKnw2aYAT6Txbt6en2wJRTNFycrKvk1qPHQapump": {
+   "socials": [
+    {
+     "url": "https://x.com/esotericpigeon/status/2114027707717579050?s=20",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://www.youtube.com/watch?v=r-sUE2JaOGc",
+     "label": "Website"
+    }
+   ]
+  },
+  "BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump": {
+   "socials": [],
+   "websites": []
+  },
+  "V64uWZCfAfWPzrXqN4CHF2Jy1VFVTTfPLhJmq3Cpump": {
+   "socials": [
+    {
+     "url": "https://x.com/formicaonsol",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://formicasol.fun/",
+     "label": "Website"
+    }
+   ]
+  },
+  "2qX8fcbdLMNBR1PWo2ak7YiUvnC24CTFuCW7zsfHpump": {
+   "socials": [],
+   "websites": []
+  },
+  "C1mBfBoDkwWfd6uTFZp62ARHLjeVp3bDpCDMfMZtPngE": {
+   "socials": [
+    {
+     "url": "https://x.com/Hoookedpad",
+     "type": "twitter"
+    }
+   ],
+   "websites": [
+    {
+     "url": "https://www.hookedpad.com/",
+     "label": "Website"
+    }
+   ]
+  },
+  "H4Xf9LysARXsMLx5YeQoA3JNq8zbXU4SqvfeYzdpump": {
+   "socials": [],
+   "websites": []
+  }
+ },
+ "meta": {
+  "BGpURkQa9NeUp9uJPQnJgzdhmQtDkXesiFWWVDWcKu7P": {
+   "uri": "https://ipfs.io/ipfs/QmePSZoxfg4YncH87D9giUyghRGuHuoFG5nw2wNRstshy3",
+   "err": "",
+   "twitter": "https://x.com/alloxdotai",
+   "website": "",
+   "telegram": ""
+  },
+  "A4cAN66ZhtTWwku6A2941RZgR64tTSV93rcyVoQkyqnF": {
+   "uri": "https://m.rapidlaunch.io/m/76XHU2BVw",
+   "twitter": "https://x.com/zumpsol/status/2113707399198503265",
+   "website": "https://youtu.be/70K8WWdAkfo?t=4",
+   "telegram": "",
+   "err": ""
+  },
+  "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs": {
+   "uri": ""
+  },
+  "CuXZEv9fv2koW8fBdk4xsHbNRVixp3jJfJ6jEcDz8CXs": {
+   "uri": "https://metadata.j7tracker.io/metadata/ZVaMRpB75D.json",
+   "twitter": "https://x.com/findingarunner/status/2113730312433811796",
+   "website": "",
+   "telegram": "",
+   "err": ""
+  },
+  "6Tk3uHQpLDtd4Qob5fduLjfhXxAasWgvdo8hYeswxMiL": {
+   "uri": "https://ipfs.io/ipfs/bafkreib4ofmegn4gx3c7txgavargeaf7em3hw5kcxafnlo3gyct55ucfzm",
+   "err": "",
+   "twitter": "",
+   "website": "",
+   "telegram": ""
+  },
+  "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump": {
+   "uri": "https://ipfs.io/ipfs/QmbCcWuqA9Abn6xSeP63s4T3pnvq9EhCdWD5XBQkNJuhaq",
+   "err": "",
+   "twitter": "",
+   "website": "",
+   "telegram": ""
+  },
+  "4nZJvocTBuShVKUpgPf4eKgUcrbxh69FJfkXuNurQd37": {
+   "uri": "https://ipfs.io/ipfs/Qmb9MfsqwTXKfvKHeuwa1q5MVr9jotJRmZLL8J5qCjndBe",
+   "err": "",
+   "twitter": "https://x.com/NamiAgent",
+   "website": "https://namiagent.xyz/",
+   "telegram": "https://t.me/NamiAgent"
+  },
+  "Jd5JX9snSJP1ikWLyriRUpwizof8u3BJP26bvs9quaS": {
+   "uri": "https://coffee-tragic-silverfish-214.mypinata.cloud/ipfs/bafkreid2em5daffx2pltmt2uhpfjyxuova4dp2l7dzhpjyiw4a3qtdu37a/metadata.json",
+   "twitter": "https://x.com/uncquant/status/2113831195284808001",
+   "website": "https://otcdesks.cash/coin/EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump",
+   "telegram": "",
+   "err": ""
+  },
+  "6XGsE9BC6ao712UMnQHs5RBooRGfugkioYoG8cSrPqs": {
+   "uri": "https://coffee-tragic-silverfish-214.mypinata.cloud/ipfs/bafkreiftepi7lyzkqwvuesvmiqp5otnn6o5qcyowc2bpihu7mvj4jarh5q/metadata.json",
+   "twitter": "https://x.com/Yokiiio22/status/2113925856402067928",
+   "website": "",
+   "telegram": "",
+   "err": ""
+  },
+  "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": {
+   "uri": "https://arweave.net/nhnR5WErzQVpPTy4jZsFGwlISmvnmp5j9eioV4pP_C4",
+   "twitter": "",
+   "website": "",
+   "telegram": "",
+   "err": ""
+  },
+  "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q": {
+   "uri": "https://ipfs.io/ipfs/QmQUuB8KhXwwHLEy8Xrx28C5VFKfnPU3uyYCXnTMVaA3YX",
+   "err": "",
+   "twitter": "https://x.com/evmbot",
+   "website": "",
+   "telegram": ""
+  },
+  "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD": {
+   "uri": "https://static.jup.ag/jupUSD/metadata.json",
+   "twitter": "https://x.com/JupiterExchange",
+   "website": "https://jupusd.money/",
+   "telegram": "",
+   "err": ""
+  },
+  "B68DmS6KsYcNpEifba6mptE8rgSV5s6Uuaeo3piND2pY": {
+   "uri": "https://ipfs.io/ipfs/QmeNyR2D9bjSPMuKHmnUPywfawhNE5YwTCQpKgRdKvnH94",
+   "err": "",
+   "twitter": "https://x.com/0xSoulProtocol",
+   "website": "",
+   "telegram": ""
+  },
+  "DAwy9AjZRm8cq5yp57qagEvihgj7H9idNHLWf3qoYRFp": {
+   "uri": "https://turbo-gateway.com/N4iUBpgkGrPlyLxn2Nw7xnwl_lkVPEulgEbXB5RExLg?ext=json",
+   "twitter": "",
+   "website": "https://nodf.site/",
+   "telegram": "https://telegram.me/Trumpupup",
+   "err": ""
+  },
+  "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY": {
+   "uri": "https://storage.googleapis.com/bubblemaps-metadata/bmt/metadata.json",
+   "twitter": "",
+   "website": "",
+   "telegram": "",
+   "err": ""
+  },
+  "C1mBfBoDkwWfd6uTFZp62ARHLjeVp3bDpCDMfMZtPngE": {
+   "uri": "https://gateway.irys.xyz/28kYgr5ZHe8w1WwSrYPLbiyEcpFfSUgnC8EQZcxyZLY2",
+   "twitter": "https://x.com/Hoookedpad",
+   "website": "https://www.hookedpad.com/",
+   "telegram": "",
+   "err": ""
+  }
+ },
+ "tweets": {
+  "A4cAN66ZhtTWwku6A2941RZgR64tTSV93rcyVoQkyqnF|fx": {
+   "status": 200,
+   "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/zumpsol/status/2113707399198503265\",\"id\":\"2113707399198503265\",\"text\":\"TRUMP JUST SHOWED A NEW COIN ''YOU MISSED BITCHES''????\\n\\nCHEKC IT OUT: https://youtu.be/70K8WWdAkfo?t=4\",\"raw_text\":{\"text\":\"TRUMP JUST SHOWED A NEW COIN ''YOU MISSED BITCHES''????\\n\\nCHEKC IT OUT: https://t.co/i5Cb2iADtp https://t.co/eHSThU9B4t\",\"display_text_range\":[0,94],\"facets\":[{\"type\":\"url\",\"indices\":[71,94],\"original\":\"https://t.co/i5Cb2iADtp\",\"replacement\":\"https://youtu.be/70K8WWdAkfo?t=4\",\"display\":\"youtu.be/70K8WWdAkfo?t=4\"},{\"type\":\"media\",\"indices\":[95,118],\"id\":\"2113707397281660928\",\"display\":\"pic.x.com/eHSThU9B4t\",\"original\":\"https://t.co/eHSThU9B4t\",\"replacement\":\"https://x.com/zumpsol/status/2113707399198503265/photo/1\"}]},\"author\":{\"screen_name\":\"zumpsol\",\"url\":\"https://x.com/zumpsol\",\"id\":\"2035132133602402304\",\"followers\":357,\"following\":5,\"likes\":191,\"media_count\":286,\"name\":\"zump\",\"description\":\"nop\",\"raw_description\":{\"text\":\"nop\",\"facets\":[]},\"location\":\"\",\"banner_url\":\"\",\"avatar_url\":\"https://pbs.twimg.com/profile_images/2053633043068280832/DN1ygFwO_200x200.jpg\",\"joined\":\"Fri Mar 20 23:11:34 +0000 2026\",\"protected\":false,\"website\":null,\"verification\":{\"verified\":false,\"verified_at\":null,\"type\":null},\"avatar_color\":null},\"replies\":51,\"retweets\":19,\"likes\":127,\"bookmarks\":2,\"quotes\":21,\"created_at\":\"Fri Oct 23 19:01:29 +0000 2026\",\"created_timestamp\":1792782089,\"possibly_sensitive\":false,\"views\":28007,\"is_note_tweet\":false,\"community_note\":null,\"lang\":\"en\",\"replying_to\":null,\"replying_to_status\":null,\"media\":{\"all\":[{\"type\":\"photo\",\"id\":\"2113707397281660928\",\"url\":\"https://pbs.twimg.com/media/HVVlrc4WwAAs9j6.jpg?name=orig\",\"width\":361,\"height\":227}],\"photos\":[{\"type\":\"photo\",\"id\":\"2113707397281660928\",\"url\":\"https://pbs"
+  },
+  "A4cAN66ZhtTWwku6A2941RZgR64tTSV93rcyVoQkyqnF|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"Tweet\",\"favorite_count\":127,\"lang\":\"en\",\"possibly_sensitive\":false,\"created_at\":\"2026-10-23T19:01:29.000Z\",\"display_text_range\":[0,94],\"entities\":{\"media\":[{\"display_url\":\"pic.x.com/eHSThU9B4t\",\"expanded_url\":\"https://x.com/zumpsol/status/2113707399198503265/photo/1\",\"indices\":[95,118],\"url\":\"https://t.co/eHSThU9B4t\"}],\"urls\":[{\"display_url\":\"youtu.be/70K8WWdAkfo?t=4\",\"expanded_url\":\"https://youtu.be/70K8WWdAkfo?t=4\",\"indices\":[71,94],\"url\":\"https://t.co/i5Cb2iADtp\"}]},\"id_str\":\"2113707399198503265\",\"text\":\"TRUMP JUST SHOWED A NEW COIN ''YOU MISSED BITCHES''????\\n\\nCHEKC IT OUT: https://t.co/i5Cb2iADtp https://t.co/eHSThU9B4t\",\"user\":{\"id_str\":\"2035132133602402304\",\"name\":\"zump\",\"screen_name\":\"zumpsol\",\"is_blue_verified\":false,\"profile_image_shape\":\"Circle\",\"verified\":false,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/2053633043068280832/DN1ygFwO_normal.jpg\"},\"edit_control\":{\"edit_tweet_ids\":[\"2113707399198503265\"],\"editable_until_msecs\":\"1792785689000\",\"edits_remaining\":\"5\",\"is_edit_eligible\":true},\"mediaDetails\":[{\"display_url\":\"pic.x.com/eHSThU9B4t\",\"expanded_url\":\"https://x.com/zumpsol/status/2113707399198503265/photo/1\",\"ext_media_availability\":{\"status\":\"Available\"},\"indices\":[95,118],\"media_url_https\":\"https://pbs.twimg.com/media/HVVlrc4WwAAs9j6.jpg\",\"original_info\":{\"focus_rects\":[{\"h\":202,\"w\":361,\"x\":0,\"y\":0},{\"h\":227,\"w\":227,\"x\":134,\"y\":0},{\"h\":227,\"w\":199,\"x\":162,\"y\":0},{\"h\":227,\"w\":114,\"x\":247,\"y\":0},{\"h\":227,\"w\":361,\"x\":0,\"y\":0}],\"height\":227,\"width\":361},\"sizes\":{\"large\":{\"h\":227,\"resize\":\"fit\",\"w\":361},\"medium\":{\"h\":227,\"resize\":\"fit\",\"w\":361},\"small\":{\"h\":227,\"resize\":\"fit\",\"w\":361},\"thumb\":{\"h\":150,\"resize\":\"crop\",\"w\":150}},\"type\":\"photo\",\"url\":\"https://t.co/eHSThU9B4t\"}],\"photos\":[{\"backgroundColor\":{\"red\":204,\"green\":"
+  },
+  "CuXZEv9fv2koW8fBdk4xsHbNRVixp3jJfJ6jEcDz8CXs|fx": {
+   "status": 200,
+   "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/findingarunner/status/2113730312433811796\",\"id\":\"2113730312433811796\",\"text\":\"This baby is going super viral for being born with a Moustache.\\n\\nit can be meme'd endlessly and even a pfp cult.\\n\\nthe name bebe bigote will make no sense to most people. \\\"Moustache baby\\\" is better\\nhttps://x.com/ecuadoraldia365/status/2113625271962354079?s=20\",\"raw_text\":{\"text\":\"This baby is going super viral for being born with a Moustache.\\n\\nit can be meme'd endlessly and even a pfp cult.\\n\\nthe name bebe bigote will make no sense to most people. \\\"Moustache baby\\\" is better\\nhttps://t.co/DZLRaKRUAh\",\"display_text_range\":[0,220],\"facets\":[{\"type\":\"url\",\"indices\":[197,220],\"original\":\"https://t.co/DZLRaKRUAh\",\"replacement\":\"https://x.com/ecuadoraldia365/status/2113625271962354079?s=20\",\"display\":\"x.com/ecuadoraldia36…\"}]},\"author\":{\"screen_name\":\"findingarunner\",\"url\":\"https://x.com/findingarunner\",\"id\":\"2081123633838145536\",\"followers\":76,\"following\":8,\"likes\":20,\"media_count\":6,\"name\":\"figaru\",\"description\":\"\",\"raw_description\":{\"text\":\"\",\"facets\":[]},\"location\":\"\",\"banner_url\":\"\",\"avatar_url\":\"https://pbs.twimg.com/profile_images/2081124545058963456/9fH1cLrg_200x200.jpg\",\"joined\":\"Sat Jul 25 21:07:11 +0000 2026\",\"protected\":false,\"website\":null,\"verification\":{\"verified\":false,\"verified_at\":null,\"type\":null},\"avatar_color\":null},\"replies\":71,\"retweets\":46,\"likes\":223,\"bookmarks\":15,\"quotes\":22,\"created_at\":\"Fri Oct 23 20:32:32 +0000 2026\",\"created_timestamp\":1792787552,\"possibly_sensitive\":false,\"views\":26484,\"is_note_tweet\":false,\"community_note\":null,\"lang\":\"en\",\"replying_to\":null,\"replying_to_status\":null,\"quote\":{\"url\":\"https://x.com/ecuadoraldia365/status/2113625271962354079\",\"id\":\"2113625271962354079\",\"text\":\"Un video d"
+  },
+  "CuXZEv9fv2koW8fBdk4xsHbNRVixp3jJfJ6jEcDz8CXs|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"Tweet\",\"favorite_count\":223,\"lang\":\"en\",\"possibly_sensitive\":false,\"created_at\":\"2026-10-23T20:32:32.000Z\",\"display_text_range\":[0,220],\"entities\":{\"urls\":[{\"display_url\":\"x.com/ecuadoraldia36…\",\"expanded_url\":\"https://x.com/ecuadoraldia365/status/2113625271962354079?s=20\",\"indices\":[197,220],\"url\":\"https://t.co/DZLRaKRUAh\"}]},\"id_str\":\"2113730312433811796\",\"text\":\"This baby is going super viral for being born with a Moustache.\\n\\nit can be meme'd endlessly and even a pfp cult.\\n\\nthe name bebe bigote will make no sense to most people. \\\"Moustache baby\\\" is better\\nhttps://t.co/DZLRaKRUAh\",\"user\":{\"id_str\":\"2081123633838145536\",\"name\":\"figaru\",\"screen_name\":\"findingarunner\",\"is_blue_verified\":false,\"profile_image_shape\":\"Circle\",\"verified\":false,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/2081124545058963456/9fH1cLrg_normal.jpg\"},\"edit_control\":{\"edit_tweet_ids\":[\"2113730312433811796\"],\"editable_until_msecs\":\"1792791152000\",\"edits_remaining\":\"5\",\"is_edit_eligible\":true},\"conversation_count\":71,\"news_action_type\":\"conversation\",\"quoted_tweet\":{\"favorite_count\":10371,\"lang\":\"es\",\"possibly_sensitive\":false,\"reply_count\":1694,\"retweet_count\":1172,\"created_at\":\"2026-10-23T13:35:08.000Z\",\"display_text_range\":[0,168],\"entities\":{\"media\":[{\"display_url\":\"pic.x.com/lEf5vwZ0cw\",\"expanded_url\":\"https://x.com/ecuadoraldia365/status/2113625271962354079/video/1\",\"indices\":[169,192],\"url\":\"https://t.co/lEf5vwZ0cw\"}]},\"id_str\":\"2113625271962354079\",\"text\":\"Un video de un bebé con vello facial se ha vuelto viral, generando miles de reacciones. Los expertos recuerdan que cada caso debe evaluarse con un profesional de salud. https://t.co/lEf5vwZ0cw\",\"user\":{\"id_str\":\"235625906\",\"name\":\"Ecuador Al Día 365\",\"screen_name\":\"ecuadoraldia365\",\"is_blue_verified"
+  },
+  "8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump|fx": {
+   "status": 200,
+   "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/imBilngineer/status/2113353187541545094\",\"id\":\"2113353187541545094\",\"text\":\"WTF. McDonald's director just confirmed the McRib is back AND mentioned crypto??\\n\\nthe McRib Bull Market Indicator is real, there's literally a TradingView script for it\\n\\nthis is good asf, pair it to McDonald's and BTC\\n\\nhttps://www.tradingview.com/script/nukhKiLN-McRib-Bull-Market-Indicator/\",\"raw_text\":{\"text\":\"WTF. McDonald's director just confirmed the McRib is back AND mentioned crypto??\\n\\nthe McRib Bull Market Indicator is real, there's literally a TradingView script for it\\n\\nthis is good asf, pair it to McDonald's and BTC\\n\\nhttps://t.co/8Te6CHJ4xH https://t.co/rpyEkuCX4O\",\"display_text_range\":[0,242],\"facets\":[{\"type\":\"url\",\"indices\":[219,242],\"original\":\"https://t.co/8Te6CHJ4xH\",\"replacement\":\"https://www.tradingview.com/script/nukhKiLN-McRib-Bull-Market-Indicator/\",\"display\":\"tradingview.com/script/nukhKiL…\"},{\"type\":\"media\",\"indices\":[243,266],\"id\":\"2113353179471413248\",\"display\":\"pic.x.com/rpyEkuCX4O\",\"original\":\"https://t.co/rpyEkuCX4O\",\"replacement\":\"https://x.com/imBilngineer/status/2113353187541545094/photo/1\"}]},\"author\":{\"screen_name\":\"imBilngineer\",\"url\":\"https://x.com/imBilngineer\",\"id\":\"1890426406837895168\",\"followers\":10148,\"following\":438,\"likes\":26151,\"media_count\":943,\"name\":\"Bilngineer\",\"description\":\"Memecoins Engineer\",\"raw_description\":{\"text\":\"Memecoins Engineer\",\"facets\":[]},\"location\":\"\",\"banner_url\":\"https://pbs.twimg.com/profile_banners/1890426406837895168/1788541539\",\"avatar_url\":\"https://pbs.twimg.com/profile_images/2095920988341014528/ad2nxTRE_200x200.jpg\",\"joined\":\"Fri Feb 14 15:42:40 +0000 2025\",\"protected\":false,\"website\":{\"url\":\"https://t.me/BuildersPlan\",\"display_url\":\"t.me/BuildersPlan\"},\"ve"
+  },
+  "8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"Tweet\",\"favorite_count\":223,\"lang\":\"en\",\"possibly_sensitive\":false,\"created_at\":\"2026-10-22T19:33:58.000Z\",\"display_text_range\":[0,242],\"entities\":{\"media\":[{\"display_url\":\"pic.x.com/rpyEkuCX4O\",\"expanded_url\":\"https://x.com/imBilngineer/status/2113353187541545094/photo/1\",\"indices\":[243,266],\"url\":\"https://t.co/rpyEkuCX4O\"}],\"urls\":[{\"display_url\":\"tradingview.com/script/nukhKiL…\",\"expanded_url\":\"https://www.tradingview.com/script/nukhKiLN-McRib-Bull-Market-Indicator/\",\"indices\":[219,242],\"url\":\"https://t.co/8Te6CHJ4xH\"}]},\"id_str\":\"2113353187541545094\",\"text\":\"WTF. McDonald's director just confirmed the McRib is back AND mentioned crypto??\\n\\nthe McRib Bull Market Indicator is real, there's literally a TradingView script for it\\n\\nthis is good asf, pair it to McDonald's and BTC\\n\\nhttps://t.co/8Te6CHJ4xH https://t.co/rpyEkuCX4O\",\"user\":{\"id_str\":\"1890426406837895168\",\"name\":\"Bilngineer\",\"screen_name\":\"imBilngineer\",\"is_blue_verified\":true,\"profile_image_shape\":\"Circle\",\"verified\":false,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/2095920988341014528/ad2nxTRE_normal.jpg\"},\"edit_control\":{\"edit_tweet_ids\":[\"2113353187541545094\"],\"editable_until_msecs\":\"1792701238000\",\"edits_remaining\":\"5\",\"is_edit_eligible\":false},\"mediaDetails\":[{\"display_url\":\"pic.x.com/rpyEkuCX4O\",\"expanded_url\":\"https://x.com/imBilngineer/status/2113353187541545094/photo/1\",\"ext_media_availability\":{\"status\":\"Available\"},\"indices\":[243,266],\"media_url_https\":\"https://pbs.twimg.com/media/HVQjhQtWAAAS0-J.png\",\"original_info\":{\"focus_rects\":[{\"h\":842,\"w\":1504,\"x\":122,\"y\":0},{\"h\":842,\"w\":842,\"x\":453,\"y\":0},{\"h\":842,\"w\":739,\"x\":505,\"y\":0},{\"h\":842,\"w\":421,\"x\":664,\"y\":0},{\"h\":842,\"w\":1749,\"x\":0,\"y\":0}],\"height\":842,\"width\":1749},\"sizes\":{\"large\":{\"h\":842,\"resize\":\"fit\",\"w"
+  },
+  "9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump|fx": {
+   "status": 200,
+   "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/CoachPatNFT/status/2113800981783720003\",\"id\":\"2113800981783720003\",\"text\":\"This graphic of privacy coins outperforming memecoins is going viral.\\n\\nWhy not run Privacy Coin paired with a basket of all the largest privacy tokens?\",\"raw_text\":{\"text\":\"This graphic of privacy coins outperforming memecoins is going viral.\\n\\nWhy not run Privacy Coin paired with a basket of all the largest privacy tokens? https://t.co/n9H6GWVDjM\",\"display_text_range\":[0,151],\"facets\":[{\"type\":\"media\",\"indices\":[152,175],\"id\":\"2113800980177297408\",\"display\":\"pic.x.com/n9H6GWVDjM\",\"original\":\"https://t.co/n9H6GWVDjM\",\"replacement\":\"https://x.com/CoachPatNFT/status/2113800981783720003/photo/1\"},{\"type\":\"media\",\"indices\":[152,175],\"id\":\"2113800980537942016\",\"display\":\"pic.x.com/n9H6GWVDjM\",\"original\":\"https://t.co/n9H6GWVDjM\",\"replacement\":\"https://x.com/CoachPatNFT/status/2113800981783720003/photo/1\"}]},\"author\":{\"screen_name\":\"CoachPatNFT\",\"url\":\"https://x.com/CoachPatNFT\",\"id\":\"1391251189690511364\",\"followers\":3946,\"following\":604,\"likes\":2137,\"media_count\":418,\"name\":\"Coachpat.sol\",\"description\":\"I don't Paint Pictures, I Picture Paint \\nhttps://t.me/CoachPatsPlays\",\"raw_description\":{\"text\":\"I don't Paint Pictures, I Picture Paint \\nhttps://t.co/3ILCwjKGwh\",\"facets\":[{\"type\":\"url\",\"indices\":[41,64],\"original\":\"https://t.co/3ILCwjKGwh\",\"replacement\":\"https://t.me/CoachPatsPlays\",\"display\":\"t.me/CoachPatsPlays\"}]},\"location\":\"\",\"banner_url\":\"https://pbs.twimg.com/profile_banners/1391251189690511364/1648119527\",\"avatar_url\":\"https://pbs.twimg.com/profile_images/1859456412977418240/yZN5NyDH_200x200.jpg\",\"joined\":\"Sun May 09 04:38:35 +0000 2021\",\"protected\":false,\"website\":{\"url\":\"https://t.me/CoachPatsPlays\",\"display_url\":\"t.me/CoachPatsP"
+  },
+  "9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"Tweet\",\"favorite_count\":73,\"lang\":\"en\",\"possibly_sensitive\":false,\"created_at\":\"2026-10-24T01:13:21.000Z\",\"display_text_range\":[0,151],\"entities\":{\"media\":[{\"display_url\":\"pic.x.com/n9H6GWVDjM\",\"expanded_url\":\"https://x.com/CoachPatNFT/status/2113800981783720003/photo/1\",\"indices\":[152,175],\"url\":\"https://t.co/n9H6GWVDjM\"}]},\"id_str\":\"2113800981783720003\",\"text\":\"This graphic of privacy coins outperforming memecoins is going viral.\\n\\nWhy not run Privacy Coin paired with a basket of all the largest privacy tokens? https://t.co/n9H6GWVDjM\",\"user\":{\"id_str\":\"1391251189690511364\",\"name\":\"Coachpat.sol\",\"screen_name\":\"CoachPatNFT\",\"is_blue_verified\":true,\"profile_image_shape\":\"Circle\",\"verified\":false,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/1859456412977418240/yZN5NyDH_normal.jpg\"},\"edit_control\":{\"edit_tweet_ids\":[\"2113800981783720003\"],\"editable_until_msecs\":\"1792808001000\",\"edits_remaining\":\"5\",\"is_edit_eligible\":false},\"mediaDetails\":[{\"display_url\":\"pic.x.com/n9H6GWVDjM\",\"expanded_url\":\"https://x.com/CoachPatNFT/status/2113800981783720003/photo/1\",\"ext_media_availability\":{\"status\":\"Available\"},\"indices\":[152,175],\"media_url_https\":\"https://pbs.twimg.com/media/HVW6ysVXIAAJ0Im.png\",\"original_info\":{\"focus_rects\":[{\"h\":283,\"w\":505,\"x\":0,\"y\":0},{\"h\":283,\"w\":283,\"x\":0,\"y\":0},{\"h\":283,\"w\":248,\"x\":0,\"y\":0},{\"h\":283,\"w\":142,\"x\":0,\"y\":0},{\"h\":283,\"w\":530,\"x\":0,\"y\":0}],\"height\":283,\"width\":530},\"sizes\":{\"large\":{\"h\":283,\"resize\":\"fit\",\"w\":530},\"medium\":{\"h\":283,\"resize\":\"fit\",\"w\":530},\"small\":{\"h\":283,\"resize\":\"fit\",\"w\":530},\"thumb\":{\"h\":150,\"resize\":\"crop\",\"w\":150}},\"type\":\"photo\",\"url\":\"https://t.co/n9H6GWVDjM\"},{\"display_url\":\"pic.x.com/n9H6GWVDjM\",\"expanded_url\":\"https://x.com/CoachPatNFT/status/2113800981783720003/photo/1\",\"ext_media_a"
+  },
+  "Jd5JX9snSJP1ikWLyriRUpwizof8u3BJP26bvs9quaS|fx": {
+   "status": 200,
+   "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/uncquant/status/2113831195284808001\",\"id\":\"2113831195284808001\",\"text\":\"Blind ape dis hoe..\\n\\nMoon dat!\",\"raw_text\":{\"text\":\"Blind ape dis hoe..\\n\\nMoon dat! https://t.co/Y9GIztyJiy\",\"display_text_range\":[0,30],\"facets\":[{\"type\":\"media\",\"indices\":[31,54],\"id\":\"2113831142411431937\",\"display\":\"pic.x.com/Y9GIztyJiy\",\"original\":\"https://t.co/Y9GIztyJiy\",\"replacement\":\"https://x.com/uncquant/status/2113831195284808001/photo/1\"}]},\"author\":{\"screen_name\":\"uncquant\",\"url\":\"https://x.com/uncquant\",\"id\":\"1868802535194279936\",\"followers\":614,\"following\":8,\"likes\":722,\"media_count\":289,\"name\":\"Uncquant\",\"description\":\"Wife says this is funny money..\",\"raw_description\":{\"text\":\"Wife says this is funny money..\",\"facets\":[]},\"location\":\"\",\"banner_url\":\"https://pbs.twimg.com/profile_banners/1868802535194279936/1788412950\",\"avatar_url\":\"https://pbs.twimg.com/profile_images/2095379254620114944/rZwBMYAM_200x200.jpg\",\"joined\":\"Mon Dec 16 23:37:06 +0000 2024\",\"protected\":false,\"website\":null,\"verification\":{\"verified\":true,\"verified_at\":null,\"type\":\"individual\"},\"avatar_color\":null},\"replies\":46,\"retweets\":49,\"likes\":165,\"bookmarks\":6,\"quotes\":13,\"created_at\":\"Sat Oct 24 03:13:24 +0000 2026\",\"created_timestamp\":1792811604,\"possibly_sensitive\":false,\"views\":16638,\"is_note_tweet\":false,\"community_note\":null,\"lang\":\"nl\",\"replying_to\":null,\"replying_to_status\":null,\"media\":{\"all\":[{\"type\":\"photo\",\"id\":\"2113831142411431937\",\"url\":\"https://pbs.twimg.com/media/HVXWOXaXcAEiOA4.jpg?name=orig\",\"width\":1254,\"height\":1254}],\"photos\":[{\"type\":\"photo\",\"id\":\"2113831142411431937\",\"url\":\"https://pbs.twimg.com/media/HVXWOXaXcAEiOA4.jpg?name=orig\",\"width\":1254,\"height\":1254}]},\"twitter_card\":\"summary_large_image\",\"color\":null,\"provider\":\"twitter\",\"rep"
+  },
+  "Jd5JX9snSJP1ikWLyriRUpwizof8u3BJP26bvs9quaS|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"Tweet\",\"favorite_count\":165,\"lang\":\"nl\",\"possibly_sensitive\":false,\"created_at\":\"2026-10-24T03:13:24.000Z\",\"display_text_range\":[0,30],\"entities\":{\"media\":[{\"display_url\":\"pic.x.com/Y9GIztyJiy\",\"expanded_url\":\"https://x.com/uncquant/status/2113831195284808001/photo/1\",\"indices\":[31,54],\"url\":\"https://t.co/Y9GIztyJiy\"}]},\"id_str\":\"2113831195284808001\",\"text\":\"Blind ape dis hoe..\\n\\nMoon dat! https://t.co/Y9GIztyJiy\",\"user\":{\"id_str\":\"1868802535194279936\",\"name\":\"Uncquant\",\"screen_name\":\"uncquant\",\"is_blue_verified\":true,\"profile_image_shape\":\"Circle\",\"verified\":false,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/2095379254620114944/rZwBMYAM_normal.jpg\"},\"edit_control\":{\"edit_tweet_ids\":[\"2113831195284808001\"],\"editable_until_msecs\":\"1792815204000\",\"edits_remaining\":\"5\",\"is_edit_eligible\":false},\"mediaDetails\":[{\"display_url\":\"pic.x.com/Y9GIztyJiy\",\"expanded_url\":\"https://x.com/uncquant/status/2113831195284808001/photo/1\",\"ext_media_availability\":{\"status\":\"Available\"},\"indices\":[31,54],\"media_url_https\":\"https://pbs.twimg.com/media/HVXWOXaXcAEiOA4.jpg\",\"original_info\":{\"focus_rects\":[{\"h\":702,\"w\":1254,\"x\":0,\"y\":0},{\"h\":1254,\"w\":1254,\"x\":0,\"y\":0},{\"h\":1254,\"w\":1100,\"x\":108,\"y\":0},{\"h\":1254,\"w\":627,\"x\":345,\"y\":0},{\"h\":1254,\"w\":1254,\"x\":0,\"y\":0}],\"height\":1254,\"width\":1254},\"sizes\":{\"large\":{\"h\":1254,\"resize\":\"fit\",\"w\":1254},\"medium\":{\"h\":1200,\"resize\":\"fit\",\"w\":1200},\"small\":{\"h\":680,\"resize\":\"fit\",\"w\":680},\"thumb\":{\"h\":150,\"resize\":\"crop\",\"w\":150}},\"type\":\"photo\",\"url\":\"https://t.co/Y9GIztyJiy\"}],\"photos\":[{\"backgroundColor\":{\"red\":204,\"green\":214,\"blue\":221},\"cropCandidates\":[{\"h\":702,\"w\":1254,\"x\":0,\"y\":0},{\"h\":1254,\"w\":1254,\"x\":0,\"y\":0},{\"h\":1254,\"w\":1100,\"x\":108,\"y\":0},{\"h\":1254,\"w\":627,\"x\":345,\"y\":0},{\"h\":1254,\"w\":1254,\"x\":0,\"y\":0}],\"e"
+  },
+  "6XGsE9BC6ao712UMnQHs5RBooRGfugkioYoG8cSrPqs|fx": {
+   "status": 404,
+   "body": "{\"code\":404,\"message\":\"NOT_FOUND\",\"tweet\":null}"
+  },
+  "6XGsE9BC6ao712UMnQHs5RBooRGfugkioYoG8cSrPqs|syn": {
+   "status": 200,
+   "body": "{\"__typename\":\"TweetTombstone\",\"tombstone\":{\"text\":{\"entities\":[{\"from_index\":42,\"ref\":{\"__typename\":\"TimelineUrl\",\"url\":\"https://help.x.com/rules-and-policies/notices-on-x\",\"url_type\":\"ExternalUrl\"},\"to_index\":52}],\"rtl\":false,\"text\":\"This Post was deleted by the Post author. Learn more\"}}}"
+  }
+ },
+ "errors": [],
+ "stats": {
+  "coins": 64,
+  "dex_twitter": 32,
+  "meta_twitter": 10,
+  "meta_uri_ok": 15,
+  "status_links": 13
+ }
+}
