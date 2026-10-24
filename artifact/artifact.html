@@ -656,7 +656,14 @@ refresh();
 goOnline();
 // Charge coins.json s’il existe (créé par fetch-coins.mjs), sinon garde les coins de démo.
 const local=/^(localhost|127\.)|github\.io$/.test(location.hostname);
-fetch("coins.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(Array.isArray(d)){const ok=d.filter(k=>!isRug(k.ch));if(ok.length>=ROUNDS)COINS=ok}}).catch(()=>{}).then(()=>fetch("coins-img.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")IMGMAP=m}).catch(()=>{}))
-.then(()=>fetch("coins-i18n.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")DESC=m}).catch(()=>{}))
-.then(()=>fetch("ca-map.json"+(local?"?v="+Date.now():"")).then(r=>r.ok?r.json():{}).then(m=>{if(m&&typeof m==="object")CAMAP=m}).catch(()=>{})).finally(()=>start("casual"));
+// Les données viennent du dossier du jeu ; à défaut (copie locale sans données), directement de GitHub.
+const GH="https://raw.githubusercontent.com/devgglatube/devine-ath/main/";
+const bust=local?"?v="+Date.now():"";
+const getJ=(f,gh)=>fetch(f+bust).then(r=>r.ok?r.json():Promise.reject()).catch(()=>fetch(GH+gh+"?v="+Math.floor(Date.now()/600000)).then(r=>r.ok?r.json():Promise.reject())).catch(()=>null);
+Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coins-img.json"),getJ("coins-i18n.json","artifact/coins-i18n.json"),getJ("ca-map.json","artifact/ca-map.json")]).then(([d,im,ds,ca])=>{
+  if(Array.isArray(d)){const ok=d.filter(k=>!isRug(k.ch));if(ok.length>=ROUNDS)COINS=ok}
+  if(im&&typeof im==="object")IMGMAP=im;
+  if(ds&&typeof ds==="object")DESC=ds;
+  if(ca&&typeof ca==="object")CAMAP=ca;
+}).finally(()=>start("casual"));
 </script>
