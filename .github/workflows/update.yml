@@ -10,6 +10,7 @@ on:
       - "images.mjs"
       - "pairs.mjs"
       - "fees.mjs"
+      - "tweets.mjs"
 permissions:
   contents: write
 concurrency:
@@ -18,7 +19,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,11 +44,13 @@ jobs:
         run: timeout 5m node pairs.mjs || true
       - name: Lire le partage des fees (blockchain)
         run: timeout 5m node fees.mjs || true
+      - name: Chercher les tweets des coins
+        run: timeout 8m node tweets.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
           git config user.email "coins-bot@users.noreply.github.com"
-          git add coins.json artifact/coins-img.json
+          git add coins.json artifact/coins-img.json artifact/tweets.json
           if git diff --cached --quiet; then echo "rien de nouveau"; exit 0; fi
           git commit -m "Nouveaux coins"
           for i in 1 2 3 4; do
