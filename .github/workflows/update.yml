@@ -9,6 +9,7 @@ on:
       - "fetch-coins.mjs"
       - "images.mjs"
       - "pairs.mjs"
+      - "fees.mjs"
 permissions:
   contents: write
 concurrency:
@@ -30,6 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Installer les outils (images, blockchain)
+        run: npm install --no-save sharp@0.33.5 @solana/web3.js@1.98.0 || true
       - name: Chercher de nouveaux coins
         run: |
           N=$(node -e 'let n=0;try{n=require("./coins.json").length}catch(e){};console.log(Math.min(40,Math.max(20,Math.ceil(n/6)+2)))')
@@ -38,6 +41,8 @@ jobs:
         run: timeout 8m node images.mjs || true
       - name: Ajouter les paires de trading
         run: timeout 5m node pairs.mjs || true
+      - name: Lire le partage des fees (blockchain)
+        run: timeout 5m node fees.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
