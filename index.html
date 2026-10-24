@@ -93,7 +93,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-of
 
 @media (max-width:430px){.top{gap:5px}.logo{font-size:.92rem}.pill{padding:5px 8px;font-size:.74rem}.acct{padding:6px 8px;font-size:.72rem}.rt{gap:5px}}
 #rdy{text-align:center}#rdy p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
-.ca{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:8px 10px;margin:10px 0;min-width:0}.ca code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.78rem}.ca button{width:auto;flex:none;padding:6px 10px;font-size:.78rem;border-radius:10px}.ca a{flex:none;font-size:.78rem;color:var(--up);font-weight:700}
+.ca{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:8px 10px;margin:10px 0;min-width:0}.ca code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.78rem}.ca button{width:auto;flex:none;padding:6px 10px;font-size:.78rem;border-radius:10px}.prl{display:flex;flex-wrap:wrap;gap:4px 14px;min-width:0;flex:1}.ca a{flex:none;font-size:.78rem;color:var(--up);font-weight:700}
 .stat{background:var(--card2);border-radius:14px;padding:12px;font-size:.9rem;display:grid;gap:6px}.stat b{color:var(--up)}.stat svg{width:100%;height:46px}
 .code{background:var(--card2);border-radius:12px;padding:10px;font-size:.72rem;line-height:1.45;overflow-x:auto;white-space:pre;margin:6px 0;color:var(--ink)}
 .row2{display:flex;gap:8px}.row2 button{font-size:.85rem;padding:12px}.alt{background:var(--card2);color:var(--ink)}
@@ -209,6 +209,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
       <div class="verdict" id="msg"></div>
       <div class="pts" id="pts"></div>
       <div class="ca" id="ca" hidden><span class="k">CA</span><code id="cav"></code><button id="cac" class="alt" aria-label="Copier le CA">Copier</button><a id="cad" target="_blank" rel="noopener noreferrer">Dexscreener</a></div>
+      <div class="ca" id="pr" hidden><span class="k">Paires</span><span class="prl" id="prl"></span></div>
       <button id="next"></button>
     </div>
   </article>
@@ -278,7 +279,7 @@ en:{
 "Mise {0} pts ({1}) · 6 s par manche · 10 manches":"Stake {0} pts ({1}) · 6 s per round · 10 rounds","Il te faut {0} pts (gagne-en en classique)":"You need {0} pts (earn them in classic mode)",
 "Lecture seule : demande l’accès Contributeur pour apparaître au classement.":"Read-only: ask for Contributor access to appear on the leaderboard.","Connecté : ton score est en ligne.":"Signed in: your score is online.",
 "Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur).":"Sign-in isn’t possible here: open the game from your claude.ai account (shared link, Contributor access).",
-"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Leaving a ranked game loses your stake. Press again to confirm.","CA copié.":"CA copied.","Code copié.":"Code copied.","Dataset copié.":"Dataset copied.","Sélectionné : copie avec Ctrl/Cmd+C.":"Selected: copy with Ctrl/Cmd+C.",
+"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Leaving a ranked game loses your stake. Press again to confirm.","CA copié.":"CA copied.","Paires":"Pairs","Code copié.":"Code copied.","Dataset copié.":"Dataset copied.","Sélectionné : copie avec Ctrl/Cmd+C.":"Selected: copy with Ctrl/Cmd+C.",
 "Quasiment pile !":"Almost spot on!","Tu étais ×{0} trop haut":"You were ×{0} too high","Tu étais ×{0} trop bas":"You were ×{0} too low","Manche suivante":"Next round","Voir mon score":"See my score",
 "Tu sens le marché.":"You can feel the market.","Pas mal, tu es dans le bon ordre de grandeur.":"Not bad, you’re in the right ballpark.","Les memecoins restent imprévisibles. Retente ta chance.":"Memecoins stay unpredictable. Try again.",
 "Points gagnés":"Points earned","Nouveau rang : {0} !":"New rank: {0}!","Rang perdu : {0}":"Rank lost: {0}","Rejouer en ranked ({0} pts)":"Play ranked again ({0} pts)","Pas assez de points : mode classique":"Not enough points: classic mode",
@@ -309,7 +310,7 @@ es:{
 "Mise {0} pts ({1}) · 6 s par manche · 10 manches":"Apuesta {0} pts ({1}) · 6 s por ronda · 10 rondas","Il te faut {0} pts (gagne-en en classique)":"Necesitas {0} pts (gánalos en modo clásico)",
 "Lecture seule : demande l’accès Contributeur pour apparaître au classement.":"Solo lectura: pide acceso de Colaborador para aparecer en la clasificación.","Connecté : ton score est en ligne.":"Conectado: tu puntuación está en línea.",
 "Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur).":"No se puede iniciar sesión aquí: abre el juego desde tu cuenta de claude.ai (enlace compartido, acceso de Colaborador).",
-"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Abandonar una partida ranked pierde tu apuesta. Pulsa de nuevo para confirmar.","CA copié.":"CA copiado.","Code copié.":"Código copiado.","Dataset copié.":"Dataset copiado.","Sélectionné : copie avec Ctrl/Cmd+C.":"Seleccionado: copia con Ctrl/Cmd+C.",
+"Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Abandonar una partida ranked pierde tu apuesta. Pulsa de nuevo para confirmar.","CA copié.":"CA copiado.","Paires":"Pares","Code copié.":"Código copiado.","Dataset copié.":"Dataset copiado.","Sélectionné : copie avec Ctrl/Cmd+C.":"Seleccionado: copia con Ctrl/Cmd+C.",
 "Quasiment pile !":"¡Casi exacto!","Tu étais ×{0} trop haut":"Te pasaste ×{0}","Tu étais ×{0} trop bas":"Te quedaste ×{0} corto","Manche suivante":"Siguiente ronda","Voir mon score":"Ver mi puntuación",
 "Tu sens le marché.":"Sientes el mercado.","Pas mal, tu es dans le bon ordre de grandeur.":"Nada mal, estás en el orden de magnitud correcto.","Les memecoins restent imprévisibles. Retente ta chance.":"Los memecoins siguen siendo impredecibles. Inténtalo de nuevo.",
 "Points gagnés":"Puntos ganados","Nouveau rang : {0} !":"¡Nuevo rango: {0}!","Rang perdu : {0}":"Rango perdido: {0}","Rejouer en ranked ({0} pts)":"Jugar ranked otra vez ({0} pts)","Pas assez de points : mode classique":"Puntos insuficientes: modo clásico",
@@ -428,6 +429,8 @@ function isRug(ch){
 }
 const dec=t=>String(t==null?"":t).replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,"\"").replace(/&#39;/g,"'");
 const descOf=k=>{const m=DESC[k.t+"|"+k.n];return dec(m&&m[LANG]?m[LANG]:k.d||"")};
+const DEXN={pumpswap:"PumpSwap","pump-fun":"pump.fun",raydium:"Raydium",meteora:"Meteora",orca:"Orca",pumpfun:"pump.fun",fluxbeam:"FluxBeam"};
+const dexName=d=>DEXN[d]||String(d||"DEX").replace(/(^|-)(\w)/g,(m,x,y)=>(x?" ":"")+y.toUpperCase());
 const caOf=k=>k.id||CAMAP[k.t+"|"+k.n]||"";
 function validate(){
   if(busy)return;busy=true;stopTimer();
@@ -442,6 +445,8 @@ function validate(){
     $("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
     $("out").hidden=false;countUp($("pts"),pts,900,"+");
     const ca=caOf(k);$("ca").hidden=!ca;if(ca){$("cav").textContent=ca;$("cav").title=ca;$("cad").href="https://dexscreener.com/solana/"+ca;$("cac").onclick=()=>copyTxt(ca,T("CA copié."))}
+    const prs=Array.isArray(k.pr)?k.pr:[];$("pr").hidden=!prs.length;$("prl").textContent="";
+    prs.forEach(p=>{const a=document.createElement("a");a.target="_blank";a.rel="noopener noreferrer";a.href="https://dexscreener.com/solana/"+encodeURIComponent(p.a);a.textContent=(p.q||"?")+" · "+dexName(p.d);$("prl").appendChild(a)});
     meta();
     $("pg").style.width=((i+1)/deck.length*100)+"%";
   });
@@ -600,7 +605,7 @@ window.DevineBot={
     S.bot.games++;S.bot.hist.push(sc/10);S.bot.hist=S.bot.hist.slice(-200);save();if(!$("sh").hidden&&shown==="bot")drawBot();
     return {ath:k.ath,score:sc,percent:sc/10,ratio:guess/k.ath};
   },
-  dataset:()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l,ath:k.ath,ca:caOf(k)||null,chart:k.ch||null})),
+  dataset:()=>COINS.map((k,x)=>({id:x,name:k.n,ticker:k.t,description:k.d||"",holders:k.ho||null,chain:k.c,launch:k.l,ath:k.ath,ca:caOf(k)||null,pairs:k.pr||null,chart:k.ch||null})),
   stats:()=>({games:S.bot.games,avgPercent:S.bot.hist.length?S.bot.hist.reduce((a,b)=>a+b,0)/S.bot.hist.length:0})
 };
 const botCode=()=>T("// Exemple : un bot qui devine toujours 1 M$ puis apprend")+"\nconst c = DevineBot.next();\nconst guess = 1e6;            "+T("// à toi de faire mieux")+"\nconst r = DevineBot.answer(c.id, guess);\nconsole.log(c.name, r.score, r.percent + \" %\", \""+T("ATH réel :")+"\", r.ath);\n"+T("// DevineBot.dataset() : toutes les données avec l’ATH, pour entraîner")+"\n"+T("// DevineBot.stats()   : moyenne en % de tes bots");
