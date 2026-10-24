@@ -92,7 +92,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-of
 .acct.on{color:var(--up)}
 
 @media (max-width:430px){.top{gap:5px}.logo{font-size:.92rem}.pill{padding:5px 8px;font-size:.74rem}.acct{padding:6px 8px;font-size:.72rem}.rt{gap:5px}}
-#rdy{text-align:center}#rdy p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
+#rdy{text-align:center}#cnt{display:grid;gap:8px;margin:0 0 14px}#cnt b{font-size:1.6rem}#cnt input{width:100%}#rdy p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
 .ca{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:8px 10px;margin:10px 0;min-width:0}.ca code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.78rem}.ca button{width:auto;flex:none;padding:6px 10px;font-size:.78rem;border-radius:10px}.prl{display:flex;flex-wrap:wrap;gap:4px 14px;min-width:0;flex:1}.ca a{flex:none;font-size:.78rem;color:var(--up);font-weight:700}
 .stat{background:var(--card2);border-radius:14px;padding:12px;font-size:.9rem;display:grid;gap:6px}.stat b{color:var(--up)}.stat svg{width:100%;height:46px}
 .code{background:var(--card2);border-radius:12px;padding:10px;font-size:.72rem;line-height:1.45;overflow-x:auto;white-space:pre;margin:6px 0;color:var(--ink)}
@@ -240,7 +240,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
       <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
       <button id="ok">Valider ma prédiction</button>
     </div>
-    <div id="rdy" hidden><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
+    <div id="rdy" hidden><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><div id="cnt"><label for="cn" class="k">Nombre de coins à prédire</label><b id="cnv"></b><input type="range" id="cn" min="3" max="25" step="1" value="10" aria-label="Nombre de coins à prédire"></div><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
     <div id="out" hidden>
       <div class="cmp"><div><span class="k">Ta prédiction</span><b id="mg"></b></div><div><span class="k">ATH réel</span><b id="ma"></b></div></div>
       <div class="verdict" id="msg"></div>
@@ -305,7 +305,7 @@ en:{
 "devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
 "Classement et scores":"Leaderboard and scores","Rangs et profil":"Ranks and profile","Entraîner mon bot":"Train my bot","Données et API pour tes bots":"Data and API for your bots","Langue":"Language",
 "Chaîne":"Chain","Lancement":"Launch","Chart du market cap":"Market cap chart","Chart masqué":"Chart hidden","Ton ATH (market cap max)":"Your ATH (max market cap)","Prédiction du market cap maximum":"Maximum market cap guess",
-"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Classic mode: no time limit, the coin appears when you press.","Lancer la manche":"Start the round",
+"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Nombre de coins à prédire":"Number of coins to predict","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Classic mode: no time limit, the coin appears when you press.","Lancer la manche":"Start the round",
 "Lancer la manche {0}/{1}":"Start round {0}/{1}","Ta prédiction":"Your guess","ATH réel":"Real ATH","Copier le CA":"Copy the CA","Copier":"Copy","Score final":"Final score","Rejouer":"Play again",
 "Partager mon score":"Share my score","Texte à copier":"Text to copy","Fermer":"Close","Classement":"Leaderboard","Mes parties":"My games",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Your bot can play here to learn: it asks for a coin (without the ATH), answers with its guess, and gets the real ATH and its score. Bot games don’t count on the leaderboard.",
@@ -336,7 +336,7 @@ es:{
 "devine l’ATH":"adivina el ATH","Connexion":"Iniciar sesión","Connecté":"Conectado","Menu":"Menú","Mode classique":"Modo clásico","Gratuit · sans limite de temps":"Gratis · sin límite de tiempo","Mode ranked":"Modo ranked",
 "Classement et scores":"Clasificación y puntuaciones","Rangs et profil":"Rangos y perfil","Entraîner mon bot":"Entrenar mi bot","Données et API pour tes bots":"Datos y API para tus bots","Langue":"Idioma",
 "Chaîne":"Cadena","Lancement":"Lanzamiento","Chart du market cap":"Gráfico del market cap","Chart masqué":"Gráfico oculto","Ton ATH (market cap max)":"Tu ATH (market cap máx.)","Prédiction du market cap maximum":"Predicción del market cap máximo",
-"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Modo clásico: sin límite de tiempo, la moneda aparece cuando pulsas.","Lancer la manche":"Empezar la ronda",
+"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Nombre de coins à prédire":"Número de monedas a predecir","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Modo clásico: sin límite de tiempo, la moneda aparece cuando pulsas.","Lancer la manche":"Empezar la ronda",
 "Lancer la manche {0}/{1}":"Empezar la ronda {0}/{1}","Ta prédiction":"Tu predicción","ATH réel":"ATH real","Copier le CA":"Copiar el CA","Copier":"Copiar","Score final":"Puntuación final","Rejouer":"Jugar de nuevo",
 "Partager mon score":"Compartir mi puntuación","Texte à copier":"Texto para copiar","Fermer":"Cerrar","Classement":"Clasificación","Mes parties":"Mis partidas",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Tu bot puede jugar aquí para aprender: pide una moneda (sin el ATH), responde con su predicción y recibe el ATH real y su puntuación. Las partidas de bots no cuentan en la clasificación.",
@@ -391,21 +391,22 @@ function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout
 
 // ===== Tirage : pas de répétition, tailles de coins mélangées =====
 const seenKey=k=>k.t+"|"+k.n;
-function pick(){
+const casualN=()=>{let n=10;try{n=parseInt(localStorage.getItem("dath.n"))||10}catch(e){}return Math.max(3,Math.min(25,n))};
+function pick(n){n=n||ROUNDS;
   let seen=[];try{seen=JSON.parse(localStorage.getItem("dath.seen")||"[]")}catch(e){}
   let pool=COINS.filter(k=>!seen.includes(seenKey(k)));
-  if(pool.length<ROUNDS){seen=[];pool=[...COINS]}
+  if(pool.length<n){seen=[];pool=[...COINS]}
   const g={};
   pool.sort(()=>Math.random()-.5).forEach(k=>{const b=k.b==null?"x":k.b;(g[b]=g[b]||[]).push(k)});
   const keys=Object.keys(g).sort(()=>Math.random()-.5),out=[];
-  while(out.length<ROUNDS&&keys.some(b=>g[b].length))for(const b of keys){if(g[b].length&&out.length<ROUNDS)out.push(g[b].pop())}
+  while(out.length<n&&keys.some(b=>g[b].length))for(const b of keys){if(g[b].length&&out.length<n)out.push(g[b].pop())}
   out.sort(()=>Math.random()-.5);
   try{localStorage.setItem("dath.seen",JSON.stringify(seen.concat(out.map(seenKey)).slice(-200)))}catch(e){}
   return out;
 }
 function start(m){
   mode=m||"casual";sheet(0);gen++;navOn();
-  deck=pick();
+  deck=pick(mode==="ranked"?ROUNDS:casualN());
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
 function fillInfo(k){
@@ -431,6 +432,7 @@ function show(){
   $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
   $("out").hidden=true;$("s").value=500;upd();
   $("cc").hidden=true;$("input").hidden=true;$("rdy").hidden=false;$("tm").hidden=true;
+  $("cnt").hidden=!(mode!=="ranked"&&i===0);if(!$("cnt").hidden){$("cn").value=deck.length;$("cnv").textContent=deck.length}
   $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode==="ranked";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
 }
 function upd(){$("g").textContent=fmt(val())}
@@ -674,7 +676,7 @@ function launch(m){
   start(m);
 }
 function settle(){
-  const p=total/(deck.length*1000),gp=Math.round(p*(mode==="ranked"?(stake||200)*1.5:500));
+  const p=total/(deck.length*1000),gp=Math.round(p*(mode==="ranked"?(stake||200)*1.5:deck.length*50));
   let h="<div>"+T("Points gagnés")+" <b class='pos'>+"+gp+" pts</b></div>";S.pts+=gp;
   S.games=(S.games||0)+1;const sc=Math.round(p*5000);if(mode==="ranked"&&sc>(S.best||0))S.best=sc;
   if(mode==="ranked"){
@@ -763,6 +765,8 @@ function drawRanks(){
 const openMenu=()=>{};
 $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
+$("cn").addEventListener("input",()=>{const n=+$("cn").value;$("cnv").textContent=n;try{localStorage.setItem("dath.n",String(n))}catch(e){}
+  if(mode!=="ranked"&&i===0&&!busy){deck=pick(n);show()}});
 $("go").addEventListener("click",()=>{if(busy)return;
   if(mode==="ranked"&&!paid){if(S.pts<stake){toast(T("Il te faut {0} pts (gagne-en en classique)",stake));return}paid=true;S.pts-=stake;save();refresh();push()}
   $("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}});
