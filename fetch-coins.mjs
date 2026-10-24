@@ -94,12 +94,17 @@ async function get(path, retry = 2) {
 async function discover() {
   const paths = [];
   const smallNeeded = need()[0] > 0 || need()[1] > 0;
-  const fresh = [];
-  for (let p = 1; p <= 10; p++) fresh.push(`/networks/solana/new_pools?page=${p}`);
-  const vol = [];
-  for (let p = 1; p <= 6; p++) vol.push(`/networks/solana/pools?sort=h24_volume_usd_desc&page=${p}`);
-  const trend = [1, 2].map((p) => `/networks/solana/trending_pools?page=${p}`);
-  paths.push(...(smallNeeded ? [...fresh, ...trend, ...vol] : [...vol, ...trend, ...fresh]));
+  // Les "nouveaux pools" ont moins d'1 h : pas assez d'historique. On préfère les pools pump.fun / PumpSwap
+  // déjà vieux de quelques heures (beaucoup ont un ATH de 10 à 50 K$), puis les plus actifs.
+  const pages = (f, n) => Array.from({ length: n }, (_, i) => f(i + 1));
+  const small = [
+    ...pages((p) => `/networks/solana/dexes/pump-fun/pools?page=${p}`, 10),
+    ...pages((p) => `/networks/solana/dexes/pumpswap/pools?page=${p}`, 10),
+    ...pages((p) => `/networks/solana/pools?sort=h24_tx_count_desc&page=${p}`, 5),
+  ];
+  const vol = pages((p) => `/networks/solana/pools?sort=h24_volume_usd_desc&page=${p}`, 6);
+  const trend = pages((p) => `/networks/solana/trending_pools?duration=24h&page=${p}`, 3);
+  paths.push(...(smallNeeded ? [...small, ...trend, ...vol] : [...vol, ...trend, ...small]));
   const seen = new Set();
   const found = [];
   let failures = 0;
@@ -113,6 +118,7 @@ async function discover() {
         const fdv = Number(a.fdv_usd);
         if (SKIP.has(symbol.toUpperCase()) || seen.has(address)) continue;
         if (!(fdv > 0 && fdv < 1.5e8) || !(Number(a.base_token_price_usd) > 0)) continue;
+        if (Date.now() - new Date(a.pool_created_at) < 36e5) continue; // moins d'1 h : historique trop court
         seen.add(address);
         found.push({ address, pool: a, fdv });
       }
