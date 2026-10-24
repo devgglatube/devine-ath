@@ -8,6 +8,7 @@ on:
       - ".github/workflows/update.yml"
       - "fetch-coins.mjs"
       - "images.mjs"
+      - "pairs.mjs"
 permissions:
   contents: write
 concurrency:
@@ -35,6 +36,8 @@ jobs:
           timeout 20m node fetch-coins.mjs $N || true
       - name: Télécharger les logos
         run: timeout 8m node images.mjs || true
+      - name: Ajouter les paires de trading
+        run: timeout 5m node pairs.mjs || true
       - name: Enregistrer si quelque chose a changé
         run: |
           git config user.name "coins-bot"
