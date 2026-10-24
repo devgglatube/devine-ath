@@ -414,7 +414,7 @@ function show(){
   $("im").src=IMGMAP[k.t+"|"+k.n]||k.img||avatar(k);
   $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;
   renderTweet(k);
-  $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=k.l;
+  $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=launchOf(k.l);
   meta();
   const nx=deck[i+1];if(nx&&nx.img&&!IMGMAP[nx.t+"|"+nx.n])new Image().src=nx.img;
   $("pg").style.width=(i/deck.length*100)+"%";
@@ -469,6 +469,16 @@ const descOf=k=>{const m=DESC[k.t+"|"+k.n];return dec(m&&m[LANG]?m[LANG]:k.d||""
 const DEXN={pumpswap:"PumpSwap","pump-fun":"pump.fun",raydium:"Raydium",meteora:"Meteora",orca:"Orca",pumpfun:"pump.fun",fluxbeam:"FluxBeam"};
 const dexName=d=>DEXN[d]||String(d||"DEX").replace(/(^|-)(\w)/g,(m,x,y)=>(x?" ":"")+y.toUpperCase());
 const caOf=k=>k.id||CAMAP[k.t+"|"+k.n]||"";
+// date de lancement : la donnée est en français (« 24 octobre 2026 »), affichée dans la langue choisie
+const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const MOIS_L={en:["January","February","March","April","May","June","July","August","September","October","November","December"],es:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]};
+function launchOf(l){
+  if(l==null)return"";
+  const m=/^(?:(\d{1,2})\s+)?([A-Za-zÀ-ÿ]+)\s+(\d{4})$/.exec(String(l).trim()),j=m?MOIS.indexOf(m[2].toLowerCase()):-1;
+  if(LANG==="fr"||j<0)return l;
+  const d=m[1]?+m[1]:0,y=m[3],n=MOIS_L[LANG][j];
+  return LANG==="en"?(d?n+" "+d+", "+y:n+" "+y):(d?d+" de "+n+" de "+y:n[0].toUpperCase()+n.slice(1)+" de "+y);
+}
 
 // ===== Carte du tweet (ou du compte X) associé au coin, sur le modèle de l’aperçu d’Axiom =====
 // Les données viennent de tweets.json (robot) : tout est écrit avec textContent, les images doivent être des data:image.
@@ -786,7 +796,7 @@ function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
   i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
-  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);renderTweet(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i])}meta();if(mode==="ranked"&&!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
