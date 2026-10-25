@@ -299,7 +299,7 @@ input[type=range]{height:32px;background:linear-gradient(var(--line),var(--line)
 input[type=range]:focus-visible{outline:none}
 input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
 input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
-#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}#mn .ri,td.n .ri{margin-right:.3em}</style>
+#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -617,7 +617,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
   </div>
 <div id="ac-v" hidden></div>
   <div id="rk-v" hidden>
-    <label class="k" for="pn">Pseudo</label><input id="pn" maxlength="14" autocomplete="off">
+    <label class="k" for="pn">Pseudo</label><div class="pnr"><span id="pnic"></span><input id="pn" maxlength="14" autocomplete="off"></div>
     <div class="k" id="rp-t"></div><div class="bar" style="margin-top:8px"><i id="rp-b"></i></div>
     <ul id="ladder"></ul>
     <div class="k" style="margin-top:14px">Ton biais de prédiction</div><div class="stat" id="bias"></div>
@@ -1015,6 +1015,7 @@ const RIP=[
 '<path d="M4 10v4h3l8 4V6L7 10z"/><path d="M18.5 9.5a4 4 0 0 1 0 5M7 14l1.5 6h2.5L10 15.5"/>',
 '<path d="M12 3a8 8 0 0 0-8 8c0 2.6 1.2 4.4 3 5.5V20h10v-3.5c1.8-1.1 3-2.9 3-5.5a8 8 0 0 0-8-8z"/><circle cx="9" cy="11.5" r="1.8" fill="currentColor"/><circle cx="15" cy="11.5" r="1.8" fill="currentColor"/><path d="M10 20v-2.5M12 20v-2.5M14 20v-2.5"/>'];
 const RI=RIP.map((d,k)=>'<svg class="ri" viewBox="0 0 24 24" fill="none" stroke="'+RANKS[k][2]+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:'+RANKS[k][2]+'">'+d+'</svg>');
+const NM=(k,n)=>'<span class="nm">'+RI[k]+'<span>'+esc(n)+'</span></span>';
 const rankIdx=rp=>RANKS.reduce((b,r,j)=>rp>=r[1]?j:b,0);
 // rang affiché : seuil de RP, plus la place dans le classement quand il est connu (pos = null hors ligne)
 function rankOf(rp,pos){let j=rankIdx(rp);while(j>0&&TOP[j]&&pos!=null&&pos>TOP[j])j--;return j}
@@ -1056,7 +1057,7 @@ $("acct").addEventListener("click",()=>sheet("account"));
 function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="review"?'<i class="tag tg2">'+T("ENTRAÎNEMENT")+"</i> "+c:mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
-  $("mn").innerHTML=RI[j]+esc(S.name);$("mn").title=r[0];$("mr").innerHTML=RI[j]+" "+r[0];$("mr").style.color=r[2];
+  $("mn").innerHTML=NM(j,S.name);$("mn").title=r[0];$("mr").textContent=r[0];$("mr").style.color=r[2];
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
   const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();
@@ -1156,7 +1157,7 @@ function scoreImage(){
 }
 $("imgb").addEventListener("click",()=>{try{$("imgp").src=scoreImage();$("imgov").hidden=false}catch(e){toast(T("Image impossible sur cet appareil."))}});
 $("imgx").addEventListener("click",()=>{$("imgov").hidden=true});$("imgov").addEventListener("click",e=>{if(e.target.id==="imgov")$("imgov").hidden=true});
-function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+RI[rankOf(p.rp||0,pos)]+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RI[rankOf(p.rp||0,pos)]+" "+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
+function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+NM(rankOf(p.rp||0,pos),p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
   if(tab==="board"){
@@ -1225,8 +1226,8 @@ function drawRent(){
 }
 function drawRanks(){
   const ps=myPos(),j=rankOf(S.rp,ps),nx=RANKS[j+1];
-  $("pn").value=S.name;
-  $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RI[j]+" "+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
+  $("pn").value=S.name;$("pnic").innerHTML=RI[j];
+  $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
   {const E=(S.er||[]).slice().sort((a,b)=>a-b),n=E.length,bx=$("bias");
     if(n<10)bx.textContent=T("Joue encore {0} coin(s) pour voir si tu vois plutôt trop haut ou trop bas.",10-n);
     else{const m=n%2?E[(n-1)/2]:(E[n/2-1]+E[n/2])/2,f=Math.pow(10,Math.abs(m)).toFixed(1).replace(".",decSep());
@@ -1240,7 +1241,7 @@ function statOf(m){const L=(S.scores||[]).filter(x=>x.m===m),d=(S.rd||{})[m]||{n
   return{g:L.length,n:d.n,x:d.x,avg:L.length?L.reduce((a,x)=>a+x.s,0)/L.length/50:null,best:L.length?Math.max(...L.map(x=>x.s))/50:null}}
 function drawAccount(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j],pc=v=>v==null?"—":Math.round(v)+" %";
-  let h="<div class='ac-h'><b>"+esc(S.name)+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
+  let h="<div class='ac-h'><b>"+NM(j,S.name)+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
   h+="<div class='k'>"+T("Se connecter")+"</div><div class='lg'>"+LOGINS.map(([n,c,l],k)=>"<button data-lg='"+k+"'><i style='background:"+c+"'>"+l+"</i>"+esc(T("Continuer avec {0}",n))+"</button>").join("")+"</div>";
   h+="<p class='note'>"+T(online?"Classement en ligne actif : ton score est partagé.":"Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.")+"</p>";
   h+="<div class='k' style='margin-top:18px'>"+T("Statistiques")+"</div><div class='stg'>";
