@@ -242,6 +242,8 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .cred{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;background:var(--card2);border-radius:14px;padding:14px}
 .cred .cn{grid-row:1/span 3;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--ink);text-align:center;min-width:76px}.cred .cn small{display:block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .cred .ct{font-weight:800}.cred .cl{color:var(--muted);font-size:.82rem}.cred.t3 .ct{color:var(--up)}.cred.t2 .ct{color:#FFC53D}.cred.t1 .ct{color:#FF8A3D}.cred.t0 .ct{color:var(--muted)}
+#imgov{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.78);display:grid;place-items:center;padding:16px;overflow:auto}#imgov[hidden]{display:none}
+#imgov .pn{max-width:520px}#imgov .ph{font-size:1.2rem}#imgx{width:36px;height:36px;padding:0;border-radius:50%;background:none;border:1px solid var(--line);color:var(--ink);font-size:1rem}
 </style>
 </head>
 <body>
@@ -339,9 +341,15 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   <div class="sum" id="sum"></div>
   <button id="again">Rejouer</button>
   <button id="share" class="ghost">Partager mon score</button>
+  <button id="imgb" class="ghost">Créer l’image de mon score</button>
   <input id="sharetext" readonly hidden aria-label="Texte à copier">
 </section>
 
+<div id="imgov" hidden><div class="pn" role="dialog" aria-label="Image du score" style="text-align:center">
+  <div class="ph"><b>Image du score</b><button id="imgx" aria-label="Fermer">✕</button></div>
+  <img id="imgp" alt="Image de ton score" style="max-width:100%;border-radius:16px;display:block;margin:0 auto 12px">
+  <p class="note" style="margin:0">Enregistre l’image : clic droit, ou appui long sur mobile.</p>
+</div></div>
 <div class="sh" id="sh" hidden><div class="pn" role="region" aria-labelledby="sh-t">
   <div class="ph"><b id="sh-t"></b><button id="sx" aria-label="Fermer">✕</button></div>
   <div class="k lvk" id="lvk" hidden>Niveau de détail</div>
@@ -609,6 +617,7 @@ Object.assign(DICT.en,{"Exercice de prédiction, pas un conseil financier. Non a
 Object.assign(DICT.en,{"Détail de la partie": "Game breakdown", "×{0} trop haut": "×{0} too high", "×{0} trop bas": "×{0} too low", "ta prédiction {0}, ATH {1}": "your guess {0}, ATH {1}"});Object.assign(DICT.es,{"Détail de la partie": "Detalle de la partida", "×{0} trop haut": "×{0} demasiado alto", "×{0} trop bas": "×{0} demasiado bajo", "ta prédiction {0}, ATH {1}": "tu predicción {0}, ATH {1}"});
 Object.assign(DICT.en,{"Bienvenue sur Devine l’ATH": "Welcome to Guess the ATH", "Lis le narratif du coin : son histoire, son mème, son personnage.": "Read the coin’s narrative: its story, its meme, its character.", "Devine jusqu’où cette histoire l’a fait monter (son ATH).": "Guess how high that story took it (its ATH).", "Compare avec la réalité et apprends à mieux juger.": "Compare with reality and learn to judge better.", "C’est parti": "Let’s go", "Comment ça marche": "How it works", "Le narratif": "The narrative"});Object.assign(DICT.es,{"Bienvenue sur Devine l’ATH": "Bienvenido a Adivina el ATH", "Lis le narratif du coin : son histoire, son mème, son personnage.": "Lee la narrativa de la moneda: su historia, su meme, su personaje.", "Devine jusqu’où cette histoire l’a fait monter (son ATH).": "Adivina hasta dónde la llevó esa historia (su ATH).", "Compare avec la réalité et apprends à mieux juger.": "Compara con la realidad y aprende a juzgar mejor.", "C’est parti": "Vamos", "Comment ça marche": "Cómo funciona", "Le narratif": "La narrativa"});
 Object.assign(DICT.en,{"Score de crédibilité du bot": "Bot credibility score", "Calculé sur cet appareil à partir de tes parties de bot. Ce n’est pas une certification.": "Computed on this device from your bot games. This is not a certification.", "Formule : crédibilité = précision moyenne (50 dernières parties) × (1 − 0,5 × régularité) × volume. La régularité vaut l’écart-type des scores ÷ 40 (plafonné à 1), et le volume vaut le nombre de parties ÷ 100 (plafonné à 1).": "Formula: credibility = average accuracy (last 50 games) × (1 − 0.5 × irregularity) × volume. Irregularity is the standard deviation of scores ÷ 40 (capped at 1), and volume is the number of games ÷ 100 (capped at 1).", "À prouver": "To prove", "En construction": "In progress", "Crédible": "Credible", "Très crédible": "Highly credible", "Précision moyenne : {0} %": "Average accuracy: {0}%", "Écart : {0} pts": "Spread: {0} pts", "Volume : {0} / 100 parties": "Volume: {0} / 100 games"});Object.assign(DICT.es,{"Score de crédibilité du bot": "Puntuación de credibilidad del bot", "Calculé sur cet appareil à partir de tes parties de bot. Ce n’est pas une certification.": "Calculado en este dispositivo a partir de tus partidas de bot. No es una certificación.", "Formule : crédibilité = précision moyenne (50 dernières parties) × (1 − 0,5 × régularité) × volume. La régularité vaut l’écart-type des scores ÷ 40 (plafonné à 1), et le volume vaut le nombre de parties ÷ 100 (plafonné à 1).": "Fórmula: credibilidad = precisión media (últimas 50 partidas) × (1 − 0,5 × irregularidad) × volumen. La irregularidad es la desviación típica de las puntuaciones ÷ 40 (máximo 1) y el volumen es el número de partidas ÷ 100 (máximo 1).", "À prouver": "Por demostrar", "En construction": "En construcción", "Crédible": "Creíble", "Très crédible": "Muy creíble", "Précision moyenne : {0} %": "Precisión media: {0} %", "Écart : {0} pts": "Dispersión: {0} pts", "Volume : {0} / 100 parties": "Volumen: {0} / 100 partidas"});
+Object.assign(DICT.en,{"Créer l’image de mon score": "Create my score image", "Image du score": "Score image", "Image de ton score": "Image of your score", "Enregistre l’image : clic droit, ou appui long sur mobile.": "Save the image: right-click, or long-press on mobile.", "Score final": "Final score", "{0} coins devinés": "{0} coins guessed", "Image impossible sur cet appareil.": "Image not possible on this device."});Object.assign(DICT.es,{"Créer l’image de mon score": "Crear la imagen de mi puntuación", "Image du score": "Imagen de la puntuación", "Image de ton score": "Imagen de tu puntuación", "Enregistre l’image : clic droit, ou appui long sur mobile.": "Guarda la imagen: clic derecho, o pulsación larga en móvil.", "Score final": "Puntuación final", "{0} coins devinés": "{0} monedas adivinadas", "Image impossible sur cet appareil.": "Imagen imposible en este dispositivo."});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -982,7 +991,7 @@ function askLvl(a){
 $("ask-v").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b||!askFor)return;setLvl(+b.dataset.pick);const a=askFor;askFor=null;sheet(a)});
 
 // Échap ferme le panneau ; le pied de page ouvre la page Transparence ; aria-current sur le menu
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("sh").hidden){e.preventDefault();askFor=null;sheet(0)}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("imgov").hidden){$("imgov").hidden=true;return}if(e.key==="Escape"&&!$("sh").hidden){e.preventDefault();askFor=null;sheet(0)}});
 $("ft-t").addEventListener("click",()=>sheet("trust"));
 
 // ----- accueil du premier lancement
@@ -990,6 +999,29 @@ function showWel(){if(!S.welcomed)$("wel").hidden=false}
 function hideWel(){$("wel").hidden=true;S.welcomed=1;save()}
 $("wel-go").addEventListener("click",hideWel);
 $("wel-how").addEventListener("click",()=>{hideWel();askLvl("help")});
+
+// ----- image de score (canvas), à enregistrer par clic droit / appui long
+function scoreImage(){
+  const W=1080,H=1080,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+  x.fillStyle="#09090B";x.fillRect(0,0,W,H);
+  const g=x.createRadialGradient(W*.75,0,0,W*.75,0,W*.9);g.addColorStop(0,"rgba(34,226,122,.28)");g.addColorStop(1,"rgba(34,226,122,0)");x.fillStyle=g;x.fillRect(0,0,W,H);
+  const F="Inter, system-ui, sans-serif";
+  x.fillStyle="#22E27A";x.beginPath();x.roundRect(72,72,96,96,26);x.fill();
+  x.strokeStyle="#06150C";x.lineWidth=9;x.lineCap="round";x.lineJoin="round";x.beginPath();x.moveTo(94,142);x.lineTo(114,118);x.lineTo(128,132);x.lineTo(150,100);x.stroke();
+  x.fillStyle="#F5F5F7";x.font="800 54px "+F;x.textBaseline="alphabetic";x.fillText("devine l’ATH",190,138);
+  const max=deck.length*1000,pc=Math.round(total/max*100);
+  x.fillStyle="#8B8B96";x.font="700 38px "+F;x.fillText(T("Score final"),72,400);
+  x.fillStyle="#F5F5F7";x.font="800 220px "+F;x.fillText(num(total),66,610);
+  x.fillStyle="#8B8B96";x.font="700 46px "+F;x.fillText("/ "+num(max)+" · "+pc+" %",72,690);
+  x.fillStyle="#22E27A";x.font="800 44px "+F;
+  const tag=mode==="ranked"?"RANKED · "+RANKS[rankOf(S.rp,myPos())][0]:mode==="daily"?T("Défi du jour"):T("Mode classique");x.fillText(tag,72,790);
+  x.fillStyle="#8B8B96";x.font="600 36px "+F;x.fillText(T("{0} coins devinés",deck.length),72,850);
+  x.fillStyle="#26262C";x.fillRect(72,940,W-144,3);
+  x.fillStyle="#8B8B96";x.font="600 30px "+F;x.fillText(T("Exercice de prédiction, pas un conseil financier."),72,1000);
+  return c.toDataURL("image/png");
+}
+$("imgb").addEventListener("click",()=>{try{$("imgp").src=scoreImage();$("imgov").hidden=false}catch(e){toast(T("Image impossible sur cet appareil."))}});
+$("imgx").addEventListener("click",()=>{$("imgov").hidden=true});$("imgov").addEventListener("click",e=>{if(e.target.id==="imgov")$("imgov").hidden=true});
 function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
