@@ -299,7 +299,7 @@ input[type=range]{height:32px;background:linear-gradient(var(--line),var(--line)
 input[type=range]:focus-visible{outline:none}
 input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
 input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
-#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}</style>
+#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}#fx-o{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.fx-b{display:flex;gap:18px;align-items:flex-start;max-width:100%;flex-wrap:wrap;justify-content:center}#fx-cv{width:min(380px,86vw);height:auto;aspect-ratio:1080/1350;border-radius:18px;background:#000}.fx-c{display:grid;gap:10px;width:min(300px,86vw)}.fx-c .tabs{display:flex;gap:6px}.fx-c .tabs button{width:auto;flex:1}.fx-c button{width:100%}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -1239,12 +1239,65 @@ function drawRanks(){
 const LOGINS=[["pump.fun","#22E27A","P"],["FOMO","#FF8A3D","F"],["Google","#8AB4F8","G"],["Phantom","#AB9FF2","👻"]];
 function statOf(m){const L=(S.scores||[]).filter(x=>x.m===m),d=(S.rd||{})[m]||{n:0,x:0};
   return{g:L.length,n:d.n,x:d.x,avg:L.length?L.reduce((a,x)=>a+x.s,0)/L.length/50:null,best:L.length?Math.max(...L.map(x=>x.s))/50:null}}
+Object.assign(DICT.en,{"Quasi pile":"Spot-on","Exercice de prédiction, pas un conseil financier.":"Prediction exercise, not financial advice.","Flex mes stats":"Flex my stats","Flex tes stats":"Flex your stats","Ajoute une image ou une vidéo en fond":"Add an image or a video as background","Choisir un fichier":"Choose a file","Précision moyenne":"Average accuracy","Télécharger":"Download","Fermer":"Close","Enregistrement de la vidéo…":"Recording video…","Vidéo prête.":"Video ready.","Image prête.":"Image ready.","Fichier non supporté.":"Unsupported file.","Retirer le fond":"Remove background","Meilleure partie":"Best game"});
+Object.assign(DICT.es,{"Quasi pile":"Casi exacto","Exercice de prédiction, pas un conseil financier.":"Ejercicio de predicción, no consejo financiero.","Flex mes stats":"Presume tus stats","Flex tes stats":"Presume tus stats","Ajoute une image ou une vidéo en fond":"Añade una imagen o un vídeo de fondo","Choisir un fichier":"Elegir un archivo","Précision moyenne":"Precisión media","Télécharger":"Descargar","Fermer":"Cerrar","Enregistrement de la vidéo…":"Grabando vídeo…","Vidéo prête.":"Vídeo listo.","Image prête.":"Imagen lista.","Fichier non supporté.":"Archivo no compatible.","Retirer le fond":"Quitar el fondo","Meilleure partie":"Mejor partida"});
+const FX={mode:"ranked",media:null,kind:null,vid:null,raf:0,icon:null,iconK:-1};
+function fxIcon(j,cb){if(FX.iconK===j&&FX.icon)return;FX.iconK=j;const im=new Image();im.onload=()=>{FX.icon=im;if(cb)cb()};im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(RI[j].replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" '))}
+function fxStats(){const j=rankOf(S.rp,myPos()),t=statOf(FX.mode),pc=v=>v==null?"—":Math.round(v)+" %";
+  return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:pc(t.avg),cells:[[T("Parties"),String(t.g)],[T("Meilleure partie"),pc(t.best)],[T("Quasi pile"),String(t.x)],["RP",num(S.rp)]]}}
+function fxDraw(cv){const c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats();
+  c.fillStyle="#07090c";c.fillRect(0,0,W,H);
+  const m=FX.media;
+  if(m){const w=FX.kind==="video"?m.videoWidth:m.naturalWidth,h=FX.kind==="video"?m.videoHeight:m.naturalHeight;
+    if(w&&h){const s=Math.max(W/w,H/h);c.drawImage(m,(W-w*s)/2,(H-h*s)/2,w*s,h*s)}}
+  else{const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#06150C");g.addColorStop(1,"#0b0f14");c.fillStyle=g;c.fillRect(0,0,W,H);
+    c.strokeStyle="rgba(34,226,122,.35)";c.lineWidth=8;c.lineJoin="round";c.beginPath();c.moveTo(60,H*.55);c.lineTo(W*.3,H*.42);c.lineTo(W*.5,H*.5);c.lineTo(W*.75,H*.3);c.lineTo(W-60,H*.2);c.stroke()}
+  const ov=c.createLinearGradient(0,0,0,H);ov.addColorStop(0,"rgba(0,0,0,.65)");ov.addColorStop(.45,"rgba(0,0,0,.25)");ov.addColorStop(1,"rgba(0,0,0,.8)");c.fillStyle=ov;c.fillRect(0,0,W,H);
+  c.textBaseline="alphabetic";c.fillStyle="#22E27A";c.beginPath();c.roundRect(60,60,56,56,16);c.fill();
+  c.strokeStyle="#06150C";c.lineWidth=6;c.lineCap="round";c.lineJoin="round";c.beginPath();c.moveTo(72,102);c.lineTo(86,84);c.lineTo(96,94);c.lineTo(108,76);c.stroke();
+  c.fillStyle="#fff";c.font="700 40px system-ui,sans-serif";c.fillText("devine l’ATH",132,102);
+  c.textAlign="right";c.fillStyle="rgba(255,255,255,.75)";c.font="700 32px system-ui,sans-serif";c.fillText(FX.mode==="ranked"?"RANKED":T("Mode classique").toUpperCase(),W-60,102);c.textAlign="left";
+  if(FX.icon)c.drawImage(FX.icon,60,H-760,96,96);
+  c.fillStyle="#fff";c.font="800 64px system-ui,sans-serif";c.fillText(d.name,176,H-700);
+  c.fillStyle=d.color;c.font="800 36px system-ui,sans-serif";c.fillText(d.rank,176,H-654);
+  c.fillStyle="rgba(255,255,255,.7)";c.font="600 34px system-ui,sans-serif";c.fillText(T("Précision moyenne"),60,H-520);
+  c.fillStyle="#22E27A";c.font="900 190px system-ui,sans-serif";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=24;c.fillText(d.big,56,H-350);c.shadowBlur=0;
+  const cw=(W-120-3*16)/4,y=H-290;
+  d.cells.forEach((x,k)=>{const px=60+k*(cw+16);c.fillStyle="rgba(0,0,0,.55)";c.beginPath();c.roundRect(px,y,cw,170,22);c.fill();
+    c.fillStyle="rgba(255,255,255,.65)";c.font="600 24px system-ui,sans-serif";c.fillText(x[0].length>14?x[0].slice(0,13)+"…":x[0],px+18,y+48);
+    c.fillStyle="#fff";c.font="800 52px system-ui,sans-serif";c.fillText(x[1],px+18,y+126)});
+  c.fillStyle="rgba(255,255,255,.55)";c.font="500 24px system-ui,sans-serif";c.fillText(T("Exercice de prédiction, pas un conseil financier."),60,H-60)}
+function fxLoop(){const cv=$("fx-cv");if(!cv)return;fxDraw(cv);FX.raf=requestAnimationFrame(fxLoop)}
+function fxClose(){cancelAnimationFrame(FX.raf);const o=$("fx-o");if(o)o.remove();if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null}
+function fxSave(blob,name){const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
+function fxOpen(){fxClose();const o=document.createElement("div");o.id="fx-o";
+  o.innerHTML="<div class='fx-b'><canvas id='fx-cv' width='1080' height='1350'></canvas><div class='fx-c'><div class='tabs' id='fx-m'><button data-m='ranked'>Ranked</button><button data-m='casual'>"+T("Mode classique")+"</button></div><p class='note'>"+T("Ajoute une image ou une vidéo en fond")+"</p><input id='fx-f' type='file' accept='image/*,video/*' hidden><button id='fx-pick' class='alt'>"+T("Choisir un fichier")+"</button><button id='fx-rm' class='ghost' hidden>"+T("Retirer le fond")+"</button><button id='fx-dl'>"+T("Télécharger")+"</button><button id='fx-x' class='ghost'>"+T("Fermer")+"</button></div></div>";
+  document.body.appendChild(o);
+  const j=rankOf(S.rp,myPos());FX.iconK=-1;fxIcon(j);
+  const mb=()=>o.querySelectorAll("#fx-m button").forEach(b=>b.classList.toggle("on",b.dataset.m===FX.mode));mb();
+  $("fx-m").onclick=e=>{const b=e.target.closest("[data-m]");if(b){FX.mode=b.dataset.m;mb()}};
+  $("fx-pick").onclick=()=>$("fx-f").click();
+  $("fx-rm").onclick=()=>{if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null;$("fx-rm").hidden=true};
+  $("fx-x").onclick=fxClose;o.addEventListener("click",e=>{if(e.target===o)fxClose()});
+  $("fx-f").onchange=e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);
+    if(f.type.startsWith("image/")){const im=new Image();im.onload=()=>{FX.media=im;FX.kind="image";$("fx-rm").hidden=false};im.src=u}
+    else if(f.type.startsWith("video/")){const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.src=u;v.onloadeddata=()=>{FX.media=v;FX.kind="video";v.play().catch(()=>{});$("fx-rm").hidden=false}}
+    else toast(T("Fichier non supporté."));e.target.value=""};
+  $("fx-dl").onclick=()=>{const cv=$("fx-cv");
+    if(FX.kind==="video"&&window.MediaRecorder&&cv.captureStream){const v=FX.media;v.currentTime=0;v.play().catch(()=>{});const st=cv.captureStream(30),ch=[];let mr;
+      try{mr=new MediaRecorder(st,{mimeType:MediaRecorder.isTypeSupported("video/mp4")?"video/mp4":"video/webm"})}catch(_){mr=new MediaRecorder(st)}
+      mr.ondataavailable=x=>{if(x.data.size)ch.push(x.data)};
+      mr.onstop=()=>{const ext=(mr.mimeType||"").includes("mp4")?"mp4":"webm";fxSave(new Blob(ch,{type:mr.mimeType||"video/webm"}),"devine-ath-flex."+ext);toast(T("Vidéo prête."));$("fx-dl").disabled=false};
+      $("fx-dl").disabled=true;toast(T("Enregistrement de la vidéo…"));mr.start();setTimeout(()=>mr.stop(),Math.min(10,Math.max(3,v.duration||6))*1000)}
+    else cv.toBlob(b=>{fxSave(b,"devine-ath-flex.png");toast(T("Image prête."))},"image/png")};
+  fxLoop()}
+$("ac-v").addEventListener("click",e=>{if(e.target.closest("#flexb"))fxOpen()});
 function drawAccount(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j],pc=v=>v==null?"—":Math.round(v)+" %";
   let h="<div class='ac-h'><b>"+NM(j,S.name)+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
   h+="<div class='k'>"+T("Se connecter")+"</div><div class='lg'>"+LOGINS.map(([n,c,l],k)=>"<button data-lg='"+k+"'><i style='background:"+c+"'>"+l+"</i>"+esc(T("Continuer avec {0}",n))+"</button>").join("")+"</div>";
   h+="<p class='note'>"+T(online?"Classement en ligne actif : ton score est partagé.":"Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.")+"</p>";
-  h+="<div class='k' style='margin-top:18px'>"+T("Statistiques")+"</div><div class='stg'>";
+  h+="<div class='k' style='margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:10px'><span>"+T("Statistiques")+"</span><button id='flexb' class='alt' style='padding:8px 16px'>🔥 "+T("Flex mes stats")+"</button></div><div class='stg'>";
   [["casual","Classique"],["ranked","Ranked"]].forEach(([m,l])=>{const t=statOf(m);
     h+="<div><h3>"+T(l)+"</h3>"+(t.g||t.n?"<p>"+T("Parties")+"<b>"+t.g+"</b></p><p>"+T("Manches")+"<b>"+t.n+"</b></p><p>"+T("Précision moyenne")+"<b>"+pc(t.avg)+"</b></p><p>"+T("Meilleure partie")+"<b>"+pc(t.best)+"</b></p><p>"+T("Quasi pile (±10 %)")+"<b>"+t.x+"</b></p>":"<p>"+T("Pas encore de parties")+"</p>")+"</div>"});
   h+="</div>";
