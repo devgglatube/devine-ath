@@ -178,10 +178,40 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 .tw-more:hover{border-color:var(--tw-link)}
 @media (max-width:899px){.tw-ph img{max-height:240px}}
 @media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
+
+/* ===== Liquid glass ===== */
+:root{--bg:#07070C;--card:rgba(255,255,255,.07);--card2:rgba(255,255,255,.09);--line:rgba(255,255,255,.16);--muted:#A6A8B8;--glass-blur:blur(28px) saturate(180%);--spec:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06),inset 0 0 22px rgba(255,255,255,.04),0 14px 40px rgba(0,0,0,.35)}
+body{background:radial-gradient(60vmax 60vmax at 12% 8%,#1d3bff55,transparent 60%),radial-gradient(55vmax 55vmax at 90% 20%,#b13dff4d,transparent 60%),radial-gradient(60vmax 60vmax at 70% 95%,#00e08a40,transparent 60%),radial-gradient(50vmax 50vmax at 5% 90%,#ff4fa238,transparent 60%),var(--bg);background-attachment:fixed}
+.card,.pn,.side,.pill,.stg>div,.stat,.cmp div,.chips div,.ca,.code,#pn,.lg button,.ghost,.alt,.acct,.tabs button,.langs button,#sx,.side button[data-a].on,#ladder li.me,tr.me td{-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+.card,.pn{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:var(--spec);border-radius:28px;position:relative;overflow:hidden}
+.card::before,.pn::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover::before,.pn:hover::before{opacity:1}
+.side{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border-right:1px solid rgba(255,255,255,.14);box-shadow:inset -1px 0 0 rgba(255,255,255,.08)}
+.pill,.acct,.langs button,.tabs button,#sx{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 14px rgba(0,0,0,.25)}
+.chips div,.cmp div,.stat,.stg>div,.ca,.code,.lg button,.ghost,.alt,#pn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
+.side button[data-a]:hover{background:rgba(255,255,255,.1)}
+.side button[data-a].on,#ladder li.me,tr.me td{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 3px 0 var(--up)}
+button{border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -8px 16px rgba(255,255,255,.12),0 8px 24px rgba(34,226,122,.28);transition:transform .15s,box-shadow .2s,filter .2s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.ghost,.alt,.lg button,.pill,.acct,.langs button:not(.on),.tabs button,#sx,.side button[data-a]{box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 4px 14px rgba(0,0,0,.2)}
+.lock{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02))}
+.cw{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+input[type=range]{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 2px rgba(0,0,0,.4)}
+input[type=range]::-webkit-slider-thumb{background:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.9);box-shadow:0 4px 14px rgba(0,0,0,.4),inset 0 -6px 10px rgba(34,226,122,.45)}
+input[type=range]::-moz-range-thumb{background:rgba(255,255,255,.85);border:1px solid #fff}
+.bar,.tbar{background:rgba(255,255,255,.1)}
+td,th{border-bottom-color:rgba(255,255,255,.1)}
+#fx{position:fixed;left:0;top:0;width:320px;height:320px;margin:-160px 0 0 -160px;border-radius:50%;pointer-events:none;z-index:50;background:radial-gradient(circle,rgba(120,170,255,.30),rgba(190,110,255,.16) 40%,transparent 68%);mix-blend-mode:screen;opacity:0;transition:opacity .4s;will-change:transform}
+#fx.on{opacity:1}
+#fx2{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;pointer-events:none;z-index:51;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6);opacity:0;transition:opacity .3s,width .2s,height .2s,margin .2s;will-change:transform}
+#fx2.on{opacity:1}#fx2.h{width:54px;height:54px;margin:-27px 0 0 -27px}
+@media (hover:none){#fx,#fx2{display:none}}
+@media (prefers-reduced-motion:reduce){#fx,#fx2{display:none}button{transition:none}}
 </style>
 </head>
 <body>
 
+<div id="fx"></div><div id="fx2"></div>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="logo">devine l’ATH</div>
@@ -780,6 +810,15 @@ function drawAccount(){
   $("ac-v").innerHTML=h;
 }
 $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(b)toast(T("Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.",LOGINS[+b.dataset.lg][0]))});
+
+// ----- effet liquid glass autour de la souris -----
+(()=>{const a=$("fx"),b=$("fx2");let x=0,y=0,tx=0,ty=0,on=false,raf=0;
+const loop=()=>{x+=(tx-x)*.18;y+=(ty-y)*.18;a.style.transform="translate("+tx+"px,"+ty+"px)";b.style.transform="translate("+x+"px,"+y+"px)";raf=Math.abs(tx-x)+Math.abs(ty-y)>.3?requestAnimationFrame(loop):0};
+addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;tx=e.clientX;ty=e.clientY;if(!on){on=true;x=tx;y=ty;a.classList.add("on");b.classList.add("on")}
+ b.classList.toggle("h",!!e.target.closest("button,a,input,.card"));
+ const c=e.target.closest(".card,.pn");if(c){const r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")}
+ if(!raf)raf=requestAnimationFrame(loop)});
+document.addEventListener("pointerleave",()=>{on=false;a.classList.remove("on");b.classList.remove("on")})})();
 
 // ----- événements -----
 const openMenu=()=>{};
