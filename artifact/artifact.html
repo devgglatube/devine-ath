@@ -799,7 +799,7 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 let deck,i,total,skip,busy,mode="casual",timer=0,zero=false,gen=0,streak=0,bestStreak=0;
 
 const fmt=v=>v>=1e9?(v/1e9).toFixed(1).replace(".",decSep())+(LANG==="fr"?" Md$":" B$"):v>=1e6?(v/1e6).toFixed(v>=1e7?0:1).replace(".",decSep())+" M$":v>=1e3?Math.round(v/1e3)+" K$":Math.round(v)+" $";
-let SCL="lin";try{SCL=localStorage.getItem("dath.scale")==="log"?"log":"lin"}catch(e){}
+let SCL="log";try{SCL=localStorage.getItem("dath.scale2")==="lin"?"lin":"log"}catch(e){}
 const LOV=Math.pow(10,LO),HIV=150e6,SMAX=100000;
 let manual=null;
 const val=()=>{if(manual!=null)return manual;const f=$("s").value/SMAX;return SCL==="lin"?LOV+f*(HIV-LOV):Math.pow(10,LO+f*SPAN)};
@@ -1456,7 +1456,7 @@ function drawSettings(){$("themes").innerHTML=THEMES.map((t,k)=>"<button data-th
 $("themes").addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(b){TH=+b.dataset.th;applyTheme()}});
 $("modes").addEventListener("click",e=>{const b=e.target.closest("[data-md]");if(b){MD=b.dataset.md;applyTheme()}});
 applyTheme();
-function applyScale(){try{localStorage.setItem("dath.scale",SCL)}catch(e){}const m=$("scales");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.sc===SCL));sclTicks()}
+function applyScale(){try{localStorage.setItem("dath.scale2",SCL)}catch(e){}const m=$("scales");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.sc===SCL));sclTicks()}
 $("scales").addEventListener("click",e=>{const b=e.target.closest("[data-sc]");if(!b)return;const v=Math.max(LOV,Math.min(HIV,val()));SCL=b.dataset.sc;$("s").value=Math.max(0,Math.min(SMAX,Math.round(posOf(v))));applyScale();upd()});
 applyScale();
 
