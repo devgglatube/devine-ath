@@ -332,7 +332,6 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 @media (max-width:899px){#game>.card:first-child{height:min(58vh,560px)}#game>.card:nth-child(2){height:auto}#game>.card:nth-child(2) .cw{min-height:200px}}
 /* v115 intro */
 #intro{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:radial-gradient(ellipse at 50% 38%,color-mix(in srgb,var(--up) 22%,#05080a) 0,#050506 62%);color:#fff;transition:opacity .7s ease,transform .7s ease,visibility .7s;overflow:hidden}
-#intro{animation:ikill .01s 15.5s forwards}@keyframes ikill{to{opacity:0;visibility:hidden;pointer-events:none}}
 #intro.out{opacity:0;transform:scale(1.06);visibility:hidden;pointer-events:none}
 #intro .ig{position:absolute;inset:-56px;will-change:transform;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;animation:igp 9s linear infinite}
 @keyframes igp{to{transform:translate3d(56px,56px,0)}}
@@ -362,6 +361,16 @@ html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
 #intro .ln,#intro .dt,#intro .rg{will-change:transform,opacity,stroke-dashoffset}
 button,.side button{touch-action:manipulation}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+/* v119 tutoriel */
+#coach{position:fixed;inset:0;z-index:900;pointer-events:none}#coach[hidden]{display:none}
+#csp{position:fixed;border-radius:16px;box-shadow:0 0 0 9999px rgba(0,0,0,.72),0 0 0 2px var(--up),0 0 24px var(--up);transition:left .35s cubic-bezier(.3,.8,.3,1),top .35s cubic-bezier(.3,.8,.3,1),width .35s cubic-bezier(.3,.8,.3,1),height .35s cubic-bezier(.3,.8,.3,1),opacity .2s;pointer-events:none;animation:cpl 1.8s ease-in-out infinite}
+@keyframes cpl{50%{box-shadow:0 0 0 9999px rgba(0,0,0,.72),0 0 0 2px var(--up),0 0 40px var(--up)}}
+#ctip{position:fixed;pointer-events:auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 18px 50px rgba(0,0,0,.6);transition:left .35s cubic-bezier(.3,.8,.3,1),top .35s cubic-bezier(.3,.8,.3,1);animation:ctin .4s ease both}
+@keyframes ctin{from{opacity:0;transform:translateY(8px)}}
+#ctip .cs{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--up)}
+#ctip p{margin:6px 0 12px;font-size:.92rem;line-height:1.45}
+#ctip .cb{display:flex;gap:8px;justify-content:flex-end}#ctip .cb button{width:auto;padding:9px 16px;font-size:.85rem;border-radius:99px}#ctip .cb button[hidden]{display:none}
+#ctip .cb .ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -700,6 +709,8 @@ button,.side button{touch-action:manipulation}
     <p class="note" style="margin:6px 0 0">Linéaire : les graduations sont régulières, mais les petits market caps se règlent finement avec les flèches du clavier. Logarithmique : plus de précision sur les petits coins.</p>
     <div class="k" style="margin-top:18px">Sons</div>
     <div class="langs" id="sounds"><button data-sn="1">Activés</button><button data-sn="0">Coupés</button></div>
+    <div class="k" style="margin-top:18px">Tutoriel</div>
+    <div class="langs" id="tutob"><button data-tt="1">Revoir le tutoriel</button></div>
     <div class="k" style="margin-top:18px">Thème de couleur</div>
     <div class="themes" id="themes"></div>
   </div>
@@ -726,7 +737,7 @@ button,.side button{touch-action:manipulation}
 </div>
 <script>(function(){var it=document.getElementById("intro");if(!it)return;function c(){it.classList.add("out");setTimeout(function(){if(it.parentNode)it.parentNode.removeChild(it)},800)}
 it.querySelector("#ilang").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-l]");if(!b)return;try{localStorage.setItem("dath.lang",b.dataset.l)}catch(x){}setTimeout(c,300)});
-setTimeout(c,15000)})();</script>
+var sv=false;try{sv=!!localStorage.getItem("dath.lang")}catch(x){}if(sv)setTimeout(c,15000)})();</script>
 <script>
 // Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
 let COINS=[
@@ -739,7 +750,7 @@ const $=id=>document.getElementById(id);
 // ===== Langues : le français est la source, T() traduit à l’affichage =====
 const LANGS={fr:"Français",en:"English",es:"Español"};
 let LANG="en";
-let LSAVED=false;try{LSAVED=!!localStorage.getItem("dath.lang")}catch(e){}
+let INTRO_DONE=false,DREADY=false,TUT=false;let LSAVED=false;try{LSAVED=!!localStorage.getItem("dath.lang")}catch(e){}
 try{const s=localStorage.getItem("dath.lang"),n=(navigator.language||"").slice(0,2).toLowerCase();LANG=LANGS[s]?s:LANGS[n]?n:"en"}catch(e){}
 const DICT={
 en:{
@@ -1223,6 +1234,7 @@ function launch(m){
 }
 function settle(){
   if(mode==="friends"){$("sum").innerHTML="<div>"+T("Partie entre amis terminée : aucun point gagné. Regarde le classement en haut de la page.")+"</div>";$("again").textContent=T("Rejouer");save();refresh();return}
+  if(TUT){TUT=false;$("sum").innerHTML="<div>"+T("Tutoriel terminé : aucun point gagné. À toi de jouer !")+"</div>";$("again").textContent=T("Rejouer");refresh();return}
   if(mode==="review"){$("sum").innerHTML="<div>"+T("Entraînement terminé : aucun point gagné et ton classement ne change pas.")+"</div>";$("again").textContent=T("Rejouer");save();refresh();return}
   const p=total/(deck.length*1000);let gp=Math.round(p*(mode==="ranked"?(stake?stake*1.5:100):deck.length*50)),first=true;
   if(mode==="daily"){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};first=D.last!==d;if(first){D.st=D.last===dayKey(1)?(D.st||0)+1:1;D.last=d;D.s=Math.round(p*5000);D.best=Math.max(D.best||0,D.s);{const ms=roundLog.map(x=>x.ms||0),avg=ms.length?ms.reduce((a,b)=>a+b,0)/ms.length:0;D.today={d,s:D.s,n:deck.length,ok:roundLog.filter(x=>x.ok).length,avg,rounds:roundLog.map(x=>({n:x.n,t:x.t,g:x.g,a:x.a,p:x.p,ms:x.ms||0}))};D.hist=(D.hist||[]).filter(h=>h.d!==d).concat({d,s:D.s,avg,ok:D.today.ok,n:D.today.n}).slice(-60)}}else gp=0}
@@ -1523,6 +1535,22 @@ Object.assign(DICT.en,{"Champion":"Champion","Trophée unique : n°1 du classeme
 Object.assign(DICT.es,{"Champion":"Campeón","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Trofeo único: n.º 1 de la clasificación. Pasa al siguiente mejor puntaje.","Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 Object.assign(DICT.en,{"Sons":"Sounds","Activés":"On","Coupés":"Off"});Object.assign(DICT.es,{"Sons":"Sonidos","Activés":"Activados","Coupés":"Desactivados"});
 Object.assign(DICT.en,{"Devine l’ATH":"Guess the ATH","Lis le narratif, devine l’ATH.":"Read the narrative, guess the ATH.","Choisis ta langue pour commencer":"Choose your language to start"});Object.assign(DICT.es,{"Devine l’ATH":"Adivina el ATH","Lis le narratif, devine l’ATH.":"Lee la narrativa, adivina el ATH.","Choisis ta langue pour commencer":"Elige tu idioma para empezar"});
+Object.assign(DICT.en,{"Tutoriel":"Tutorial","Revoir le tutoriel":"Replay the tutorial","Suivant":"Next","Terminer":"Finish","Passer le tuto":"Skip tutorial","Étape {0}/{1}":"Step {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial done: no points earned. Your turn!",
+"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"Welcome! Let’s make a first prediction together. Press “Start the round”.",
+"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Here’s your coin. Read its name, narrative and tweet: they’re your only clues.",
+"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"The chart is hidden. Guess how high the market cap climbed: that’s its ATH (the highest it reached).",
+"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +.":"Move the slider to place your guess. You can also type an exact value or use the − / + buttons.",
+"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».":"The closer to the ATH and the faster you answer, the more points you earn. Press “Submit my guess”.",
+"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.":"Watch the curve unfold: the flag marks the real ATH.",
+"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !":"Here’s your score: your guess, the real ATH, the gap and your speed bonus. You know how to play!"});
+Object.assign(DICT.es,{"Tutoriel":"Tutorial","Revoir le tutoriel":"Repetir el tutorial","Suivant":"Siguiente","Terminer":"Terminar","Passer le tuto":"Saltar el tutorial","Étape {0}/{1}":"Paso {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial terminado: no se gana ningún punto. ¡Te toca!",
+"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"¡Bienvenido! Hagamos una primera predicción juntos. Pulsa «Empezar la ronda».",
+"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Aquí está tu moneda. Lee su nombre, su narrativa y su tuit: son tus únicas pistas.",
+"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"El gráfico está oculto. Adivina hasta dónde subió el market cap: ese es su ATH (el máximo alcanzado).",
+"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +.":"Mueve el control para colocar tu predicción. También puedes escribir un valor exacto o usar los botones − / +.",
+"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».":"Cuanto más cerca del ATH y más rápido respondas, más puntos ganas. Pulsa «Confirmar mi predicción».",
+"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.":"Mira cómo se revela la curva: la bandera marca el ATH real.",
+"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !":"Esta es tu puntuación: tu predicción, el ATH real, la diferencia y tu bonus de velocidad. ¡Ya sabes jugar!"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
@@ -1607,6 +1635,54 @@ $("fr-v").addEventListener("click",async e=>{
 });
 $("frb").addEventListener("click",()=>sheet("friends"));
 
+
+// ----- tutoriel guidé : première prédiction -----
+const TUTO_STEPS=[
+ {sel:"#go",t:"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».",wait:()=>!$("rdy").hidden===false},
+ {sel:"#cc",t:"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices."},
+ {sel:"#cw",t:"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint)."},
+ {sel:"#s",t:"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +."},
+ {sel:"#ok",t:"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».",wait:()=>$("input").hidden},
+ {sel:"#cw",t:"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.",wait:()=>!$("out").hidden,nonext:1},
+ {sel:"#out",t:"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !",last:1}];
+let TU={on:false,k:0,tm:0};
+function tutoDone(){try{return localStorage.getItem("dath.tuto")==="1"}catch(e){return false}}
+function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone()||(S.games||0)>0)return;tutoStart()}
+function tutoStart(){
+  if(TU.on)return;sheet(0);start("casual");deck=deck.slice(0,1);$("cn").value=1;$("cnv").textContent=1;meta();$("go").textContent=T("Lancer la manche {0}/{1}",1,1);TUT=true;
+  TU.on=true;TU.k=0;let c=$("coach");if(!c){c=document.createElement("div");c.id="coach";c.innerHTML="<div id='csp'></div><div id='ctip'><div class='cs'></div><p></p><div class='cb'><button class='ghost' id='cskip'></button><button id='cnx'></button></div></div>";document.body.appendChild(c);
+    $("cskip").addEventListener("click",()=>tutoEnd(false));$("cnx").addEventListener("click",()=>{sfx("tap");TU.k++;tutoShow()})}
+  c.hidden=false;tutoShow();clearInterval(TU.tm);TU.tm=setInterval(tutoTick,150);addEventListener("resize",tutoPlace)}
+function tutoEnd(done){clearInterval(TU.tm);TU.on=false;removeEventListener("resize",tutoPlace);const c=$("coach");if(c)c.hidden=true;
+  try{localStorage.setItem("dath.tuto","1")}catch(e){}
+  if(!done){TUT=false;if(!$("rdy").hidden&&i===0)start("casual")}else sfx("rank")}
+function tutoShow(){
+  const st=TUTO_STEPS[TU.k];if(!st){tutoEnd(true);return}
+  const tip=$("ctip");tip.querySelector("p").textContent=T(st.t);tip.querySelector(".cs").textContent=T("Étape {0}/{1}",TU.k+1,TUTO_STEPS.length);
+  $("cskip").textContent=T("Passer le tuto");$("cnx").textContent=T(st.last?"Terminer":"Suivant");$("cnx").hidden=[0,4,5].includes(TU.k);
+  $("cskip").hidden=!!st.last;
+  const el=document.querySelector(st.sel);if(el){try{el.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){}}
+  tutoPlace();if(TU.k>0)sfx("tick")}
+function tutoTick(){
+  if(!TU.on)return;const st=TUTO_STEPS[TU.k];if(!st)return;
+  if(TU.k===0&&!$("rdy").hidden===false){TU.k=1;tutoShow();return}
+  if(TU.k===3&&TU.moved){TU.moved=false;TU.k=4;tutoShow();return}
+  if(TU.k===4&&$("input").hidden){TU.k=5;tutoShow();return}
+  if(TU.k===5&&!$("out").hidden){TU.k=6;tutoShow();return}
+  tutoPlace()}
+$("s").addEventListener("input",()=>{if(TU.on&&TU.k===3)TU.moved=true});
+function tutoPlace(){
+  if(!TU.on)return;const st=TUTO_STEPS[TU.k];if(!st)return;const el=document.querySelector(st.sel),sp=$("csp"),tip=$("ctip");
+  if(!el||el.offsetParent===null&&getComputedStyle(el).position!=="fixed"){sp.style.opacity=0;return}
+  let r=el.getBoundingClientRect();const vh=innerHeight,vw=innerWidth;
+  const top=Math.max(4,r.top-6),bot=Math.min(vh-4,r.bottom+6),lf=Math.max(4,r.left-6),rt=Math.min(vw-4,r.right+6);
+  sp.style.opacity=1;sp.style.cssText+=";left:"+lf+"px;top:"+top+"px;width:"+(rt-lf)+"px;height:"+Math.max(10,bot-top)+"px";
+  const tw=Math.min(340,vw-24),th=tip.offsetHeight||150;tip.style.width=tw+"px";
+  let x=Math.max(12,Math.min(vw-tw-12,lf+(rt-lf)/2-tw/2)),y;
+  if(vh-bot>=th+14)y=bot+12;else if(top>=th+14)y=top-th-12;else y=vh-th-12;
+  tip.style.left=x+"px";tip.style.top=y+"px"}
+$("tutob").addEventListener("click",()=>{try{localStorage.removeItem("dath.tuto")}catch(e){}INTRO_DONE=true;DREADY=true;tutoStart()});
+
 // curseur personnalisé : petit point de la couleur du thème, très légère animation
 {const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
  if(fine){const c=$("cur");document.body.appendChild(c);document.documentElement.classList.add("cc");
@@ -1641,7 +1717,7 @@ $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(
 applyLang();
 (function(){const it=$("intro");if(!it)return;let saved=LSAVED;
   const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",saved&&b.dataset.l===LANG));mark();
-  let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>it.remove(),800)};
+  let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>{it.remove();INTRO_DONE=true;tryTuto()},800)};
   $("ilang").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;saved=true;applyLang();mark();sfx("good");setTimeout(close,260)});
   if(saved){$("ihint").textContent="";setTimeout(close,3600);it.addEventListener("click",e=>{if(!e.target.closest("button"))close()})}
 })();
@@ -1661,5 +1737,5 @@ Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coi
   if(ca&&typeof ca==="object")CAMAP=ca;
   if(wt&&typeof wt==="object")WTAG=wt;
   if(tw&&typeof tw==="object"&&!Array.isArray(tw))TW=tw;
-}).finally(()=>{start("casual");showWel()});
+}).finally(()=>{start("casual");showWel();DREADY=true;tryTuto()});
 </script>
