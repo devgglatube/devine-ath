@@ -1,17 +1,40 @@
 [
  {
-  "m": "FBcrTWLEVTxKuc67LLiN2DwUQ6JrPjNyz5MY5iBMpump",
+  "RPC": "https://solana-rpc.publicnode.com",
+  "status": 403,
+  "body": "{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32602,\"message\":\"Indexed requests require a personal token. Get one at: https://www.allnodes.com/publicnode\"},\"id\":1}\n"
+ },
+ {
+  "RPC": "https://solana.drpc.org",
+  "status": 400,
+  "body": "{\"id\":1,\"jsonrpc\":\"2.0\",\"error\":{\"message\":\"chain is not available on free plan, please upgrade to paid plan\",\"code\":35}}"
+ },
+ {
+  "RPC": "https://rpc.ankr.com/solana",
+  "status": 403,
+  "body": "{\"error\":\"message: API key is not allowed to access blockchain, json-rpc code: -32052, rest code: 403\"}"
+ },
+ {
+  "RPC": "https://solana.api.onfinality.io/public",
+  "status": 429,
+  "body": "{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32029,\"message\":\"Too Many Requests, Please apply an OnFinality API key or contact us to receive a higher rate limit\"},\"id\":1}"
+ },
+ {
+  "RPC": "https://api.mainnet.solana.com",
   "status": 429,
   "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
  },
  {
-  "m": "HVCX2j4mch83a1sxtC2gjLeamGp3Z6bD8j8b2kqTG8ZA",
-  "status": 429,
-  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+  "RPC": "https://endpoints.omniatech.io/v1/sol/mainnet/public",
+  "status": 521,
+  "body": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if g"
  },
  {
-  "m": "6bW6xsZxYqcvqabk9rRgQwgjPNwe8SACPusx5o1wpump",
-  "status": 429,
-  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+  "RPC": "https://solana.therpc.io",
+  "error": "TypeError: fetch failed"
+ },
+ {
+  "RPC": "https://solana-mainnet.rpc.extrnode.com",
+  "error": "TypeError: fetch failed"
  }
 ]
