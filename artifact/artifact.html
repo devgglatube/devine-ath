@@ -60,7 +60,7 @@ h2 em{font-style:normal;color:var(--muted);font-size:1rem;font-weight:600;margin
 .cw{position:relative;margin-top:6px;border-radius:14px;overflow:hidden;background:var(--card2)}
 svg{display:block;width:100%;height:auto}
 .lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:700;font-size:.9rem;background:repeating-linear-gradient(135deg,#1B1B20 0 12px,#202026 12px 24px);transition:opacity .4s}
-.lock svg{width:70%;max-width:260px;height:auto;overflow:visible}.lock path{fill:none;filter:drop-shadow(0 0 4px rgba(255,255,255,.5));stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.lock svg{width:70%;max-width:260px;height:auto;overflow:visible}.lock path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 @keyframes spin{to{transform:rotate(360deg)}}
 .cw.open .lock{opacity:0;pointer-events:none}
 .lbl{font-size:.8rem;font-weight:700;fill:var(--ink)}
@@ -799,14 +799,14 @@ $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(
 
 // ----- courbe "meme coin" animée pendant le chargement -----
 (()=>{const P=$("lkp"),C=$("lkc"),N=48;let v=30,m=0,pts=Array(N).fill(30);
-const step=()=>{const r=Math.random();if(r<.07)m=5+Math.random()*7;else if(r<.12)m=-(4+Math.random()*7);m*=.7;
- v+=m+(Math.random()-.46)*3.2;v=Math.max(6,Math.min(54,v));if(v>=54||v<=6)m=-m*.4;
+const step=()=>{const r=Math.random();if(r<.07)m=5+Math.random()*7;else if(r<.12)m=-(4+Math.random()*7);m*=.8;
+ v+=m+(Math.random()-.47)*.8;v=Math.max(6,Math.min(54,v));if(v>=54||v<=6)m=-m*.4;
  pts.push(v);pts.shift()};
 const draw=()=>{
  P.setAttribute("d",pts.map((y,i)=>(i?"L":"M")+(i*160/(N-1)).toFixed(1)+" "+(60-y).toFixed(1)).join(" "));
  C.setAttribute("cx",160);C.setAttribute("cy",60-v)};
 for(let i=0;i<90;i++)step();draw();
-setInterval(()=>{if(!$("lk").getBoundingClientRect().width||document.hidden)return;step();draw()},70)})();
+setInterval(()=>{if(!$("lk").getBoundingClientRect().width||document.hidden)return;step();draw()},100)})();
 
 // ----- événements -----
 const openMenu=()=>{};
