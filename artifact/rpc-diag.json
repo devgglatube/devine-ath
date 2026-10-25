@@ -1,40 +1,152 @@
 [
  {
-  "RPC": "https://solana-rpc.publicnode.com",
-  "status": 403,
-  "body": "{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32602,\"message\":\"Indexed requests require a personal token. Get one at: https://www.allnodes.com/publicnode\"},\"id\":1}\n"
+  "n": "EXEMPLE",
+  "status": 404
  },
  {
-  "RPC": "https://solana.drpc.org",
-  "status": 400,
-  "body": "{\"id\":1,\"jsonrpc\":\"2.0\",\"error\":{\"message\":\"chain is not available on free plan, please upgrade to paid plan\",\"code\":35}}"
+  "n": "Arctis",
+  "status": 200,
+  "holders": {
+   "count": 681,
+   "distribution_percentage": {
+    "top_10": "43.7447",
+    "11_20": "17.0095",
+    "21_40": "14.6821",
+    "rest": "24.5637"
+   },
+   "last_updated": "2026-10-24T07:40:33Z"
+  },
+  "score": 42.26493506493507,
+  "ca": {
+   "pool": 54.286,
+   "transaction": 64,
+   "creation": 0,
+   "info": 100,
+   "holders": 40
+  }
  },
  {
-  "RPC": "https://rpc.ankr.com/solana",
-  "status": 403,
-  "body": "{\"error\":\"message: API key is not allowed to access blockchain, json-rpc code: -32052, rest code: 403\"}"
+  "n": "NotInEmploymentEducationTraining",
+  "status": 200,
+  "holders": {
+   "count": 34312,
+   "distribution_percentage": {
+    "top_10": "19.241",
+    "11_20": "8.8466",
+    "21_40": "11.556",
+    "rest": "60.3564"
+   },
+   "last_updated": "2026-10-24T12:45:24Z"
+  },
+  "score": 75.95157324735105,
+  "ca": {
+   "pool": 100,
+   "transaction": 80,
+   "creation": 100,
+   "info": 100,
+   "holders": 87.5
+  }
  },
  {
-  "RPC": "https://solana.api.onfinality.io/public",
-  "status": 429,
-  "body": "{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32029,\"message\":\"Too Many Requests, Please apply an OnFinality API key or contact us to receive a higher rate limit\"},\"id\":1}"
+  "n": "The McRib Indicator",
+  "status": 200,
+  "holders": {
+   "count": 6717,
+   "distribution_percentage": {
+    "top_10": "33.791",
+    "11_20": "6.7889",
+    "21_40": "8.2686",
+    "rest": "51.1515"
+   },
+   "last_updated": "2026-10-24T02:33:53Z"
+  },
+  "score": 52.57142857142857,
+  "ca": {
+   "pool": 65.714,
+   "transaction": 80,
+   "creation": 0,
+   "info": 60,
+   "holders": 61.25
+  }
  },
  {
-  "RPC": "https://api.mainnet.solana.com",
-  "status": 429,
-  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+  "n": "Privacycoin",
+  "status": 200,
+  "holders": {
+   "count": 1171,
+   "distribution_percentage": {
+    "top_10": "33.9923",
+    "11_20": "9.6138",
+    "21_40": "12.1625",
+    "rest": "44.2314"
+   },
+   "last_updated": "2026-10-24T06:26:07Z"
+  },
+  "score": 49.24675324675325,
+  "ca": {
+   "pool": 54.286,
+   "transaction": 100,
+   "creation": 0,
+   "info": 60,
+   "holders": 53.75
+  }
  },
  {
-  "RPC": "https://endpoints.omniatech.io/v1/sol/mainnet/public",
-  "status": 521,
-  "body": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if g"
+  "n": "baton",
+  "status": 429
  },
  {
-  "RPC": "https://solana.therpc.io",
-  "error": "TypeError: fetch failed"
+  "n": "Nami Agent",
+  "status": 429
  },
  {
-  "RPC": "https://solana-mainnet.rpc.extrnode.com",
-  "error": "TypeError: fetch failed"
+  "n": "PHP-UP-2026",
+  "status": 429
+ },
+ {
+  "n": "Remus",
+  "status": 429
+ },
+ {
+  "n": "Monkey Hug",
+  "status": 429
+ },
+ {
+  "n": "evmbot",
+  "status": 200,
+  "holders": {
+   "count": 1817,
+   "distribution_percentage": {
+    "top_10": "82.5621",
+    "11_20": "7.1844",
+    "21_40": "10.0045",
+    "rest": "0.249"
+   },
+   "last_updated": "2026-10-24T15:57:12Z"
+  },
+  "score": 38.64935064935066,
+  "ca": {
+   "pool": 28.571,
+   "transaction": 100,
+   "creation": 0,
+   "info": 40,
+   "holders": 47.5
+  }
+ },
+ {
+  "n": "Doge Pepe",
+  "status": 429
+ },
+ {
+  "n": "DESSA",
+  "status": 429
+ },
+ {
+  "n": "Dacity Coin",
+  "status": 429
+ },
+ {
+  "n": "Jean Phil",
+  "status": 429
  }
 ]
