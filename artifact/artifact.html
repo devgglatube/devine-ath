@@ -253,6 +253,16 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   #menu.open .langs .k{display:block}
   .side .logo,.brand .logo{white-space:nowrap}
 }
+/* V14 : synthèse de confiance et statut des fonctions */
+.tsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin:12px 0 4px}
+.tsum div{background:var(--card2);border-radius:14px;padding:12px 12px 12px 42px;position:relative;display:grid;gap:2px}
+.tsum div::before{content:"✓";position:absolute;left:12px;top:12px;width:20px;height:20px;border-radius:50%;background:var(--up);color:#000;font-size:.72rem;font-weight:800;display:grid;place-items:center}
+.tsum b{font-size:.95rem}.tsum span{color:var(--muted);font-size:.8rem}
+.stl{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.stl li{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card2);border-radius:12px;padding:10px 12px}
+.stl li>div{display:grid;gap:1px;min-width:0}.stl b{font-size:.9rem}.stl span{color:var(--muted);font-size:.78rem}
+.stl i{flex:none;font-style:normal;font-size:.68rem;font-weight:800;border-radius:99px;padding:3px 9px;border:1px solid var(--line);color:var(--muted)}
+.stl i.on{color:var(--up);border-color:rgba(0,210,106,.45)}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -493,6 +503,24 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   </div>
 <div id="trust-v" hidden>
     <p class="note" style="margin-top:0">Tout ce qu’il faut savoir pour juger le jeu : comment le score est calculé, d’où viennent les données, ce que le site fait et ne fait pas.</p>
+    <div class="tsum">
+      <div><b>Des points, pas d’argent</b><span>On joue avec des points du jeu, jamais avec de l’argent réel.</span></div>
+      <div><b>Aucun trade</b><span>Le site ne passe aucun ordre et ne touche jamais à ton wallet.</span></div>
+      <div><b>Aucun conseil</b><span>Un exercice de prédiction, jamais un conseil financier.</span></div>
+      <div><b>Rien n’est encaissé</b><span>Aucun paiement n’est possible aujourd’hui.</span></div>
+    </div>
+    <div class="k" style="margin-top:16px">Ce qui est ouvert et ce qui est prévu</div>
+    <ul class="stl">
+<li><div><b>Mode classique</b><span>Gratuit, sans limite de temps.</span></div><i class="on">Disponible</i></li>
+<li><div><b>Mode ranked</b><span>Mises et gains en points du jeu, jamais en argent.</span></div><i class="on">Disponible</i></li>
+<li><div><b>Défi du jour</b><span>5 coins identiques pour tous, chaque jour.</span></div><i class="on">Disponible</i></li>
+<li><div><b>Entraîner un bot</b><span>Dataset et parties de bot gratuits, stats sur ton appareil.</span></div><i class="on">Disponible</i></li>
+<li><div><b>Score de crédibilité du bot</b><span>Calculé sur ton appareil, ce n’est pas une certification.</span></div><i class="on">Disponible</i></li>
+<li><div><b>Forfaits Pro, Équipe et Crédits</b><span>Prix indicatifs, rien n’est encaissé.</span></div><i>Bientôt</i></li>
+<li><div><b>Location de bot</b><span>Tu gardes 80 % du prix, la plateforme prélève 20 %.</span></div><i>Bientôt</i></li>
+<li><div><b>Certification, parrainage et API</b><span>Pistes prévues, montants et conditions à confirmer.</span></div><i>Bientôt</i></li>
+    </ul>
+    <p class="note" style="margin-top:6px">Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.</p>
     <div class="k" style="margin-top:16px">Qui est derrière</div>
     <p class="note" style="margin-top:6px">Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.</p>
     <div class="k" style="margin-top:16px">Le calcul du score</div>
@@ -629,6 +657,7 @@ Object.assign(DICT.en,{"Créer l’image de mon score": "Create my score image",
 Object.assign(DICT.en,{"DÉFI": "DAILY"});Object.assign(DICT.es,{"DÉFI": "DESAFÍO"});
 Object.assign(DICT.en,{"Base actuelle : {0} coins, avec des ATH de {1} à {2}.": "Current database: {0} coins, with ATHs from {1} to {2}."});Object.assign(DICT.es,{"Base actuelle : {0} coins, avec des ATH de {1} à {2}.": "Base actual: {0} monedas, con ATH de {1} a {2}."});
 Object.assign(DICT.en,{"Menu": "Menu"});Object.assign(DICT.es,{"Menu": "Menú"});
+Object.assign(DICT.en,{"Des points, pas d’argent": "Points, not money", "On joue avec des points du jeu, jamais avec de l’argent réel.": "You play with game points, never with real money.", "Aucun trade": "No trading", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "The site places no orders and never touches your wallet.", "Aucun conseil": "No advice", "Un exercice de prédiction, jamais un conseil financier.": "A prediction exercise, never financial advice.", "Rien n’est encaissé": "Nothing is charged", "Aucun paiement n’est possible aujourd’hui.": "No payment is possible today.", "Ce qui est ouvert et ce qui est prévu": "What is open and what is planned", "Gratuit, sans limite de temps.": "Free, no time limit.", "Mises et gains en points du jeu, jamais en argent.": "Stakes and winnings in game points, never money.", "5 coins identiques pour tous, chaque jour.": "5 identical coins for everyone, every day.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Free dataset and bot games, stats on your device.", "Calculé sur ton appareil, ce n’est pas une certification.": "Computed on your device, not a certification.", "Forfaits Pro, Équipe et Crédits": "Pro, Team and Credits plans", "Prix indicatifs, rien n’est encaissé.": "Indicative prices, nothing is charged.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "You keep 80% of the price, the platform takes 20%.", "Certification, parrainage et API": "Certification, referral and API", "Pistes prévues, montants et conditions à confirmer.": "Planned ideas, amounts and terms to be confirmed.", "Disponible": "Available", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "The online leaderboard is only available if you open the game from claude.ai, signed in to your account."});Object.assign(DICT.es,{"Des points, pas d’argent": "Puntos, no dinero", "On joue avec des points du jeu, jamais avec de l’argent réel.": "Juegas con puntos del juego, nunca con dinero real.", "Aucun trade": "Ningún trade", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "El sitio no ejecuta órdenes y nunca toca tu wallet.", "Aucun conseil": "Ningún consejo", "Un exercice de prédiction, jamais un conseil financier.": "Un ejercicio de predicción, nunca un consejo financiero.", "Rien n’est encaissé": "No se cobra nada", "Aucun paiement n’est possible aujourd’hui.": "Hoy no es posible ningún pago.", "Ce qui est ouvert et ce qui est prévu": "Qué está abierto y qué está previsto", "Gratuit, sans limite de temps.": "Gratis, sin límite de tiempo.", "Mises et gains en points du jeu, jamais en argent.": "Apuestas y ganancias en puntos del juego, nunca en dinero.", "5 coins identiques pour tous, chaque jour.": "5 monedas idénticas para todos, cada día.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Dataset y partidas de bot gratis, estadísticas en tu dispositivo.", "Calculé sur ton appareil, ce n’est pas une certification.": "Calculado en tu dispositivo, no es una certificación.", "Forfaits Pro, Équipe et Crédits": "Planes Pro, Equipo y Créditos", "Prix indicatifs, rien n’est encaissé.": "Precios indicativos, no se cobra nada.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "Te quedas con el 80 % del precio, la plataforma cobra el 20 %.", "Certification, parrainage et API": "Certificación, referidos y API", "Pistes prévues, montants et conditions à confirmer.": "Ideas previstas, importes y condiciones por confirmar.", "Disponible": "Disponible", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "La clasificación en línea solo está disponible si abres el juego desde claude.ai, con tu cuenta iniciada."});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
