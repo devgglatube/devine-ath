@@ -267,7 +267,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .rc .r.st{border-top:0}.rc .r.st b{white-space:normal;color:var(--up)}
 /* V16 : sur mobile, la zone de prédiction reste collée en bas de l’écran pendant qu’on lit le coin */
 @media (max-width:899px){
-  #game .card:has(#input:not([hidden])){position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:20;padding:12px 16px 14px;background:rgba(18,18,20,.97);box-shadow:0 -10px 30px rgba(0,0,0,.65),0 0 0 1px var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  #game .card:has(#input:not([hidden])){position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:20;padding:12px 16px 14px;background:rgba(18,18,20,.97);box-shadow:0 -10px 30px rgba(0,0,0,.65),0 0 0 1px var(--line);}
   #input .k{font-size:.72rem}
   #input .guess{font-size:1.8rem;margin:0 0 4px}
   #input .ticks{margin-bottom:8px;font-size:.7rem}
@@ -334,8 +334,8 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 #intro{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:radial-gradient(ellipse at 50% 38%,color-mix(in srgb,var(--up) 22%,#05080a) 0,#050506 62%);color:#fff;transition:opacity .7s ease,transform .7s ease,visibility .7s;overflow:hidden}
 #intro{animation:ikill .01s 15.5s forwards}@keyframes ikill{to{opacity:0;visibility:hidden;pointer-events:none}}
 #intro.out{opacity:0;transform:scale(1.06);visibility:hidden;pointer-events:none}
-#intro .ig{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 70%);mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 70%);animation:igp 9s linear infinite}
-@keyframes igp{to{background-position:56px 56px}}
+#intro .ig{position:absolute;inset:-56px;will-change:transform;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;animation:igp 9s linear infinite}
+@keyframes igp{to{transform:translate3d(56px,56px,0)}}
 #intro svg.ic{position:relative;width:min(560px,86vw);height:auto;overflow:visible}
 #intro .ln{fill:none;stroke:var(--up);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:ild 2.1s .25s cubic-bezier(.6,.05,.25,1) forwards;filter:drop-shadow(0 0 8px var(--up))}
 #intro .ar{fill:var(--up);opacity:.12;opacity:0;animation:ifa 1s 1.6s forwards}
@@ -348,11 +348,20 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 #intro .iw span{display:block;margin-top:6px;color:#9aa;font-size:.95rem;letter-spacing:.04em}
 @keyframes iup{to{opacity:1;transform:none}}@keyframes ish{to{background-position:-220% 0}}
 #intro .il{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;opacity:0;transform:translateY(14px);animation:iup .8s 2.3s ease forwards}
-#intro .il button{width:auto;min-width:128px;padding:12px 22px;border-radius:99px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+#intro .il button{width:auto;min-width:128px;padding:12px 22px;border-radius:99px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
 #intro .il button:hover{transform:translateY(-3px);border-color:var(--up);background:color-mix(in srgb,var(--up) 22%,transparent);box-shadow:0 8px 28px color-mix(in srgb,var(--up) 35%,transparent)}
 #intro .il button.on{border-color:var(--up);background:color-mix(in srgb,var(--up) 26%,transparent)}
 #intro .ih{position:relative;color:#7b8;font-size:.78rem;opacity:0;animation:iup .8s 2.7s ease forwards}
 @media (prefers-reduced-motion:reduce){#intro *{animation-duration:.01s!important;animation-delay:0s!important}}
+/* v118 fluidité */
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+#cur,#cur::after{backface-visibility:hidden;transform-style:flat}#cur{transform:translate3d(-50px,-50px,0)}
+#cur::after{will-change:transform,opacity}
+.cw{contain:layout paint;transform:translateZ(0)}
+#game>.card,.side,#sh{backface-visibility:hidden}
+#intro .ln,#intro .dt,#intro .rg{will-change:transform,opacity,stroke-dashoffset}
+button,.side button{touch-action:manipulation}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
