@@ -231,6 +231,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 @media (max-width:899px){.navh,.tg{display:none}.brand{padding:0}.brand .mk{width:28px;height:28px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media (min-width:900px){.side{padding:16px 14px;gap:6px}.side button[data-a]{padding:8px 12px}.navh{padding:8px 12px 2px}.mh{padding:8px 10px}}
+.ft0{margin:28px auto 0;max-width:1060px;text-align:center;color:var(--muted);font-size:.78rem;padding-bottom:8px}.lnk{background:none;color:var(--ink);text-decoration:underline;padding:0 2px;font-size:inherit;font-weight:600}
 </style>
 </head>
 <body>
@@ -494,6 +495,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   </div>
 </div></div>
 <div id="toast" role="status" hidden></div>
+<footer class="ft0"><span>Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.</span> <button type="button" id="ft-t" class="lnk">En savoir plus</button></footer>
 </main>
 </div>
 
@@ -585,6 +587,7 @@ Object.assign(DICT.en,{"Tout ce qu’il faut savoir pour juger le jeu : comment 
 Object.assign(DICT.en,{"Bientôt": "Coming soon", "Location de bot": "Bot rental", "du prix pour toi": "of the price for you", "Tu fixes le prix, la plateforme garde 20 %.": "You set the price, the platform keeps 20%.", "Parrainage": "Referral", "1 mois": "1 month", "offert, à confirmer": "free, to be confirmed", "Invite un trader : vous gagnez chacun un mois d’abonnement.": "Invite a trader: you each earn a month of subscription.", "Certification": "Certification", "une fois par bot": "once per bot", "Badge vérifiable pour prouver la crédibilité de ton bot.": "Verifiable badge to prove your bot’s credibility.", "API et données": "API and data", "Sur devis": "On quote", "pour les équipes": "for teams", "Jeux de données annotés et accès API pour entraîner d’autres modèles.": "Annotated datasets and API access to train other models.", "Moyens de rémunération prévus": "Planned ways to earn", "Rien n’est encore ouvert : ces pistes sont prévues, leurs montants et conditions peuvent changer.": "Nothing is open yet: these are planned, and amounts and terms may change.", "Comment le projet se finance": "How the project is funded", "Aujourd’hui rien n’est encaissé. Sont prévus : des abonnements, des crédits, des certifications de bots et une commission sur la location de bots.": "Nothing is charged today. Planned: subscriptions, credits, bot certifications and a commission on bot rentals."});Object.assign(DICT.es,{"Bientôt": "Próximamente", "Location de bot": "Alquiler de bot", "du prix pour toi": "del precio para ti", "Tu fixes le prix, la plateforme garde 20 %.": "Tú fijas el precio, la plataforma se queda con el 20 %.", "Parrainage": "Patrocinio", "1 mois": "1 mes", "offert, à confirmer": "gratis, por confirmar", "Invite un trader : vous gagnez chacun un mois d’abonnement.": "Invita a un trader: ambos ganáis un mes de suscripción.", "Certification": "Certificación", "une fois par bot": "una vez por bot", "Badge vérifiable pour prouver la crédibilité de ton bot.": "Insignia verificable para demostrar la credibilidad de tu bot.", "API et données": "API y datos", "Sur devis": "A medida", "pour les équipes": "para equipos", "Jeux de données annotés et accès API pour entraîner d’autres modèles.": "Conjuntos de datos anotados y acceso API para entrenar otros modelos.", "Moyens de rémunération prévus": "Formas de ingresos previstas", "Rien n’est encore ouvert : ces pistes sont prévues, leurs montants et conditions peuvent changer.": "Todavía no hay nada abierto: son planes y los importes y condiciones pueden cambiar.", "Comment le projet se finance": "Cómo se financia el proyecto", "Aujourd’hui rien n’est encaissé. Sont prévus : des abonnements, des crédits, des certifications de bots et une commission sur la location de bots.": "Hoy no se cobra nada. Están previstos: suscripciones, créditos, certificaciones de bots y una comisión por el alquiler de bots."});
 Object.assign(DICT.en,{"Défi du jour": "Daily challenge", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Daily challenge: 5 identical coins for everyone, renewed every day at midnight UTC. Points are earned only once a day, and your streak counts consecutive days.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Done today: {0} / 5,000 · streak {1}", "5 coins identiques pour tous · série {0}": "5 identical coins for everyone · streak {0}", "Série du défi : {0} jour(s)": "Challenge streak: {0} day(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Challenge already played today: no points this time."});Object.assign(DICT.es,{"Défi du jour": "Desafío del día", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Desafío del día: 5 monedas idénticas para todos, renovadas cada día a medianoche UTC. Los puntos solo se ganan una vez al día y tu racha cuenta los días consecutivos.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Hecho hoy: {0} / 5.000 · racha {1}", "5 coins identiques pour tous · série {0}": "5 monedas idénticas para todos · racha {0}", "Série du défi : {0} jour(s)": "Racha del desafío: {0} día(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Desafío ya jugado hoy: sin puntos esta vez."});
 Object.assign(DICT.en,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Daily challenge: 5 identical coins for everyone, no time limit. Points count only once a day."});Object.assign(DICT.es,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Desafío del día: 5 monedas idénticas para todos, sin límite de tiempo. Los puntos cuentan solo una vez al día."});
+Object.assign(DICT.en,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Prediction exercise, not financial advice. Not affiliated with Axiom or Pump.fun.", "En savoir plus": "Learn more"});Object.assign(DICT.es,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Ejercicio de predicción, no un consejo financiero. No afiliado a Axiom ni a Pump.fun.", "En savoir plus": "Saber más"});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -929,7 +932,7 @@ document.querySelectorAll(".pl-slot").forEach(e=>{e.innerHTML=$("plans-src").inn
 function setLvl(n){S.lvl=n;try{save()}catch(e){}$("sh").dataset.lv=n;document.querySelectorAll("#lvl button").forEach(b=>b.classList.toggle("on",+b.dataset.lv===n))}
 $("lvl").addEventListener("click",e=>{const b=e.target.closest("[data-lv]");if(b)setLvl(+b.dataset.lv)});
 let shown=0;
-function navOn(){const a=shown||mode;document.querySelectorAll("#menu [data-a]").forEach(b=>b.classList.toggle("on",b.dataset.a===a))}
+function navOn(){const a=shown||mode;document.querySelectorAll("#menu [data-a]").forEach(b=>{const on=b.dataset.a===a;b.classList.toggle("on",on);if(on)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")})}
 let abandoned=false;
 function sheet(w){
   if(!w&&abandoned){abandoned=false;shown=0;start("casual");return}
@@ -948,6 +951,10 @@ function askLvl(a){
   $("ask-v").hidden=false;document.querySelectorAll("#ask-v [data-pick]").forEach(b=>b.classList.toggle("on",+b.dataset.pick===(S.lvl||2)));
 }
 $("ask-v").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b||!askFor)return;setLvl(+b.dataset.pick);const a=askFor;askFor=null;sheet(a)});
+
+// Échap ferme le panneau ; le pied de page ouvre la page Transparence ; aria-current sur le menu
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("sh").hidden){e.preventDefault();askFor=null;sheet(0)}});
+$("ft-t").addEventListener("click",()=>sheet("trust"));
 function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
