@@ -225,6 +225,10 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media (min-width:900px){.side{padding:16px 14px;gap:6px}.side button[data-a]{padding:8px 12px}.navh{padding:8px 12px 2px}.mh{padding:8px 10px}}
 .ft0{margin:28px auto 0;max-width:1060px;text-align:center;color:var(--muted);font-size:.78rem;padding-bottom:8px}.lnk{background:none;color:var(--ink);text-decoration:underline;padding:0 2px;font-size:inherit;font-weight:600}
+.chips{grid-template-columns:repeat(2,minmax(0,1fr))}.chips div:nth-child(3){grid-column:1/-1}.chips b{overflow-wrap:normal;word-break:normal}
+.rc{display:grid;gap:0;margin:0 0 14px;background:var(--card2);border-radius:14px;padding:6px 14px;text-align:left}.rc .k{padding:8px 0 4px}
+.rc div.r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:9px 0;border-top:1px solid var(--line);font-size:.88rem}.rc .r b{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rc .r span{color:var(--muted)}.rc .r .pt{grid-row:1/span 2;grid-column:2;align-self:center;font-weight:800;color:var(--up)}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -310,6 +314,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   <div class="k">Score final</div>
   <div class="big" id="total"></div>
   <p class="verdict" id="verdict"></p>
+  <div class="rc" id="recap" hidden></div>
   <div class="sum" id="sum"></div>
   <button id="again">Rejouer</button>
   <button id="share" class="ghost">Partager mon score</button>
@@ -578,6 +583,7 @@ Object.assign(DICT.en,{"Bientôt": "Coming soon", "Location de bot": "Bot rental
 Object.assign(DICT.en,{"Défi du jour": "Daily challenge", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Daily challenge: 5 identical coins for everyone, renewed every day at midnight UTC. Points are earned only once a day, and your streak counts consecutive days.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Done today: {0} / 5,000 · streak {1}", "5 coins identiques pour tous · série {0}": "5 identical coins for everyone · streak {0}", "Série du défi : {0} jour(s)": "Challenge streak: {0} day(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Challenge already played today: no points this time."});Object.assign(DICT.es,{"Défi du jour": "Desafío del día", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Desafío del día: 5 monedas idénticas para todos, renovadas cada día a medianoche UTC. Los puntos solo se ganan una vez al día y tu racha cuenta los días consecutivos.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Hecho hoy: {0} / 5.000 · racha {1}", "5 coins identiques pour tous · série {0}": "5 monedas idénticas para todos · racha {0}", "Série du défi : {0} jour(s)": "Racha del desafío: {0} día(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Desafío ya jugado hoy: sin puntos esta vez."});
 Object.assign(DICT.en,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Daily challenge: 5 identical coins for everyone, no time limit. Points count only once a day."});Object.assign(DICT.es,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Desafío del día: 5 monedas idénticas para todos, sin límite de tiempo. Los puntos cuentan solo una vez al día."});
 Object.assign(DICT.en,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Prediction exercise, not financial advice. Not affiliated with Axiom or Pump.fun.", "En savoir plus": "Learn more"});Object.assign(DICT.es,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Ejercicio de predicción, no un consejo financiero. No afiliado a Axiom ni a Pump.fun.", "En savoir plus": "Saber más"});
+Object.assign(DICT.en,{"Détail de la partie": "Game breakdown", "×{0} trop haut": "×{0} too high", "×{0} trop bas": "×{0} too low", "ta prédiction {0}, ATH {1}": "your guess {0}, ATH {1}"});Object.assign(DICT.es,{"Détail de la partie": "Detalle de la partida", "×{0} trop haut": "×{0} demasiado alto", "×{0} trop bas": "×{0} demasiado bajo", "ta prédiction {0}, ATH {1}": "tu predicción {0}, ATH {1}"});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -620,13 +626,14 @@ function pick(n){n=n||ROUNDS;
   return out;
 }
 // ----- défi du jour : mêmes 5 coins pour tous, renouvelés chaque jour (UTC)
+let roundLog=[];
 const dayKey=(o=0)=>new Date(Date.now()-o*864e5).toISOString().slice(0,10);
 const hash32=x=>{let h=2166136261;for(let c=0;c<x.length;c++){h^=x.charCodeAt(c);h=Math.imul(h,16777619)}return h>>>0};
 function dailyDeck(){const d=dayKey();return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
 function dailySub(){const D=S.daily||{},alive=D.last===dayKey()||D.last===dayKey(1);
   return D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
 function start(m){
-  mode=m||"casual";sheet(0);gen++;navOn();
+  roundLog=[];mode=m||"casual";sheet(0);gen++;navOn();
   deck=mode==="daily"?dailyDeck():pick(mode==="ranked"?ROUNDS:casualN());
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
@@ -799,7 +806,7 @@ function validate(){
   if(busy)return;busy=true;stopTimer();
   const k=deck[i],g=val();
   const pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)));zero=false;
-  total+=pts;
+  total+=pts;roundLog.push({n:k.n,t:k.t,g,a:k.ath,p:pts});
   {const rr=g>k.ath?g/k.ath:k.ath/g;S.rd=S.rd||{};const o=S.rd[mode]=S.rd[mode]||{n:0,x:0};o.n++;if(rr<1.1)o.x++;save()}
   $("input").hidden=true;$("rdy").hidden=true;$("cw").className="cw open";
   animate(k.ch||fake(k.ath),k.ath,()=>{
@@ -813,11 +820,18 @@ function validate(){
     $("pg").style.width=((i+1)/deck.length*100)+"%";
   });
 }
+function drawRecap(){
+  const R=roundLog,box=$("recap");if(!R.length){box.hidden=true;return}
+  const row=x=>{const r=x.g>x.a?x.g/x.a:x.a/x.g;
+    const d=r<1.1?T("Quasiment pile !"):T(x.g>x.a?"×{0} trop haut":"×{0} trop bas",r.toFixed(1).replace(".",decSep()));
+    return"<div class='r'><b>"+esc(x.n)+"</b><span>"+esc(d)+" · "+esc(T("ta prédiction {0}, ATH {1}",fmt(x.g),fmt(x.a)))+"</span><span class='pt'>+"+num(x.p)+"</span></div>"};
+  box.innerHTML="<div class='k'>"+T("Détail de la partie")+"</div>"+R.map(row).join("");box.hidden=false;
+}
 function next(){
   i++;
   if(i<deck.length){show();return}
   $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;
-  countUp($("total"),total,1200,"");settle();
+  countUp($("total"),total,1200,"");settle();drawRecap();
   const p=total/(deck.length*1000);
   $("verdict").textContent=T(p>.8?"Tu sens le marché.":p>.5?"Pas mal, tu es dans le bon ordre de grandeur.":"Les memecoins restent imprévisibles. Retente ta chance.");
 }
