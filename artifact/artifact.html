@@ -782,6 +782,7 @@ const LANGS={fr:"Français",en:"English",es:"Español"};
 let LANG="en";
 let INTRO_DONE=false,DREADY=false,TUT=false;let LSAVED=false;try{LSAVED=!!localStorage.getItem("dath.lang")}catch(e){}
 try{const s=localStorage.getItem("dath.lang"),n=(navigator.language||"").slice(0,2).toLowerCase();LANG=LANGS[s]?s:LANGS[n]?n:"en"}catch(e){}
+LANG="en";
 const DICT={
 en:{
 "devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
@@ -1748,7 +1749,7 @@ function applyLang(){
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
 applyLang();
 (function(){const it=$("intro");if(!it)return;let saved=LSAVED;
-  const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",saved&&b.dataset.l===LANG));mark();
+  const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));mark();
   let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>{it.remove();INTRO_DONE=true;tryTuto()},800)};
   $("ilang").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;saved=true;applyLang();mark();sfx("good");setTimeout(close,260)});
 })();
