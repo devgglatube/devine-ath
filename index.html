@@ -809,8 +809,8 @@ $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(
 
 // ----- courbe "meme coin" animée pendant le chargement (défilement fluide) -----
 (()=>{const P=$("lkp"),C=$("lkc"),K=$("lk"),N=40,DX=160/(N-2),IV=260;let v=30,m=0,prev=30,tgt=30,t0=performance.now();const ys=Array(N).fill(30);
-const next=()=>{const r=Math.random();if(r<.08)m=3+Math.random()*4;else if(r<.14)m=-(2.5+Math.random()*4);m*=.75;
- v+=m+(Math.random()-.47)*.9;if(v>52||v<8){v=Math.max(8,Math.min(52,v));m=-m*.4}return v};
+const next=()=>{const r=Math.random();if(r<.12)m=4+Math.random()*5;else if(r<.2)m=-(3.5+Math.random()*5);m*=.75;
+ v+=m+(Math.random()-.47)*2;if(v>52||v<8){v=Math.max(8,Math.min(52,v));m=-m*.4}return v};
 for(let i=0;i<N;i++)ys[i]=next();prev=ys[N-1];tgt=next();
 const e=t=>t*t*(3-2*t);
 const frame=now=>{requestAnimationFrame(frame);if(document.hidden||!K.getBoundingClientRect().width){t0=now;return}
