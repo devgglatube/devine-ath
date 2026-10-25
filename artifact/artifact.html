@@ -316,7 +316,7 @@ html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.
 #s::-webkit-slider-thumb{width:44px;height:44px;box-shadow:0 0 0 8px rgba(255,255,255,.14)}#s::-moz-range-thumb{width:36px;height:36px}
 #s::-webkit-slider-runnable-track{height:56px;background:transparent}#s::-moz-range-track{background:transparent}
 html[data-mode=light] #s::-webkit-slider-thumb{box-shadow:0 0 0 8px rgba(0,0,0,.08)}
-.guess{font-size:2.8rem}.ticks{font-size:.85rem}</style>
+.guess{font-size:2.8rem}.ticks{font-size:.85rem}@media (min-width:900px){#game>.card:first-child{grid-row:1}#game>.card:nth-child(3){grid-column:1/-1}#game .card:nth-child(3) #input,#game .card:nth-child(3) #out{max-width:none}}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -391,7 +391,7 @@ html[data-mode=light] #s::-webkit-slider-thumb{box-shadow:0 0 0 8px rgba(0,0,0,.
       <div id="tm" hidden><div class="tbar"><i id="tb"></i></div><span id="ts"></span></div>
       <div class="k" style="text-align:center">Ton ATH (market cap max)</div>
       <div class="guess" id="g"></div>
-      <input type="range" id="s" min="0" max="10000" value="500" aria-label="Prédiction du market cap maximum">
+      <input type="range" id="s" min="0" max="100000" value="500" aria-label="Prédiction du market cap maximum">
       <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
       <button id="ok">Valider ma prédiction</button>
     </div>
@@ -788,7 +788,7 @@ let deck,i,total,skip,busy,mode="casual",timer=0,zero=false,gen=0,streak=0,bestS
 
 const fmt=v=>v>=1e9?(v/1e9).toFixed(1).replace(".",decSep())+(LANG==="fr"?" Md$":" B$"):v>=1e6?(v/1e6).toFixed(v>=1e7?0:1).replace(".",decSep())+" M$":v>=1e3?Math.round(v/1e3)+" K$":Math.round(v)+" $";
 let SCL="lin";try{SCL=localStorage.getItem("dath.scale")==="log"?"log":"lin"}catch(e){}
-const LOV=Math.pow(10,LO),HIV=150e6,SMAX=10000;
+const LOV=Math.pow(10,LO),HIV=150e6,SMAX=100000;
 const val=()=>{const f=$("s").value/SMAX;return SCL==="lin"?LOV+f*(HIV-LOV):Math.pow(10,LO+f*SPAN)};
 const posOf=v=>SMAX*(SCL==="lin"?(v-LOV)/(HIV-LOV):(Math.log10(v)-LO)/SPAN);
 function sclTicks(){const t=document.querySelector("#input .ticks");if(t)t.innerHTML="<span>10 K$</span><span>"+(SCL==="lin"?"75 M$":"1 M$")+"</span><span>150 M$</span>"}
