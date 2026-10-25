@@ -1,0 +1,17 @@
+[
+ {
+  "m": "FBcrTWLEVTxKuc67LLiN2DwUQ6JrPjNyz5MY5iBMpump",
+  "status": 429,
+  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+ },
+ {
+  "m": "HVCX2j4mch83a1sxtC2gjLeamGp3Z6bD8j8b2kqTG8ZA",
+  "status": 429,
+  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+ },
+ {
+  "m": "6bW6xsZxYqcvqabk9rRgQwgjPNwe8SACPusx5o1wpump",
+  "status": 429,
+  "body": " {\"jsonrpc\":\"2.0\",\"error\":{\"code\": 429,\"message\":\"Too many requests for a specific RPC call\"}, \"id\": 1 } \r\n"
+ }
+]
