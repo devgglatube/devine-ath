@@ -308,7 +308,7 @@ en:{
 "Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Leaving a ranked game loses your stake. Press again to confirm.","CA copié.":"CA copied.","Paires":"Pairs","Fees partagés":"Fees shared","Holders":"Holders","Charité":"Charity","Code copié.":"Code copied.","Dataset copié.":"Dataset copied.","Sélectionné : copie avec Ctrl/Cmd+C.":"Selected: copy with Ctrl/Cmd+C.",
 "Quasiment pile !":"Almost spot on!","Tu étais ×{0} trop haut":"You were ×{0} too high","Tu étais ×{0} trop bas":"You were ×{0} too low","Manche suivante":"Next round","Voir mon score":"See my score",
 "Tu sens le marché.":"You can feel the market.","Pas mal, tu es dans le bon ordre de grandeur.":"Not bad, you’re in the right ballpark.","Les memecoins restent imprévisibles. Retente ta chance.":"Memecoins stay unpredictable. Try again.",
-"Points gagnés":"Points earned","Nouveau rang : {0} !":"New rank: {0}!","Rang perdu : {0}":"Rank lost: {0}","Rejouer en ranked ({0} pts)":"Play ranked again ({0} pts)","Pas assez de points : mode classique":"Not enough points: classic mode",
+"Points gagnés":"Points earned","Nouveau rang : {0} !":"New rank: {0}!","Rang perdu : {0}":"Rank lost: {0}","Rejouer en ranked ({0} pts)":"Play ranked again ({0} pts)","Rejouer en ranked (gratuit)":"Play ranked again (free)","gratuit":"free","Gratuit ({0}) · 6 s par manche · 10 manches":"Free ({0}) · 6 s per round · 10 rounds","Pas assez de points : mode classique":"Not enough points: classic mode",
 "Joueur":"Player","Points de rang":"Rank points","Partie":"Game","Score":"Score","Le classement en ligne n’est pas disponible ici.":"The online leaderboard isn’t available here.",
 "Ouvre le jeu depuis son lien en étant connecté à claude.ai pour apparaître au classement.":"Open the game from its link while signed in to claude.ai to appear on the leaderboard.","Chargement…":"Loading…",
 "Ton score arrive : envoi en cours.":"Your score is on its way: sending.","Ton score arrive : lecture seule, pas d’envoi.":"Your score is on its way: read-only, nothing sent.",
@@ -339,7 +339,7 @@ es:{
 "Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer.":"Abandonar una partida ranked pierde tu apuesta. Pulsa de nuevo para confirmar.","CA copié.":"CA copiado.","Paires":"Pares","Fees partagés":"Fees compartidos","Holders":"Holders","Charité":"Caridad","Code copié.":"Código copiado.","Dataset copié.":"Dataset copiado.","Sélectionné : copie avec Ctrl/Cmd+C.":"Seleccionado: copia con Ctrl/Cmd+C.",
 "Quasiment pile !":"¡Casi exacto!","Tu étais ×{0} trop haut":"Te pasaste ×{0}","Tu étais ×{0} trop bas":"Te quedaste ×{0} corto","Manche suivante":"Siguiente ronda","Voir mon score":"Ver mi puntuación",
 "Tu sens le marché.":"Sientes el mercado.","Pas mal, tu es dans le bon ordre de grandeur.":"Nada mal, estás en el orden de magnitud correcto.","Les memecoins restent imprévisibles. Retente ta chance.":"Los memecoins siguen siendo impredecibles. Inténtalo de nuevo.",
-"Points gagnés":"Puntos ganados","Nouveau rang : {0} !":"¡Nuevo rango: {0}!","Rang perdu : {0}":"Rango perdido: {0}","Rejouer en ranked ({0} pts)":"Jugar ranked otra vez ({0} pts)","Pas assez de points : mode classique":"Puntos insuficientes: modo clásico",
+"Points gagnés":"Puntos ganados","Nouveau rang : {0} !":"¡Nuevo rango: {0}!","Rang perdu : {0}":"Rango perdido: {0}","Rejouer en ranked ({0} pts)":"Jugar ranked otra vez ({0} pts)","Rejouer en ranked (gratuit)":"Jugar ranked otra vez (gratis)","gratuit":"gratis","Gratuit ({0}) · 6 s par manche · 10 manches":"Gratis ({0}) · 6 s por ronda · 10 rondas","Pas assez de points : mode classique":"Puntos insuficientes: modo clásico",
 "Joueur":"Jugador","Points de rang":"Puntos de rango","Partie":"Partida","Score":"Puntuación","Le classement en ligne n’est pas disponible ici.":"La clasificación en línea no está disponible aquí.",
 "Ouvre le jeu depuis son lien en étant connecté à claude.ai pour apparaître au classement.":"Abre el juego desde su enlace con tu sesión de claude.ai para aparecer en la clasificación.","Chargement…":"Cargando…",
 "Ton score arrive : envoi en cours.":"Tu puntuación está en camino: enviando.","Ton score arrive : lecture seule, pas d’envoi.":"Tu puntuación está en camino: solo lectura, sin envío.",
@@ -592,7 +592,9 @@ function next(){
 // ===== Points, rangs, profil (sauvegardés ici, et en ligne quand c’est possible) =====
 const RANKS=[["Exit Liquidity",0,"#8B8B96"],["Paper Hands",150,"#7DB8FF"],["Degen",400,"#22E27A"],["Sniper",800,"#FFC53D"],["KOL",1400,"#FF8A3D"],["Drainer",2200,"#FF4F64"]];
 const TOP={4:500,5:100}; // KOL = top 500, Drainer = top 100 du classement en ligne
-const COSTS=[100,150,200,300,450,700]; // mise ranked selon le rang : Exit Liquidity … Drainer
+const COSTS=[0,50,100,200,350,600]; // mise ranked selon le rang : Exit Liquidity (gratuit) … Drainer
+// RP gagnés ou perdus selon la performance p (0 à 1) : seuil à 55 %, les pertes augmentent avec le rang
+const rpDelta=(p,j)=>{let d=Math.round((p-.55)*200);if(d<0)d=Math.round(d*(1+.3*j));return Math.max(-150,Math.min(100,d))};
 const costNow=()=>COSTS[rankOf(S.rp,myPos())];
 let stake=0,paid=false;
 const TIME=6000, TIMEOUT_ZERO=false; // TIMEOUT_ZERO=true : 0 point si les 6 s sont écoulées (sinon la prédiction est validée là où est le curseur)
@@ -649,7 +651,7 @@ function refresh(){
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
   const C=costNow();$("mrk").disabled=S.pts<C;acct();
-  $("msub").textContent=S.pts>=C?T("Mise {0} pts ({1}) · 6 s par manche · 10 manches",C,r[0]):T("Il te faut {0} pts (gagne-en en classique)",C);
+  $("msub").textContent=S.pts>=C?(C?T("Mise {0} pts ({1}) · 6 s par manche · 10 manches",C,r[0]):T("Gratuit ({0}) · 6 s par manche · 10 manches",r[0])):T("Il te faut {0} pts (gagne-en en classique)",C);
 }
 function startTimer(){
   stopTimer();$("tm").hidden=mode!=="ranked";if(mode!=="ranked")return;
@@ -667,11 +669,11 @@ function launch(m){
   start(m);
 }
 function settle(){
-  const p=total/(deck.length*1000),gp=Math.round(p*(mode==="ranked"?(stake||200)*1.5:deck.length*50));
+  const p=total/(deck.length*1000),gp=Math.round(p*(mode==="ranked"?(stake?stake*1.5:100):deck.length*50));
   let h="<div>"+T("Points gagnés")+" <b class='pos'>+"+gp+" pts</b></div>";S.pts+=gp;
   S.games=(S.games||0)+1;const sc=Math.round(p*5000);if(mode==="ranked"&&sc>(S.best||0))S.best=sc;
   if(mode==="ranked"){
-    const old=S.rp,d=Math.max(-60,Math.min(125,Math.round((p*5000-2500)/20)));
+    const old=S.rp,d=rpDelta(p,rankOf(S.rp,estPos(S.rp)));
     const o=rankOf(old,estPos(old));
     S.rp=Math.max(0,old+d);const n=rankOf(S.rp,estPos(S.rp));
     h+="<div>Rank points <b class='"+(d>=0?"pos":"neg")+"'>"+(d>=0?"+":"")+d+" RP</b></div>";
@@ -679,7 +681,7 @@ function settle(){
   }
   S.scores.push({m:mode,s:sc,t:Date.now()});S.scores=S.scores.slice(-300);save();push();
   $("sum").innerHTML=h;
-  $("again").textContent=mode==="ranked"?(S.pts>=costNow()?T("Rejouer en ranked ({0} pts)",costNow()):T("Pas assez de points : mode classique")):T("Rejouer");
+  $("again").textContent=mode==="ranked"?(S.pts>=costNow()?(costNow()?T("Rejouer en ranked ({0} pts)",costNow()):T("Rejouer en ranked (gratuit)")):T("Pas assez de points : mode classique")):T("Rejouer");
   refresh();
 }
 
@@ -749,7 +751,7 @@ function drawRanks(){
   $("pn").value=S.name;
   $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
   $("rp-b").style.width=(nx?Math.max(0,Math.min(100,(S.rp-RANKS[j][1])/(nx[1]-RANKS[j][1])*100)):100)+"%";
-  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+T("mise {0}",COSTS[k])+"</span></li>").join("");
+  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
 }
 
 // ----- événements -----
