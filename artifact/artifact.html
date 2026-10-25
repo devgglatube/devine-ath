@@ -330,6 +330,28 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 #game>.card:nth-child(2) .cw{flex:none}
 @media (min-width:900px){#game{grid-template-rows:560px auto}}@media (min-width:900px){#game>.card:nth-child(2) .cw{height:430px}#game>.card:nth-child(2) .cw #svg{height:100%;width:100%}}
 @media (max-width:899px){#game>.card:first-child{height:min(58vh,560px)}#game>.card:nth-child(2){height:auto}#game>.card:nth-child(2) .cw{min-height:200px}}
+/* v115 intro */
+#intro{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:radial-gradient(ellipse at 50% 38%,color-mix(in srgb,var(--up) 22%,#05080a) 0,#050506 62%);color:#fff;transition:opacity .7s ease,transform .7s ease,visibility .7s;overflow:hidden}
+#intro.out{opacity:0;transform:scale(1.06);visibility:hidden;pointer-events:none}
+#intro .ig{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 70%);mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 70%);animation:igp 9s linear infinite}
+@keyframes igp{to{background-position:56px 56px}}
+#intro svg.ic{position:relative;width:min(560px,86vw);height:auto;overflow:visible}
+#intro .ln{fill:none;stroke:var(--up);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:ild 2.1s .25s cubic-bezier(.6,.05,.25,1) forwards;filter:drop-shadow(0 0 8px var(--up))}
+#intro .ar{fill:var(--up);opacity:.12;opacity:0;animation:ifa 1s 1.6s forwards}
+@keyframes ild{to{stroke-dashoffset:0}}@keyframes ifa{to{opacity:.14}}
+#intro .dt{fill:#fff;opacity:0;transform-box:fill-box;transform-origin:center;animation:idt .6s 2.2s cubic-bezier(.2,1.6,.4,1) forwards}
+#intro .rg{fill:none;stroke:var(--up);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:irg 1.6s 2.3s ease-out infinite}
+@keyframes idt{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@keyframes irg{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(5)}}
+#intro .iw{position:relative;text-align:center;opacity:0;transform:translateY(16px);animation:iup .9s 1.5s ease forwards}
+#intro .iw b{display:block;font-size:clamp(2rem,7vw,3.4rem);font-weight:800;letter-spacing:-.04em;background:linear-gradient(90deg,#fff,var(--up),#fff);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ish 4s 2.4s linear infinite}
+#intro .iw span{display:block;margin-top:6px;color:#9aa;font-size:.95rem;letter-spacing:.04em}
+@keyframes iup{to{opacity:1;transform:none}}@keyframes ish{to{background-position:-220% 0}}
+#intro .il{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;opacity:0;transform:translateY(14px);animation:iup .8s 2.3s ease forwards}
+#intro .il button{width:auto;min-width:128px;padding:12px 22px;border-radius:99px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+#intro .il button:hover{transform:translateY(-3px);border-color:var(--up);background:color-mix(in srgb,var(--up) 22%,transparent);box-shadow:0 8px 28px color-mix(in srgb,var(--up) 35%,transparent)}
+#intro .il button.on{border-color:var(--up);background:color-mix(in srgb,var(--up) 26%,transparent)}
+#intro .ih{position:relative;color:#7b8;font-size:.78rem;opacity:0;animation:iup .8s 2.7s ease forwards}
+@media (prefers-reduced-motion:reduce){#intro *{animation-duration:.01s!important;animation-delay:0s!important}}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -685,6 +707,13 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 </main>
 </div>
 
+<div id="intro" role="dialog" aria-label="Langue">
+<div class="ig"></div>
+<svg class="ic" viewBox="0 0 400 150" aria-hidden="true"><path class="ar" d="M10 130 L60 100 L95 112 L140 70 L180 84 L230 40 L270 58 L330 18 L330 140 L10 140Z"/><path class="ln" d="M10 130 L60 100 L95 112 L140 70 L180 84 L230 40 L270 58 L330 18"/><circle class="rg" cx="330" cy="18" r="6"/><circle class="dt" cx="330" cy="18" r="6"/></svg>
+<div class="iw"><b>Devine l’ATH</b><span>Lis le narratif, devine l’ATH.</span></div>
+<div class="il" id="ilang"><button data-l="fr">Français</button><button data-l="en">English</button><button data-l="es">Español</button></div>
+<div class="ih" id="ihint">Choisis ta langue pour commencer</div>
+</div>
 <script>
 // Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
 let COINS=[
@@ -697,6 +726,7 @@ const $=id=>document.getElementById(id);
 // ===== Langues : le français est la source, T() traduit à l’affichage =====
 const LANGS={fr:"Français",en:"English",es:"Español"};
 let LANG="en";
+let LSAVED=false;try{LSAVED=!!localStorage.getItem("dath.lang")}catch(e){}
 try{const s=localStorage.getItem("dath.lang"),n=(navigator.language||"").slice(0,2).toLowerCase();LANG=LANGS[s]?s:LANGS[n]?n:"en"}catch(e){}
 const DICT={
 en:{
@@ -1479,6 +1509,7 @@ $("pn").addEventListener("change",()=>push());
 Object.assign(DICT.en,{"Champion":"Champion","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Unique trophy: #1 on the leaderboard. It passes to the next best score.","Terminé · reviens demain":"Done · come back tomorrow","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
 Object.assign(DICT.es,{"Champion":"Campeón","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Trofeo único: n.º 1 de la clasificación. Pasa al siguiente mejor puntaje.","Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 Object.assign(DICT.en,{"Sons":"Sounds","Activés":"On","Coupés":"Off"});Object.assign(DICT.es,{"Sons":"Sonidos","Activés":"Activados","Coupés":"Desactivados"});
+Object.assign(DICT.en,{"Devine l’ATH":"Guess the ATH","Lis le narratif, devine l’ATH.":"Read the narrative, guess the ATH.","Choisis ta langue pour commencer":"Choose your language to start"});Object.assign(DICT.es,{"Devine l’ATH":"Adivina el ATH","Lis le narratif, devine l’ATH.":"Lee la narrativa, adivina el ATH.","Choisis ta langue pour commencer":"Elige tu idioma para empezar"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
@@ -1593,6 +1624,12 @@ function applyLang(){
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
 applyLang();
+(function(){const it=$("intro");if(!it)return;let saved=LSAVED;
+  const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",saved&&b.dataset.l===LANG));mark();
+  let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>it.remove(),800)};
+  $("ilang").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;saved=true;applyLang();mark();sfx("good");setTimeout(close,260)});
+  if(saved){$("ihint").textContent="";setTimeout(close,3600);it.addEventListener("click",e=>{if(!e.target.closest("button"))close()})}
+})();
 refresh();
 goOnline();
 // Charge coins.json s’il existe (créé par fetch-coins.mjs), sinon garde les coins de démo.
