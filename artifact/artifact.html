@@ -312,7 +312,7 @@ html[data-mode=light] .lock{background:#E4E4E8}html[data-mode=light] .lock path{
 html[data-mode=light] .card:hover{border-color:#c5c5cc}html[data-mode=light] .card,html[data-mode=light] .pn{box-shadow:0 1px 2px rgba(0,0,0,.05)}
 html[data-mode=light] #mn,html[data-mode=light] h2{color:var(--ink)}
 html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.55)}
-#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}#go{background:var(--up);color:var(--on-up)}.lock path{stroke:var(--up)}#lkc{fill:var(--up)}#sh-t,.side button[data-a].on{color:var(--up)}.side button[data-a].on::before{background:var(--up)}html[data-mode=light] .lock path{stroke:var(--up)}html[data-mode=light] .side button[data-a].on{color:var(--up)}.navsp{flex:1;min-height:12px;border-bottom:1px solid var(--line);margin-bottom:6px}@media (max-width:899px){.navsp{display:none}}.navh{text-align:center}</style>
+#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}#go{background:var(--up);color:var(--on-up)}.lock path{stroke:var(--up)}#lkc{fill:var(--up)}#sh-t,.side button[data-a].on{color:var(--up)}.side button[data-a].on::before{background:var(--up)}html[data-mode=light] .lock path{stroke:var(--up)}html[data-mode=light] .side button[data-a].on{color:var(--up)}.navsp{flex:1;min-height:12px;border-bottom:1px solid var(--line);margin-bottom:6px}@media (max-width:899px){.navsp{display:none}}.navh{text-align:center}#mdl{position:relative}#mdl.done{padding-right:44px}.dchk{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--up);color:var(--on-up);display:flex;align-items:center;justify-content:center}.dchk svg{width:16px;height:16px}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -323,7 +323,7 @@ html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.
     <div class="navh">Jouer</div>
     <button data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
     <button data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
-    <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small></button>
+    <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small><span class="dchk" hidden aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
     <div class="navh">Progression</div>
     <button data-a="scores">Classement et scores</button>
     <button data-a="ranks">Rangs et profil</button>
@@ -807,7 +807,7 @@ function dailyDeck(){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};
   const L=dailyPick(d);D.dk=d;D.keys=L.map(seenKey);save();return L}
 function dailyPick(d){return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
 function dailySub(){const D=S.daily||{},alive=D.last===dayKey()||D.last===dayKey(1);
-  return D.started===dayKey()||D.last===dayKey()?(D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("Défi du jour commencé · reviens demain")):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
+  return D.started===dayKey()||D.last===dayKey()?T("Terminé · reviens demain"):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
 // coins les plus ratés (écart de plus de ×5) : on les garde pour s’entraîner dessus, sans points
 const missKeys=()=>{const have=new Set(COINS.map(seenKey));return(S.miss||[]).filter(x=>have.has(x))};
 function reviewDeck(){return missKeys().sort(()=>Math.random()-.5).slice(0,8).map(x=>COINS.find(k=>seenKey(k)===x))}
@@ -1086,7 +1086,7 @@ function refresh(){
   $("mn").innerHTML=NM(j,S.name);$("mn").title=r[0];$("mr").textContent=r[0];$("mr").style.color=r[2];
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
-  const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();
+  const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();{const D=S.daily||{},dn=D.started===dayKey()||D.last===dayKey();$("mdl").querySelector(".dchk").hidden=!dn;$("mdl").classList.toggle("done",dn)}
   $("msub").textContent=S.pts>=C?(C?T("Mise {0} pts ({1}) · 6 s par manche · 10 manches",C,r[0]):T("Gratuit ({0}) · 6 s par manche · 10 manches",r[0])):T("Il te faut {0} pts (gagne-en en classique)",C);
 }
 function startTimer(){
@@ -1394,8 +1394,8 @@ $("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#s
 $("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
 $("pn").addEventListener("change",()=>push());
 
-Object.assign(DICT.en,{"Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
-Object.assign(DICT.es,{"Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+Object.assign(DICT.en,{"Terminé · reviens demain":"Done · come back tomorrow","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
+Object.assign(DICT.es,{"Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
