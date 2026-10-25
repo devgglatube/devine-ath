@@ -66,6 +66,8 @@ function concentrated(info) {
 }
 let CAM = {};
 try { CAM = JSON.parse(await readFile("artifact/ca-map.json", "utf8")); } catch {}
+let BLOCK = [];
+try { BLOCK = JSON.parse(await readFile("blocklist.json", "utf8")); } catch {}
 const mintOf = (c) => c.id || CAM[keyOf(c)];
 
 // --- coins déjà présents ---
@@ -80,7 +82,7 @@ const before = out.length;
 out = out.filter((c) => !isRug(c.ch));
 if (out.length < before) console.log(`${before - out.length} rug pull(s) retiré(s) de coins.json`);
 const bf = out.length;
-out = out.filter((c) => !isFlat(c.ch));
+out = out.filter((c) => !isFlat(c.ch) && !BLOCK.includes(keyOf(c)));
 if (out.length < bf) console.log(`${bf - out.length} coin(s) trop plat(s) retiré(s) de coins.json`);
 out = out.filter((c, i) => out.findIndex((x) => keyOf(x) === keyOf(c)) === i); // pas deux coins avec le même nom
 out.forEach((c) => (c.b = bucketOf(c.ath)));
@@ -247,6 +249,7 @@ for (const cand of candidates) {
   console.log("→", cand.pool.name);
   try {
     const coin = await buildCoin(cand);
+    if (BLOCK.includes(keyOf(coin))) throw new Error("coin bloqué");
     if (known.has(keyOf(coin))) throw new Error("déjà présent");
     known.add(keyOf(coin));
     out.push(coin);
