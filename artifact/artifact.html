@@ -299,7 +299,20 @@ input[type=range]{height:32px;background:linear-gradient(var(--line),var(--line)
 input[type=range]:focus-visible{outline:none}
 input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
 input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
-#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}#fx-o{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.fx-b{display:flex;gap:18px;align-items:flex-start;max-width:100%;flex-wrap:wrap;justify-content:center}#fx-cv{width:min(380px,86vw);height:auto;aspect-ratio:1080/1350;border-radius:18px;background:#000}.fx-c{display:grid;gap:10px;width:min(300px,86vw)}.fx-c .tabs{display:flex;gap:6px}.fx-c .tabs button{width:auto;flex:1}.fx-c button{width:100%}</style>
+#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}#fx-o{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.fx-b{display:flex;gap:18px;align-items:flex-start;max-width:100%;flex-wrap:wrap;justify-content:center}#fx-cv{width:min(380px,86vw);height:auto;aspect-ratio:1080/1350;border-radius:18px;background:#000}.fx-c{display:grid;gap:10px;width:min(300px,86vw)}.fx-c .tabs{display:flex;gap:6px}.fx-c .tabs button{width:auto;flex:1}.fx-c button{width:100%}.langs{display:flex;gap:6px;align-items:center;padding:8px 0 0;flex-wrap:wrap}#set-v .langs button{width:auto;padding:10px 16px;font-size:.9rem;border-radius:99px}
+.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px}.themes button{display:flex;align-items:center;gap:10px;background:var(--card2);color:var(--ink);padding:12px;border-radius:14px;font-size:.9rem;text-align:left}.themes button i{width:22px;height:22px;border-radius:50%;flex:none}.themes button.on{box-shadow:inset 0 0 0 2px var(--up)}
+#line{stroke:var(--up)}#head,#peak circle,.pen{fill:var(--up)}#gr stop{stop-color:var(--up)}.mk rect{fill:var(--up)}
+html[data-mode=light]{--bg:#F4F4F6;--card:#fff;--card2:#EEEEF1;--line:#DCDCE1;--ink:#0B0B0D;--muted:#6B6B74;--down:#D92D45;color-scheme:light}
+html[data-mode=light] body{background:var(--bg)}html[data-mode=light] .side{background:#fff}
+html[data-mode=light] button{color:#fff}html[data-mode=light] .ghost,html[data-mode=light] .alt,html[data-mode=light] .lg button,html[data-mode=light] .themes button,html[data-mode=light] .side button[data-a],html[data-mode=light] .lvl button,html[data-mode=light] .ask button{color:var(--ink)}
+html[data-mode=light] .side button[data-a]{color:var(--muted)}html[data-mode=light] .side button[data-a].on,html[data-mode=light] .side button[data-a]:hover{color:var(--ink)}
+html[data-mode=light] .pill,html[data-mode=light] .acct,html[data-mode=light] .langs button,html[data-mode=light] .tabs button,html[data-mode=light] #sx{color:var(--ink)}
+html[data-mode=light] .langs button.on,html[data-mode=light] .tabs button.on{background:var(--ink);color:#fff}
+html[data-mode=light] .lock{background:#E4E4E8}html[data-mode=light] .lock path{stroke:#9a9aa3}html[data-mode=light] .lbl{fill:#0B0B0D}
+html[data-mode=light] .card:hover{border-color:#c5c5cc}html[data-mode=light] .card,html[data-mode=light] .pn{box-shadow:0 1px 2px rgba(0,0,0,.05)}
+html[data-mode=light] #mn,html[data-mode=light] h2{color:var(--ink)}
+html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.55)}
+#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -313,6 +326,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small></button>
     <button data-a="scores">Classement et scores</button>
     <button data-a="ranks">Rangs et profil</button>
+    <button data-a="settings">Paramètres<small>Langue et thème de couleur</small></button>
     <div class="navh">Apprendre</div>
     <button data-a="help">Comment ça marche<small>Règles, score et rangs expliqués</small></button>
     <button data-a="trust">Transparence<small>Score, sources des données, limites</small></button>
@@ -320,7 +334,6 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <button data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
     <button data-a="rent">Louer mon bot<small>Gagne en prêtant ses prédictions</small></button>
   </nav>
-  <div class="langs" id="langs"><span class="k">Langue</span><button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
 </aside>
 <main>
 <div class="top"><div class="pill" id="meta"></div></div>
@@ -613,6 +626,14 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <p class="note" style="margin-top:6px">Est-ce un jeu d’argent ? Non : on joue avec des points, jamais avec de l’argent réel.</p>
     <p class="note" style="margin-top:6px">Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.</p>
     <p class="note" style="margin-top:6px">Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.</p>
+  </div>
+<div id="set-v" hidden>
+    <div class="k">Langue</div>
+    <div class="langs" id="langs"><button data-l="fr">Français</button><button data-l="en">English</button><button data-l="es">Español</button></div>
+    <div class="k" style="margin-top:18px">Apparence</div>
+    <div class="langs" id="modes"><button data-md="dark">Sombre</button><button data-md="light">Clair</button></div>
+    <div class="k" style="margin-top:18px">Thème de couleur</div>
+    <div class="themes" id="themes"></div>
   </div>
 <div id="ac-v" hidden></div>
   <div id="rk-v" hidden>
@@ -1109,9 +1130,9 @@ let abandoned=false;
 function sheet(w){
   if(!w&&abandoned){abandoned=false;shown=0;start("casual");return}
   $("ask-v").hidden=true;shown=w;$("sh").hidden=!w;document.body.classList.toggle("onpage",!!w);navOn();if(w)window.scrollTo(0,0);if(!w)return;
-  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":w==="help"?"Comment ça marche":w==="rent"?"Louer mon bot":w==="trust"?"Transparence":w==="account"?"Mon compte":"Rangs et profil");
-  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";$("ac-v").hidden=w!=="account";$("help-v").hidden=w!=="help";$("lvl").hidden=$("lvk").hidden=!(w==="help"||w==="bot"||w==="rent");setLvl(S.lvl||2);$("rent-v").hidden=w!=="rent";$("trust-v").hidden=w!=="trust";
-  w==="help"?0:w==="trust"?drawTrust():w==="rent"?drawRent():w==="scores"?drawScores():w==="bot"?drawBot():w==="account"?drawAccount():drawRanks();
+  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":w==="help"?"Comment ça marche":w==="rent"?"Louer mon bot":w==="trust"?"Transparence":w==="account"?"Mon compte":w==="settings"?"Paramètres":"Rangs et profil");
+  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";$("ac-v").hidden=w!=="account";$("set-v").hidden=w!=="settings";$("help-v").hidden=w!=="help";$("lvl").hidden=$("lvk").hidden=!(w==="help"||w==="bot"||w==="rent");setLvl(S.lvl||2);$("rent-v").hidden=w!=="rent";$("trust-v").hidden=w!=="trust";
+  w==="help"?0:w==="trust"?drawTrust():w==="rent"?drawRent():w==="scores"?drawScores():w==="bot"?drawBot():w==="account"?drawAccount():w==="settings"?drawSettings():drawRanks();
 }
 
 const CATS={help:"Comment ça marche",bot:"Entraîner mon bot",rent:"Louer mon bot"};
@@ -1119,7 +1140,7 @@ let askFor=null;
 function askLvl(a){
   askFor=a;shown=a;$("sh").hidden=false;document.body.classList.add("onpage");navOn();window.scrollTo(0,0);
   $("sh-t").textContent=T(CATS[a]);
-  ["sc-v","rk-v","bot-v","ac-v","help-v","rent-v","trust-v","lvl","lvk"].forEach(id=>$(id).hidden=true);
+  ["sc-v","rk-v","bot-v","ac-v","set-v","help-v","rent-v","trust-v","lvl","lvk"].forEach(id=>$(id).hidden=true);
   $("ask-v").hidden=false;document.querySelectorAll("#ask-v [data-pick]").forEach(b=>b.classList.toggle("on",+b.dataset.pick===(S.lvl||2)));
 }
 $("ask-v").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b||!askFor)return;setLvl(+b.dataset.pick);const a=askFor;askFor=null;sheet(a)});
@@ -1244,23 +1265,23 @@ const FX={mode:"ranked",media:null,kind:null,vid:null,raf:0,icon:null,iconK:-1};
 function fxIcon(j,cb){if(FX.iconK===j&&FX.icon)return;FX.iconK=j;const im=new Image();im.onload=()=>{FX.icon=im;if(cb)cb()};im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(RI[j].replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" '))}
 function fxStats(){const j=rankOf(S.rp,myPos()),t=statOf(FX.mode),pc=v=>v==null?"—":Math.round(v)+" %";
   return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:pc(t.avg),cells:[[T("Parties"),String(t.g)],[T("Meilleure partie"),pc(t.best)],[T("Quasi pile"),String(t.x)],["RP",num(S.rp)]]}}
-function fxDraw(cv){const c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats();
+function fxDraw(cv){const AC=(getComputedStyle(document.documentElement).getPropertyValue("--up")||"#22E27A").trim(),c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats();
   c.fillStyle="#07090c";c.fillRect(0,0,W,H);
   const m=FX.media;
   if(m){const w=FX.kind==="video"?m.videoWidth:m.naturalWidth,h=FX.kind==="video"?m.videoHeight:m.naturalHeight;
     if(w&&h){const s=Math.max(W/w,H/h);c.drawImage(m,(W-w*s)/2,(H-h*s)/2,w*s,h*s)}}
-  else{const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#06150C");g.addColorStop(1,"#0b0f14");c.fillStyle=g;c.fillRect(0,0,W,H);
-    c.strokeStyle="rgba(34,226,122,.35)";c.lineWidth=8;c.lineJoin="round";c.beginPath();c.moveTo(60,H*.55);c.lineTo(W*.3,H*.42);c.lineTo(W*.5,H*.5);c.lineTo(W*.75,H*.3);c.lineTo(W-60,H*.2);c.stroke()}
+  else{const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#000");g.addColorStop(1,"#0b0f14");c.fillStyle=g;c.fillRect(0,0,W,H);
+    c.globalAlpha=1;c.strokeStyle=AC;c.lineWidth=8;c.lineJoin="round";c.beginPath();c.moveTo(60,H*.55);c.lineTo(W*.3,H*.42);c.lineTo(W*.5,H*.5);c.lineTo(W*.75,H*.3);c.lineTo(W-60,H*.2);c.stroke()}
   const ov=c.createLinearGradient(0,0,0,H);ov.addColorStop(0,"rgba(0,0,0,.65)");ov.addColorStop(.45,"rgba(0,0,0,.25)");ov.addColorStop(1,"rgba(0,0,0,.8)");c.fillStyle=ov;c.fillRect(0,0,W,H);
-  c.textBaseline="alphabetic";c.fillStyle="#22E27A";c.beginPath();c.roundRect(60,60,56,56,16);c.fill();
-  c.strokeStyle="#06150C";c.lineWidth=6;c.lineCap="round";c.lineJoin="round";c.beginPath();c.moveTo(72,102);c.lineTo(86,84);c.lineTo(96,94);c.lineTo(108,76);c.stroke();
+  c.textBaseline="alphabetic";c.fillStyle=AC;c.beginPath();c.roundRect(60,60,56,56,16);c.fill();
+  c.strokeStyle="#000";c.lineWidth=6;c.lineCap="round";c.lineJoin="round";c.beginPath();c.moveTo(72,102);c.lineTo(86,84);c.lineTo(96,94);c.lineTo(108,76);c.stroke();
   c.fillStyle="#fff";c.font="700 40px system-ui,sans-serif";c.fillText("devine l’ATH",132,102);
   c.textAlign="right";c.fillStyle="rgba(255,255,255,.75)";c.font="700 32px system-ui,sans-serif";c.fillText(FX.mode==="ranked"?"RANKED":T("Mode classique").toUpperCase(),W-60,102);c.textAlign="left";
   if(FX.icon)c.drawImage(FX.icon,60,H-760,96,96);
   c.fillStyle="#fff";c.font="800 64px system-ui,sans-serif";c.fillText(d.name,176,H-700);
   c.fillStyle=d.color;c.font="800 36px system-ui,sans-serif";c.fillText(d.rank,176,H-654);
   c.fillStyle="rgba(255,255,255,.7)";c.font="600 34px system-ui,sans-serif";c.fillText(T("Précision moyenne"),60,H-520);
-  c.fillStyle="#22E27A";c.font="900 190px system-ui,sans-serif";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=24;c.fillText(d.big,56,H-350);c.shadowBlur=0;
+  c.fillStyle=AC;c.font="900 190px system-ui,sans-serif";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=24;c.fillText(d.big,56,H-350);c.shadowBlur=0;
   const cw=(W-120-3*16)/4,y=H-290;
   d.cells.forEach((x,k)=>{const px=60+k*(cw+16);c.fillStyle="rgba(0,0,0,.55)";c.beginPath();c.roundRect(px,y,cw,170,22);c.fill();
     c.fillStyle="rgba(255,255,255,.65)";c.font="600 24px system-ui,sans-serif";c.fillText(x[0].length>14?x[0].slice(0,13)+"…":x[0],px+18,y+48);
@@ -1367,6 +1388,18 @@ $("share").addEventListener("click",async()=>{
   catch(e){const f=$("sharetext");f.value=t;f.hidden=false;f.focus();f.select()}
   setTimeout(()=>$("share").textContent=T("Partager mon score"),2000);
 });
+
+Object.assign(DICT.en,{"Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
+Object.assign(DICT.es,{"Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
+let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
+function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
+  try{localStorage.setItem("dath.theme",String(TH));localStorage.setItem("dath.mode",MD)}catch(e){}
+  const t=$("themes");if(t)t.querySelectorAll("button").forEach((b,k)=>b.classList.toggle("on",k===TH));const m=$("modes");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.md===MD))}
+function drawSettings(){$("themes").innerHTML=THEMES.map((t,k)=>"<button data-th='"+k+"'><i style='background:"+t[1]+"'></i>"+T(t[0])+"</button>").join("");applyTheme()}
+$("themes").addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(b){TH=+b.dataset.th;applyTheme()}});
+$("modes").addEventListener("click",e=>{const b=e.target.closest("[data-md]");if(b){MD=b.dataset.md;applyTheme()}});
+applyTheme();
 
 function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
