@@ -167,7 +167,7 @@
   "ho": 927,
   "c": "Solana",
   "l": "22 octobre 2026",
-  "d": "The Perpetual Trading Protocol Built for Memecoin Traders.\nLong &amp; Short Memecoins up to 1000x \u2022 Stake $VIRTUAL \u2022 Earn USDC \u2022Buy-Back &amp; Burn $VIRTUAL.",
+  "d": "The Perpetual Trading Protocol Built for Memecoin Traders.\nLong &amp; Short Memecoins up to 1000x • Stake $VIRTUAL • Earn USDC •Buy-Back &amp; Burn $VIRTUAL.",
   "ath": 586369,
   "ch": [
    125633,
@@ -409,7 +409,7 @@
   "img": "https://assets.geckoterminal.com/cx4dx2gu5iebtp5et1z4psgney9g",
   "ho": 6064,
   "c": "Solana",
-  "l": "25 ao\u00fbt 2026",
+  "l": "25 août 2026",
   "d": "",
   "ath": 5152688,
   "ch": [
@@ -1809,195 +1809,6 @@
   ]
  },
  {
-  "id": "EDqML4vnQSkkL6UktQVxPX2Nh32aaBGwTzwxyBvApump",
-  "n": "The Shift",
-  "t": "Shift",
-  "img": "https://assets.geckoterminal.com/o88bnh297363iw71vmig2v9ixrsd",
-  "ho": 131,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "",
-  "ath": 25384,
-  "ch": [
-   13012,
-   13982,
-   14511,
-   25384,
-   5199,
-   5373,
-   4749,
-   5574,
-   5531,
-   5013,
-   4578,
-   4469,
-   4257,
-   4301,
-   4055,
-   3662,
-   3661,
-   3572,
-   3556,
-   3548,
-   3484,
-   3549,
-   3575,
-   3417,
-   3416,
-   3403,
-   3348,
-   3325,
-   3354,
-   3322,
-   3319,
-   3063,
-   2973,
-   3082,
-   3107,
-   3005,
-   3215,
-   3056,
-   2910,
-   2843,
-   2922,
-   3378
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "PUMP",
-    "a": "AJX74GgQKcfNE97cX7ebFgqBSvW2wbAdkajV4UgUKm9Q"
-   }
-  ]
- },
- {
-  "id": "6SMfgZkr9QRseAyNAJwvYEe7Nk3PDJTFj1srYXLMFCk4",
-  "n": "anon",
-  "t": "anon",
-  "img": "https://assets.geckoterminal.com/yb0pucp1pa4wp2f1ewvoa5dw81tt",
-  "ho": 75,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 36494,
-  "ch": [
-   26419,
-   13775,
-   26961,
-   10066,
-   16981,
-   17037,
-   18988,
-   17576,
-   21555,
-   24418,
-   25786,
-   22552,
-   29621,
-   36494,
-   20707,
-   28470,
-   12678,
-   11920,
-   10349,
-   10577,
-   8223,
-   8226,
-   7350,
-   7065,
-   6186,
-   6139,
-   6327,
-   6593,
-   6390,
-   6024,
-   5965,
-   5841,
-   5809,
-   5815,
-   5806,
-   5783,
-   5746,
-   5776,
-   5714,
-   5688,
-   5788,
-   5470,
-   5121,
-   5001,
-   3965,
-   3714,
-   3704,
-   3669,
-   3681,
-   3874,
-   3871,
-   3866,
-   3848,
-   4014,
-   3700,
-   4813,
-   3675,
-   3548,
-   3536,
-   3519
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "6V4PhKNBhBihdwVcPrdhATSfTTwahDgTVMwWQnjq2mZ4"
-   }
-  ]
- },
- {
-  "id": "DmtjsWsH1B9GNZaxwPhJtw6prR8Nu5LEqrCB73wEpump",
-  "n": "Boo",
-  "t": "Boo",
-  "img": "https://assets.geckoterminal.com/jhs9ga2wmd4ks6e12rej1g4mbi07",
-  "ho": 107,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 29361,
-  "ch": [
-   20246,
-   29361,
-   8205,
-   7311,
-   7992,
-   7112,
-   6626,
-   6826,
-   5616,
-   5195,
-   5865,
-   4463,
-   4361,
-   4078,
-   3961,
-   3834,
-   3807,
-   3778,
-   3775,
-   3766,
-   5027,
-   4081,
-   3878,
-   3768
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "FJ1xusxxNFhMxeMP1UG4hvBxKyWzMBK4T85Z5tCnWWyh"
-   }
-  ]
- },
- {
   "id": "FUMMypMwEQqvx2zNXBA5gororx5nEjPtV9WUPxN8kRuu",
   "n": "Elon Coin",
   "t": "ELON",
@@ -2076,81 +1887,8 @@
     "q": "SOL",
     "a": "ETvPPimBeoPUy5gEpjiQjUpS8f1TsVzZ2MxUErwaY4vP"
    }
-  ]
- },
- {
-  "id": "Uni86XoVtpDBfrLQF3qEfprv2uYVmBYTVLQEc2qUiwA",
-  "n": "Unicorn",
-  "t": "Uni",
-  "img": "https://assets.geckoterminal.com/067uof8gldmf2nqg0fuxoyp4egc8",
-  "ho": 55,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "I ran FU to $10M - We back\n\nLaunched with notrandom.fun",
-  "ath": 15297,
-  "ch": [
-   8503,
-   9821,
-   9846,
-   9372,
-   9390,
-   11522,
-   13080,
-   10868,
-   8938,
-   10120,
-   12279,
-   12042,
-   14280,
-   15297,
-   11978,
-   11744,
-   11176,
-   10666,
-   10489,
-   10749,
-   11052,
-   6990,
-   7272,
-   4937,
-   4448,
-   3758,
-   3757,
-   3667,
-   3664,
-   3652,
-   3540,
-   3529,
-   3515,
-   3488,
-   3484,
-   3473,
-   3477,
-   3455,
-   3294,
-   3285,
-   3251,
-   3244,
-   3182,
-   3058,
-   3036,
-   3031,
-   3034,
-   3015,
-   3009,
-   2943,
-   2976,
-   2983,
-   2981
   ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "G4nBc6RfheBXFLibPt9y3rTcLE38Nfm7X82oxKxFKugV"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "3qcqSKnw2aYAT6Txbt6en2wJRTNFycrKvk1qPHQapump",
@@ -2240,178 +1978,8 @@
      10000
     ]
    ]
-  }
- },
- {
-  "id": "BwZmBr4XFaDFEN6pQyay5aHNLaFSgxky6TpF9SxYpump",
-  "n": "TigerPrawnJacketPotatoCatFish",
-  "t": "Foodslop",
-  "img": "https://assets.geckoterminal.com/eopwvbmje51zogrlywmofm7s17be",
-  "ho": 100,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "Deployed using https://j7tracker.io",
-  "ath": 35009,
-  "ch": [
-   35009,
-   20857,
-   14021,
-   15299,
-   16969,
-   26707,
-   20270,
-   17258,
-   25984,
-   23204,
-   23933,
-   18073,
-   17420,
-   22820,
-   19924,
-   19433,
-   16186,
-   16045,
-   17734,
-   16250,
-   16459,
-   18394,
-   19599,
-   17032,
-   18279,
-   18410,
-   14673,
-   15182,
-   15135,
-   14564,
-   16436,
-   15742,
-   14790,
-   14907,
-   14429,
-   14514,
-   15016,
-   14440,
-   13953,
-   13099,
-   12557,
-   11204,
-   12508,
-   10536,
-   8283,
-   9319,
-   8384,
-   7851,
-   7602,
-   7380,
-   9003,
-   10128,
-   10531,
-   10004,
-   9658,
-   7967,
-   7321,
-   6653,
-   6250,
-   6236
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "CEWzVoX9UMXMs965hejX1LQvMbmWpxkvnnx1c7p4NAiu"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "V64uWZCfAfWPzrXqN4CHF2Jy1VFVTTfPLhJmq3Cpump",
-  "n": "The Formicarium",
-  "t": "FORMICA",
-  "img": "https://assets.geckoterminal.com/xzvxgz2pjofmzvuqtm9qghd74wom",
-  "ho": 71,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "The market digs the nest. \r\n\r\n$FORMICA \u2014 The Formicarium",
-  "ath": 23140,
-  "ch": [
-   23140,
-   13596,
-   12216,
-   12803,
-   10190,
-   9410,
-   11298,
-   13619,
-   15984,
-   16634,
-   18996,
-   18650,
-   19130,
-   19667,
-   15921,
-   15721,
-   15549,
-   14104,
-   13595,
-   14244,
-   16867,
-   15162,
-   15528,
-   15258,
-   17617,
-   19256,
-   16632,
-   11707,
-   13990,
-   13482,
-   14175,
-   12481,
-   9298,
-   10034,
-   9241,
-   10339,
-   10754,
-   10368,
-   9892,
-   10685,
-   11242,
-   13659,
-   15117,
-   13016,
-   11581,
-   11996,
-   10045,
-   10796,
-   10246,
-   11090,
-   9902,
-   10151,
-   8751,
-   7773,
-   8240,
-   7602,
-   6622,
-   6315,
-   6332,
-   6832
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "6gw5yCpxdmzFuSjFLECbcnArrqAV2wHGwpM98Jz4fNWq"
-   }
-  ]
+  },
+  "bz": 0
  },
  {
   "id": "2qX8fcbdLMNBR1PWo2ak7YiUvnC24CTFuCW7zsfHpump",
@@ -2478,7 +2046,8 @@
     "q": "TSLAx",
     "a": "66bFfjYDsvQheraRpHkYZkxtumEeTWgjWbX2xTsQk8gu"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "C1mBfBoDkwWfd6uTFZp62ARHLjeVp3bDpCDMfMZtPngE",
@@ -2559,7 +2128,8 @@
     "q": "SOL",
     "a": "C7r9jXWiVYmBYR2Jj5YSLiEitUGJPjQXWeg7HPU8NwUk"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "yJvmnWZqJiJj19TnU1FcbbvnCiLX1ocBAHczggbpump",
@@ -2569,7 +2139,7 @@
   "ho": 20,
   "c": "Solana",
   "l": "24 octobre 2026",
-  "d": "Cataclaws is bringing the play \ud83d\udc08\u200d\u2b1b",
+  "d": "Cataclaws is bringing the play 🐈‍⬛",
   "ath": 1212234,
   "ch": [
    362395,
@@ -2603,7 +2173,7 @@
   "ho": 13473,
   "c": "Solana",
   "l": "15 octobre 2026",
-  "d": "Flying Tesla Roadster ($FTR) \u2014 The Future Has No Roads.**\r\n\r\nFlying Tesla Roadster is a Solana meme coin inspired by Elon Musk's vision of the next-generation Tesla Roadster, a revolutionary electric ",
+  "d": "Flying Tesla Roadster ($FTR) — The Future Has No Roads.**\r\n\r\nFlying Tesla Roadster is a Solana meme coin inspired by Elon Musk's vision of the next-generation Tesla Roadster, a revolutionary electric ",
   "ath": 7399084,
   "ch": [
    232607,
@@ -2683,7 +2253,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
@@ -2764,7 +2335,8 @@
     "q": "SOL",
     "a": "Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
@@ -2773,7 +2345,7 @@
   "img": "https://coin-images.coingecko.com/coins/images/102172342/large/TripleT.png?1772991763",
   "ho": 26121,
   "c": "Solana",
-  "l": "24 f\u00e9vrier 2026",
+  "l": "24 février 2026",
   "d": "Tung Tung Tung Sahur ($TripleT) is a community-driven memecoin on Solana, launched fairly via pump.fun with no pre-mints. It draws from a viral TikTok \"brainrot\" meme featuring an AI-generated wooden ",
   "ath": 27152172,
   "ch": [
@@ -2845,7 +2417,8 @@
     "q": "SOL",
     "a": "3KFCgJ5R3zshW8hTDbzjSrrKSRYmKvsMfhc4Vo4iddxD"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "A75Xx6SeftAmWduv9KGwb2GCjXUAhxozcCUCys9jpump",
@@ -2926,7 +2499,8 @@
     "q": "AMD",
     "a": "EwsYHiuznyNqH5f65YpfsoQBLq2KyETuvhm5un7wsfDG"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
@@ -2936,7 +2510,7 @@
   "ho": 70014,
   "c": "Solana",
   "l": "20 avril 2025",
-  "d": "The TROLL token on the Solana network is a meme coin inspired by internet trolling culture, designed for entertainment and community engagement with no intrinsic value. Built on Solana\u2019s blockchain, i",
+  "d": "The TROLL token on the Solana network is a meme coin inspired by internet trolling culture, designed for entertainment and community engagement with no intrinsic value. Built on Solana’s blockchain, i",
   "ath": 147610701,
   "ch": [
    17820302,
@@ -3007,7 +2581,8 @@
     "q": "SOL",
     "a": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "3fTTQRfkuRbV9TBcUbtdBLk8QYA75vWn6bHRduGjpump",
@@ -3017,7 +2592,7 @@
   "ho": 197,
   "c": "Solana",
   "l": "24 octobre 2026",
-  "d": "The moustache is the feature. Official is the claim. $Moustache \u2014 the coin with nothing to prove but the \u2019stache.",
+  "d": "The moustache is the feature. Official is the claim. $Moustache — the coin with nothing to prove but the ’stache.",
   "ath": 152264,
   "ch": [
    133010,
@@ -3143,7 +2718,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "CbTbAY45Tfp8Lbk2ovjkS7wthxNka19MbGbGAZAdpump",
@@ -3224,203 +2800,8 @@
     "q": "SOL",
     "a": "2jW1oUzWsSQ14hrGowXeadeqMygcCAYvM4knpRZ3P9DJ"
    }
-  ]
- },
- {
-  "id": "4pkRAiy5WQNbfG7JigDHBm3aXqA6fR87a3TPu1yypump",
-  "n": "Theranos",
-  "t": "theranos",
-  "img": "https://assets.geckoterminal.com/oters275doqkdcdf84l6lnec328a",
-  "ho": 78,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "The company. Paired to Elizabeth.",
-  "ath": 57582,
-  "ch": [
-   12894,
-   21837,
-   17570,
-   18379,
-   45387,
-   57582,
-   16481,
-   21561,
-   32447,
-   21409,
-   20545,
-   20411,
-   20025,
-   18415,
-   18277,
-   16750,
-   25430,
-   22415,
-   24654,
-   21496,
-   26941,
-   30788,
-   25252,
-   21647,
-   16980,
-   16464,
-   17384,
-   19163,
-   15896,
-   8388,
-   9152,
-   12014,
-   12939,
-   15970,
-   13732,
-   8102,
-   8782,
-   7826,
-   9017,
-   7127,
-   7078,
-   6370,
-   6643,
-   7826,
-   5251,
-   7582,
-   5725,
-   4421,
-   3822,
-   4129,
-   4041,
-   3340,
-   4115,
-   3848,
-   2007,
-   2394,
-   1476,
-   1496,
-   1428,
-   1006
   ],
-  "b": 1,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "ELIZABETH",
-    "a": "C4VUVALpAXgtbHQqpKykwhx536xpoJMPtfMxP16wBW5Y"
-   }
-  ]
- },
- {
-  "id": "5egBPNw6CKrQrRPnwukBFyTxjpscvPj4LNaW1oBRpump",
-  "n": "billy",
-  "t": "billy",
-  "img": "https://assets.geckoterminal.com/kry7f5x5ccp8wc6sl9n3efa6c60q",
-  "ho": 175,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "",
-  "ath": 67981,
-  "ch": [
-   6065,
-   7788,
-   17093,
-   24947,
-   11186,
-   27775,
-   35804,
-   52629,
-   40911,
-   23440,
-   20950,
-   36663,
-   31350,
-   65034,
-   67981,
-   40430,
-   33293,
-   30549,
-   25936,
-   26031,
-   22097,
-   22529,
-   22040,
-   18838,
-   16780,
-   15629,
-   16169,
-   14828,
-   11862,
-   10630,
-   11779,
-   15999,
-   13601,
-   15118,
-   16222,
-   13942,
-   12984,
-   12014,
-   8989,
-   8631,
-   7635,
-   7242,
-   7847,
-   6880,
-   7102,
-   6052,
-   6176,
-   8335,
-   8390,
-   6444,
-   3945,
-   3107,
-   2866,
-   2977,
-   2911,
-   3252,
-   3019,
-   3039,
-   2992,
-   2868
-  ],
-  "b": 1,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "mil",
-    "a": "58USCwcBjYGue4976Nyzzd6BoJeRX9K1aRPoJsdQpHiS"
-   }
-  ]
- },
- {
-  "id": "BPKT5bTRaiBvv8uVwrQUN3ZNgCbC71k89wtYvuGfLFfM",
-  "n": "gary",
-  "t": "gary",
-  "img": "https://assets.geckoterminal.com/8700zo5xzzv5bb1raij5n2b6flf1",
-  "ho": 933,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 2198397,
-  "ch": [
-   100921,
-   588651,
-   867701,
-   944002,
-   543424,
-   2013812,
-   2019243,
-   2198397,
-   1866539,
-   1715472,
-   1663011,
-   1489148,
-   891123
-  ],
-  "b": 3,
-  "pr": [
-   {
-    "d": "meteoradbc",
-    "q": "SOL",
-    "a": "6E7s9pgLBN9gTVx71KkYoMikw1vsECXVdL8Ej6h9YzkG"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "Cggjah6mVhhh6uwCbjGUfPLnapsBbzUL2aAZokHo3iYT",
@@ -3501,7 +2882,8 @@
     "q": "SOL",
     "a": "WvHNACjNgZ1oBx8FRqfjnNuTiytXRgiLJuNu1gW2j1k"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "5Dw9h4ySRjRPcED7g23kabJ5KSpReKLitktM9TREpump",
@@ -3559,7 +2941,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
@@ -3640,7 +3023,8 @@
     "q": "SOL",
     "a": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "AQBTDs9tw2Qf1Mk2NGC6xyrHPpXDLZyh2xigsynzpump",
@@ -3721,44 +3105,12 @@
     "q": "SOL",
     "a": "AUtGu4B3o7iJhPgGFUzg2AdL1uT72LfAA7jhTm5dpuyG"
    }
-  ]
- },
- {
-  "id": "BTaJ4nrMRuF3i4SuLBgdWKFQwRZqY3qxu6hPJH7v6cGb",
-  "n": "Moustache Baby",
-  "t": "Moustache",
-  "img": "https://assets.geckoterminal.com/hen04ry0w1bbyx7wgaafjm2zo9tm",
-  "ho": 2081,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 1590351,
-  "ch": [
-   207643,
-   395395,
-   648690,
-   905978,
-   631947,
-   680394,
-   753580,
-   850120,
-   1457000,
-   1590351,
-   1161592,
-   698038
   ],
-  "b": 3,
-  "pr": [
-   {
-    "d": "meteoradbc",
-    "q": "SOL",
-    "a": "78huZKxEPjauUha2Lroq7acoPceXNyRTYoMcDc1bGPv9"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "DVvpr4MSTET7jHbFptTrMkZQitgwH5nPZii5jwUXLf1Q",
-  "n": "\u30d7\u30e9\u30a4\u30d9\u30fc\u30c8\u30b3\u30a4\u30f3",
+  "n": "プライベートコイン",
   "t": "JAPAN",
   "img": "https://assets.geckoterminal.com/23cqogu4iw5pqltlahapczp693lt",
   "ho": 14,
@@ -3835,7 +3187,8 @@
     "q": "SOL",
     "a": "FU24PQSJ4vY7vScuCV9twVYZanpGTxTPQCBmyWTuLkqd"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "HMYd9tosnUXuNHmq7pXmoePRVBLBBjA3JBfydq6upump",
@@ -3916,7 +3269,8 @@
     "q": "SOL",
     "a": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "2q1kaDj5u1YpyVRqFwAp5juEzccgy5S8KxQZtr2jpump",
@@ -4165,5 +3519,105 @@
    }
   ],
   "bz": 0
+ },
+ {
+  "id": "4BAwvGYfVGeHa1QMaUsf1VyfLzVnnKvuF6vvgko8pump",
+  "n": "Benny the Trencher",
+  "t": "Benny",
+  "img": "https://assets.geckoterminal.com/r3d6fd0gn6dc49dmwz8zl48yoibz",
+  "ho": 170,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "",
+  "ath": 25158,
+  "ch": [
+   5593,
+   20343,
+   25158,
+   16708,
+   3885,
+   3480,
+   3339,
+   3479,
+   3346,
+   3307,
+   3272,
+   3211,
+   3492,
+   3687,
+   3730,
+   3659,
+   3633,
+   3606,
+   3600,
+   3598,
+   3582,
+   3548,
+   3497,
+   3500,
+   3623,
+   3733,
+   3818,
+   3566,
+   3783,
+   3694,
+   3690,
+   3668
+  ],
+  "b": 0,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "TTWO",
+    "a": "F8VeUqqnBdUKCaVruzJsLfshvTf3pvqnt9X4g2aurcQ1"
+   }
+  ]
+ },
+ {
+  "id": "FmuciqKXRRnKqhi7BNin5mYH6fm3oTrfVB5A5Fyrpump",
+  "n": "Marvin the Martian",
+  "t": "Marvin",
+  "img": "https://assets.geckoterminal.com/2akehbfkwpmlmbq2evzjpo8yzswv",
+  "ho": 3258,
+  "c": "Solana",
+  "l": "25 octobre 2026",
+  "d": "",
+  "ath": 853363,
+  "ch": [
+   39768,
+   36916,
+   125727,
+   128610,
+   160285,
+   192609,
+   422048,
+   290708,
+   355445,
+   624923,
+   675847,
+   853363,
+   553852,
+   649552,
+   637988
+  ],
+  "b": 2,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "FYLA8ej1X6n4nBiEKCZ3zmvACeH5MhdPRkkgPqtWsm1n"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
+     10000
+    ]
+   ]
+  }
  }
 ]
