@@ -67,7 +67,7 @@ h2 em{font-style:normal;color:var(--muted);font-size:1rem;font-weight:600;margin
 .cw{position:relative;margin-top:6px;border-radius:14px;overflow:hidden;background:var(--card2)}
 svg{display:block;width:100%;height:auto}
 .lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:700;font-size:.9rem;background:repeating-linear-gradient(135deg,#1B1B20 0 12px,#202026 12px 24px);transition:opacity .4s}
-.lock::before{content:"";width:34px;height:34px;border-radius:50%;border:2px dashed var(--muted);animation:spin 6s linear infinite}
+.lock svg{width:120px;height:56px;overflow:visible}.lock path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 @keyframes spin{to{transform:rotate(360deg)}}
 .cw.open .lock{opacity:0;pointer-events:none}
 .lbl{font-size:.8rem;font-weight:700;fill:var(--ink)}
@@ -177,7 +177,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 .tw-more{display:block;text-align:center;border:1px solid var(--tw-line);border-radius:99px;padding:9px 12px;font-size:.92rem;font-weight:700;color:var(--tw-link);text-decoration:none}
 .tw-more:hover{border-color:var(--tw-link)}
 @media (max-width:899px){.tw-ph img{max-height:240px}}
-@media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
+@media (prefers-reduced-motion:reduce){.pulse,.pen,.pole{animation:none}.bar i{transition:none}}
 
 /* ===== Style épuré : noir pur, blanc, traits fins (inspiré Trade Republic) ===== */
 :root{--bg:#000;--card:#0C0C0D;--card2:#161617;--line:#232325;--ink:#FFF;--muted:#85858C;--up:#00D26A;--down:#F0435A;--on-up:#000}
@@ -257,7 +257,7 @@ a{color:var(--ink)}.ca a{color:var(--up)}
         <circle id="head" r="4.5" fill="#22E27A" cx="-10" cy="-10"/>
         <g id="peak" hidden><circle class="pulse" r="5" fill="#22E27A"/><circle r="5" fill="#22E27A"/><line class="pole" x1="0" y1="-5" x2="0" y2="-30" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round"/><path class="pen" d="M1 -30 L19 -24 L1 -18Z" fill="#22E27A"/><text class="lbl" text-anchor="middle" y="-38" id="pl"></text></g>
       </svg>
-      <div class="lock">Chart masqué</div>
+      <div class="lock"><svg viewBox="0 0 120 50" aria-hidden="true"><path d="M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14"><animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.33;0.66;1" values="M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14;M0 36 L15 42 L30 26 L45 32 L60 14 L75 24 L90 8 L105 18 L120 4;M0 42 L15 28 L30 34 L45 16 L60 30 L75 18 L90 26 L105 10 L120 20;M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14"/></path></svg><span>Chart masqué</span></div>
     </div>
   </article>
 
