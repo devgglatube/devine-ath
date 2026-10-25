@@ -371,6 +371,29 @@ button,.side button{touch-action:manipulation}
 #ctip p{margin:6px 0 12px;font-size:.92rem;line-height:1.45}
 #ctip .cb{display:flex;gap:8px;justify-content:flex-end}#ctip .cb button{width:auto;padding:9px 16px;font-size:.85rem;border-radius:99px}#ctip .cb button[hidden]{display:none}
 #ctip .cb .ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+/* v120 cadrage sans défilement */
+#wel{display:none!important}
+@media (min-width:900px){
+main{padding-bottom:0!important;min-height:0}.ft0{position:fixed;bottom:6px;left:268px;right:0;margin:0!important;padding:0!important;text-align:center;font-size:.7rem;pointer-events:none;z-index:5}.ft0 button{pointer-events:auto}
+#game{height:max(560px,calc(100vh - 124px));grid-template-rows:minmax(0,1fr) auto;align-items:stretch;min-height:0}
+#game>.card:first-child{grid-row:1 / span 2;grid-column:1;height:auto;overflow-y:auto}
+#game>.card:nth-child(2){grid-column:2;grid-row:1;height:auto;display:flex;flex-direction:column;min-height:0}
+#game>.card:nth-child(2) .cw{flex:1 1 0;height:auto;min-height:0}
+#game>.card:nth-child(2) .cw #svg{height:100%;width:100%}
+#game>.card:nth-child(3){grid-column:2;grid-row:2}
+#game>.card:nth-child(3){padding:12px 18px 14px}#input .guess{font-size:2.1rem;line-height:1.1;margin:0}#input #s{margin:0}#input .fine{margin-top:0}#input .note{margin:4px 0 6px!important;font-size:.72rem}#input>.k{margin:0}#input #ok{padding:13px}
+#game>.card:nth-child(3){height:326px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#game>.card:nth-child(3) #input{display:flex;flex-direction:column;justify-content:center}
+#game>.card:nth-child(3) #out:not([hidden]){display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center}
+#out>.rbar,#out>.cmp,#out>#next,#out>.stk{grid-column:1/-1}#out>.ca{grid-column:1/-1;margin:0;order:8}#out>#next{order:9}#out>.ca{padding:6px 10px}
+#out>#msg{grid-column:1;margin:0;align-self:end}#out>#spd{grid-column:1;margin:0!important;align-self:start}
+#out>#pts{grid-column:2;grid-row:3 / span 2;font-size:2.3rem;margin:0;text-align:right}
+#out .cmp div{padding:7px 12px}#out .cmp b{font-size:1.05rem}#out #next{padding:13px}
+#game:has(#cc[hidden])>.card:nth-child(2){grid-column:1/-1;grid-row:1}
+#game:has(#cc[hidden])>.card:nth-child(3){grid-column:1/-1;grid-row:2}
+#game:has(#cc[hidden]) .cw{height:auto;flex:1 1 0;display:block}
+#game:has(#cc[hidden]) .cw #svg{height:100%;width:100%}
+}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -737,7 +760,7 @@ button,.side button{touch-action:manipulation}
 </div>
 <script>(function(){var it=document.getElementById("intro");if(!it)return;function c(){it.classList.add("out");setTimeout(function(){if(it.parentNode)it.parentNode.removeChild(it)},800)}
 it.querySelector("#ilang").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-l]");if(!b)return;try{localStorage.setItem("dath.lang",b.dataset.l)}catch(x){}setTimeout(c,300)});
-var sv=false;try{sv=!!localStorage.getItem("dath.lang")}catch(x){}if(sv)setTimeout(c,15000)})();</script>
+})();</script>
 <script>
 // Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
 let COINS=[
@@ -1647,7 +1670,7 @@ const TUTO_STEPS=[
  {sel:"#out",t:"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !",last:1}];
 let TU={on:false,k:0,tm:0};
 function tutoDone(){try{return localStorage.getItem("dath.tuto")==="1"}catch(e){return false}}
-function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone()||(S.games||0)>0)return;tutoStart()}
+function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone())return;tutoStart()}
 function tutoStart(){
   if(TU.on)return;sheet(0);start("casual");deck=deck.slice(0,1);$("cn").value=1;$("cnv").textContent=1;meta();$("go").textContent=T("Lancer la manche {0}/{1}",1,1);TUT=true;
   TU.on=true;TU.k=0;let c=$("coach");if(!c){c=document.createElement("div");c.id="coach";c.innerHTML="<div id='csp'></div><div id='ctip'><div class='cs'></div><p></p><div class='cb'><button class='ghost' id='cskip'></button><button id='cnx'></button></div></div>";document.body.appendChild(c);
@@ -1719,7 +1742,6 @@ applyLang();
   const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",saved&&b.dataset.l===LANG));mark();
   let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>{it.remove();INTRO_DONE=true;tryTuto()},800)};
   $("ilang").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;saved=true;applyLang();mark();sfx("good");setTimeout(close,260)});
-  if(saved){$("ihint").textContent="";setTimeout(close,3600);it.addEventListener("click",e=>{if(!e.target.closest("button"))close()})}
 })();
 refresh();
 goOnline();
