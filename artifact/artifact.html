@@ -408,7 +408,6 @@ html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.
   <div class="sum" id="sum"></div>
   <button id="again">Rejouer</button>
   <button id="missb" class="ghost" hidden>Rejouer mes coins les plus ratés</button>
-  <button id="share" class="ghost">Partager mon score</button>
   <button id="flexd" class="ghost" hidden>🔥 Flex mes stats</button>
   <button id="imgb" class="ghost">Créer l’image de mon score</button>
   <input id="sharetext" readonly hidden aria-label="Texte à copier">
@@ -1387,12 +1386,6 @@ $("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){
 $("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#sx"))sheet(0)});
 $("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
 $("pn").addEventListener("change",()=>push());
-$("share").addEventListener("click",async()=>{
-  const t=T("J’ai fait {0} / {1} sur Devine l’ATH",num(total),num(deck.length*1000))+(mode==="ranked"?T(" (ranked, {0})",RANKS[rankOf(S.rp,myPos())][0]):"")+T(". Tu fais mieux ?");
-  try{await navigator.clipboard.writeText(t);$("share").textContent=T("Copié ✓")}
-  catch(e){const f=$("sharetext");f.value=t;f.hidden=false;f.focus();f.select()}
-  setTimeout(()=>$("share").textContent=T("Partager mon score"),2000);
-});
 
 Object.assign(DICT.en,{"Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
 Object.assign(DICT.es,{"Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
