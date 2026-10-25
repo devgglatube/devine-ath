@@ -6340,5 +6340,40 @@
     "a": "FFnuTJsNSH8pmU1E9X1nj285dkB4JAhnFnJnq89KHUgW"
    }
   ]
+ },
+ {
+  "id": "ybjwat3PV3uGF1K8T3zj9g3BhUSWonbQRDAd5Dvpump",
+  "n": "X",
+  "t": "X",
+  "img": "https://assets.geckoterminal.com/6d1jvbwfizdbrz26r9y51pcypchx",
+  "ho": 2082,
+  "c": "Solana",
+  "l": "25 octobre 2026",
+  "d": "what's happening?!",
+  "ath": 1025598,
+  "ch": [
+   400820,
+   431130,
+   475809,
+   519785,
+   573761,
+   617900,
+   678530,
+   732046,
+   787331,
+   845499,
+   923133,
+   982491,
+   1025598
+  ],
+  "b": 3,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "CnwX6cMf3rjzWMmsQyY2tAh3jToc12HyxTSmJ7bPyrny"
+   }
+  ]
  }
 ]
