@@ -409,6 +409,7 @@ html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.
   <button id="again">Rejouer</button>
   <button id="missb" class="ghost" hidden>Rejouer mes coins les plus ratés</button>
   <button id="share" class="ghost">Partager mon score</button>
+  <button id="flexd" class="ghost" hidden>🔥 Flex mes stats</button>
   <button id="imgb" class="ghost">Créer l’image de mon score</button>
   <input id="sharetext" readonly hidden aria-label="Texte à copier">
 </section>
@@ -1009,7 +1010,7 @@ function drawRecap(){
 function next(){
   i++;
   if(i<deck.length){show();return}
-  $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;
+  $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;$("flexd").hidden=mode!=="daily";
   countUp($("total"),total,1200,"");settle();drawRecap();$("missb").hidden=mode==="review"||missKeys().length<3;
   const p=total/(deck.length*1000);
   $("verdict").textContent=T(p>.8?"Tu sens le marché.":p>.5?"Pas mal, tu es dans le bon ordre de grandeur.":"Les memecoins restent imprévisibles. Retente ta chance.");
@@ -1175,6 +1176,7 @@ function scoreImage(){
   x.fillStyle="#8B8B96";x.font="600 30px "+F;x.fillText(T("Exercice de prédiction, pas un conseil financier."),72,1000);
   return c.toDataURL("image/png");
 }
+$("flexd").addEventListener("click",()=>{const n=deck.length,ok=roundLog.filter(x=>x.ok).length;FX.snap={p:total/(n*1000),total,n,ok,st:(S.daily&&S.daily.st)||1};fxOpen("daily")});
 $("imgb").addEventListener("click",()=>{try{$("imgp").src=scoreImage();$("imgov").hidden=false}catch(e){toast(T("Image impossible sur cet appareil."))}});
 $("imgx").addEventListener("click",()=>{$("imgov").hidden=true});$("imgov").addEventListener("click",e=>{if(e.target.id==="imgov")$("imgov").hidden=true});
 function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+NM(rankOf(p.rp||0,pos),p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
@@ -1259,11 +1261,13 @@ function drawRanks(){
 const LOGINS=[["pump.fun","#22E27A","P"],["FOMO","#FF8A3D","F"],["Google","#8AB4F8","G"],["Phantom","#AB9FF2","👻"]];
 function statOf(m){const L=(S.scores||[]).filter(x=>x.m===m),d=(S.rd||{})[m]||{n:0,x:0};
   return{g:L.length,n:d.n,x:d.x,avg:L.length?L.reduce((a,x)=>a+x.s,0)/L.length/50:null,best:L.length?Math.max(...L.map(x=>x.s))/50:null}}
-Object.assign(DICT.en,{"Quasi pile":"Spot-on","Exercice de prédiction, pas un conseil financier.":"Prediction exercise, not financial advice.","Flex mes stats":"Flex my stats","Flex tes stats":"Flex your stats","Ajoute une image ou une vidéo en fond":"Add an image or a video as background","Choisir un fichier":"Choose a file","Précision moyenne":"Average accuracy","Télécharger":"Download","Fermer":"Close","Enregistrement de la vidéo…":"Recording video…","Vidéo prête.":"Video ready.","Image prête.":"Image ready.","Fichier non supporté.":"Unsupported file.","Retirer le fond":"Remove background","Meilleure partie":"Best game"});
-Object.assign(DICT.es,{"Quasi pile":"Casi exacto","Exercice de prédiction, pas un conseil financier.":"Ejercicio de predicción, no consejo financiero.","Flex mes stats":"Presume tus stats","Flex tes stats":"Presume tus stats","Ajoute une image ou une vidéo en fond":"Añade una imagen o un vídeo de fondo","Choisir un fichier":"Elegir un archivo","Précision moyenne":"Precisión media","Télécharger":"Descargar","Fermer":"Cerrar","Enregistrement de la vidéo…":"Grabando vídeo…","Vidéo prête.":"Vídeo listo.","Image prête.":"Imagen lista.","Fichier non supporté.":"Archivo no compatible.","Retirer le fond":"Quitar el fondo","Meilleure partie":"Mejor partida"});
+Object.assign(DICT.en,{"Performance du défi":"Challenge performance","Score":"Score","Coins":"Coins","À ×3":"Within ×3","Série":"Streak","Défi du jour":"Daily challenge","Quasi pile":"Spot-on","Exercice de prédiction, pas un conseil financier.":"Prediction exercise, not financial advice.","Flex mes stats":"Flex my stats","Flex tes stats":"Flex your stats","Ajoute une image ou une vidéo en fond":"Add an image or a video as background","Choisir un fichier":"Choose a file","Précision moyenne":"Average accuracy","Télécharger":"Download","Fermer":"Close","Enregistrement de la vidéo…":"Recording video…","Vidéo prête.":"Video ready.","Image prête.":"Image ready.","Fichier non supporté.":"Unsupported file.","Retirer le fond":"Remove background","Meilleure partie":"Best game"});
+Object.assign(DICT.es,{"Performance du défi":"Rendimiento del reto","Score":"Puntuación","Coins":"Monedas","À ×3":"A ×3","Série":"Racha","Défi du jour":"Reto del día","Quasi pile":"Casi exacto","Exercice de prédiction, pas un conseil financier.":"Ejercicio de predicción, no consejo financiero.","Flex mes stats":"Presume tus stats","Flex tes stats":"Presume tus stats","Ajoute une image ou une vidéo en fond":"Añade una imagen o un vídeo de fondo","Choisir un fichier":"Elegir un archivo","Précision moyenne":"Precisión media","Télécharger":"Descargar","Fermer":"Cerrar","Enregistrement de la vidéo…":"Grabando vídeo…","Vidéo prête.":"Vídeo listo.","Image prête.":"Imagen lista.","Fichier non supporté.":"Archivo no compatible.","Retirer le fond":"Quitar el fondo","Meilleure partie":"Mejor partida"});
 const FX={mode:"ranked",media:null,kind:null,vid:null,raf:0,icon:null,iconK:-1};
 function fxIcon(j,cb){if(FX.iconK===j&&FX.icon)return;FX.iconK=j;const im=new Image();im.onload=()=>{FX.icon=im;if(cb)cb()};im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(RI[j].replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" '))}
-function fxStats(){const j=rankOf(S.rp,myPos()),t=statOf(FX.mode),pc=v=>v==null?"—":Math.round(v)+" %";
+function fxStats(){const j=rankOf(S.rp,myPos()),pc=v=>v==null?"—":Math.round(v)+" %";
+  if(FX.mode==="daily"&&FX.snap){const q=FX.snap;return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:Math.round(q.p*100)+" %",lbl:T("Performance du défi"),cells:[[T("Score"),num(q.total)],[T("Coins"),String(q.n)],[T("À ×3"),q.ok+"/"+q.n],[T("Série"),String(q.st)]]}}
+  const t=statOf(FX.mode);
   return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:pc(t.avg),cells:[[T("Parties"),String(t.g)],[T("Meilleure partie"),pc(t.best)],[T("Quasi pile"),String(t.x)],["RP",num(S.rp)]]}}
 function fxDraw(cv){const AC=(getComputedStyle(document.documentElement).getPropertyValue("--up")||"#22E27A").trim(),c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats();
   c.fillStyle="#07090c";c.fillRect(0,0,W,H);
@@ -1276,11 +1280,11 @@ function fxDraw(cv){const AC=(getComputedStyle(document.documentElement).getProp
   c.textBaseline="alphabetic";c.fillStyle=AC;c.beginPath();c.roundRect(60,60,56,56,16);c.fill();
   c.strokeStyle="#000";c.lineWidth=6;c.lineCap="round";c.lineJoin="round";c.beginPath();c.moveTo(72,102);c.lineTo(86,84);c.lineTo(96,94);c.lineTo(108,76);c.stroke();
   c.fillStyle="#fff";c.font="700 40px system-ui,sans-serif";c.fillText("devine l’ATH",132,102);
-  c.textAlign="right";c.fillStyle="rgba(255,255,255,.75)";c.font="700 32px system-ui,sans-serif";c.fillText(FX.mode==="ranked"?"RANKED":T("Mode classique").toUpperCase(),W-60,102);c.textAlign="left";
+  c.textAlign="right";c.fillStyle="rgba(255,255,255,.75)";c.font="700 32px system-ui,sans-serif";c.fillText(FX.mode==="ranked"?"RANKED":FX.mode==="daily"?T("Défi du jour").toUpperCase():T("Mode classique").toUpperCase(),W-60,102);c.textAlign="left";
   if(FX.icon)c.drawImage(FX.icon,60,H-760,96,96);
   c.fillStyle="#fff";c.font="800 64px system-ui,sans-serif";c.fillText(d.name,176,H-700);
   c.fillStyle=d.color;c.font="800 36px system-ui,sans-serif";c.fillText(d.rank,176,H-654);
-  c.fillStyle="rgba(255,255,255,.7)";c.font="600 34px system-ui,sans-serif";c.fillText(T("Précision moyenne"),60,H-520);
+  c.fillStyle="rgba(255,255,255,.7)";c.font="600 34px system-ui,sans-serif";c.fillText(d.lbl||T("Précision moyenne"),60,H-520);
   c.fillStyle=AC;c.font="900 190px system-ui,sans-serif";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=24;c.fillText(d.big,56,H-350);c.shadowBlur=0;
   const cw=(W-120-3*16)/4,y=H-290;
   d.cells.forEach((x,k)=>{const px=60+k*(cw+16);c.fillStyle="rgba(0,0,0,.55)";c.beginPath();c.roundRect(px,y,cw,170,22);c.fill();
@@ -1291,9 +1295,10 @@ function fxLoop(){const cv=$("fx-cv");if(!cv)return;fxDraw(cv);FX.raf=requestAni
 function fxClose(){cancelAnimationFrame(FX.raf);const o=$("fx-o");if(o)o.remove();if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null}
 async function fxSave(blob,name){try{const dl=window.claude&&await window.claude.use("downloads");if(dl){await dl.save({filename:name,data:blob});return}}catch(e){if(e&&e.code==="declined")return}
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
-function fxOpen(){fxClose();const o=document.createElement("div");o.id="fx-o";
+function fxOpen(m){fxClose();if(m==="daily")FX.mode="daily";else if(FX.mode==="daily")FX.mode="ranked";const o=document.createElement("div");o.id="fx-o";
   o.innerHTML="<div class='fx-b'><canvas id='fx-cv' width='1080' height='1350'></canvas><div class='fx-c'><div class='tabs' id='fx-m'><button data-m='ranked'>Ranked</button><button data-m='casual'>"+T("Mode classique")+"</button></div><p class='note'>"+T("Ajoute une image ou une vidéo en fond")+"</p><input id='fx-f' type='file' accept='image/*,video/*' hidden><button id='fx-pick' class='alt'>"+T("Choisir un fichier")+"</button><button id='fx-rm' class='ghost' hidden>"+T("Retirer le fond")+"</button><button id='fx-dl'>"+T("Télécharger")+"</button><button id='fx-x' class='ghost'>"+T("Fermer")+"</button></div></div>";
   document.body.appendChild(o);
+  if(FX.mode==="daily")$("fx-m").hidden=true;
   const j=rankOf(S.rp,myPos());FX.iconK=-1;fxIcon(j);
   const mb=()=>o.querySelectorAll("#fx-m button").forEach(b=>b.classList.toggle("on",b.dataset.m===FX.mode));mb();
   $("fx-m").onclick=e=>{const b=e.target.closest("[data-m]");if(b){FX.mode=b.dataset.m;mb()}};
