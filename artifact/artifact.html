@@ -394,6 +394,12 @@ main{padding-bottom:0!important;min-height:0}.ft0{position:fixed;bottom:6px;left
 #game:has(#cc[hidden]) .cw{height:auto;flex:1 1 0;display:block}
 #game:has(#cc[hidden]) .cw #svg{height:100%;width:100%}
 }
+/* v121 bouton page d'accueil */
+#game>.card:nth-child(2){position:relative}
+#home,#home2{background:var(--up)!important;color:var(--on-up)!important;font-weight:800}#home{display:none;position:absolute;top:12px;right:14px;width:auto;padding:13px 26px;font-size:1.05rem;border-radius:99px;z-index:3;box-shadow:0 8px 24px color-mix(in srgb,var(--up) 40%,transparent)}
+#game:has(#out:not([hidden])) #home{display:block}#game:has(#out:not([hidden])) #ck{visibility:hidden}
+#home2{width:100%;padding:18px;font-size:1.15rem;margin-bottom:14px;box-shadow:0 8px 24px color-mix(in srgb,var(--up) 40%,transparent)}
+@media (max-width:899px){#home{top:10px;right:10px;padding:11px 18px;font-size:.95rem}}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -448,7 +454,7 @@ main{padding-bottom:0!important;min-height:0}.ft0{position:fixed;bottom:6px;left
   </article>
 
   <article class="card">
-    <div class="ch-head"><span class="k">Market cap</span><span class="k" id="ck"></span></div>
+    <div class="ch-head"><span class="k">Market cap</span><span class="k" id="ck"></span><button id="home" type="button">Page d’accueil</button></div>
     <div id="cv">???</div>
     <div class="cw" id="cw">
       <svg id="svg" viewBox="0 0 360 200" role="img" aria-label="Chart du market cap">
@@ -492,6 +498,7 @@ main{padding-bottom:0!important;min-height:0}.ft0{position:fixed;bottom:6px;left
 </section>
 
 <section id="end" class="card" hidden>
+  <button id="home2" type="button" class="homeb">Page d’accueil</button>
   <div class="k">Score final</div>
   <div class="big" id="total"></div>
   <p class="verdict" id="verdict"></p>
@@ -1558,7 +1565,7 @@ Object.assign(DICT.en,{"Champion":"Champion","Trophée unique : n°1 du classeme
 Object.assign(DICT.es,{"Champion":"Campeón","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Trofeo único: n.º 1 de la clasificación. Pasa al siguiente mejor puntaje.","Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 Object.assign(DICT.en,{"Sons":"Sounds","Activés":"On","Coupés":"Off"});Object.assign(DICT.es,{"Sons":"Sonidos","Activés":"Activados","Coupés":"Desactivados"});
 Object.assign(DICT.en,{"Devine l’ATH":"Guess the ATH","Lis le narratif, devine l’ATH.":"Read the narrative, guess the ATH.","Choisis ta langue pour commencer":"Choose your language to start"});Object.assign(DICT.es,{"Devine l’ATH":"Adivina el ATH","Lis le narratif, devine l’ATH.":"Lee la narrativa, adivina el ATH.","Choisis ta langue pour commencer":"Elige tu idioma para empezar"});
-Object.assign(DICT.en,{"Tutoriel":"Tutorial","Revoir le tutoriel":"Replay the tutorial","Suivant":"Next","Terminer":"Finish","Passer le tuto":"Skip tutorial","Étape {0}/{1}":"Step {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial done: no points earned. Your turn!",
+Object.assign(DICT.en,{"Page d’accueil":"Home","Tutoriel":"Tutorial","Revoir le tutoriel":"Replay the tutorial","Suivant":"Next","Terminer":"Finish","Passer le tuto":"Skip tutorial","Étape {0}/{1}":"Step {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial done: no points earned. Your turn!",
 "Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"Welcome! Let’s make a first prediction together. Press “Start the round”.",
 "Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Here’s your coin. Read its name, narrative and tweet: they’re your only clues.",
 "Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"The chart is hidden. Guess how high the market cap climbed: that’s its ATH (the highest it reached).",
@@ -1566,7 +1573,7 @@ Object.assign(DICT.en,{"Tutoriel":"Tutorial","Revoir le tutoriel":"Replay the tu
 "Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».":"The closer to the ATH and the faster you answer, the more points you earn. Press “Submit my guess”.",
 "Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.":"Watch the curve unfold: the flag marks the real ATH.",
 "Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !":"Here’s your score: your guess, the real ATH, the gap and your speed bonus. You know how to play!"});
-Object.assign(DICT.es,{"Tutoriel":"Tutorial","Revoir le tutoriel":"Repetir el tutorial","Suivant":"Siguiente","Terminer":"Terminar","Passer le tuto":"Saltar el tutorial","Étape {0}/{1}":"Paso {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial terminado: no se gana ningún punto. ¡Te toca!",
+Object.assign(DICT.es,{"Page d’accueil":"Inicio","Tutoriel":"Tutorial","Revoir le tutoriel":"Repetir el tutorial","Suivant":"Siguiente","Terminer":"Terminar","Passer le tuto":"Saltar el tutorial","Étape {0}/{1}":"Paso {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial terminado: no se gana ningún punto. ¡Te toca!",
 "Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"¡Bienvenido! Hagamos una primera predicción juntos. Pulsa «Empezar la ronda».",
 "Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Aquí está tu moneda. Lee su nombre, su narrativa y su tuit: son tus únicas pistas.",
 "Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"El gráfico está oculto. Adivina hasta dónde subió el market cap: ese es su ATH (el máximo alcanzado).",
@@ -1674,7 +1681,7 @@ function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone())return;tutoStart()
 function tutoStart(){
   if(TU.on)return;sheet(0);start("casual");deck=deck.slice(0,1);$("cn").value=1;$("cnv").textContent=1;meta();$("go").textContent=T("Lancer la manche {0}/{1}",1,1);TUT=true;
   TU.on=true;TU.k=0;let c=$("coach");if(!c){c=document.createElement("div");c.id="coach";c.innerHTML="<div id='csp'></div><div id='ctip'><div class='cs'></div><p></p><div class='cb'><button class='ghost' id='cskip'></button><button id='cnx'></button></div></div>";document.body.appendChild(c);
-    $("cskip").addEventListener("click",()=>tutoEnd(false));$("cnx").addEventListener("click",()=>{sfx("tap");TU.k++;tutoShow()})}
+    $("cskip").addEventListener("click",()=>tutoEnd(false));$("cnx").addEventListener("click",()=>{if(TUTO_STEPS[TU.k]&&TUTO_STEPS[TU.k].last){goHome();return}sfx("tap");TU.k++;tutoShow()})}
   c.hidden=false;tutoShow();clearInterval(TU.tm);TU.tm=setInterval(tutoTick,150);addEventListener("resize",tutoPlace)}
 function tutoEnd(done){clearInterval(TU.tm);TU.on=false;removeEventListener("resize",tutoPlace);const c=$("coach");if(c)c.hidden=true;
   try{localStorage.setItem("dath.tuto","1")}catch(e){}
@@ -1682,7 +1689,7 @@ function tutoEnd(done){clearInterval(TU.tm);TU.on=false;removeEventListener("res
 function tutoShow(){
   const st=TUTO_STEPS[TU.k];if(!st){tutoEnd(true);return}
   const tip=$("ctip");tip.querySelector("p").textContent=T(st.t);tip.querySelector(".cs").textContent=T("Étape {0}/{1}",TU.k+1,TUTO_STEPS.length);
-  $("cskip").textContent=T("Passer le tuto");$("cnx").textContent=T(st.last?"Terminer":"Suivant");$("cnx").hidden=[0,4,5].includes(TU.k);
+  $("cskip").textContent=T("Passer le tuto");$("cnx").textContent=T(st.last?"Page d’accueil":"Suivant");$("cnx").hidden=[0,4,5].includes(TU.k);
   $("cskip").hidden=!!st.last;
   const el=document.querySelector(st.sel);if(el){try{el.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){}}
   tutoPlace();if(TU.k>0)sfx("tick")}
@@ -1704,6 +1711,8 @@ function tutoPlace(){
   let x=Math.max(12,Math.min(vw-tw-12,lf+(rt-lf)/2-tw/2)),y;
   if(vh-bot>=th+14)y=bot+12;else if(top>=th+14)y=top-th-12;else y=vh-th-12;
   tip.style.left=x+"px";tip.style.top=y+"px"}
+function goHome(){sfx("tap");if(TU.on){tutoEnd(true)}TUT=false;launch("casual")}
+$("home").addEventListener("click",goHome);$("home2").addEventListener("click",goHome);
 $("tutob").addEventListener("click",()=>{try{localStorage.removeItem("dath.tuto")}catch(e){}INTRO_DONE=true;DREADY=true;tutoStart()});
 
 // curseur personnalisé : petit point de la couleur du thème, très légère animation
