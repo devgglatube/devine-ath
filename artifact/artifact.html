@@ -468,7 +468,7 @@ function animate(ch,ath,done){
   line.setAttribute("d",d);area.setAttribute("d",d+"L"+x(ch.length-1)+" "+(H-P)+"L"+x(0)+" "+(H-P)+"Z");
   const len=line.getTotalLength();
   line.style.strokeDasharray=len;line.style.strokeDashoffset=len;
-  const dur=reduce?1:3000,t0=performance.now();
+  const dur=3000,t0=performance.now();
   const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
   (function f(now){
     if(my!==gen)return;
@@ -487,7 +487,7 @@ function animate(ch,ath,done){
 }
 function countUp(el,to,ms,pre){
   const t0=performance.now();
-  (function f(n){const p=reduce?1:Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
+  (function f(n){const p=Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
 }
 let CAMAP={},IMGMAP={},DESC={},WTAG={},TW={};
 // rug pull : effondrement quasi total ou chute brutale juste après le sommet (une mort lente reste un coin « nul » valable)
