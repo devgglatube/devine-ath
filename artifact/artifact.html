@@ -229,6 +229,9 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .rc{display:grid;gap:0;margin:0 0 14px;background:var(--card2);border-radius:14px;padding:6px 14px;text-align:left}.rc .k{padding:8px 0 4px}
 .rc div.r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:9px 0;border-top:1px solid var(--line);font-size:.88rem}.rc .r b{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rc .r span{color:var(--muted)}.rc .r .pt{grid-row:1/span 2;grid-column:2;align-self:center;font-weight:800;color:var(--up)}
+.desc:not([hidden])::before{content:attr(data-l);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--up);margin-bottom:3px}
+.wel{display:grid;gap:10px;border-color:#2c4a39;background:linear-gradient(180deg,rgba(34,226,122,.08),transparent 70%),var(--card);margin-bottom:14px}.wel h3{margin:0;font-size:1.1rem}.wel ol{margin:0;padding-left:20px;color:var(--muted);font-size:.9rem;display:grid;gap:3px}
+.wel .row2{margin-top:2px}.wel .row2 button{flex:1}
 </style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
@@ -255,6 +258,11 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 <div class="top"><div class="pill" id="meta"></div></div>
 <div class="bar"><i id="pg"></i></div>
 
+<div class="card wel" id="wel" hidden>
+  <h3>Bienvenue sur Devine l’ATH</h3>
+  <ol><li>Lis le narratif du coin : son histoire, son mème, son personnage.</li><li>Devine jusqu’où cette histoire l’a fait monter (son ATH).</li><li>Compare avec la réalité et apprends à mieux juger.</li></ol>
+  <div class="row2"><button id="wel-go">C’est parti</button><button id="wel-how" class="alt">Comment ça marche</button></div>
+</div>
 <section id="game">
   <article class="card" id="cc">
     <div class="coin">
@@ -584,6 +592,7 @@ Object.assign(DICT.en,{"Défi du jour": "Daily challenge", "Défi du jour : 5 co
 Object.assign(DICT.en,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Daily challenge: 5 identical coins for everyone, no time limit. Points count only once a day."});Object.assign(DICT.es,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Desafío del día: 5 monedas idénticas para todos, sin límite de tiempo. Los puntos cuentan solo una vez al día."});
 Object.assign(DICT.en,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Prediction exercise, not financial advice. Not affiliated with Axiom or Pump.fun.", "En savoir plus": "Learn more"});Object.assign(DICT.es,{"Exercice de prédiction, pas un conseil financier. Non affilié à Axiom ni à Pump.fun.": "Ejercicio de predicción, no un consejo financiero. No afiliado a Axiom ni a Pump.fun.", "En savoir plus": "Saber más"});
 Object.assign(DICT.en,{"Détail de la partie": "Game breakdown", "×{0} trop haut": "×{0} too high", "×{0} trop bas": "×{0} too low", "ta prédiction {0}, ATH {1}": "your guess {0}, ATH {1}"});Object.assign(DICT.es,{"Détail de la partie": "Detalle de la partida", "×{0} trop haut": "×{0} demasiado alto", "×{0} trop bas": "×{0} demasiado bajo", "ta prédiction {0}, ATH {1}": "tu predicción {0}, ATH {1}"});
+Object.assign(DICT.en,{"Bienvenue sur Devine l’ATH": "Welcome to Guess the ATH", "Lis le narratif du coin : son histoire, son mème, son personnage.": "Read the coin’s narrative: its story, its meme, its character.", "Devine jusqu’où cette histoire l’a fait monter (son ATH).": "Guess how high that story took it (its ATH).", "Compare avec la réalité et apprends à mieux juger.": "Compare with reality and learn to judge better.", "C’est parti": "Let’s go", "Comment ça marche": "How it works", "Le narratif": "The narrative"});Object.assign(DICT.es,{"Bienvenue sur Devine l’ATH": "Bienvenido a Adivina el ATH", "Lis le narratif du coin : son histoire, son mème, son personnage.": "Lee la narrativa de la moneda: su historia, su meme, su personaje.", "Devine jusqu’où cette histoire l’a fait monter (son ATH).": "Adivina hasta dónde la llevó esa historia (su ATH).", "Compare avec la réalité et apprends à mieux juger.": "Compara con la realidad y aprende a juzgar mejor.", "C’est parti": "Vamos", "Comment ça marche": "Cómo funciona", "Le narratif": "La narrativa"});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -649,7 +658,7 @@ function show(){
   const k=deck[i];busy=false;skip=false;
   $("im").onerror=()=>{$("im").onerror=null;$("im").src=avatar(k)};
   $("im").src=IMGMAP[k.t+"|"+k.n]||k.img||avatar(k);
-  $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;
+  $("n").textContent=dec(k.n);$("t").textContent=dec(k.t);$("d").textContent=descOf(k);$("d").hidden=!k.d;$("d").dataset.l=T("Le narratif");
   renderTweet(k);fillInfo(k);
   $("ho").textContent=k.ho?num(k.ho):"—";$("c").textContent=k.c;$("l").textContent=launchOf(k.l);
   meta();
@@ -959,6 +968,12 @@ $("ask-v").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");
 // Échap ferme le panneau ; le pied de page ouvre la page Transparence ; aria-current sur le menu
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("sh").hidden){e.preventDefault();askFor=null;sheet(0)}});
 $("ft-t").addEventListener("click",()=>sheet("trust"));
+
+// ----- accueil du premier lancement
+function showWel(){if(!S.welcomed)$("wel").hidden=false}
+function hideWel(){$("wel").hidden=true;S.welcomed=1;save()}
+$("wel-go").addEventListener("click",hideWel);
+$("wel-how").addEventListener("click",()=>{hideWel();askLvl("help")});
 function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
@@ -1095,7 +1110,7 @@ function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
   i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
-  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
+  upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("d").dataset.l=T("Le narratif");$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
@@ -1116,5 +1131,5 @@ Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coi
   if(ca&&typeof ca==="object")CAMAP=ca;
   if(wt&&typeof wt==="object")WTAG=wt;
   if(tw&&typeof tw==="object"&&!Array.isArray(tw))TW=tw;
-}).finally(()=>start("casual"));
+}).finally(()=>{start("casual");showWel()});
 </script>
