@@ -320,7 +320,7 @@ html[data-mode=light] #s::-webkit-slider-thumb{box-shadow:0 0 0 8px rgba(0,0,0,.
 @keyframes fpole{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes funf{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes fwave{0%,100%{transform:scaleX(1) skewY(0)}50%{transform:scaleX(.9) skewY(5deg)}}
 .rf.go~.rg{animation:rgin .4s ease-out both}@keyframes rgin{from{transform:scale(0)}to{transform:scale(1)}}
 html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textarea{cursor:text!important}
-#cur{position:fixed;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--up);pointer-events:none;z-index:2147483647;opacity:0;transition:opacity .2s;will-change:transform}#cur.on{opacity:1}
+#cur{position:fixed;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--up);pointer-events:none;z-index:2147483647;opacity:0;transition:opacity .2s;will-change:transform;margin:0}#cur.on{opacity:1}
 #cur::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--up);opacity:.5;animation:curp 2.6s ease-in-out infinite;transition:inset .15s}
 #cur.hv::after{inset:-10px}#cur.dn{filter:brightness(.85)}
 @keyframes curp{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:.15}}
@@ -1601,12 +1601,14 @@ $("frb").addEventListener("click",()=>sheet("friends"));
 // curseur personnalisé : petit point de la couleur du thème, très légère animation
 {const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
  if(fine){const c=$("cur");document.body.appendChild(c);document.documentElement.classList.add("cc");
-  let x=-50,y=-50,tx=-50,ty=-50,on=false,raf=0;
-  const loop=()=>{x+=(tx-x)*.35;y+=(ty-y)*.35;c.style.transform="translate("+x+"px,"+y+"px)";raf=requestAnimationFrame(loop)};
-  addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;if(!on){on=true;x=tx;y=ty;c.classList.add("on");loop()}},{passive:true});
-  document.addEventListener("mouseleave",()=>c.classList.remove("on"));document.addEventListener("mouseenter",()=>c.classList.add("on"));
+  let on=false;
+  const mv=e=>{c.style.transform="translate3d("+e.clientX+"px,"+e.clientY+"px,0)";if(!on){on=true;c.classList.add("on")}};
+  addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;mv(e)},{passive:true});
+  addEventListener("mousemove",mv,{passive:true});
+  document.documentElement.addEventListener("mouseleave",()=>{on=false;c.classList.remove("on")});
+  addEventListener("blur",()=>{on=false;c.classList.remove("on")});
   addEventListener("mousedown",()=>c.classList.add("dn"));addEventListener("mouseup",()=>c.classList.remove("dn"));
-  document.addEventListener("mouseover",e=>{c.classList.toggle("hv",!!e.target.closest("button,a,input,.acct,[data-a]"))},{passive:true})}
+  document.addEventListener("mouseover",e=>{const t=e.target;c.classList.toggle("hv",!!(t&&t.closest&&t.closest("button,a,input,.acct,[data-a]")))},{passive:true})}
  else{const c=$("cur");if(c)c.remove()}}
 
 // déconnexion : coupe le lien avec le classement en ligne sur cet appareil
