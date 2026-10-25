@@ -111,6 +111,10 @@ td.v{font-weight:800;color:var(--up)}
 tr.me td{background:var(--card2)}
 tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 .rk{font-size:.75rem;font-weight:800;margin-left:6px}
+.ac-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:16px}.ac-h b{font-size:1.4rem}
+.lg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0 6px}.lg button{display:flex;align-items:center;gap:10px;background:var(--card2);color:var(--ink);font-size:.9rem;padding:12px;text-align:left}.lg i{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;color:#0B0B0F}
+.stg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}.stg>div{background:var(--card2);border-radius:14px;padding:14px;display:grid;gap:8px}.stg h3{margin:0;font-size:1rem}.stg p{margin:0;display:flex;justify-content:space-between;gap:8px;font-size:.88rem;color:var(--muted)}.stg p b{color:var(--ink)}
+@media (max-width:560px){.lg,.stg{grid-template-columns:1fr}}
 .note{color:var(--muted);font-size:.8rem;margin:10px 0 0}
 #pn{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px;font:inherit;margin:6px 0 14px}
 #ladder{list-style:none;padding:0;margin:12px 0}
@@ -266,6 +270,7 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
     <div class="row2"><button id="bot-cc" class="alt">Copier le code</button><button id="bot-cd" class="alt">Copier le dataset JSON</button></div>
     <p class="note" id="bot-n"></p>
   </div>
+  <div id="ac-v" hidden></div>
   <div id="rk-v" hidden>
     <label class="k" for="pn">Pseudo</label><input id="pn" maxlength="14" autocomplete="off">
     <div class="k" id="rp-t"></div><div class="bar" style="margin-top:8px"><i id="rp-b"></i></div>
@@ -295,7 +300,7 @@ en:{
 "devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
 "Classement et scores":"Leaderboard and scores","Rangs et profil":"Ranks and profile","Entraîner mon bot":"Train my bot","Données et API pour tes bots":"Data and API for your bots","Langue":"Language",
 "Chaîne":"Chain","Lancement":"Launch","Chart du market cap":"Market cap chart","Chart masqué":"Chart hidden","Ton ATH (market cap max)":"Your ATH (max market cap)","Prédiction du market cap maximum":"Maximum market cap guess",
-"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Nombre de coins à prédire":"Number of coins to predict","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Classic mode: no time limit, the coin appears when you press.","Lancer la manche":"Start the round",
+"Valider ma prédiction":"Submit my guess","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Ranked mode: the 6 s timer starts when you press.","Nombre de coins à prédire":"Number of coins to predict","Mon compte":"My account","Se connecter":"Sign in","Continuer avec {0}":"Continue with {0}","Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.":"{0} sign-in is coming soon. Your progress is kept on this device.","Statistiques":"Statistics","Classique":"Classic","Parties":"Games","Manches":"Rounds","Précision moyenne":"Average accuracy","Meilleure partie":"Best game","Quasi pile (±10 %)":"Nearly spot-on (±10%)","Pas encore de parties":"No games yet","Classement en ligne actif : ton score est partagé.":"Online leaderboard active: your score is shared.","Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.":"Online leaderboard unavailable here. Your progress is kept on this device.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Classic mode: no time limit, the coin appears when you press.","Lancer la manche":"Start the round",
 "Lancer la manche {0}/{1}":"Start round {0}/{1}","Ta prédiction":"Your guess","ATH réel":"Real ATH","Copier le CA":"Copy the CA","Copier":"Copy","Score final":"Final score","Rejouer":"Play again",
 "Partager mon score":"Share my score","Texte à copier":"Text to copy","Fermer":"Close","Classement":"Leaderboard","Mes parties":"My games",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Your bot can play here to learn: it asks for a coin (without the ATH), answers with its guess, and gets the real ATH and its score. Bot games don’t count on the leaderboard.",
@@ -326,7 +331,7 @@ es:{
 "devine l’ATH":"adivina el ATH","Connexion":"Iniciar sesión","Connecté":"Conectado","Menu":"Menú","Mode classique":"Modo clásico","Gratuit · sans limite de temps":"Gratis · sin límite de tiempo","Mode ranked":"Modo ranked",
 "Classement et scores":"Clasificación y puntuaciones","Rangs et profil":"Rangos y perfil","Entraîner mon bot":"Entrenar mi bot","Données et API pour tes bots":"Datos y API para tus bots","Langue":"Idioma",
 "Chaîne":"Cadena","Lancement":"Lanzamiento","Chart du market cap":"Gráfico del market cap","Chart masqué":"Gráfico oculto","Ton ATH (market cap max)":"Tu ATH (market cap máx.)","Prédiction du market cap maximum":"Predicción del market cap máximo",
-"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Nombre de coins à prédire":"Número de monedas a predecir","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Modo clásico: sin límite de tiempo, la moneda aparece cuando pulsas.","Lancer la manche":"Empezar la ronda",
+"Valider ma prédiction":"Confirmar mi predicción","Mode ranked : le chrono de 6 s démarre quand tu appuies.":"Modo ranked: el cronómetro de 6 s empieza cuando pulsas.","Nombre de coins à prédire":"Número de monedas a predecir","Mon compte":"Mi cuenta","Se connecter":"Iniciar sesión","Continuer avec {0}":"Continuar con {0}","Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.":"El inicio de sesión con {0} llegará pronto. Tu progreso se guarda en este dispositivo.","Statistiques":"Estadísticas","Classique":"Clásico","Parties":"Partidas","Manches":"Rondas","Précision moyenne":"Precisión media","Meilleure partie":"Mejor partida","Quasi pile (±10 %)":"Casi exacto (±10 %)","Pas encore de parties":"Aún no hay partidas","Classement en ligne actif : ton score est partagé.":"Clasificación en línea activa: tu puntuación se comparte.","Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.":"Clasificación en línea no disponible aquí. Tu progreso se guarda en este dispositivo.","Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.":"Modo clásico: sin límite de tiempo, la moneda aparece cuando pulsas.","Lancer la manche":"Empezar la ronda",
 "Lancer la manche {0}/{1}":"Empezar la ronda {0}/{1}","Ta prédiction":"Tu predicción","ATH réel":"ATH real","Copier le CA":"Copiar el CA","Copier":"Copiar","Score final":"Puntuación final","Rejouer":"Jugar de nuevo",
 "Partager mon score":"Compartir mi puntuación","Texte à copier":"Texto para copiar","Fermer":"Cerrar","Classement":"Clasificación","Mes parties":"Mis partidas",
 "Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.":"Tu bot puede jugar aquí para aprender: pide una moneda (sin el ATH), responde con su predicción y recibe el ATH real y su puntuación. Las partidas de bots no cuentan en la clasificación.",
@@ -568,6 +573,7 @@ function validate(){
   const k=deck[i],g=val();
   const pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)));zero=false;
   total+=pts;
+  {const rr=g>k.ath?g/k.ath:k.ath/g;S.rd=S.rd||{};const o=S.rd[mode]=S.rd[mode]||{n:0,x:0};o.n++;if(rr<1.1)o.x++;save()}
   $("input").hidden=true;$("rdy").hidden=true;$("cw").className="cw open";
   animate(k.ch||fake(k.ath),k.ath,()=>{
     $("mg").textContent=fmt(g);$("ma").textContent=fmt(k.ath);
@@ -638,12 +644,7 @@ async function goOnline(){
 }
 
 function acct(){const b=$("acct");b.classList.toggle("on",online);$("acl").textContent=online?"● "+(S.name||T("Connecté")):T("Connexion")}
-$("acct").addEventListener("click",async()=>{
-  if(online){sheet("ranks");return}
-  await goOnline();
-  if(online){acct();toast(T("Connecté : ton score est en ligne."))}
-  else toast(T("Connexion impossible ici : ouvre le jeu depuis ton compte claude.ai (lien partagé, accès Contributeur)."));
-});
+$("acct").addEventListener("click",()=>sheet("account"));
 function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
@@ -692,9 +693,9 @@ let abandoned=false;
 function sheet(w){
   if(!w&&abandoned){abandoned=false;shown=0;start("casual");return}
   shown=w;$("sh").hidden=!w;document.body.classList.toggle("onpage",!!w);navOn();if(w)window.scrollTo(0,0);if(!w)return;
-  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":"Rangs et profil");
-  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";
-  w==="scores"?drawScores():w==="bot"?drawBot():drawRanks();
+  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":w==="account"?"Mon compte":"Rangs et profil");
+  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";$("ac-v").hidden=w!=="account";
+  w==="scores"?drawScores():w==="bot"?drawBot():w==="account"?drawAccount():drawRanks();
 }
 function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
@@ -753,6 +754,22 @@ function drawRanks(){
   $("rp-b").style.width=(nx?Math.max(0,Math.min(100,(S.rp-RANKS[j][1])/(nx[1]-RANKS[j][1])*100)):100)+"%";
   $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
 }
+
+const LOGINS=[["pump.fun","#22E27A","P"],["FOMO","#FF8A3D","F"],["Google","#8AB4F8","G"],["Phantom","#AB9FF2","👻"]];
+function statOf(m){const L=(S.scores||[]).filter(x=>x.m===m),d=(S.rd||{})[m]||{n:0,x:0};
+  return{g:L.length,n:d.n,x:d.x,avg:L.length?L.reduce((a,x)=>a+x.s,0)/L.length/50:null,best:L.length?Math.max(...L.map(x=>x.s))/50:null}}
+function drawAccount(){
+  const j=rankOf(S.rp,myPos()),r=RANKS[j],pc=v=>v==null?"—":Math.round(v)+" %";
+  let h="<div class='ac-h'><b>"+esc(S.name)+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
+  h+="<div class='k'>"+T("Se connecter")+"</div><div class='lg'>"+LOGINS.map(([n,c,l],k)=>"<button data-lg='"+k+"'><i style='background:"+c+"'>"+l+"</i>"+esc(T("Continuer avec {0}",n))+"</button>").join("")+"</div>";
+  h+="<p class='note'>"+T(online?"Classement en ligne actif : ton score est partagé.":"Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.")+"</p>";
+  h+="<div class='k' style='margin-top:18px'>"+T("Statistiques")+"</div><div class='stg'>";
+  [["casual","Classique"],["ranked","Ranked"]].forEach(([m,l])=>{const t=statOf(m);
+    h+="<div><h3>"+T(l)+"</h3>"+(t.g||t.n?"<p>"+T("Parties")+"<b>"+t.g+"</b></p><p>"+T("Manches")+"<b>"+t.n+"</b></p><p>"+T("Précision moyenne")+"<b>"+pc(t.avg)+"</b></p><p>"+T("Meilleure partie")+"<b>"+pc(t.best)+"</b></p><p>"+T("Quasi pile (±10 %)")+"<b>"+t.x+"</b></p>":"<p>"+T("Pas encore de parties")+"</p>")+"</div>"});
+  h+="</div>";
+  $("ac-v").innerHTML=h;
+}
+$("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(b)toast(T("Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.",LOGINS[+b.dataset.lg][0]))});
 
 // ----- événements -----
 const openMenu=()=>{};
