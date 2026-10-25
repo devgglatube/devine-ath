@@ -312,7 +312,7 @@ html[data-mode=light] .lock{background:#E4E4E8}html[data-mode=light] .lock path{
 html[data-mode=light] .card:hover{border-color:#c5c5cc}html[data-mode=light] .card,html[data-mode=light] .pn{box-shadow:0 1px 2px rgba(0,0,0,.05)}
 html[data-mode=light] #mn,html[data-mode=light] h2{color:var(--ink)}
 html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.55)}
-#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}#go{background:var(--up);color:var(--on-up)}.lock path{stroke:var(--up)}#lkc{fill:var(--up)}#sh-t,.side button[data-a].on{color:var(--up)}.side button[data-a].on::before{background:var(--up)}html[data-mode=light] .lock path{stroke:var(--up)}html[data-mode=light] .side button[data-a].on{color:var(--up)}</style>
+#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}#go{background:var(--up);color:var(--on-up)}.lock path{stroke:var(--up)}#lkc{fill:var(--up)}#sh-t,.side button[data-a].on{color:var(--up)}.side button[data-a].on::before{background:var(--up)}html[data-mode=light] .lock path{stroke:var(--up)}html[data-mode=light] .side button[data-a].on{color:var(--up)}.navsp{flex:1;min-height:12px;border-bottom:1px solid var(--line);margin-bottom:6px}@media (max-width:899px){.navsp{display:none}}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -324,15 +324,17 @@ html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.
     <button data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
     <button data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
     <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small></button>
+    <div class="navh">Progression</div>
     <button data-a="scores">Classement et scores</button>
     <button data-a="ranks">Rangs et profil</button>
-    <button data-a="settings">Paramètres<small>Langue et thème de couleur</small></button>
     <div class="navh">Apprendre</div>
     <button data-a="help">Comment ça marche<small>Règles, score et rangs expliqués</small></button>
     <button data-a="trust">Transparence<small>Score, sources des données, limites</small></button>
     <div class="navh">Bots</div>
     <button data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
     <button data-a="rent">Louer mon bot<small>Gagne en prêtant ses prédictions</small></button>
+    <div class="navsp"></div>
+    <button data-a="settings">Paramètres<small>Langue et thème de couleur</small></button>
   </nav>
 </aside>
 <main>
@@ -1387,8 +1389,8 @@ $("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#s
 $("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
 $("pn").addEventListener("change",()=>push());
 
-Object.assign(DICT.en,{"Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
-Object.assign(DICT.es,{"Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+Object.assign(DICT.en,{"Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
+Object.assign(DICT.es,{"Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
