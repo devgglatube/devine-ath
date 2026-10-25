@@ -1007,6 +1007,7 @@ const TIME=6000, TIMEOUT_ZERO=false; // TIMEOUT_ZERO=true : 0 point si les 6 s s
 let S={name:"Anon",pts:500,rp:0,best:0,games:0,scores:[]},tab="board";
 try{Object.assign(S,JSON.parse(localStorage.getItem("dath.v1")||"{}"))}catch(e){}
 const save=()=>{try{localStorage.setItem("dath.v1",JSON.stringify(S))}catch(e){}};
+const RI=["💧","🧻","🎰","🎯","📣","☠️"];
 const rankIdx=rp=>RANKS.reduce((b,r,j)=>rp>=r[1]?j:b,0);
 // rang affiché : seuil de RP, plus la place dans le classement quand il est connu (pos = null hors ligne)
 function rankOf(rp,pos){let j=rankIdx(rp);while(j>0&&TOP[j]&&pos!=null&&pos>TOP[j])j--;return j}
@@ -1048,7 +1049,7 @@ $("acct").addEventListener("click",()=>sheet("account"));
 function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="review"?'<i class="tag tg2">'+T("ENTRAÎNEMENT")+"</i> "+c:mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
-  $("mn").textContent=S.name;$("mr").textContent=r[0];$("mr").style.color=r[2];
+  $("mn").textContent=S.name;$("mr").textContent=RI[j]+" "+r[0];$("mr").style.color=r[2];
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
   const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();
@@ -1081,7 +1082,7 @@ function settle(){
     const o=rankOf(old,estPos(old));
     S.rp=Math.max(0,old+d);const n=rankOf(S.rp,estPos(S.rp));
     h+="<div>Rank points <b class='"+(d>=0?"pos":"neg")+"'>"+(d>=0?"+":"")+d+" RP</b></div>";
-    if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RANKS[n][0])+"</div>";
+    if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RI[n]+" "+RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RI[n]+" "+RANKS[n][0])+"</div>";
   }
   S.scores.push({m:mode,s:sc,t:Date.now()});S.scores=S.scores.slice(-300);save();push();
   $("sum").innerHTML=h;
@@ -1148,7 +1149,7 @@ function scoreImage(){
 }
 $("imgb").addEventListener("click",()=>{try{$("imgp").src=scoreImage();$("imgov").hidden=false}catch(e){toast(T("Image impossible sur cet appareil."))}});
 $("imgx").addEventListener("click",()=>{$("imgov").hidden=true});$("imgov").addEventListener("click",e=>{if(e.target.id==="imgov")$("imgov").hidden=true});
-function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
+function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RI[rankOf(p.rp||0,pos)]+" "+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
   if(tab==="board"){
@@ -1218,13 +1219,13 @@ function drawRent(){
 function drawRanks(){
   const ps=myPos(),j=rankOf(S.rp,ps),nx=RANKS[j+1];
   $("pn").value=S.name;
-  $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
+  $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RI[j]+" "+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
   {const E=(S.er||[]).slice().sort((a,b)=>a-b),n=E.length,bx=$("bias");
     if(n<10)bx.textContent=T("Joue encore {0} coin(s) pour voir si tu vois plutôt trop haut ou trop bas.",10-n);
     else{const m=n%2?E[(n-1)/2]:(E[n/2-1]+E[n/2])/2,f=Math.pow(10,Math.abs(m)).toFixed(1).replace(".",decSep());
       bx.textContent=Math.abs(m)<.15?T("Bien calibré : sur tes {0} derniers coins, tes prédictions sont en moyenne au bon niveau.",n):T(m>0?"Tu vois plutôt trop haut : en médiane, ×{0} au-dessus de l’ATH (sur {1} coins).":"Tu vois plutôt trop bas : en médiane, ×{0} en dessous de l’ATH (sur {1} coins).",f,n)}}
   $("rp-b").style.width=(nx?Math.max(0,Math.min(100,(S.rp-RANKS[j][1])/(nx[1]-RANKS[j][1])*100)):100)+"%";
-  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
+  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+RI[k]+" "+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
 }
 
 const LOGINS=[["pump.fun","#22E27A","P"],["FOMO","#FF8A3D","F"],["Google","#8AB4F8","G"],["Phantom","#AB9FF2","👻"]];
