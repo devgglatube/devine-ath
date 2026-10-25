@@ -282,6 +282,13 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   #input #ok{padding:13px}
   #tm{margin-bottom:6px}
 }
+/* V17 : simulateur de revenus (location de bot) */
+.bd0{display:inline-block;font-size:.66rem;font-weight:700;border-radius:99px;padding:2px 8px;border:1px solid var(--line);color:var(--muted);margin-left:6px;vertical-align:middle;letter-spacing:0}
+.sim{background:var(--card2);border-radius:14px;padding:14px;display:grid;gap:4px;margin-top:8px}
+.sim .sr{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.sim .sr b{font-size:1.05rem}
+.simr{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.simr div{background:var(--card);border-radius:12px;padding:10px 12px;display:grid;gap:2px}.simr b{font-size:1.15rem}
+.simr .hot{box-shadow:inset 0 0 0 1.5px var(--up)}.simr .hot b{color:var(--up)}
 </style>
 </head>
 <body>
@@ -503,6 +510,19 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
       <div class="plan hot"><b>Ce que tu touches</b><div class="pr">240 €</div><div>avec 20 locataires, par mois</div></div>
     </div>
     <p class="note" style="margin:6px 0 0">Simple exemple de calcul : 20 × 15 € = 300 €, moins 60 € de commission. Ce n’est pas une promesse de revenu.</p>
+    <div class="k" style="margin-top:16px">Simulateur de revenus <span class="bd0">Bientôt</span></div>
+    <div class="sim">
+      <div class="sr"><label for="sim-p" class="k">Prix mensuel par locataire</label><b id="sim-pv"></b></div>
+      <input type="range" id="sim-p" min="5" max="50" step="1" value="15">
+      <div class="sr"><label for="sim-n" class="k">Nombre de locataires</label><b id="sim-nv"></b></div>
+      <input type="range" id="sim-n" min="1" max="50" step="1" value="20">
+      <div class="simr">
+        <div><span class="k">Payé par les locataires</span><b id="sim-g"></b></div>
+        <div><span class="k">Commission de la plateforme (20 %)</span><b id="sim-c"></b></div>
+        <div class="hot"><span class="k">Ce que tu touches</span><b id="sim-t"></b></div>
+      </div>
+    </div>
+    <p class="note" style="margin:6px 0 0">Simulation pour comprendre le calcul. La location n’est pas ouverte et aucun revenu n’est garanti : il faut d’abord trouver des locataires.</p>
     <div class="m2">
     <div class="k" style="margin-top:16px">Moyens de rémunération prévus</div>
     <div class="plans">
@@ -683,6 +703,7 @@ Object.assign(DICT.en,{"Base actuelle : {0} coins, avec des ATH de {1} à {2}.":
 Object.assign(DICT.en,{"Menu": "Menu"});Object.assign(DICT.es,{"Menu": "Menú"});
 Object.assign(DICT.en,{"Des points, pas d’argent": "Points, not money", "On joue avec des points du jeu, jamais avec de l’argent réel.": "You play with game points, never with real money.", "Aucun trade": "No trading", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "The site places no orders and never touches your wallet.", "Aucun conseil": "No advice", "Un exercice de prédiction, jamais un conseil financier.": "A prediction exercise, never financial advice.", "Rien n’est encaissé": "Nothing is charged", "Aucun paiement n’est possible aujourd’hui.": "No payment is possible today.", "Ce qui est ouvert et ce qui est prévu": "What is open and what is planned", "Gratuit, sans limite de temps.": "Free, no time limit.", "Mises et gains en points du jeu, jamais en argent.": "Stakes and winnings in game points, never money.", "5 coins identiques pour tous, chaque jour.": "5 identical coins for everyone, every day.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Free dataset and bot games, stats on your device.", "Calculé sur ton appareil, ce n’est pas une certification.": "Computed on your device, not a certification.", "Forfaits Pro, Équipe et Crédits": "Pro, Team and Credits plans", "Prix indicatifs, rien n’est encaissé.": "Indicative prices, nothing is charged.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "You keep 80% of the price, the platform takes 20%.", "Certification, parrainage et API": "Certification, referral and API", "Pistes prévues, montants et conditions à confirmer.": "Planned ideas, amounts and terms to be confirmed.", "Disponible": "Available", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "The online leaderboard is only available if you open the game from claude.ai, signed in to your account."});Object.assign(DICT.es,{"Des points, pas d’argent": "Puntos, no dinero", "On joue avec des points du jeu, jamais avec de l’argent réel.": "Juegas con puntos del juego, nunca con dinero real.", "Aucun trade": "Ningún trade", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "El sitio no ejecuta órdenes y nunca toca tu wallet.", "Aucun conseil": "Ningún consejo", "Un exercice de prédiction, jamais un conseil financier.": "Un ejercicio de predicción, nunca un consejo financiero.", "Rien n’est encaissé": "No se cobra nada", "Aucun paiement n’est possible aujourd’hui.": "Hoy no es posible ningún pago.", "Ce qui est ouvert et ce qui est prévu": "Qué está abierto y qué está previsto", "Gratuit, sans limite de temps.": "Gratis, sin límite de tiempo.", "Mises et gains en points du jeu, jamais en argent.": "Apuestas y ganancias en puntos del juego, nunca en dinero.", "5 coins identiques pour tous, chaque jour.": "5 monedas idénticas para todos, cada día.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Dataset y partidas de bot gratis, estadísticas en tu dispositivo.", "Calculé sur ton appareil, ce n’est pas une certification.": "Calculado en tu dispositivo, no es una certificación.", "Forfaits Pro, Équipe et Crédits": "Planes Pro, Equipo y Créditos", "Prix indicatifs, rien n’est encaissé.": "Precios indicativos, no se cobra nada.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "Te quedas con el 80 % del precio, la plataforma cobra el 20 %.", "Certification, parrainage et API": "Certificación, referidos y API", "Pistes prévues, montants et conditions à confirmer.": "Ideas previstas, importes y condiciones por confirmar.", "Disponible": "Disponible", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "La clasificación en línea solo está disponible si abres el juego desde claude.ai, con tu cuenta iniciada."});
 Object.assign(DICT.en,{"Série : {0} d’affilée à moins de ×3 de l’ATH": "Streak: {0} in a row within ×3 of the ATH", "Précision : {0}/{1} à moins de ×3 de l’ATH": "Accuracy: {0}/{1} within ×3 of the ATH", "Meilleure série : {0}": "Best streak: {0}", "Record personnel : {0}": "Personal record: {0}", "Nouveau record !": "New record!", "La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.": "The streak counts coins in a row where your guess is within ×3 of the ATH. It measures your consistency: it earns no points."});Object.assign(DICT.es,{"Série : {0} d’affilée à moins de ×3 de l’ATH": "Racha: {0} seguidas a menos de ×3 del ATH", "Précision : {0}/{1} à moins de ×3 de l’ATH": "Precisión: {0}/{1} a menos de ×3 del ATH", "Meilleure série : {0}": "Mejor racha: {0}", "Record personnel : {0}": "Récord personal: {0}", "Nouveau record !": "¡Nuevo récord!", "La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.": "La racha cuenta las monedas seguidas en las que tu predicción está a menos de ×3 del ATH. Mide tu regularidad: no da ningún punto."});
+Object.assign(DICT.en,{"Simulateur de revenus": "Revenue simulator", "Prix mensuel par locataire": "Monthly price per renter", "Nombre de locataires": "Number of renters", "Payé par les locataires": "Paid by renters", "Commission de la plateforme (20 %)": "Platform commission (20%)", "Simulation pour comprendre le calcul. La location n’est pas ouverte et aucun revenu n’est garanti : il faut d’abord trouver des locataires.": "A simulation to understand the calculation. Rental is not open and no income is guaranteed: you first need to find renters.", "{0} € par mois": "€{0} per month", "mois": "month"});Object.assign(DICT.es,{"Simulateur de revenus": "Simulador de ingresos", "Prix mensuel par locataire": "Precio mensual por inquilino", "Nombre de locataires": "Número de inquilinos", "Payé par les locataires": "Pagado por los inquilinos", "Commission de la plateforme (20 %)": "Comisión de la plataforma (20 %)", "Simulation pour comprendre le calcul. La location n’est pas ouverte et aucun revenu n’est garanti : il faut d’abord trouver des locataires.": "Una simulación para entender el cálculo. El alquiler no está abierto y no se garantiza ningún ingreso: primero hay que encontrar inquilinos.", "{0} € par mois": "{0} € al mes", "mois": "mes"});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -1202,6 +1223,12 @@ const openMenu=o=>{const m=$("menu"),b=$("mbtn");if(o===undefined)o=!m.classList
 $("mbtn").addEventListener("click",()=>openMenu());
 document.addEventListener("click",e=>{if(!$("menu").classList.contains("open"))return;if(!e.target.closest("#menu")&&!e.target.closest("#acct"))openMenu(false)});
 
+// simulateur de location : 80 % pour le propriétaire du bot, 20 % de commission
+function simUpd(){const pr=+$("sim-p").value,n=+$("sim-n").value,g=pr*n,c=Math.round(g*.2),t=g-c;
+  const m=x=>T("{0} € par mois",num(x));
+  $("sim-pv").textContent=m(pr);$("sim-nv").textContent=num(n);
+  $("sim-g").textContent=m(g);$("sim-c").textContent="− "+m(c);$("sim-t").textContent=m(t)}
+$("sim-p").addEventListener("input",simUpd);$("sim-n").addEventListener("input",simUpd);
 $("s").addEventListener("input",upd);
 $("ok").addEventListener("click",validate);
 $("cn").addEventListener("input",()=>{const n=+$("cn").value;$("cnv").textContent=n;try{localStorage.setItem("dath.n",String(n))}catch(e){}
@@ -1241,7 +1268,7 @@ $("share").addEventListener("click",async()=>{
 
 function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
-  i18nDom();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
+  i18nDom();if(typeof simUpd==="function")simUpd();document.title=LANG==="fr"?"Devine l’ATH":LANG==="es"?"Adivina el ATH":"Guess the ATH";
   document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));
   upd();refresh();if(deck){if($("game")&&!$("game").hidden&&deck[i]){$("d").textContent=descOf(deck[i]);$("d").dataset.l=T("Le narratif");$("l").textContent=launchOf(deck[i].l);renderTweet(deck[i]);fillInfo(deck[i])}meta();if(!$("rdy").hidden)$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length)}
   if($("sh")&&!$("sh").hidden)sheet(shown);
