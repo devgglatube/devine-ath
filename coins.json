@@ -157,147 +157,8 @@
     "q": "TTWO",
     "a": "7Te1wXcfeQjKLGHXFvxSCnGZTqunoZ9fxBn7KKjrkNEr"
    }
-  ]
- },
- {
-  "n": "Aura Final Boss",
-  "t": "Kimchi",
-  "img": "https://coin-images.coingecko.com/coins/images/102179673/large/KIMCHI.png?1792547588",
-  "ho": 22446,
-  "c": "Solana",
-  "l": "21 octobre 2026",
-  "d": "",
-  "ath": 47489233,
-  "ch": [
-   37618358,
-   35650461,
-   31643740,
-   33817583,
-   36450406,
-   31263556,
-   32170159,
-   29343005,
-   29910459,
-   30725703,
-   31162282,
-   34146942,
-   47489233,
-   35957695,
-   34813713,
-   26702573,
-   27031367,
-   24879649,
-   28061856,
-   24007710,
-   23793508,
-   21382335,
-   20142515,
-   22339194,
-   21003089,
-   22687812,
-   19257751,
-   16648686,
-   17115284,
-   15230933,
-   14360586,
-   19043212,
-   13898908,
-   14802466,
-   13480288,
-   13477191,
-   12123686,
-   9669591,
-   9573287,
-   9563681,
-   11394296,
-   11204965,
-   11606768,
-   12294904,
-   9012015,
-   9648938,
-   9755191,
-   8492548,
-   9646336,
-   8973437,
-   8746809,
-   8163618,
-   7449665,
-   8102786,
-   7768759,
-   8006536,
-   7519642,
-   7349193,
-   6891368,
-   5995241
   ],
-  "b": 5,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "6DNxwecbtdNNstpB5tdnxZsfGe3HmsNgEUZhdue4b1PH"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "Gs5FHwYLrDBmCmiv5VhBLCvyiBmBYfcPedZDqR88GYeX",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "n": "BLAZE",
-  "t": "BLAZE",
-  "img": "https://assets.geckoterminal.com/4thurdhol3bv5ditum7wxrjv02ev",
-  "ho": 1860,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "BLAZE is live!",
-  "ath": 399493,
-  "ch": [
-   12359,
-   26491,
-   36665,
-   66883,
-   138837,
-   115058,
-   135887,
-   158053,
-   165129,
-   223736,
-   210178,
-   176672,
-   249700,
-   337561,
-   399493,
-   246802,
-   228253,
-   190006,
-   231978,
-   118128,
-   132922,
-   180785,
-   113644,
-   105225,
-   115720,
-   246208,
-   101903,
-   146158,
-   96693,
-   132165,
-   65825
-  ],
-  "b": 2,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "9fCLECD3dMHaEcz7Axod2W57f7oPhqBdncqRpcf1CjFJ"
-   }
-  ]
+  "bz": 0
  },
  {
   "n": "Super Inu",
@@ -377,7 +238,8 @@
     "q": "NVDAx",
     "a": "B4VFURUHHzyt8YzBGBV9jiarBvjh1EbMAbRNBnNqaxUD"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "n": "Virtual Trade",
@@ -457,7 +319,8 @@
     "q": "SOL",
     "a": "MFsvPTXCy6eiT1qMpMGKJf6a8K8fdj7YKUFPKDeEXEX"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "n": "terminal of truths",
@@ -537,122 +400,8 @@
     "q": "SOL",
     "a": "GUkDEvSyoJJ5yFHUYKuePjwTTAZYLBmWsHQ2fYaCMKYm"
    }
-  ]
- },
- {
-  "n": "mil",
-  "t": "mil",
-  "img": "https://assets.geckoterminal.com/4vaopc57shurylsdoo0wg97fr64r",
-  "ho": 2097,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 284166,
-  "ch": [
-   41209,
-   95089,
-   85142,
-   109489,
-   177651,
-   247544,
-   284166,
-   172524,
-   167689,
-   151639,
-   168052,
-   180034,
-   192649,
-   181540,
-   165453
   ],
-  "b": 2,
-  "pr": [
-   {
-    "d": "meteora",
-    "q": "SOL",
-    "a": "Ebf8ssrkwuqFtCheCvH4HUHu7cRU6TRZkkUom9VPBQj4"
-   }
-  ]
- },
- {
-  "n": "cashcat_token",
-  "t": "Cash Cat",
-  "img": "https://assets.geckoterminal.com/5b5o4septl8j5ehs0m2h37n2lg0i",
-  "ho": 2027,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "Robinhood original name was Cash Cat.",
-  "ath": 19742342,
-  "ch": [
-   23080,
-   25813,
-   29360,
-   33021,
-   34931,
-   35823,
-   35994,
-   36118,
-   37348,
-   44094,
-   45619,
-   46071,
-   48767,
-   51281,
-   54953,
-   55618,
-   58634,
-   59095,
-   61727,
-   67900,
-   70502,
-   71444,
-   73951,
-   75702,
-   77955,
-   79264,
-   82040,
-   85723,
-   86940,
-   93720,
-   92390,
-   93126,
-   96546,
-   95619,
-   97654,
-   99362,
-   101056,
-   104624,
-   106897,
-   110637,
-   111128,
-   113406,
-   114126,
-   114960,
-   117551,
-   119337,
-   119589,
-   118489,
-   119917,
-   122407,
-   123983,
-   125876,
-   127510,
-   128848,
-   130342,
-   131741,
-   133049,
-   137082,
-   136078,
-   19742342
-  ],
-  "b": 4,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "Mo1t4o631DSsYokp5NtXFB6MthTqrAxBTouGi2njy2d"
-   }
-  ]
+  "bz": 0
  },
  {
   "n": "Catecoin",
@@ -732,82 +481,8 @@
     "q": "SOL",
     "a": "HMzvsEEmtzHhvZNw9uwbaG85HCTmFnkbhzUx16cy7ca3"
    }
-  ]
- },
- {
-  "n": "Hypest",
-  "t": "HYPEST",
-  "img": "https://assets.geckoterminal.com/zv77vszppuzqxyc6blg6v2ok1ki9",
-  "ho": 2021,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "Collect your favorite influencers. Get paid when they go viral.",
-  "ath": 4808072,
-  "ch": [
-   26541,
-   29556,
-   34866,
-   38896,
-   43206,
-   48347,
-   53001,
-   56431,
-   61324,
-   65734,
-   69102,
-   73810,
-   78559,
-   82822,
-   88334,
-   91205,
-   94243,
-   99100,
-   103099,
-   103782,
-   107359,
-   112858,
-   120775,
-   125397,
-   133922,
-   140587,
-   147240,
-   152023,
-   156074,
-   161085,
-   168957,
-   176373,
-   184655,
-   201832,
-   208591,
-   216226,
-   227722,
-   241157,
-   251332,
-   256513,
-   267516,
-   268631,
-   280765,
-   287952,
-   296250,
-   302912,
-   305974,
-   309152,
-   315778,
-   320941,
-   324835,
-   324134,
-   330774,
-   339784,
-   4808072
   ],
-  "b": 3,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "A1SDTGtjjBFhkTe6AUy9oao4CEVF2Tjcjjrygt3MrwRD"
-   }
-  ]
+  "bz": 0
  },
  {
   "n": "GTA6CAT",
@@ -887,7 +562,8 @@
     "q": "SOL",
     "a": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "2JSj9dzLQwAi3q1dHYjCPF5Gveg81hBTRy8EeM3Fpump",
@@ -968,7 +644,8 @@
     "q": "SOL",
     "a": "5SpztG8hdXCG3YWx7hWjHGHF8CYGNRSWZ1smmfQQkAMX"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump",
@@ -1053,7 +730,8 @@
   "fs": {
    "s": 0,
    "sh": []
-  }
+  },
+  "bz": 0
  },
  {
   "id": "8idEA8QovsZJka6d9Z35fejE5MbL37BJxvw5k5r6pump",
@@ -1143,7 +821,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "9daaq4QBFia2C9BcAEwMP2RfWqseDsTYudqM4Lfmpump",
@@ -1233,7 +912,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
@@ -1299,81 +979,8 @@
     "q": "PUMP",
     "a": "Cb7ZRgPLhji3Th7htXyKEqbXvNjPpeTvckXuWakBUhXu"
    }
-  ]
- },
- {
-  "id": "4nZJvocTBuShVKUpgPf4eKgUcrbxh69FJfkXuNurQd37",
-  "n": "Nami Agent",
-  "t": "NAMI",
-  "img": "https://assets.geckoterminal.com/t55y6am32d3j9xsiznggn97u8dn5",
-  "ho": 2016,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "Nami Agent｜AI-Driven On-Chain Intelligence\n  Integrating artificial intelligence with Web3, exploring the decentralized future.\n  Intelligent evolution, connecting infinite possibilities.",
-  "ath": 167080,
-  "ch": [
-   23653,
-   28476,
-   33028,
-   37662,
-   39581,
-   43656,
-   47958,
-   52304,
-   55662,
-   58754,
-   62841,
-   65095,
-   68188,
-   69348,
-   65695,
-   61988,
-   64701,
-   67235,
-   68795,
-   67505,
-   71517,
-   72487,
-   72706,
-   75059,
-   78026,
-   80074,
-   81074,
-   83069,
-   86109,
-   88105,
-   90675,
-   91574,
-   94432,
-   95381,
-   96756,
-   97657,
-   100450,
-   101006,
-   102545,
-   105213,
-   106219,
-   106679,
-   108348,
-   113774,
-   119610,
-   123139,
-   130461,
-   136279,
-   128659,
-   134687,
-   136499,
-   138021,
-   135820,
-   138475,
-   140408,
-   140007,
-   144851,
-   148704,
-   152970,
-   167080
   ],
-  "b": 1
+  "bz": 0
  },
  {
   "id": "Cbkg5w7V7W2J2sUmecnyN825CbvwvXwasfhduVtNpump",
@@ -1471,7 +1078,8 @@
      3300
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
@@ -1552,7 +1160,8 @@
     "q": "SOL",
     "a": "6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "DEL3KmMovmE57YmwzFYFkMuNDs3PZyi3qMvP9Jyfpump",
@@ -1633,52 +1242,8 @@
     "q": "SOL",
     "a": "6DVtcoCyvNzLJHJVX2gCghzE8gmpVdeNBjJ5Uw1LHmWk"
    }
-  ]
- },
- {
-  "id": "8FjpzhLb2YnWieYCZiukqKkcxPCVriC1rJu5WFFAbY8Q",
-  "n": "evmbot",
-  "t": "EBOT",
-  "img": "https://assets.geckoterminal.com/31f2weggl94asn7n5gqf3yd6lbpb",
-  "ho": 1817,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "ur personel onchain bot of EVM chains",
-  "ath": 14882216,
-  "ch": [
-   24173,
-   26927,
-   30442,
-   35061,
-   37834,
-   41212,
-   45045,
-   50052,
-   52689,
-   57834,
-   62944,
-   63670,
-   67241,
-   69791,
-   71530,
-   73264,
-   77969,
-   82570,
-   83727,
-   87343,
-   89765,
-   93951,
-   96405,
-   14882216
   ],
-  "b": 4,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "BHk9QL14UzRcx8yJ9BvXdyPZSmTtrbQMicr8G3CMGK6w"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
@@ -1768,7 +1333,8 @@
      10000
     ]
    ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "GZYL4JVHikj6H71a7mTdWay1q7DwsWdJFEhkQCsYz4WT",
@@ -1849,7 +1415,8 @@
     "q": "SOL",
     "a": "VAzfgUPHpLNnDq5hFzAMeTcHhM3aB7MDqPquJ3Xb8xW"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
@@ -1930,7 +1497,8 @@
     "q": "TTWO",
     "a": "G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump",
@@ -2011,7 +1579,8 @@
     "q": "SOL",
     "a": "4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj"
    }
-  ]
+  ],
+  "bz": 0
  },
  {
   "id": "Bdmz1BAj5B2YbYVdMyZexWbjX33kfhNonHGDtQjipump",
@@ -2101,75 +1670,8 @@
      10000
     ]
    ]
-  }
- },
- {
-  "id": "CHqk5UL9vmqaZy3sth3tuhJkKpX4HSH8vEEshEfdpump",
-  "n": "Finance Inu",
-  "t": "FI",
-  "img": "https://assets.geckoterminal.com/z4ebrcfqngexu06eegewf92imyo0",
-  "ho": 53,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 35388,
-  "ch": [
-   10412,
-   10278,
-   20287,
-   24089,
-   35388,
-   12573,
-   9475,
-   6377,
-   6571,
-   6221,
-   5644,
-   4958,
-   5592,
-   4703,
-   4843,
-   4691,
-   4640,
-   4620,
-   4621,
-   4586,
-   4547,
-   4506,
-   4470,
-   4309,
-   4303,
-   4284,
-   4272,
-   4253,
-   4085,
-   3932,
-   3914,
-   3865,
-   3807,
-   3786,
-   3709,
-   3679,
-   3669,
-   3665
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "4WTwcbu1uMCqww1w7xkeJYraiwyRBb4tw7PuWyXeQ6vk"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "2k5hrzuykwyTbUe8L7UriYAQhr5hijNLgBvEB4B9pP5y",
-     10000
-    ]
-   ]
-  }
+  },
+  "bz": 0
  },
  {
   "id": "DEf2ciwJmKNkTj1p85XNSbCFZ2XMQyVtF4JTxqwopump",
@@ -2221,605 +1723,8 @@
     "q": "MSFTx",
     "a": "2uxfPAdjHt1NXSB96oq8FUG932AH98ncktn7CYBT8CLU"
    }
-  ]
- },
- {
-  "id": "52oTymEKXPupp4apCCacNw2Jeag81TgeuQWsoopApump",
-  "n": "poppi was here",
-  "t": "poppi",
-  "img": "https://assets.geckoterminal.com/gebtzi4ak7trl4p41u1aln3h7h66",
-  "ho": 94,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 29067,
-  "ch": [
-   8291,
-   18741,
-   14941,
-   29067,
-   17342,
-   12417,
-   10040,
-   5879,
-   3997,
-   3768,
-   3576,
-   3735,
-   3761,
-   3636,
-   3630,
-   3551,
-   3534,
-   3533,
-   3499,
-   4142,
-   4374,
-   4329,
-   4205,
-   4853,
-   6834,
-   4564,
-   4758,
-   3661,
-   3570,
-   3572,
-   3560,
-   3459,
-   3492,
-   3535,
-   3534,
-   3553,
-   3591,
-   3546,
-   3476,
-   3452,
-   3416,
-   3363,
-   3348,
-   3315,
-   3253,
-   3260,
-   3269,
-   3274,
-   3235,
-   3254
   ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "FsGyBDb8zJCHGz4oqVZawwP6jJFuGaAzMwFNKkrinVNp"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "7XUUe2WudEJcUuhJGX4sxoricB6mVMB1NYVVAwMbnGWd",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "ELVx4N6d2JGsQzoYqM8ofx6JPvF6StkQS7PmPbY2pump",
-  "n": "poppi was here",
-  "t": "Poppi",
-  "img": "https://assets.geckoterminal.com/aeivndshoktmhjdqepubzrhfxmkp",
-  "ho": 95,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "Deployed using https://j7tracker.io",
-  "ath": 41429,
-  "ch": [
-   7215,
-   18430,
-   16809,
-   15853,
-   12783,
-   10693,
-   17307,
-   13990,
-   11595,
-   12410,
-   16167,
-   13378,
-   17345,
-   21269,
-   16809,
-   12226,
-   13379,
-   11545,
-   17453,
-   20043,
-   22008,
-   20002,
-   29833,
-   35275,
-   41429
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "7aBxYhJopScS1oTjZiC1Ghg7rmEpi6wF91vRxPsNNMQw"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "EQhaWze43fPrJp22kzMnXysrMtaUVfadQrQtCaa8vv1W",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "3r69Zny16GetBHASjmiQVWm3rqbpb721HNsCrAyJpump",
-  "n": "우땅이",
-  "t": "Utangi",
-  "img": "https://assets.geckoterminal.com/dy5r3f5mrk9qxoiheygaevd4sfh9",
-  "ho": 94,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "나는 우땅이야\n\n",
-  "ath": 21346,
-  "ch": [
-   9906,
-   21346,
-   5407,
-   7449,
-   12343,
-   8988,
-   9823,
-   10992,
-   9358,
-   8280,
-   8598,
-   7103,
-   7544,
-   7002,
-   6778,
-   8481,
-   10508,
-   9200,
-   9130,
-   7541,
-   6466,
-   8487,
-   7985,
-   7666,
-   9238,
-   7929,
-   7654,
-   6460,
-   6170,
-   6602,
-   6551,
-   6343,
-   6567,
-   6575,
-   5590,
-   6092,
-   6076,
-   6074,
-   5977,
-   5982,
-   5976,
-   6006,
-   6014,
-   6052,
-   6234,
-   5538,
-   5314,
-   5446,
-   5375,
-   5088,
-   5144,
-   5473,
-   5215,
-   5132,
-   5254,
-   5201,
-   5084,
-   4175,
-   4157,
-   4006
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "7DuV3D4o2u2M8Jtr7CqQXJWj7djw4RD5az1WaMmiPKP8"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "EU69Fe1RHxZLEjH91VpKyVqS2siuQtbjZUxMqv7eNwhP",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "81EpzKJzgckhZNYvV4vu16Mjb5V3tMPohKcNjr7kpump",
-  "n": "Movember",
-  "t": "MOVEMBER",
-  "img": "https://assets.geckoterminal.com/yz2k914tv1wl47pg9ic0z3tgp0ws",
-  "ho": 143,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "",
-  "ath": 39362,
-  "ch": [
-   24100,
-   17864,
-   39362,
-   30338,
-   25448,
-   25639,
-   12001,
-   9963,
-   13324,
-   17204,
-   14258,
-   7181,
-   7385,
-   5009,
-   5868,
-   3979,
-   3795,
-   4937,
-   4401,
-   3828,
-   3517,
-   3296,
-   3154,
-   3238,
-   3082,
-   3906,
-   4329,
-   3783,
-   3496,
-   6877,
-   6775,
-   7257,
-   8004,
-   9774,
-   7334,
-   7456,
-   6845,
-   7816,
-   7675,
-   5745,
-   5893,
-   5499,
-   7062,
-   5461,
-   4487,
-   4241,
-   4124,
-   3826,
-   3982,
-   3858,
-   4349,
-   3581,
-   3080,
-   3229,
-   2938,
-   2513,
-   2665,
-   2040,
-   2380,
-   2557
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "Moustache",
-    "a": "8Up2DtHeDwpoZN3dMDhkgxA711tBJU2RfZZ6pDnfRywj"
-   }
-  ]
- },
- {
-  "id": "GH6nAJUCv3x8vEvmsSuo9GW8w2U8XcDiMj7jEyDnpump",
-  "n": "Justice For Ramatou D",
-  "t": "RAMATOU",
-  "img": "https://assets.geckoterminal.com/mqbwwavvv8kjnfncf4bhn3xsje0g",
-  "ho": 115,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "",
-  "ath": 18899,
-  "ch": [
-   8116,
-   9003,
-   18259,
-   18899,
-   5757,
-   5967,
-   6191,
-   5897,
-   4919,
-   4820,
-   5674,
-   4131,
-   3901,
-   3844,
-   3810,
-   3739,
-   3671,
-   3660,
-   3649,
-   3642,
-   3618,
-   3509,
-   3496,
-   3506,
-   3496,
-   3495,
-   3491,
-   3480,
-   3472,
-   3428,
-   3395,
-   3862,
-   3613,
-   3582,
-   3570,
-   3544,
-   3494,
-   3475,
-   3022,
-   2841,
-   2839,
-   2836
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "8CA5hs7B3Pv8TrffptQ78urdeFFkDTm6xoL5fVpvD4Jz"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "7RDsm2g1v5xGyWfxCv7KeYsvq9mY6dVgjTjk2fCH5fdY",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
-  "n": "Bubblemaps",
-  "t": "BMT",
-  "img": "https://coin-images.coingecko.com/coins/images/52778/large/background-square.png?1734284378",
-  "ho": 5365,
-  "c": "Solana",
-  "l": "23 décembre 2025",
-  "d": "Blockchain data is inherently cluttered, noisy, and highly technical. \n\nBubblemaps transforms this complexity into a visual experience, making analysis engaging and efficient —allowing users to addres",
-  "ath": 37411378,
-  "ch": [
-   8727722,
-   8815717,
-   9023282,
-   8727878,
-   8221825,
-   8305180,
-   8808401,
-   9586511,
-   9786300,
-   9451365,
-   8345458,
-   8221311,
-   8345152,
-   8345272,
-   8346045,
-   8598573,
-   7371653,
-   6875440,
-   6739939,
-   7118722,
-   7021563,
-   7187722,
-   6572324,
-   6467895,
-   6439793,
-   6736558,
-   6836940,
-   6504741,
-   6440783,
-   6439471,
-   6472676,
-   6473103,
-   6441056,
-   6636679,
-   7045286,
-   12695002,
-   8307573,
-   9269247,
-   8924051,
-   8096813,
-   14506510,
-   11142877,
-   10390987,
-   9783597,
-   9631788,
-   9368059,
-   9462732,
-   9953665,
-   10603124,
-   10600372,
-   10682090,
-   9977657,
-   10181380,
-   10434280,
-   10232110,
-   10490837,
-   9637649,
-   8860316,
-   10439362,
-   37411378
-  ],
-  "b": 5,
-  "pr": [
-   {
-    "d": "meteora",
-    "q": "USDC",
-    "a": "CcXK5ixHDZ4uxCYqrgKx6VBUR4wACu6fw7KfKUvaZdMY"
-   }
-  ]
- },
- {
-  "id": "7qLou7Ng4fHK5wKRxu99kCw4PgJMJDcgjrBm5CCDpump",
-  "n": "_SiCk",
-  "t": "SiCk",
-  "img": "https://assets.geckoterminal.com/hpooxpo4og0rhh8ka3k6rsg9vpxi",
-  "ho": 165,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "Deployed using https://j7tracker.io",
-  "ath": 17902,
-  "ch": [
-   12734,
-   9400,
-   6889,
-   6142,
-   7454,
-   7718,
-   10012,
-   10663,
-   10348,
-   12517,
-   11713,
-   10866,
-   11605,
-   12261,
-   12651,
-   14534,
-   17902,
-   10967,
-   10471,
-   9961,
-   9503,
-   11248,
-   12579,
-   13191,
-   13008,
-   13284,
-   13396,
-   13458
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "CsCzd9C7djGbnbwqge6wJs7LGLQwE98uKJCTdMTrjqpq"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "3ZKW6cqTXmZswK4TbsPRVWubnpew5iM7NeaR51gYbjKq",
-     10000
-    ]
-   ]
-  }
- },
- {
-  "id": "BSF4doogWHB7XkmWFngNkpqvgHeXGu3xcwXz3hgGggUY",
-  "n": "Just a notrandom guy",
-  "t": "NOTRANDOMGUY",
-  "img": "https://assets.geckoterminal.com/gv0dydfpsnq0lvelrfqplg14cs5x",
-  "ho": 121,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "Just a notrandom guy chillin collecting rewards\n\nLaunched with notrandom.fun",
-  "ath": 25772,
-  "ch": [
-   3694,
-   3658,
-   3348,
-   2630,
-   3090,
-   5174,
-   4944,
-   4981,
-   5203,
-   5248,
-   13183,
-   15128,
-   14961,
-   25772,
-   14793,
-   15481,
-   14110,
-   13842,
-   19697,
-   18422,
-   13350,
-   15868,
-   18101,
-   18645,
-   16372,
-   17576,
-   15880,
-   13747,
-   12819,
-   18364,
-   22622,
-   19464,
-   16513,
-   17763,
-   17373,
-   17197,
-   18806,
-   19820,
-   18092,
-   15834,
-   13464,
-   13439,
-   13237,
-   11789,
-   11510,
-   11961,
-   10613,
-   8250,
-   8715,
-   10428,
-   11839,
-   12719,
-   11197,
-   12476,
-   11835,
-   12039,
-   11088,
-   11437,
-   11540,
-   11920
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "NTRNDM",
-    "a": "HcaWU49We8mpyQcSEru1MzPbNum91vjDQGBL5DTLLnRz"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump",
@@ -2900,162 +1805,8 @@
     "q": "SOL",
     "a": "9pju7scVfBaH7y6xD9jEvaAXzggu7CQyW5Pq5bxcHaMy"
    }
-  ]
- },
- {
-  "id": "5AFgATAvqYtaXYVubj43Rz36d2ckp1vhnMjBnHe7pump",
-  "n": "PILLS &amp; THRILLS",
-  "t": "P&amp;T",
-  "img": "https://assets.geckoterminal.com/mdxbulbya0rej57sqwey8yu700fw",
-  "ho": 84,
-  "c": "Solana",
-  "l": "24 octobre 2026",
-  "d": "Pump.fun-inspired theme park launch pad",
-  "ath": 22070,
-  "ch": [
-   4130,
-   9185,
-   7682,
-   7773,
-   11017,
-   22070,
-   14584,
-   9591,
-   5352,
-   3516,
-   3385,
-   3295,
-   3240,
-   3216,
-   3204,
-   3210,
-   3196,
-   3182,
-   3174,
-   3168,
-   3163,
-   3149,
-   3142,
-   3129,
-   3123,
-   3118,
-   3105,
-   3083,
-   3078,
-   3071,
-   3069,
-   3066,
-   3044,
-   3039,
-   3043,
-   3032,
-   3037,
-   3037,
-   3028,
-   3022,
-   2990,
-   2992,
-   2982,
-   2979,
-   2981,
-   2976,
-   2975,
-   2965,
-   2933,
-   2897,
-   2883,
-   2905,
-   2928
   ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "FJGs8g8Yk63gX3sES4wmUzqZ2t25iuZam8ERS636q3iK"
-   }
-  ]
- },
- {
-  "id": "367aW3KAJkYwAFdrfTqPRofzCwdr7SzXiRPmvgPXpump",
-  "n": "Attention Coin",
-  "t": "Attention",
-  "img": "https://assets.geckoterminal.com/pm0boco4h3b91v6rpfz345nfhhcw",
-  "ho": 68,
-  "c": "Solana",
-  "l": "23 octobre 2026",
-  "d": "PumpFun has said it themselves: ATTENTION IS THE MOST VALUABLE CURRENCY.\r\n\r\nMy last coin, $DaCity, went to $20M and is currently sitting at $11M.\r\n\r\nNow I want to see what happens when EVERY SINGLE HO",
-  "ath": 26106,
-  "ch": [
-   9548,
-   23764,
-   26106,
-   13882,
-   13979,
-   9295,
-   8001,
-   5904,
-   6423,
-   6640,
-   5965,
-   5123,
-   5210,
-   5415,
-   5556,
-   5618,
-   5596,
-   5736,
-   5764,
-   5336,
-   5272,
-   5082,
-   4739,
-   4721,
-   4314,
-   4477,
-   4256,
-   4071,
-   4016,
-   4017,
-   4010,
-   3981,
-   3955,
-   3819,
-   3812,
-   3801,
-   3801,
-   3708,
-   3672,
-   3612,
-   3578,
-   3563,
-   3486,
-   3438,
-   3422,
-   3398,
-   3388,
-   3368,
-   3322,
-   3260,
-   3185,
-   3082,
-   3069,
-   3080,
-   3057,
-   3053,
-   2987,
-   2996,
-   2978,
-   2982
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "6UE3bkAZuA6fmyUazg9UL9mhho3yLhf2bZZy36D1Uffb"
-   }
-  ]
+  "bz": 0
  },
  {
   "id": "8rPp52zXm6QdaAebE7UPW9AY7SD2XFCrNJTezJmApump",
@@ -5245,6 +3996,173 @@
     "d": "pumpswap",
     "q": "SOL",
     "a": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+   }
+  ]
+ },
+ {
+  "id": "2q1kaDj5u1YpyVRqFwAp5juEzccgy5S8KxQZtr2jpump",
+  "n": "Everything Is Gone",
+  "t": "GONE",
+  "img": "https://assets.geckoterminal.com/mdio5ieb8prdwbfvn6orya14k2a9",
+  "ho": 193,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "Created on https://rapidlaunch.io",
+  "ath": 19786,
+  "ch": [
+   10854,
+   19786,
+   7286,
+   7009,
+   10883,
+   10011,
+   9688,
+   10225,
+   8791,
+   7753,
+   8816,
+   9661,
+   8854,
+   6937,
+   7978,
+   5548,
+   5133,
+   4415,
+   4415,
+   4413,
+   3306,
+   3615,
+   3536,
+   3531,
+   3528,
+   3488,
+   3446,
+   3564,
+   3578,
+   3598,
+   3599,
+   3597,
+   3655,
+   3704,
+   3564,
+   3552,
+   3545,
+   3533,
+   3529,
+   3594,
+   3642,
+   3507,
+   3491,
+   3476,
+   3699,
+   3587,
+   3484,
+   3485,
+   3481,
+   3506,
+   3501,
+   3506
+  ],
+  "b": 0,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "7fFBFxpkJQnfe4PgEhAdt1CzsaQn1cJySKYH9oByxQWF"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "AwnBVXZ6Z28Nzw3p6VAzmGapkE9qh461vS2G4oHGdcJF",
+     10000
+    ]
+   ]
+  }
+ },
+ {
+  "id": "BvKZFcyzttehatfazVicdzPPtHewDx2G4VkDMBc8pump",
+  "n": "Gincoin",
+  "t": "GIN",
+  "img": "https://assets.geckoterminal.com/4bvkh3ivc2pd274sqz2nwwz9p8io",
+  "ho": 148,
+  "c": "Solana",
+  "l": "25 octobre 2026",
+  "d": "",
+  "ath": 34351,
+  "ch": [
+   11742,
+   34351,
+   17743,
+   11161,
+   10763,
+   4508,
+   3666,
+   3635,
+   3460,
+   3349,
+   3337,
+   3331,
+   3332,
+   3306,
+   3273,
+   3298,
+   3276
+  ],
+  "b": 0,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "DOGE",
+    "a": "HjpzwLFP2gJ5Ue5TfTyT7A3tHjkmpS8e4Qz7u6zBjM5d"
+   }
+  ]
+ },
+ {
+  "id": "r2PByxGopFZwoV2A8i1VHrzc3d4CvzCDAjVzKUNpump",
+  "n": "onboarded",
+  "t": "onboarded",
+  "img": "https://assets.geckoterminal.com/3iwnezlaazt48nbhv4d8p7xwazq8",
+  "ho": 227,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "",
+  "ath": 24204,
+  "ch": [
+   24204,
+   21035,
+   4394,
+   4241,
+   4960,
+   4463,
+   4310,
+   3861,
+   3701,
+   3662,
+   3654,
+   3654,
+   3646,
+   3642,
+   3588,
+   3548,
+   3547,
+   3361,
+   3292,
+   3311,
+   3317,
+   3313,
+   3323
+  ],
+  "b": 0,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "AfnVWRVPcA6VMBkcNEDAJqhi7obVADYg2q5Q3utU1rty"
    }
   ]
  }
