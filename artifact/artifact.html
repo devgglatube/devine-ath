@@ -324,7 +324,13 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
 #cur::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--up);opacity:.5;animation:curp 2.6s ease-in-out infinite;transition:inset .15s}
 #cur.hv::after{inset:-10px}#cur.dn{filter:brightness(.85)}
 @keyframes curp{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:.15}}
-@media (prefers-reduced-motion:reduce){#cur::after,.rf.go .ff,.rf.go .fp{animation:none}}#logout{position:fixed;right:16px;bottom:16px;z-index:30;width:auto;display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.82rem;border-radius:99px;background:var(--card2);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.35)}#logout .ri{width:1.2em;height:1.2em;margin:0}#logout:hover{border-color:var(--up);color:var(--up)}@media (max-width:899px){body:has(#input:not([hidden])) #logout{display:none}}@media (min-width:900px){#game:has(#cc[hidden])>.card:nth-child(2){grid-column:1/-1}#game:has(#cc[hidden]) .cw{height:340px;display:flex;align-items:center;justify-content:center}#game:has(#cc[hidden]) .cw #svg{height:100%;width:auto;max-width:100%}#game:has(#cc[hidden]) #cv{font-size:2.4rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock svg{width:62%;max-width:620px}#game:has(#cc[hidden]) .lock{font-size:1.05rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock path{stroke-width:1.1}#game:has(#cc[hidden]) #lkc{r:1.5px}}</style>
+@media (prefers-reduced-motion:reduce){#cur::after,.rf.go .ff,.rf.go .fp{animation:none}}#logout{position:fixed;right:16px;bottom:16px;z-index:30;width:auto;display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.82rem;border-radius:99px;background:var(--card2);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.35)}#logout .ri{width:1.2em;height:1.2em;margin:0}#logout:hover{border-color:var(--up);color:var(--up)}@media (max-width:899px){body:has(#input:not([hidden])) #logout{display:none}}@media (min-width:900px){#game:has(#cc[hidden])>.card:nth-child(2){grid-column:1/-1}#game:has(#cc[hidden]) .cw{height:340px;display:flex;align-items:center;justify-content:center}#game:has(#cc[hidden]) .cw #svg{height:100%;width:auto;max-width:100%}#game:has(#cc[hidden]) #cv{font-size:2.4rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock svg{width:62%;max-width:620px}#game:has(#cc[hidden]) .lock{font-size:1.05rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock path{stroke-width:1.1}#game:has(#cc[hidden]) #lkc{r:1.5px}}/* v114 layout fixe: seul le tweet varie */
+#game>.card:first-child{height:560px;overflow-y:auto;overscroll-behavior:contain}
+#game>.card:nth-child(2){height:560px}
+#game>.card:nth-child(2) .cw{flex:none}
+@media (min-width:900px){#game{grid-template-rows:560px auto}}@media (min-width:900px){#game>.card:nth-child(2) .cw{height:430px}#game>.card:nth-child(2) .cw #svg{height:100%;width:100%}}
+@media (max-width:899px){#game>.card:first-child{height:min(58vh,560px)}#game>.card:nth-child(2){height:auto}#game>.card:nth-child(2) .cw{min-height:200px}}
+</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -660,6 +666,8 @@ html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textare
     <div class="k" style="margin-top:18px">Échelle du curseur</div>
     <div class="langs" id="scales"><button data-sc="lin">Linéaire</button><button data-sc="log">Logarithmique</button></div>
     <p class="note" style="margin:6px 0 0">Linéaire : les graduations sont régulières, mais les petits market caps se règlent finement avec les flèches du clavier. Logarithmique : plus de précision sur les petits coins.</p>
+    <div class="k" style="margin-top:18px">Sons</div>
+    <div class="langs" id="sounds"><button data-sn="1">Activés</button><button data-sn="0">Coupés</button></div>
     <div class="k" style="margin-top:18px">Thème de couleur</div>
     <div class="themes" id="themes"></div>
   </div>
@@ -886,11 +894,11 @@ function animate(ch,ath,done){
   const x=j=>P+(W-2*P)*j/(ch.length-1), y=v=>H-P-(H-P-T)*v/mx;
   const d=ch.map((v,j)=>(j?"L":"M")+x(j).toFixed(1)+" "+y(v).toFixed(1)).join("");
   const line=$("line"),area=$("area"),mi=ch.indexOf(mx),px=x(mi),py=y(mx);let planted=false;
-  const plant=()=>{planted=true;$("peak").removeAttribute("hidden");$("peak").setAttribute("transform","translate("+px+" "+py+")");$("pl").textContent="ATH "+fmt(ath);$("pl").setAttribute("x",Math.max(-px+44,Math.min(W-px-44,0)));try{navigator.vibrate&&navigator.vibrate(25)}catch(e){}};
+  const plant=()=>{planted=true;sfx("flag");$("peak").removeAttribute("hidden");$("peak").setAttribute("transform","translate("+px+" "+py+")");$("pl").textContent="ATH "+fmt(ath);$("pl").setAttribute("x",Math.max(-px+44,Math.min(W-px-44,0)));try{navigator.vibrate&&navigator.vibrate(25)}catch(e){}};
   line.setAttribute("d",d);area.setAttribute("d",d+"L"+x(ch.length-1)+" "+(H-P)+"L"+x(0)+" "+(H-P)+"Z");
   const len=line.getTotalLength();
   line.style.strokeDasharray=len;line.style.strokeDashoffset=len;
-  const dur=3000,t0=performance.now();
+  const dur=3000,t0=performance.now();sfx("whoosh");
   const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
   (function f(now){
     if(my!==gen)return;
@@ -907,9 +915,30 @@ function animate(ch,ath,done){
     done();
   })(t0);
 }
+let SND=1;try{SND=localStorage.getItem("dath.snd")==="0"?0:1}catch(e){}
+let AC=null;
+function sfx(kind){
+  if(!SND)return;
+  try{
+    if(!AC){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;AC=new C()}
+    if(AC.state==="suspended")AC.resume();
+    const t=AC.currentTime;
+    const tone=(f,d,at,type,vol,f2)=>{const o=AC.createOscillator(),g=AC.createGain();o.type=type||"sine";o.frequency.setValueAtTime(f,t+at);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+at+d);
+      g.gain.setValueAtTime(0.0001,t+at);g.gain.exponentialRampToValueAtTime(vol||.12,t+at+.012);g.gain.exponentialRampToValueAtTime(.0001,t+at+d);o.connect(g);g.connect(AC.destination);o.start(t+at);o.stop(t+at+d+.02)};
+    if(kind==="tap")tone(520,.06,0,"triangle",.07,780);
+    else if(kind==="tick")tone(900+Math.random()*60,.03,0,"square",.025);
+    else if(kind==="flag"){tone(220,.18,0,"sine",.16,90);tone(660,.1,.12,"triangle",.1,990)}
+    else if(kind==="whoosh"){tone(180,.5,0,"sawtooth",.025,1400)}
+    else if(kind==="good"){tone(523,.12,0,"triangle",.11);tone(659,.12,.09,"triangle",.11);tone(784,.22,.18,"triangle",.11)}
+    else if(kind==="ok"){tone(440,.12,0,"triangle",.1);tone(523,.2,.1,"triangle",.1)}
+    else if(kind==="bad"){tone(300,.25,0,"sawtooth",.07,150)}
+    else if(kind==="rank"){[523,659,784,1047].forEach((f,k)=>tone(f,.2,k*.1,"triangle",.11));tone(1319,.4,.42,"sine",.1)}
+  }catch(e){}
+}
+document.addEventListener("pointerdown",e=>{if(e.target.closest&&e.target.closest("button,a,[data-a]"))sfx("tap")},true);
 function countUp(el,to,ms,pre){
-  const t0=performance.now();
-  (function f(n){const p=Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
+  const t0=performance.now();let lt=0;
+  (function f(n){const p=Math.min(1,(n-t0)/ms);if(n-lt>70&&p<1){lt=n;sfx("tick")}el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
 }
 let CAMAP={},IMGMAP={},DESC={},WTAG={},TW={};
 // rug pull : effondrement quasi total ou chute brutale juste après le sommet (une mort lente reste un coin « nul » valable)
@@ -1031,7 +1060,7 @@ function validate(){
     {const pc=v=>Math.max(0,Math.min(100,posOf(Math.max(LOV,Math.min(HIV,v)))/SMAX*100));$("rg").style.left=pc(g)+"%";$("rf").style.left=pc(k.ath)+"%";$("rf").classList.remove("go");void $("rf").offsetWidth;$("rf").classList.add("go");$("rlg").textContent=T("Toi");$("rlf").textContent="ATH";const a=pc(g),b=pc(k.ath);$("rlg").style.left=a+"%";$("rlf").style.left=b+"%";const near=Math.abs(a-b)<9;$("rlg").style.transform=near&&a<=b?"translateX(-100%)":"translateX(-50%)";$("rlf").style.transform=near&&a<=b?"translateX(0)":near?"translateX(-50%)":"translateX(-50%)";$("rlg").style.top=near&&a>b?"22px":"";}
     const r=g>k.ath?g/k.ath:k.ath/g;
     $("msg").textContent=r<1.1?T("Quasiment pile !"):T(g>k.ath?"Tu étais ×{0} trop haut":"Tu étais ×{0} trop bas",r.toFixed(1).replace(".",decSep()));
-    $("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
+    sfx(pts>=800?"good":pts>=400?"ok":"bad");$("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
     $("stk").hidden=streak<2;if(streak>=2)$("stk").textContent=T("Série : {0} d’affilée à moins de ×3 de l’ATH",streak);
     $("spd").textContent=T("Vitesse : {0} s · bonus ×{1}",(ms/1000).toFixed(1).replace(".",decSep()),tf.toFixed(2).replace(".",decSep()));$("out").hidden=false;countUp($("pts"),pts,900,"+");
     const ca=caOf(k);$("ca").hidden=!ca;if(ca){$("cav").textContent=ca;$("cav").title=ca;$("cad").href="https://dexscreener.com/solana/"+ca;$("cac").onclick=()=>copyTxt(ca,T("CA copié."))}
@@ -1162,7 +1191,7 @@ function settle(){
     const o=rankOf(old,estPos(old));
     S.rp=Math.max(0,old+d);const n=rankOf(S.rp,estPos(S.rp));
     h+="<div>Rank points <b class='"+(d>=0?"pos":"neg")+"'>"+(d>=0?"+":"")+d+" RP</b></div>";
-    if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RI[n]+" "+RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RI[n]+" "+RANKS[n][0])+"</div>";
+    if(n>o)sfx("rank");if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RI[n]+" "+RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RI[n]+" "+RANKS[n][0])+"</div>";
   }
   S.scores.push({m:mode,s:sc,t:Date.now()});S.scores=S.scores.slice(-300);save();push();
   $("sum").innerHTML=h;
@@ -1449,6 +1478,7 @@ $("pn").addEventListener("change",()=>push());
 
 Object.assign(DICT.en,{"Champion":"Champion","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Unique trophy: #1 on the leaderboard. It passes to the next best score.","Terminé · reviens demain":"Done · come back tomorrow","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
 Object.assign(DICT.es,{"Champion":"Campeón","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Trofeo único: n.º 1 de la clasificación. Pasa al siguiente mejor puntaje.","Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+Object.assign(DICT.en,{"Sons":"Sounds","Activés":"On","Coupés":"Off"});Object.assign(DICT.es,{"Sons":"Sonidos","Activés":"Activados","Coupés":"Desactivados"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
@@ -1458,6 +1488,9 @@ function drawSettings(){$("themes").innerHTML=THEMES.map((t,k)=>"<button data-th
 $("themes").addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(b){TH=+b.dataset.th;applyTheme()}});
 $("modes").addEventListener("click",e=>{const b=e.target.closest("[data-md]");if(b){MD=b.dataset.md;applyTheme()}});
 applyTheme();
+function applySnd(){try{localStorage.setItem("dath.snd",String(SND))}catch(e){}const m=$("sounds");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",+b.dataset.sn===SND))}
+$("sounds").addEventListener("click",e=>{const b=e.target.closest("[data-sn]");if(b){SND=+b.dataset.sn;applySnd();sfx("good")}});
+applySnd();
 function applyScale(){try{localStorage.setItem("dath.scale2",SCL)}catch(e){}const m=$("scales");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.sc===SCL));sclTicks()}
 $("scales").addEventListener("click",e=>{const b=e.target.closest("[data-sc]");if(!b)return;const v=Math.max(LOV,Math.min(HIV,val()));SCL=b.dataset.sc;$("s").value=Math.max(0,Math.min(SMAX,Math.round(posOf(v))));applyScale();upd()});
 applyScale();
