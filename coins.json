@@ -3619,5 +3619,46 @@
     ]
    ]
   }
+ },
+ {
+  "id": "3W8a85XwdjusBKnVUoLyzwWbgxvwk7B3EDbabfbQpump",
+  "n": "Kugen &amp; XiaoHuang",
+  "t": "Friendship",
+  "img": "https://assets.geckoterminal.com/0w15otw5xb6k00vnue5ggb4h8ion",
+  "ho": 124,
+  "c": "Solana",
+  "l": "24 octobre 2026",
+  "d": "Launched on discord.gg/uxento",
+  "ath": 41265,
+  "ch": [
+   18782,
+   16808,
+   15466,
+   15272,
+   15814,
+   17771,
+   14397,
+   15155,
+   13643,
+   18179,
+   14883,
+   14212,
+   14972,
+   15451,
+   12904,
+   12731,
+   19601,
+   30075,
+   41265
+  ],
+  "b": 0,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "7o1YArZREZQrJh9RhussLcWYVFzP6k7zDeyD7qn7azoz"
+   }
+  ]
  }
 ]
