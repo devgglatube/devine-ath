@@ -289,6 +289,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .simr{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
 .simr div{background:var(--card);border-radius:12px;padding:10px 12px;display:grid;gap:2px}.simr b{font-size:1.15rem}
 .simr .hot{box-shadow:inset 0 0 0 1.5px var(--up)}.simr .hot b{color:var(--up)}
+.tag.tg2{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -368,7 +369,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
       <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
       <button id="ok">Valider ma prédiction</button>
     </div>
-    <div id="rdy" hidden><p id="rdd" hidden>Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.</p><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><div id="cnt"><label for="cn" class="k">Nombre de coins à prédire</label><b id="cnv"></b><input type="range" id="cn" min="3" max="25" step="1" value="10" aria-label="Nombre de coins à prédire"></div><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
+    <div id="rdy" hidden><p id="rdd" hidden>Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.</p><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><div id="cnt"><label for="cn" class="k">Nombre de coins à prédire</label><b id="cnv"></b><input type="range" id="cn" min="3" max="25" step="1" value="10" aria-label="Nombre de coins à prédire"></div><p id="rdv" hidden>Entraînement : tu rejoues les coins que tu as le plus ratés, sans limite de temps. Aucun point n’est gagné.</p><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
     <div id="out" hidden>
       <div class="cmp"><div><span class="k">Ta prédiction</span><b id="mg"></b></div><div><span class="k">ATH réel</span><b id="ma"></b></div></div>
       <div class="verdict" id="msg"></div>
@@ -387,6 +388,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
   <div class="rc" id="recap" hidden></div>
   <div class="sum" id="sum"></div>
   <button id="again">Rejouer</button>
+  <button id="missb" class="ghost" hidden>Rejouer mes coins les plus ratés</button>
   <button id="share" class="ghost">Partager mon score</button>
   <button id="imgb" class="ghost">Créer l’image de mon score</button>
   <input id="sharetext" readonly hidden aria-label="Texte à copier">
@@ -466,6 +468,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
     <div class="k" style="margin-top:14px">Comment le score est calculé</div>
     <p class="note" style="margin-top:6px">Chaque coin vaut jusqu’à 1 000 points. Plus ta prédiction est proche de l’ATH réel, plus tu gagnes : pile juste = 1 000, à un facteur 10 près = 500, à un facteur 100 près = 0. L’erreur se mesure en multiples, pas en dollars.</p>
     <p class="note" style="margin-top:6px">La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.</p>
+    <p class="note" style="margin-top:6px">Après une partie, tu peux rejouer les coins que tu as le plus ratés (écart de plus de ×5) en mode entraînement : sans limite de temps, et sans points.</p>
     </div>
     <div class="m3">
     <p class="note" style="margin-top:6px">Exemple : l’ATH réel est 1 M$. Si tu devines 1 M$, tu gagnes 1 000 points ; si tu devines 100 K$ (÷10), 500 points ; si tu devines 10 K$ (÷100), 0 point.</p>
@@ -704,6 +707,8 @@ Object.assign(DICT.en,{"Menu": "Menu"});Object.assign(DICT.es,{"Menu": "Menú"})
 Object.assign(DICT.en,{"Des points, pas d’argent": "Points, not money", "On joue avec des points du jeu, jamais avec de l’argent réel.": "You play with game points, never with real money.", "Aucun trade": "No trading", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "The site places no orders and never touches your wallet.", "Aucun conseil": "No advice", "Un exercice de prédiction, jamais un conseil financier.": "A prediction exercise, never financial advice.", "Rien n’est encaissé": "Nothing is charged", "Aucun paiement n’est possible aujourd’hui.": "No payment is possible today.", "Ce qui est ouvert et ce qui est prévu": "What is open and what is planned", "Gratuit, sans limite de temps.": "Free, no time limit.", "Mises et gains en points du jeu, jamais en argent.": "Stakes and winnings in game points, never money.", "5 coins identiques pour tous, chaque jour.": "5 identical coins for everyone, every day.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Free dataset and bot games, stats on your device.", "Calculé sur ton appareil, ce n’est pas une certification.": "Computed on your device, not a certification.", "Forfaits Pro, Équipe et Crédits": "Pro, Team and Credits plans", "Prix indicatifs, rien n’est encaissé.": "Indicative prices, nothing is charged.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "You keep 80% of the price, the platform takes 20%.", "Certification, parrainage et API": "Certification, referral and API", "Pistes prévues, montants et conditions à confirmer.": "Planned ideas, amounts and terms to be confirmed.", "Disponible": "Available", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "The online leaderboard is only available if you open the game from claude.ai, signed in to your account."});Object.assign(DICT.es,{"Des points, pas d’argent": "Puntos, no dinero", "On joue avec des points du jeu, jamais avec de l’argent réel.": "Juegas con puntos del juego, nunca con dinero real.", "Aucun trade": "Ningún trade", "Le site ne passe aucun ordre et ne touche jamais à ton wallet.": "El sitio no ejecuta órdenes y nunca toca tu wallet.", "Aucun conseil": "Ningún consejo", "Un exercice de prédiction, jamais un conseil financier.": "Un ejercicio de predicción, nunca un consejo financiero.", "Rien n’est encaissé": "No se cobra nada", "Aucun paiement n’est possible aujourd’hui.": "Hoy no es posible ningún pago.", "Ce qui est ouvert et ce qui est prévu": "Qué está abierto y qué está previsto", "Gratuit, sans limite de temps.": "Gratis, sin límite de tiempo.", "Mises et gains en points du jeu, jamais en argent.": "Apuestas y ganancias en puntos del juego, nunca en dinero.", "5 coins identiques pour tous, chaque jour.": "5 monedas idénticas para todos, cada día.", "Dataset et parties de bot gratuits, stats sur ton appareil.": "Dataset y partidas de bot gratis, estadísticas en tu dispositivo.", "Calculé sur ton appareil, ce n’est pas une certification.": "Calculado en tu dispositivo, no es una certificación.", "Forfaits Pro, Équipe et Crédits": "Planes Pro, Equipo y Créditos", "Prix indicatifs, rien n’est encaissé.": "Precios indicativos, no se cobra nada.", "Tu gardes 80 % du prix, la plateforme prélève 20 %.": "Te quedas con el 80 % del precio, la plataforma cobra el 20 %.", "Certification, parrainage et API": "Certificación, referidos y API", "Pistes prévues, montants et conditions à confirmer.": "Ideas previstas, importes y condiciones por confirmar.", "Disponible": "Disponible", "Le classement en ligne n’est disponible que si tu ouvres le jeu depuis claude.ai, connecté à ton compte.": "La clasificación en línea solo está disponible si abres el juego desde claude.ai, con tu cuenta iniciada."});
 Object.assign(DICT.en,{"Série : {0} d’affilée à moins de ×3 de l’ATH": "Streak: {0} in a row within ×3 of the ATH", "Précision : {0}/{1} à moins de ×3 de l’ATH": "Accuracy: {0}/{1} within ×3 of the ATH", "Meilleure série : {0}": "Best streak: {0}", "Record personnel : {0}": "Personal record: {0}", "Nouveau record !": "New record!", "La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.": "The streak counts coins in a row where your guess is within ×3 of the ATH. It measures your consistency: it earns no points."});Object.assign(DICT.es,{"Série : {0} d’affilée à moins de ×3 de l’ATH": "Racha: {0} seguidas a menos de ×3 del ATH", "Précision : {0}/{1} à moins de ×3 de l’ATH": "Precisión: {0}/{1} a menos de ×3 del ATH", "Meilleure série : {0}": "Mejor racha: {0}", "Record personnel : {0}": "Récord personal: {0}", "Nouveau record !": "¡Nuevo récord!", "La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.": "La racha cuenta las monedas seguidas en las que tu predicción está a menos de ×3 del ATH. Mide tu regularidad: no da ningún punto."});
 Object.assign(DICT.en,{"Simulateur de revenus": "Revenue simulator", "Prix mensuel par locataire": "Monthly price per renter", "Nombre de locataires": "Number of renters", "Payé par les locataires": "Paid by renters", "Commission de la plateforme (20 %)": "Platform commission (20%)", "Simulation pour comprendre le calcul. La location n’est pas ouverte et aucun revenu n’est garanti : il faut d’abord trouver des locataires.": "A simulation to understand the calculation. Rental is not open and no income is guaranteed: you first need to find renters.", "{0} € par mois": "€{0} per month", "mois": "month"});Object.assign(DICT.es,{"Simulateur de revenus": "Simulador de ingresos", "Prix mensuel par locataire": "Precio mensual por inquilino", "Nombre de locataires": "Número de inquilinos", "Payé par les locataires": "Pagado por los inquilinos", "Commission de la plateforme (20 %)": "Comisión de la plataforma (20 %)", "Simulation pour comprendre le calcul. La location n’est pas ouverte et aucun revenu n’est garanti : il faut d’abord trouver des locataires.": "Una simulación para entender el cálculo. El alquiler no está abierto y no se garantiza ningún ingreso: primero hay que encontrar inquilinos.", "{0} € par mois": "{0} € al mes", "mois": "mes"});
+Object.assign(DICT.en,{"Rejouer mes coins les plus ratés": "Replay my worst misses", "Entraînement : tu rejoues les coins que tu as le plus ratés, sans limite de temps. Aucun point n’est gagné.": "Practice: you replay the coins you missed the most, with no time limit. No points are earned.", "Entraînement terminé : aucun point gagné et ton classement ne change pas.": "Practice finished: no points earned and your ranking does not change.", "ENTRAÎNEMENT": "PRACTICE"});Object.assign(DICT.es,{"Rejouer mes coins les plus ratés": "Repetir mis mayores fallos", "Entraînement : tu rejoues les coins que tu as le plus ratés, sans limite de temps. Aucun point n’est gagné.": "Entrenamiento: repites las monedas que más has fallado, sin límite de tiempo. No se gana ningún punto.", "Entraînement terminé : aucun point gagné et ton classement ne change pas.": "Entrenamiento terminado: no se gana ningún punto y tu clasificación no cambia.", "ENTRAÎNEMENT": "PRÁCTICA"});
+Object.assign(DICT.en,{"Après une partie, tu peux rejouer les coins que tu as le plus ratés (écart de plus de ×5) en mode entraînement : sans limite de temps, et sans points.": "After a game, you can replay the coins you missed the most (off by more than ×5) in practice mode: no time limit, and no points."});Object.assign(DICT.es,{"Après une partie, tu peux rejouer les coins que tu as le plus ratés (écart de plus de ×5) en mode entraînement : sans limite de temps, et sans points.": "Después de una partida, puedes repetir las monedas que más has fallado (error de más de ×5) en modo entrenamiento: sin límite de tiempo y sin puntos."});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -753,9 +758,13 @@ const hash32=x=>{let h=2166136261;for(let c=0;c<x.length;c++){h^=x.charCodeAt(c)
 function dailyDeck(){const d=dayKey();return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
 function dailySub(){const D=S.daily||{},alive=D.last===dayKey()||D.last===dayKey(1);
   return D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
+// coins les plus ratés (écart de plus de ×5) : on les garde pour s’entraîner dessus, sans points
+const missKeys=()=>{const have=new Set(COINS.map(seenKey));return(S.miss||[]).filter(x=>have.has(x))};
+function reviewDeck(){return missKeys().sort(()=>Math.random()-.5).slice(0,8).map(x=>COINS.find(k=>seenKey(k)===x))}
+function noteMiss(k,rr){const key=seenKey(k);let L=(S.miss||[]).filter(x=>x!==key);if(rr>5)L.unshift(key);S.miss=L.slice(0,40)}
 function start(m){
   roundLog=[];streak=0;bestStreak=0;mode=m||"casual";sheet(0);gen++;navOn();
-  deck=mode==="daily"?dailyDeck():pick(mode==="ranked"?ROUNDS:casualN());
+  deck=mode==="daily"?dailyDeck():mode==="review"?reviewDeck():pick(mode==="ranked"?ROUNDS:casualN());
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
 function fillInfo(k){
@@ -782,7 +791,7 @@ function show(){
   $("out").hidden=true;$("s").value=500;upd();
   const gate=i===0;$("cc").hidden=gate;$("input").hidden=gate;$("rdy").hidden=!gate;$("tm").hidden=true;
   $("cnt").hidden=!(mode==="casual"&&i===0);if(!$("cnt").hidden){$("cn").value=deck.length;$("cnv").textContent=deck.length}
-  $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode!=="casual";$("rdd").hidden=mode!=="daily";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
+  $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode!=="casual";$("rdd").hidden=mode!=="daily";$("rdv").hidden=mode!=="review";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
   if(!gate){startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
 }
 function upd(){$("g").textContent=fmt(val())}
@@ -928,7 +937,7 @@ function validate(){
   const k=deck[i],g=val();
   const pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)));zero=false;
   total+=pts;roundLog.push({n:k.n,t:k.t,g,a:k.ath,p:pts});
-  {const rr=g>k.ath?g/k.ath:k.ath/g;if(rr<=3){streak++;if(streak>bestStreak)bestStreak=streak}else streak=0;roundLog[roundLog.length-1].ok=rr<=3;S.rd=S.rd||{};const o=S.rd[mode]=S.rd[mode]||{n:0,x:0};o.n++;if(rr<1.1)o.x++;save()}
+  {const rr=g>k.ath?g/k.ath:k.ath/g;if(rr<=3){streak++;if(streak>bestStreak)bestStreak=streak}else streak=0;roundLog[roundLog.length-1].ok=rr<=3;noteMiss(k,rr);S.rd=S.rd||{};const o=S.rd[mode]=S.rd[mode]||{n:0,x:0};o.n++;if(rr<1.1)o.x++;save()}
   $("input").hidden=true;$("rdy").hidden=true;$("cw").className="cw open";
   animate(k.ch||fake(k.ath),k.ath,()=>{
     $("mg").textContent=fmt(g);$("ma").textContent=fmt(k.ath);
@@ -946,7 +955,7 @@ function drawRecap(){
   const R=roundLog,box=$("recap");if(!R.length){box.hidden=true;return}
   const row=x=>{const r=x.g>x.a?x.g/x.a:x.a/x.g;
     const d=r<1.1?T("Quasiment pile !"):T(x.g>x.a?"×{0} trop haut":"×{0} trop bas",r.toFixed(1).replace(".",decSep()));
-    return"<div class='r'><b>"+esc(x.n)+"</b><span>"+esc(d)+" · "+esc(T("ta prédiction {0}, ATH {1}",fmt(x.g),fmt(x.a)))+"</span><span class='pt'>+"+num(x.p)+"</span></div>"};
+    return"<div class='r'><b>"+esc(dec(x.n))+"</b><span>"+esc(d)+" · "+esc(T("ta prédiction {0}, ATH {1}",fmt(x.g),fmt(x.a)))+"</span><span class='pt'>+"+num(x.p)+"</span></div>"};
   const okn=R.filter(x=>x.ok).length;let rec="";
   if(bestStreak>(S.bs||0)){const had=S.bs||0;S.bs=bestStreak;save();if(had&&bestStreak>=2)rec=" · "+T("Nouveau record !")}else if(S.bs)rec=" · "+T("Record personnel : {0}",S.bs);
   const st="<div class='r st'><b>"+esc(T("Précision : {0}/{1} à moins de ×3 de l’ATH",okn,R.length))+"</b><span>"+esc(T("Meilleure série : {0}",bestStreak))+esc(rec)+"</span></div>";
@@ -956,7 +965,7 @@ function next(){
   i++;
   if(i<deck.length){show();return}
   $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;
-  countUp($("total"),total,1200,"");settle();drawRecap();
+  countUp($("total"),total,1200,"");settle();drawRecap();$("missb").hidden=mode==="review"||missKeys().length<3;
   const p=total/(deck.length*1000);
   $("verdict").textContent=T(p>.8?"Tu sens le marché.":p>.5?"Pas mal, tu es dans le bon ordre de grandeur.":"Les memecoins restent imprévisibles. Retente ta chance.");
 }
@@ -1011,7 +1020,7 @@ async function goOnline(){
 
 function acct(){const b=$("acct");b.classList.toggle("on",online);$("acl").textContent=online?"● "+(S.name||T("Connecté")):T("Connexion")}
 $("acct").addEventListener("click",()=>sheet("account"));
-function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
+function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="review"?'<i class="tag tg2">'+T("ENTRAÎNEMENT")+"</i> "+c:mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
   $("mn").textContent=S.name;$("mr").textContent=r[0];$("mr").style.color=r[2];
@@ -1036,6 +1045,7 @@ function launch(m){
   start(m);
 }
 function settle(){
+  if(mode==="review"){$("sum").innerHTML="<div>"+T("Entraînement terminé : aucun point gagné et ton classement ne change pas.")+"</div>";$("again").textContent=T("Rejouer");save();refresh();return}
   const p=total/(deck.length*1000);let gp=Math.round(p*(mode==="ranked"?(stake?stake*1.5:100):deck.length*50)),first=true;
   if(mode==="daily"){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};first=D.last!==d;if(first){D.st=D.last===dayKey(1)?(D.st||0)+1:1;D.last=d;D.s=Math.round(p*5000);D.best=Math.max(D.best||0,D.s)}else gp=0}
   let h="<div>"+T("Points gagnés")+" <b class='pos'>+"+gp+" pts</b></div>";S.pts+=gp;
@@ -1238,6 +1248,7 @@ $("go").addEventListener("click",()=>{if(busy)return;
   $("cc").hidden=false;$("rdy").hidden=true;$("input").hidden=false;startTimer();try{$("s").focus({preventScroll:true})}catch(e){}});
 $("cw").addEventListener("click",()=>{skip=true});
 $("next").addEventListener("click",next);
+$("missb").addEventListener("click",()=>launch("review"));
 $("again").addEventListener("click",()=>launch(mode==="ranked"&&S.pts>=costNow()?"ranked":"casual"));
 addEventListener("keydown",e=>{
   if(e.key==="Escape"){openMenu(false);sheet(0);return}
