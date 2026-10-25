@@ -1266,7 +1266,7 @@ function fxDraw(cv){const c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats
   d.cells.forEach((x,k)=>{const px=60+k*(cw+16);c.fillStyle="rgba(0,0,0,.55)";c.beginPath();c.roundRect(px,y,cw,170,22);c.fill();
     c.fillStyle="rgba(255,255,255,.65)";c.font="600 24px system-ui,sans-serif";c.fillText(x[0].length>14?x[0].slice(0,13)+"…":x[0],px+18,y+48);
     c.fillStyle="#fff";c.font="800 52px system-ui,sans-serif";c.fillText(x[1],px+18,y+126)});
-  c.fillStyle="rgba(255,255,255,.55)";c.font="500 24px system-ui,sans-serif";c.fillText(T("Exercice de prédiction, pas un conseil financier."),60,H-60)}
+}
 function fxLoop(){const cv=$("fx-cv");if(!cv)return;fxDraw(cv);FX.raf=requestAnimationFrame(fxLoop)}
 function fxClose(){cancelAnimationFrame(FX.raf);const o=$("fx-o");if(o)o.remove();if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null}
 async function fxSave(blob,name){try{const dl=window.claude&&await window.claude.use("downloads");if(dl){await dl.save({filename:name,data:blob});return}}catch(e){if(e&&e.code==="declined")return}
