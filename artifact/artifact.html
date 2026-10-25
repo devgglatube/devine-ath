@@ -1677,7 +1677,7 @@ const TUTO_STEPS=[
  {sel:"#cw",t:"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.",wait:()=>!$("out").hidden,nonext:1},
  {sel:"#out",t:"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !",last:1}];
 let TU={on:false,k:0,tm:0};
-function tutoDone(){try{return localStorage.getItem("dath.tuto")==="1"}catch(e){return false}}
+function tutoDone(){try{return localStorage.getItem("dath.tuto2")==="1"}catch(e){return false}}
 function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone())return;tutoStart()}
 function tutoStart(){
   if(TU.on)return;sheet(0);start("casual");deck=deck.slice(0,1);$("cn").value=1;$("cnv").textContent=1;meta();$("go").textContent=T("Lancer la manche {0}/{1}",1,1);TUT=true;
@@ -1685,7 +1685,7 @@ function tutoStart(){
     $("cskip").addEventListener("click",()=>tutoEnd(false));$("cnx").addEventListener("click",()=>{if(TUTO_STEPS[TU.k]&&TUTO_STEPS[TU.k].last){goHome();return}sfx("tap");TU.k++;tutoShow()})}
   c.hidden=false;tutoShow();clearInterval(TU.tm);TU.tm=setInterval(tutoTick,150);addEventListener("resize",tutoPlace)}
 function tutoEnd(done){clearInterval(TU.tm);TU.on=false;removeEventListener("resize",tutoPlace);const c=$("coach");if(c)c.hidden=true;
-  try{localStorage.setItem("dath.tuto","1")}catch(e){}
+  try{localStorage.setItem("dath.tuto2","1")}catch(e){}
   if(!done){TUT=false;if(!$("rdy").hidden&&i===0)start("casual")}else sfx("rank")}
 function tutoShow(){
   const st=TUTO_STEPS[TU.k];if(!st){tutoEnd(true);return}
@@ -1714,7 +1714,7 @@ function tutoPlace(){
   tip.style.left=x+"px";tip.style.top=y+"px"}
 function goHome(){sfx("tap");if(TU.on){tutoEnd(true)}TUT=false;launch("casual")}
 $("home").addEventListener("click",goHome);$("home2").addEventListener("click",goHome);
-$("tutob").addEventListener("click",()=>{try{localStorage.removeItem("dath.tuto")}catch(e){}INTRO_DONE=true;DREADY=true;tutoStart()});
+$("tutob").addEventListener("click",()=>{try{localStorage.removeItem("dath.tuto2")}catch(e){}INTRO_DONE=true;DREADY=true;tutoStart()});
 
 // curseur personnalisé : petit point de la couleur du thème, très légère animation
 {const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
