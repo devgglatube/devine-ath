@@ -47,6 +47,46 @@ function isRug(ch) {
   return last < 0.01 || after < 0.15;
 }
 
+// --- courbe trop plate : pas assez de fluctuation pour jouer ---
+function isFlat(ch) {
+  if (!Array.isArray(ch) || ch.length < 12) return false;
+  const mx = Math.max(...ch), mn = Math.min(...ch);
+  const big = ch.slice(1).filter((v, i) => Math.abs(v - ch[i]) / ch[i] > 0.08).length;
+  return mx / mn < 2.5 || big < 4;
+}
+
+// --- wallets liés (bundle / sybil) : beaucoup de gros comptes avec quasiment le même solde ---
+// Vérifié via le RPC Solana (GitHub Actions y a accès). true = bundle, false = sain, null = inconnu (on réessaie plus tard).
+const RPC = process.env.SOLANA_RPC || "https://api.mainnet-beta.solana.com";
+let rpcDead = 0;
+async function isBundled(mint) {
+  if (!mint || rpcDead >= 4) return null;
+  for (let a = 0; a < 3; a++) {
+    await wait(1500);
+    try {
+      const res = await fetch(RPC, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getTokenLargestAccounts", params: [mint] }),
+        signal: AbortSignal.timeout(15000),
+      });
+      if (res.status === 429) { await wait(8000); continue; }
+      const v = (await res.json())?.result?.value;
+      if (!Array.isArray(v)) continue;
+      rpcDead = 0;
+      const am = v.map((x) => Number(x.uiAmount)).filter((x) => x > 0);
+      if (am.length < 8) return false;
+      const cluster = Math.max(...am.map((x) => am.filter((y) => Math.abs(y - x) / x < 0.02).length));
+      return cluster >= 5;
+    } catch {}
+  }
+  rpcDead++;
+  return null;
+}
+let CAM = {};
+try { CAM = JSON.parse(await readFile("artifact/ca-map.json", "utf8")); } catch {}
+const mintOf = (c) => c.id || CAM[keyOf(c)];
+
 // --- coins déjà présents ---
 let out = [];
 if (!FRESH) {
@@ -58,8 +98,28 @@ out = out.filter((c) => c && c.ath && Array.isArray(c.ch) && bucketOf(c.ath) >= 
 const before = out.length;
 out = out.filter((c) => !isRug(c.ch));
 if (out.length < before) console.log(`${before - out.length} rug pull(s) retiré(s) de coins.json`);
+const bf = out.length;
+out = out.filter((c) => !isFlat(c.ch));
+if (out.length < bf) console.log(`${bf - out.length} coin(s) trop plat(s) retiré(s) de coins.json`);
 out = out.filter((c, i) => out.findIndex((x) => keyOf(x) === keyOf(c)) === i); // pas deux coins avec le même nom
 out.forEach((c) => (c.b = bucketOf(c.ath)));
+{
+  let n = 0;
+  for (const c of out) {
+    if (c.bz !== undefined || n >= 12) continue;
+    const m = mintOf(c);
+    if (!m) continue;
+    n++;
+    const r = await isBundled(m);
+    if (r === null) continue;
+    c.bz = r ? 1 : 0;
+    if (r) console.log(`  wallets liés : ${c.n} retiré`);
+  }
+  const b2 = out.length;
+  out = out.filter((c) => c.bz !== 1);
+  if (out.length < b2) console.log(`${b2 - out.length} coin(s) avec wallets liés retiré(s)`);
+  await writeFile("coins.json", JSON.stringify(out, null, 1));
+}
 const counts = BUCKETS.map((_, i) => out.filter((c) => c.b === i).length);
 const known = new Set(out.map(keyOf));
 const need = () => counts.map((n) => Math.max(0, PER - n));
@@ -168,6 +228,9 @@ async function buildCoin({ address, pool }) {
 
   const ch0 = series(c, supply);
   if (isRug(ch0)) throw new Error("rug pull détecté");
+  if (isFlat(ch0)) throw new Error("courbe trop plate");
+  const bz = await isBundled(address);
+  if (bz === true) throw new Error("wallets liés (bundle)");
   let info = {};
   try {
     info = (await get(`/networks/solana/tokens/${address}/info`)).data.attributes;
@@ -186,6 +249,7 @@ async function buildCoin({ address, pool }) {
     ath,
     ch: series(c, supply),
     b,
+    ...(bz === false ? { bz: 0 } : {}),
   };
 }
 
