@@ -1802,9 +1802,9 @@
   "b": 0,
   "pr": [
    {
-    "d": "pumpfun",
+    "d": "pumpswap",
     "q": "SOL",
-    "a": "4mPDk3KkVdJ8nqhWGPN9syfDvz9rJHXJ4N8yqvqKkF7d"
+    "a": "8hUDCAd3k38atEWp8pykBodZ3RXvsHgrNmzsBrimFTWZ"
    }
   ]
  },
@@ -5094,6 +5094,51 @@
     "d": "pumpswap",
     "q": "SOL",
     "a": "Bozb9ALBQf4JBayYXKYHA7KmsRk5vKYaBPn75oZFK8mV"
+   }
+  ]
+ },
+ {
+  "id": "FpmsKRqB5oQSsa7KS5C4MRZbYEuMVkLmxi3zNrjfpump",
+  "n": "Odyssey",
+  "t": "Odyssey",
+  "img": "https://assets.geckoterminal.com/ralhljc848q0yfnxf1l91bxjmnr5",
+  "ho": 2118,
+  "c": "Solana",
+  "l": "25 octobre 2026",
+  "d": "We’re an AI lab pioneering world models—AI to understand and simulate the world",
+  "ath": 4120986,
+  "ch": [
+   510530,
+   637527,
+   736956,
+   835095,
+   954236,
+   1070331,
+   1220527,
+   1353940,
+   1506382,
+   1653601,
+   1811831,
+   2001301,
+   2232896,
+   2396994,
+   2559061,
+   2676849,
+   2725540,
+   2961659,
+   3182735,
+   3417194,
+   3672073,
+   3928150,
+   4120986
+  ],
+  "b": 3,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "9qS4irVoEaCKNJePHQqt3aEyG7nMbEd6xpZFi3aYyJFQ"
    }
   ]
  }
