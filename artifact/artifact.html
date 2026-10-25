@@ -137,10 +137,10 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 #toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);color:var(--ink);padding:10px 16px;border-radius:14px;font-weight:700;font-size:.9rem;z-index:40;width:max-content;max-width:calc(100vw - 32px);text-align:center}
 #sharetext{width:100%;margin-top:8px;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px;font:inherit;font-size:.85rem}
 /* Carte du tweet associé au coin : même contenu que l’aperçu d’Axiom (couleurs relevées sur la capture) */
-.tw{--tw-bg:#222C36;--tw-line:#4B5C6C;--tw-mut:#919DAA;--tw-ink:#E7E7E7;--tw-gold:#FFD903;--tw-like:#E34285;--tw-rt:#00BD83;--tw-rp:#4AAFE6;--tw-link:#74CCFB;
+.tw{--tw-bg:#161617;--tw-line:#2E2E31;--tw-mut:#919DAA;--tw-ink:#E7E7E7;--tw-gold:#FFD903;--tw-like:#E34285;--tw-rt:#00BD83;--tw-rp:#4AAFE6;--tw-link:#74CCFB;
   margin-top:14px;background:var(--tw-bg);border:1px solid var(--tw-line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;color:var(--tw-ink)}
 .tw-hd{display:flex;align-items:flex-start;gap:12px;min-width:0}
-.tw-av{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#2F3B47;flex:none}
+.tw-av{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#2A2A2D;flex:none}
 .tw-who{flex:1;min-width:0;padding-top:2px}
 .tw-nm{display:flex;align-items:center;gap:6px;font-weight:800;font-size:1.05rem;line-height:1.25;min-width:0}
 .tw-nm>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -172,36 +172,32 @@ tr.gap td{color:var(--muted);text-align:center;border:0;padding:2px}
 @media (max-width:899px){.tw-ph img{max-height:240px}}
 @media (prefers-reduced-motion:reduce){.pulse,.pen,.pole,.lock::before{animation:none}.bar i{transition:none}}
 
-/* ===== Liquid glass ===== */
-:root{--bg:#07070C;--card:rgba(255,255,255,.07);--card2:rgba(255,255,255,.09);--line:rgba(255,255,255,.16);--muted:#A6A8B8;--glass-blur:blur(28px) saturate(180%);--spec:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06),inset 0 0 22px rgba(255,255,255,.04),0 14px 40px rgba(0,0,0,.35)}
-body{background:radial-gradient(60vmax 60vmax at 12% 8%,#1d3bff55,transparent 60%),radial-gradient(55vmax 55vmax at 90% 20%,#b13dff4d,transparent 60%),radial-gradient(60vmax 60vmax at 70% 95%,#00e08a40,transparent 60%),radial-gradient(50vmax 50vmax at 5% 90%,#ff4fa238,transparent 60%),var(--bg);background-attachment:fixed}
-.card,.pn,.side,.pill,.stg>div,.stat,.cmp div,.chips div,.ca,.code,#pn,.lg button,.ghost,.alt,.acct,.tabs button,.langs button,#sx,.side button[data-a].on,#ladder li.me,tr.me td{-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
-.card,.pn{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:var(--spec);border-radius:28px;position:relative;overflow:hidden}
-.card::before,.pn::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.16),transparent 60%);opacity:0;transition:opacity .3s}
-.card:hover::before,.pn:hover::before{opacity:1}
-.side{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border-right:1px solid rgba(255,255,255,.14);box-shadow:inset -1px 0 0 rgba(255,255,255,.08)}
-.pill,.acct,.langs button,.tabs button,#sx{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 14px rgba(0,0,0,.25)}
-.chips div,.cmp div,.stat,.stg>div,.ca,.code,.lg button,.ghost,.alt,#pn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
-.side button[data-a]:hover{background:rgba(255,255,255,.1)}
-.side button[data-a].on,#ladder li.me,tr.me td{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 3px 0 var(--up)}
-button{border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -8px 16px rgba(255,255,255,.12),0 8px 24px rgba(34,226,122,.28);transition:transform .15s,box-shadow .2s,filter .2s}
-button:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.ghost,.alt,.lg button,.pill,.acct,.langs button:not(.on),.tabs button,#sx,.side button[data-a]{box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 4px 14px rgba(0,0,0,.2)}
-.lock{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02))}
-.cw{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
-input[type=range]{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 2px rgba(0,0,0,.4)}
-input[type=range]::-webkit-slider-thumb{background:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.9);box-shadow:0 4px 14px rgba(0,0,0,.4),inset 0 -6px 10px rgba(34,226,122,.45)}
-input[type=range]::-moz-range-thumb{background:rgba(255,255,255,.85);border:1px solid #fff}
-.bar,.tbar{background:rgba(255,255,255,.1)}
-td,th{border-bottom-color:rgba(255,255,255,.1)}
-#fx{position:fixed;left:0;top:0;width:320px;height:320px;margin:-160px 0 0 -160px;border-radius:50%;pointer-events:none;z-index:50;background:radial-gradient(circle,rgba(120,170,255,.30),rgba(190,110,255,.16) 40%,transparent 68%);mix-blend-mode:screen;opacity:0;transition:opacity .4s;will-change:transform}
-#fx.on{opacity:1}
-#fx2{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;pointer-events:none;z-index:51;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6);opacity:0;transition:opacity .3s,width .2s,height .2s,margin .2s;will-change:transform}
-#fx2.on{opacity:1}#fx2.h{width:54px;height:54px;margin:-27px 0 0 -27px}
-@media (hover:none){#fx,#fx2{display:none}}
-@media (prefers-reduced-motion:reduce){#fx,#fx2{display:none}button{transition:none}}
+/* ===== Style épuré : noir pur, blanc, traits fins (inspiré Trade Republic) ===== */
+:root{--bg:#000;--card:#0C0C0D;--card2:#161617;--line:#232325;--ink:#FFF;--muted:#85858C;--up:#00D26A;--down:#F0435A;--on-up:#000}
+body{background:#000;letter-spacing:-.01em}
+.card,.pn{background:var(--card);border:0;border-radius:20px;padding:22px}
+.side{background:#000;border-right:1px solid var(--line)}
+.side .logo{font-weight:800;letter-spacing:-.03em}
+.side button[data-a]{border-radius:10px;font-weight:600;color:var(--muted)}
+.side button[data-a]:hover{background:var(--card);color:var(--ink)}
+.side button[data-a].on{background:none;color:var(--ink);box-shadow:none}
+.side button[data-a].on::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ink);margin-right:10px;vertical-align:middle}
+.chips div,.cmp div,.stat,.stg>div,.ca,.code,#pn{background:var(--card2);border:0;border-radius:14px}
+.pill,.acct,.langs button,.tabs button,#sx{background:none;border:1px solid var(--line);color:var(--ink);box-shadow:none}
+.langs button.on,.tabs button.on{background:var(--ink);color:#000;border-color:var(--ink)}
+button{border-radius:99px;background:var(--ink);color:#000;font-weight:700;font-size:1rem;padding:16px;box-shadow:none;letter-spacing:-.01em}
+button:hover{opacity:.88}button:active{transform:scale(.98)}
+.ghost,.alt,.lg button{background:var(--card2);color:var(--ink);box-shadow:none}
+.lg button{border-radius:14px}
+.lock{background:var(--card2)}.cw{background:var(--card2);border:0}
+input[type=range]{height:4px;background:var(--line);box-shadow:none}
+input[type=range]::-webkit-slider-thumb{width:26px;height:26px;background:#fff;border:0;box-shadow:0 0 0 6px rgba(255,255,255,.12)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;border:0}
+.bar,.tbar{background:var(--line);height:2px}
+td,th{border-bottom:1px solid var(--line)}
+tr.me td,#ladder li.me{background:var(--card2);box-shadow:none}
+a{color:var(--ink)}.ca a{color:var(--up)}
 </style>
-<div id="fx"></div><div id="fx2"></div>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="logo">devine l’ATH</div>
@@ -800,15 +796,6 @@ function drawAccount(){
   $("ac-v").innerHTML=h;
 }
 $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(b)toast(T("Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.",LOGINS[+b.dataset.lg][0]))});
-
-// ----- effet liquid glass autour de la souris -----
-(()=>{const a=$("fx"),b=$("fx2");let x=0,y=0,tx=0,ty=0,on=false,raf=0;
-const loop=()=>{x+=(tx-x)*.18;y+=(ty-y)*.18;a.style.transform="translate("+tx+"px,"+ty+"px)";b.style.transform="translate("+x+"px,"+y+"px)";raf=Math.abs(tx-x)+Math.abs(ty-y)>.3?requestAnimationFrame(loop):0};
-addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;tx=e.clientX;ty=e.clientY;if(!on){on=true;x=tx;y=ty;a.classList.add("on");b.classList.add("on")}
- b.classList.toggle("h",!!e.target.closest("button,a,input,.card"));
- const c=e.target.closest(".card,.pn");if(c){const r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")}
- if(!raf)raf=requestAnimationFrame(loop)});
-document.addEventListener("pointerleave",()=>{on=false;a.classList.remove("on");b.classList.remove("on")})})();
 
 // ----- événements -----
 const openMenu=()=>{};
