@@ -60,7 +60,7 @@ h2 em{font-style:normal;color:var(--muted);font-size:1rem;font-weight:600;margin
 .cw{position:relative;margin-top:6px;border-radius:14px;overflow:hidden;background:var(--card2)}
 svg{display:block;width:100%;height:auto}
 .lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:700;font-size:.9rem;background:repeating-linear-gradient(135deg,#1B1B20 0 12px,#202026 12px 24px);transition:opacity .4s}
-.lock svg{width:120px;height:56px;overflow:visible}.lock path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.lock svg{width:70%;max-width:260px;height:auto;overflow:visible}.lock path{fill:none;filter:drop-shadow(0 0 4px rgba(255,255,255,.5));stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 @keyframes spin{to{transform:rotate(360deg)}}
 .cw.open .lock{opacity:0;pointer-events:none}
 .lbl{font-size:.8rem;font-weight:700;fill:var(--ink)}
@@ -247,7 +247,7 @@ a{color:var(--ink)}.ca a{color:var(--up)}
         <circle id="head" r="4.5" fill="#22E27A" cx="-10" cy="-10"/>
         <g id="peak" hidden><circle class="pulse" r="5" fill="#22E27A"/><circle r="5" fill="#22E27A"/><line class="pole" x1="0" y1="-5" x2="0" y2="-30" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round"/><path class="pen" d="M1 -30 L19 -24 L1 -18Z" fill="#22E27A"/><text class="lbl" text-anchor="middle" y="-38" id="pl"></text></g>
       </svg>
-      <div class="lock"><svg viewBox="0 0 120 50" aria-hidden="true"><path d="M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14"><animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.33;0.66;1" values="M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14;M0 36 L15 42 L30 26 L45 32 L60 14 L75 24 L90 8 L105 18 L120 4;M0 42 L15 28 L30 34 L45 16 L60 30 L75 18 L90 26 L105 10 L120 20;M0 40 L15 34 L30 38 L45 22 L60 28 L75 12 L90 20 L105 6 L120 14"/></path></svg><span>Chart masqué</span></div>
+      <div class="lock"><svg id="lk" viewBox="0 0 160 60" aria-hidden="true"><path id="lkp"/><circle id="lkc" r="3" fill="#fff"/></svg><span>Chart masqué</span></div>
     </div>
   </article>
 
@@ -796,6 +796,17 @@ function drawAccount(){
   $("ac-v").innerHTML=h;
 }
 $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(b)toast(T("Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.",LOGINS[+b.dataset.lg][0]))});
+
+// ----- courbe "meme coin" animée pendant le chargement -----
+(()=>{const P=$("lkp"),C=$("lkc"),N=48;let v=30,m=0,pts=Array(N).fill(30);
+const step=()=>{const r=Math.random();if(r<.07)m=5+Math.random()*7;else if(r<.12)m=-(4+Math.random()*7);m*=.7;
+ v+=m+(Math.random()-.46)*3.2;v=Math.max(6,Math.min(54,v));if(v>=54||v<=6)m=-m*.4;
+ pts.push(v);pts.shift()};
+const draw=()=>{
+ P.setAttribute("d",pts.map((y,i)=>(i?"L":"M")+(i*160/(N-1)).toFixed(1)+" "+(60-y).toFixed(1)).join(" "));
+ C.setAttribute("cx",160);C.setAttribute("cy",60-v)};
+for(let i=0;i<90;i++)step();draw();
+setInterval(()=>{if(!$("lk").getBoundingClientRect().width||document.hidden)return;step();draw()},70)})();
 
 // ----- événements -----
 const openMenu=()=>{};
