@@ -1,12 +1,14 @@
-import { writeFile } from "node:fs/promises";
+import { writeFile, readFile } from "node:fs/promises";
+const cs = JSON.parse(await readFile("coins.json", "utf8")).filter((c) => c.id).slice(0, 14);
+const ms = [{ n: "EXEMPLE", id: "FBcrTWLEVTxKuc67LLiN2DwUQ6JrPjNyz5MY5iBMpump" }, ...cs];
 const out = [];
-const EPS = ["https://solana-rpc.publicnode.com","https://solana.drpc.org","https://rpc.ankr.com/solana","https://solana.api.onfinality.io/public","https://api.mainnet.solana.com","https://endpoints.omniatech.io/v1/sol/mainnet/public","https://solana.therpc.io","https://solana-mainnet.rpc.extrnode.com"];
-for (const RPC of EPS) for (const m of ["6bW6xsZxYqcvqabk9rRgQwgjPNwe8SACPusx5o1wpump"]) {
+for (const c of ms) {
+  await new Promise((r) => setTimeout(r, 2500));
   try {
-    const r = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getTokenLargestAccounts", params: [m] }), signal: AbortSignal.timeout(15000) });
-    const t = await r.text();
-    out.push({ RPC, status: r.status, body: t.slice(0, 250) });
-  } catch (e) { out.push({ RPC, error: String(e) }); }
-  await new Promise((r) => setTimeout(r, 2000));
+    const r = await fetch(`https://api.geckoterminal.com/api/v2/networks/solana/tokens/${c.id}/info`, { headers: { accept: "application/json;version=20230302" }, signal: AbortSignal.timeout(20000) });
+    const j = await r.json();
+    const a = j?.data?.attributes || {};
+    out.push({ n: c.n, status: r.status, holders: a.holders, score: a.gt_score, ca: a.gt_score_details });
+  } catch (e) { out.push({ n: c.n, error: String(e) }); }
 }
 await writeFile("artifact/rpc-diag.json", JSON.stringify(out, null, 1));
