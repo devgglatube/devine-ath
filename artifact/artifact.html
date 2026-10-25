@@ -299,10 +299,10 @@ input[type=range]{height:32px;background:linear-gradient(var(--line),var(--line)
 input[type=range]:focus-visible{outline:none}
 input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
 input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
-#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}</style>
+#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.brk{display:inline-flex;align-items:center;margin:0 8px 0 -2px}.brk .ri{width:26px;height:26px;margin:0}</style>
 <div class="app">
 <aside class="side" id="menu" role="navigation">
-  <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
+  <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="brk" class="brk"></span><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
   <button class="acct" id="acct" aria-label="Connexion"><span id="acl">Connexion</span></button>
   <button class="mbtn" id="mbtn" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg><span>Menu</span></button>
   <div class="mh"><b id="mn"></b><span id="mr"></span><div class="k" id="mp"></div><div class="net off" id="mnet"></div></div>
@@ -1056,7 +1056,7 @@ $("acct").addEventListener("click",()=>sheet("account"));
 function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="review"?'<i class="tag tg2">'+T("ENTRAÎNEMENT")+"</i> "+c:mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
-  $("mn").textContent=S.name;$("mr").innerHTML=RI[j]+" "+r[0];$("mr").style.color=r[2];
+  $("mn").textContent=S.name;$("mr").innerHTML=RI[j]+" "+r[0];$("brk").innerHTML=RI[j];$("brk").title=r[0];$("mr").style.color=r[2];
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
   const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();
