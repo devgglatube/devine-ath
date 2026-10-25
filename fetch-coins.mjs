@@ -55,33 +55,14 @@ function isFlat(ch) {
   return mx / mn < 2.5 || big < 4;
 }
 
-// --- wallets liés (bundle / sybil) : beaucoup de gros comptes avec quasiment le même solde ---
-// Vérifié via le RPC Solana (GitHub Actions y a accès). true = bundle, false = sain, null = inconnu (on réessaie plus tard).
-const RPC = process.env.SOLANA_RPC || "https://api.mainnet-beta.solana.com";
-let rpcDead = 0;
-async function isBundled(mint) {
-  if (!mint || rpcDead >= 4) return null;
-  for (let a = 0; a < 3; a++) {
-    await wait(1500);
-    try {
-      const res = await fetch(RPC, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getTokenLargestAccounts", params: [mint] }),
-        signal: AbortSignal.timeout(15000),
-      });
-      if (res.status === 429) { await wait(8000); continue; }
-      const v = (await res.json())?.result?.value;
-      if (!Array.isArray(v)) continue;
-      rpcDead = 0;
-      const am = v.map((x) => Number(x.uiAmount)).filter((x) => x > 0);
-      if (am.length < 8) return false;
-      const cluster = Math.max(...am.map((x) => am.filter((y) => Math.abs(y - x) / x < 0.02).length));
-      return cluster >= 5;
-    } catch {}
-  }
-  rpcDead++;
-  return null;
+// --- supply trop concentrée (wallets liés / bundle) : les 40 premiers wallets détiennent presque tout, ou les 10 premiers > 65 % ---
+// Source : GeckoTerminal /info (holders.distribution_percentage). true = concentré, false = sain, null = inconnu.
+function concentrated(info) {
+  const d = info?.holders?.distribution_percentage;
+  if (!d) return null;
+  const top10 = Number(d.top_10), rest = Number(d.rest);
+  if (!(top10 >= 0) || !(rest >= 0)) return null;
+  return top10 > 65 || rest < 10;
 }
 let CAM = {};
 try { CAM = JSON.parse(await readFile("artifact/ca-map.json", "utf8")); } catch {}
@@ -104,20 +85,23 @@ if (out.length < bf) console.log(`${bf - out.length} coin(s) trop plat(s) retir�
 out = out.filter((c, i) => out.findIndex((x) => keyOf(x) === keyOf(c)) === i); // pas deux coins avec le même nom
 out.forEach((c) => (c.b = bucketOf(c.ath)));
 {
-  let n = 0;
+  // coins déjà présents : on vérifie la concentration des wallets (40 par passage, les autres aux passages suivants)
+  let n = 0, fails = 0;
   for (const c of out) {
-    if (c.bz !== undefined || n >= 12) continue;
+    if (c.bz !== undefined || n >= 40 || fails >= 3) continue;
     const m = mintOf(c);
     if (!m) continue;
     n++;
-    const r = await isBundled(m);
-    if (r === null) continue;
-    c.bz = r ? 1 : 0;
-    if (r) console.log(`  wallets liés : ${c.n} retiré`);
+    try {
+      const r = concentrated((await get(`/networks/solana/tokens/${m}/info`)).data.attributes);
+      if (r === null) continue;
+      c.bz = r ? 1 : 0;
+      if (r) console.log(`  supply concentrée : ${c.n} retiré`);
+    } catch (e) { fails++; }
   }
   const b2 = out.length;
   out = out.filter((c) => c.bz !== 1);
-  if (out.length < b2) console.log(`${b2 - out.length} coin(s) avec wallets liés retiré(s)`);
+  if (out.length < b2) console.log(`${b2 - out.length} coin(s) à supply concentrée retiré(s)`);
   await writeFile("coins.json", JSON.stringify(out, null, 1));
 }
 const counts = BUCKETS.map((_, i) => out.filter((c) => c.b === i).length);
@@ -229,12 +213,12 @@ async function buildCoin({ address, pool }) {
   const ch0 = series(c, supply);
   if (isRug(ch0)) throw new Error("rug pull détecté");
   if (isFlat(ch0)) throw new Error("courbe trop plate");
-  const bz = await isBundled(address);
-  if (bz === true) throw new Error("wallets liés (bundle)");
   let info = {};
   try {
     info = (await get(`/networks/solana/tokens/${address}/info`)).data.attributes;
   } catch {}
+  const bz = concentrated(info);
+  if (bz === true) throw new Error("supply concentrée (wallets liés)");
   const fallback = (pool.name || "").split(" / ")[0].replace("$", "").trim();
   const date = new Date(pool.pool_created_at).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
   return {
