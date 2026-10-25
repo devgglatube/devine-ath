@@ -60,7 +60,7 @@ h2 em{font-style:normal;color:var(--muted);font-size:1rem;font-weight:600;margin
 .cw{position:relative;margin-top:6px;border-radius:14px;overflow:hidden;background:var(--card2)}
 svg{display:block;width:100%;height:auto}
 .lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:700;font-size:.9rem;background:repeating-linear-gradient(135deg,#1B1B20 0 12px,#202026 12px 24px);transition:opacity .4s}
-.lock svg{width:70%;max-width:260px;height:auto;overflow:visible}.lock path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.lock svg{width:70%;max-width:260px;height:auto;overflow:hidden}.lock path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 @keyframes spin{to{transform:rotate(360deg)}}
 .cw.open .lock{opacity:0;pointer-events:none}
 .lbl{font-size:.8rem;font-weight:700;fill:var(--ink)}
@@ -247,7 +247,7 @@ a{color:var(--ink)}.ca a{color:var(--up)}
         <circle id="head" r="4.5" fill="#22E27A" cx="-10" cy="-10"/>
         <g id="peak" hidden><circle class="pulse" r="5" fill="#22E27A"/><circle r="5" fill="#22E27A"/><line class="pole" x1="0" y1="-5" x2="0" y2="-30" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round"/><path class="pen" d="M1 -30 L19 -24 L1 -18Z" fill="#22E27A"/><text class="lbl" text-anchor="middle" y="-38" id="pl"></text></g>
       </svg>
-      <div class="lock"><svg id="lk" viewBox="0 0 160 60" aria-hidden="true"><path id="lkp"/><circle id="lkc" r="3" fill="#fff"/></svg><span>Chart masqué</span></div>
+      <div class="lock"><svg id="lk" viewBox="-4 0 168 60" aria-hidden="true"><path id="lkp"/><circle id="lkc" r="3" fill="#fff"/></svg><span>Chart masqué</span></div>
     </div>
   </article>
 
@@ -797,16 +797,19 @@ function drawAccount(){
 }
 $("ac-v").addEventListener("click",e=>{const b=e.target.closest("[data-lg]");if(b)toast(T("Connexion {0} bientôt disponible. Ta progression est gardée sur cet appareil.",LOGINS[+b.dataset.lg][0]))});
 
-// ----- courbe "meme coin" animée pendant le chargement -----
-(()=>{const P=$("lkp"),C=$("lkc"),N=48;let v=30,m=0,pts=Array(N).fill(30);
-const step=()=>{const r=Math.random();if(r<.07)m=5+Math.random()*7;else if(r<.12)m=-(4+Math.random()*7);m*=.8;
- v+=m+(Math.random()-.47)*.8;v=Math.max(6,Math.min(54,v));if(v>=54||v<=6)m=-m*.4;
- pts.push(v);pts.shift()};
-const draw=()=>{
- P.setAttribute("d",pts.map((y,i)=>(i?"L":"M")+(i*160/(N-1)).toFixed(1)+" "+(60-y).toFixed(1)).join(" "));
- C.setAttribute("cx",160);C.setAttribute("cy",60-v)};
-for(let i=0;i<90;i++)step();draw();
-setInterval(()=>{if(!$("lk").getBoundingClientRect().width||document.hidden)return;step();draw()},100)})();
+// ----- courbe "meme coin" animée pendant le chargement (défilement fluide) -----
+(()=>{const P=$("lkp"),C=$("lkc"),K=$("lk"),N=40,DX=160/(N-2),IV=260;let v=30,m=0,prev=30,tgt=30,t0=performance.now();const ys=Array(N).fill(30);
+const next=()=>{const r=Math.random();if(r<.08)m=3+Math.random()*4;else if(r<.14)m=-(2.5+Math.random()*4);m*=.75;
+ v+=m+(Math.random()-.47)*.9;if(v>52||v<8){v=Math.max(8,Math.min(52,v));m=-m*.4}return v};
+for(let i=0;i<N;i++)ys[i]=next();prev=ys[N-1];tgt=next();
+const e=t=>t*t*(3-2*t);
+const frame=now=>{requestAnimationFrame(frame);if(document.hidden||!K.getBoundingClientRect().width){t0=now;return}
+ let f=(now-t0)/IV;if(f>=1){t0=now-(now-t0)%IV;f=(now-t0)/IV;ys.push(tgt);ys.shift();prev=tgt;tgt=next()}
+ const cur=prev+(tgt-prev)*e(f),sh=f*DX;let d="";
+ for(let i=0;i<N;i++){d+=(i?"L":"M")+((i-1)*DX-sh).toFixed(1)+" "+(60-ys[i]).toFixed(1)}
+ d+="L160 "+(60-cur).toFixed(1);
+ P.setAttribute("d",d);C.setAttribute("cx",160);C.setAttribute("cy",(60-cur).toFixed(1))};
+requestAnimationFrame(frame)})();
 
 // ----- événements -----
 const openMenu=()=>{};
