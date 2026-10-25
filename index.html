@@ -272,6 +272,16 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .stl i.on{color:var(--up);border-color:rgba(0,210,106,.45)}
 .stk{margin:8px 2px 0;font-size:.85rem;font-weight:800;color:var(--up)}
 .rc .r.st{border-top:0}.rc .r.st b{white-space:normal;color:var(--up)}
+/* V16 : sur mobile, la zone de prédiction reste collée en bas de l’écran pendant qu’on lit le coin */
+@media (max-width:899px){
+  #game .card:has(#input:not([hidden])){position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:20;padding:12px 16px 14px;background:rgba(18,18,20,.97);box-shadow:0 -10px 30px rgba(0,0,0,.65),0 0 0 1px var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  #input .k{font-size:.72rem}
+  #input .guess{font-size:1.8rem;margin:0 0 4px}
+  #input .ticks{margin-bottom:8px;font-size:.7rem}
+  #input input[type=range]{margin:2px 0}
+  #input #ok{padding:13px}
+  #tm{margin-bottom:6px}
+}
 </style>
 </head>
 <body>
