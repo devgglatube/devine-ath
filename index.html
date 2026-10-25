@@ -558,6 +558,7 @@ function twSeal(vf){
   const s=twSv(p+'<path d="M7.7 12.3l3 3 5.7-6.1" fill="none" stroke="'+k+'" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>',"tw-vb");
   s.removeAttribute("aria-hidden");s.setAttribute("role","img");s.setAttribute("aria-label",T("Compte vérifié"));return s;
 }
+let TWL={};const twTx=(k,e)=>{const i=TWL[k.t+"|"+k.n];return(i&&i[LANG])||e.tx||""};
 function renderTweet(k){
   const box=$("tw"),e=k?TW[k.t+"|"+k.n]:null;
   box.textContent="";
@@ -581,7 +582,7 @@ function renderTweet(k){
     box.appendChild(jn);
   }
   // texte du tweet (ou description du compte)
-  const tx=dec(e.tx||"").trim();if(tx)box.appendChild(twEl("p","tw-tx",tx));
+  const tx=dec(twTx(k,e)).trim();if(tx)box.appendChild(twEl("p","tw-tx",tx));
   if(isT){
     // image (ou miniature de la vidéo)
     if(isImg(e.ph)){
@@ -603,7 +604,7 @@ function renderTweet(k){
   box.hidden=false;
 }
 // signaux du tweet pour les bots (sans les images)
-const twData=k=>{const e=TW[k.t+"|"+k.n];return e&&(e.k==="tweet"||e.k==="profile")&&e.ah?{kind:e.k,handle:e.ah,verified:e.vf||0,followers:e.fo==null?null:e.fo,joined:e.jd||null,text:e.tx||"",time:e.ts||null,likes:e.lk==null?null:e.lk,retweets:e.rt==null?null:e.rt,replies:e.rp==null?null:e.rp,views:e.vw==null?null:e.vw,bookmarks:e.bm==null?null:e.bm}:null};
+const twData=k=>{const e=TW[k.t+"|"+k.n];return e&&(e.k==="tweet"||e.k==="profile")&&e.ah?{kind:e.k,handle:e.ah,verified:e.vf||0,followers:e.fo==null?null:e.fo,joined:e.jd||null,text:twTx(k,e),time:e.ts||null,likes:e.lk==null?null:e.lk,retweets:e.rt==null?null:e.rt,replies:e.rp==null?null:e.rp,views:e.vw==null?null:e.vw,bookmarks:e.bm==null?null:e.bm}:null};
 function validate(){
   if(busy)return;busy=true;stopTimer();
   const k=deck[i],g=val();
@@ -877,7 +878,8 @@ const local=/^(localhost|127\.)|github\.io$/.test(location.hostname);
 const GH="https://raw.githubusercontent.com/devgglatube/devine-ath/main/";
 const bust=local?"?v="+Date.now():"";
 const getJ=(f,gh)=>fetch(f+bust).then(r=>r.ok?r.json():Promise.reject()).catch(()=>fetch(GH+gh+"?v="+Math.floor(Date.now()/600000)).then(r=>r.ok?r.json():Promise.reject())).catch(()=>null);
-Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coins-img.json"),getJ("coins-i18n.json","artifact/coins-i18n.json"),getJ("ca-map.json","artifact/ca-map.json"),getJ("wallet-tags.json","artifact/wallet-tags.json"),getJ("tweets.json","artifact/tweets.json")]).then(([d,im,ds,ca,wt,tw])=>{
+Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coins-img.json"),getJ("coins-i18n.json","artifact/coins-i18n.json"),getJ("ca-map.json","artifact/ca-map.json"),getJ("wallet-tags.json","artifact/wallet-tags.json"),getJ("tweets.json","artifact/tweets.json"),getJ("tweets-i18n.json","artifact/tweets-i18n.json")]).then(([d,im,ds,ca,wt,tw,twi])=>{
+  if(twi&&typeof twi==="object"&&!Array.isArray(twi))TWL=twi;
   if(Array.isArray(d)){const ok=d.filter(k=>!isRug(k.ch));if(ok.length>=ROUNDS)COINS=ok}
   if(im&&typeof im==="object")IMGMAP=im;
   if(ds&&typeof ds==="object")DESC=ds;
