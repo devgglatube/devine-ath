@@ -802,15 +802,19 @@ function pick(n){n=n||ROUNDS;
 let roundLog=[];
 const dayKey=(o=0)=>new Date(Date.now()-o*864e5).toISOString().slice(0,10);
 const hash32=x=>{let h=2166136261;for(let c=0;c<x.length;c++){h^=x.charCodeAt(c);h=Math.imul(h,16777619)}return h>>>0};
-function dailyDeck(){const d=dayKey();return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
+function dailyDeck(){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};
+  if(D.dk===d&&Array.isArray(D.keys)){const L=D.keys.map(x=>COINS.find(k=>seenKey(k)===x)).filter(Boolean);if(L.length===5)return L}
+  const L=dailyPick(d);D.dk=d;D.keys=L.map(seenKey);save();return L}
+function dailyPick(d){return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
 function dailySub(){const D=S.daily||{},alive=D.last===dayKey()||D.last===dayKey(1);
-  return D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
+  return D.started===dayKey()||D.last===dayKey()?(D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("Défi du jour commencé · reviens demain")):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
 // coins les plus ratés (écart de plus de ×5) : on les garde pour s’entraîner dessus, sans points
 const missKeys=()=>{const have=new Set(COINS.map(seenKey));return(S.miss||[]).filter(x=>have.has(x))};
 function reviewDeck(){return missKeys().sort(()=>Math.random()-.5).slice(0,8).map(x=>COINS.find(k=>seenKey(k)===x))}
 function noteMiss(k,rr){const key=seenKey(k);let L=(S.miss||[]).filter(x=>x!==key);if(rr>5)L.unshift(key);S.miss=L.slice(0,40)}
 function start(m){
   roundLog=[];streak=0;bestStreak=0;mode=m||"casual";sheet(0);gen++;navOn();
+  if(mode==="daily"){const D=S.daily=S.daily||{st:0,best:0};D.started=dayKey();save()}
   deck=mode==="daily"?dailyDeck():mode==="review"?reviewDeck():pick(mode==="ranked"?ROUNDS:casualN());
   i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
 }
@@ -1094,6 +1098,7 @@ function startTimer(){
 function stopTimer(){cancelAnimationFrame(timer);timer=0}
 let armedAt=0;
 function launch(m){
+  if(m==="daily"&&((S.daily||{}).started===dayKey()||(S.daily||{}).last===dayKey())){toast(T("Défi du jour déjà joué. Reviens demain pour un nouveau défi !"));return}
   const inGame=!$("game").hidden&&deck&&!busy;
   if(m==="ranked"&&S.pts<costNow())return;
   if(inGame&&mode==="ranked"&&paid&&Date.now()-armedAt>4000){armedAt=Date.now();toast(T("Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer."));return}
@@ -1389,8 +1394,8 @@ $("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#s
 $("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
 $("pn").addEventListener("change",()=>push());
 
-Object.assign(DICT.en,{"Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
-Object.assign(DICT.es,{"Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+Object.assign(DICT.en,{"Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
+Object.assign(DICT.es,{"Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
 const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
 let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
 function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
