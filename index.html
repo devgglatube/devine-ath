@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#09090B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322E27A'/%3E%3Cpath d='M6 22 L13 13 L18 18 L26 8' fill='none' stroke='%2306150C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<title>Devine l’ATH – jeu de prédiction de memecoins Solana</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -274,7 +273,7 @@ button{transition:filter .15s,transform .1s,background .15s}button:active:not(:d
 .rc .r.st{border-top:0}.rc .r.st b{white-space:normal;color:var(--up)}
 /* V16 : sur mobile, la zone de prédiction reste collée en bas de l’écran pendant qu’on lit le coin */
 @media (max-width:899px){
-  #game .card:has(#input:not([hidden])){position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:20;padding:12px 16px 14px;background:rgba(18,18,20,.97);box-shadow:0 -10px 30px rgba(0,0,0,.65),0 0 0 1px var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  #game .card:has(#input:not([hidden])){position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:20;padding:12px 16px 14px;background:rgba(18,18,20,.97);box-shadow:0 -10px 30px rgba(0,0,0,.65),0 0 0 1px var(--line);}
   #input .k{font-size:.72rem}
   #input .guess{font-size:1.8rem;margin:0 0 4px}
   #input .ticks{margin-bottom:8px;font-size:.7rem}
@@ -306,6 +305,107 @@ input[type=range]{height:32px;background:linear-gradient(var(--line),var(--line)
 input[type=range]:focus-visible{outline:none}
 input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
 input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,210,106,.45)}
+#pr{display:none!important}.ri{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.15em}.nm{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}.nm .ri{width:1.25em;height:1.25em;margin:0;flex:none}.nm>span{min-width:0}#rk-v .pnr{display:flex;align-items:center;gap:10px;margin:6px 0 14px}#rk-v .pnr #pn{margin:0;flex:1;width:auto}#pnic .ri{width:30px;height:30px;margin:0;display:block}td.n{white-space:normal}#fx-o{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.fx-b{display:flex;gap:18px;align-items:flex-start;max-width:100%;flex-wrap:wrap;justify-content:center}#fx-cv{width:min(380px,86vw);height:auto;aspect-ratio:1080/1350;border-radius:18px;background:#000}.fx-c{display:grid;gap:10px;width:min(300px,86vw)}.fx-c .tabs{display:flex;gap:6px}.fx-c .tabs button{width:auto;flex:1}.fx-c button{width:100%}.langs{display:flex;gap:6px;align-items:center;padding:8px 0 0;flex-wrap:wrap}#set-v .langs button{width:auto;padding:10px 16px;font-size:.9rem;border-radius:99px}
+.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px}.themes button{display:flex;align-items:center;gap:10px;background:var(--card2);color:var(--ink);padding:12px;border-radius:14px;font-size:.9rem;text-align:left}.themes button i{width:22px;height:22px;border-radius:50%;flex:none}.themes button.on{box-shadow:inset 0 0 0 2px var(--up)}
+#line{stroke:var(--up)}#head,#peak circle,.pen{fill:var(--up)}#gr stop{stop-color:var(--up)}.mk rect{fill:var(--up)}
+html[data-mode=light]{--bg:#F4F4F6;--card:#fff;--card2:#EEEEF1;--line:#DCDCE1;--ink:#0B0B0D;--muted:#6B6B74;--down:#D92D45;color-scheme:light}
+html[data-mode=light] body{background:var(--bg)}html[data-mode=light] .side{background:#fff}
+html[data-mode=light] button{color:#fff}html[data-mode=light] .ghost,html[data-mode=light] .alt,html[data-mode=light] .lg button,html[data-mode=light] .themes button,html[data-mode=light] .side button[data-a],html[data-mode=light] .lvl button,html[data-mode=light] .ask button{color:var(--ink)}
+html[data-mode=light] .side button[data-a]{color:var(--muted)}html[data-mode=light] .side button[data-a].on,html[data-mode=light] .side button[data-a]:hover{color:var(--ink)}
+html[data-mode=light] .pill,html[data-mode=light] .acct,html[data-mode=light] .langs button,html[data-mode=light] .tabs button,html[data-mode=light] #sx{color:var(--ink)}
+html[data-mode=light] .langs button.on,html[data-mode=light] .tabs button.on{background:var(--ink);color:#fff}
+html[data-mode=light] .lock{background:#E4E4E8}html[data-mode=light] .lock path{stroke:#9a9aa3}html[data-mode=light] .lbl{fill:#0B0B0D}
+html[data-mode=light] .card:hover{border-color:#c5c5cc}html[data-mode=light] .card,html[data-mode=light] .pn{box-shadow:0 1px 2px rgba(0,0,0,.05)}
+html[data-mode=light] #mn,html[data-mode=light] h2{color:var(--ink)}
+html[data-mode=light] #imgov,html[data-mode=light] #fx-o{background:rgba(0,0,0,.55)}
+#set-v .langs{margin-left:0;padding:8px 0 0}#set-v .langs .k{display:none}html[data-mode=light] .lnk{color:var(--ink)}html[data-mode=light] input[type=range]::-webkit-slider-thumb{background:var(--up);box-shadow:0 0 0 6px rgba(0,0,0,.08)}html[data-mode=light] input[type=range]::-moz-range-thumb{background:var(--up)}html[data-mode=light] #cv.up,html[data-mode=light] td.v{color:var(--up)}#go{background:var(--up);color:var(--on-up)}.lock path{stroke:var(--up)}#lkc{fill:var(--up)}#sh-t,.side button[data-a].on{color:var(--up)}.side button[data-a].on::before{background:var(--up)}html[data-mode=light] .lock path{stroke:var(--up)}html[data-mode=light] .side button[data-a].on{color:var(--up)}.navsp{flex:1;min-height:12px;border-bottom:1px solid var(--line);margin-bottom:6px}@media (max-width:899px){.navsp{display:none}}.navh{text-align:center}#mdl{position:relative}#mdl.done{padding-right:44px}.dchk{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--up);color:var(--on-up);display:flex;align-items:center;justify-content:center}.dchk svg{width:16px;height:16px}#mdl.done{padding-right:36px}.dchk{right:10px;width:18px;height:18px;background:transparent;color:var(--up);border:1.5px solid var(--up);opacity:.85}.dchk svg{width:11px;height:11px}.tro{width:1.2em;height:1.2em;flex:none;margin-left:2px}.champ{display:flex;align-items:center;gap:12px;background:var(--card2);border-radius:14px;padding:12px 14px;margin:-6px 0 16px;box-shadow:inset 0 0 0 1.5px rgba(255,197,61,.55)}.champ .tro{width:34px;height:34px}.champ div{display:grid;gap:2px}.champ b{color:#FFC53D}.champ span{color:var(--muted);font-size:.8rem}.navh{color:var(--up)}.dbig{font-size:3rem;font-weight:800;letter-spacing:-.03em;color:var(--up);line-height:1.1;margin:4px 0 10px}.dbig small{font-size:1rem;color:var(--muted);font-weight:600}.dgrid{grid-template-columns:1fr!important}.dnext{display:flex;justify-content:space-between;align-items:center;background:var(--card2);border-radius:14px;padding:12px 14px;margin-top:16px}.dnext b{font-size:1.3rem;font-variant-numeric:tabular-nums}.dbars{display:flex;align-items:flex-end;gap:6px;height:70px;background:var(--card2);border-radius:14px;padding:10px}.dbars i{flex:1;background:var(--up);border-radius:4px 4px 0 0;min-width:6px;opacity:.9}#flive{margin-bottom:12px;padding:14px 16px}.fr-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.fr-r{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px}.fr-r.me{background:var(--card2)}.fr-p{width:18px;color:var(--muted);font-weight:800;font-size:.85rem}.fr-r .nm{flex:1;min-width:0;font-weight:700}.fr-s{color:var(--up);font-weight:800;font-size:.85rem;white-space:nowrap}.fr-list{display:grid;gap:2px;background:var(--card);border-radius:14px;margin-top:6px;min-height:40px}.fr-code{display:flex;align-items:center;gap:12px;margin:6px 0}.fr-code b{font-size:2.4rem;letter-spacing:.12em;font-weight:800;text-transform:uppercase;color:var(--up)}.fr-code button{width:auto;padding:10px 16px;font-size:.85rem}.fr-join{display:flex;gap:8px;margin-top:8px}.fr-join input{flex:1;min-width:0;background:var(--card2);border:0;border-radius:12px;color:var(--ink);padding:12px;font:inherit;text-transform:lowercase}.fr-join button{width:auto;padding:12px 18px}#fr-v .tabs{margin:8px 0 12px}#frb{display:flex;align-items:center;justify-content:center;gap:8px}#frb .ri,.fr-h .ri{width:1.3em;height:1.3em;margin:0;vertical-align:-.25em;color:var(--up)}.fr-h b{display:inline-flex;align-items:center;gap:8px}#s{height:56px;background:linear-gradient(var(--line),var(--line)) center/100% 10px no-repeat;border-radius:0;margin:10px 0}
+#s::-webkit-slider-thumb{width:44px;height:44px;box-shadow:0 0 0 8px rgba(255,255,255,.14)}#s::-moz-range-thumb{width:36px;height:36px}
+#s::-webkit-slider-runnable-track{height:56px;background:transparent}#s::-moz-range-track{background:transparent}
+html[data-mode=light] #s::-webkit-slider-thumb{box-shadow:0 0 0 8px rgba(0,0,0,.08)}
+.guess{font-size:2.8rem}.ticks{font-size:.85rem}@media (min-width:900px){#game>.card:first-child{grid-row:1}#game>.card:nth-child(3){grid-column:1/-1}#game .card:nth-child(3) #input,#game .card:nth-child(3) #out{max-width:none}}.fine{display:flex;gap:6px;align-items:center;margin:2px 0}.fine button{width:auto;flex:none;padding:10px 12px;font-size:.85rem;border-radius:12px;background:var(--card2);color:var(--ink);touch-action:manipulation;user-select:none}.fine input{flex:1;min-width:0;text-align:center;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px;font:inherit;font-weight:800;font-size:1rem}html[data-mode=light] .fine button{color:var(--ink)}@media (max-width:430px){.fine button{padding:10px 7px;font-size:.78rem}}@media (max-width:899px){.fine{flex-wrap:wrap}.fine input{order:-1;flex:1 1 100%;padding:8px}.fine button{flex:1}.fine+.note{display:none}}.fine button{white-space:nowrap}@media (max-width:430px){.fine button{padding:10px 4px;font-size:.74rem}}#s::-webkit-slider-thumb{width:14px;height:14px;border:0;box-shadow:0 0 0 3px rgba(255,255,255,.18)}#s::-moz-range-thumb{width:14px;height:14px;border:0}html[data-mode=light] #s::-webkit-slider-thumb{width:14px;height:14px;box-shadow:0 0 0 3px rgba(0,0,0,.1)}#s{background:linear-gradient(var(--line),var(--line)) center/100% 6px no-repeat}#s::-webkit-slider-thumb{margin-top:21px}.rbar{position:relative;height:74px;margin:6px 8px 12px}.rtr{position:absolute;left:0;right:0;top:44px;height:6px;border-radius:4px;background:var(--line)}.rg{position:absolute;top:41px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.2)}.rf{position:absolute;top:2px;width:28px;height:34px;margin-left:-5px;color:var(--ink)}.rf svg{width:100%;height:100%;display:block;overflow:visible}.rf::after{content:"";position:absolute;left:3px;top:36px;width:2px;height:8px;background:var(--ink);opacity:.6}.rl{position:absolute;top:56px;font-size:.72rem;font-weight:800;color:var(--muted);white-space:nowrap}.rlf{color:var(--up)}html[data-mode=light] .rg{background:#111;box-shadow:0 0 0 3px rgba(0,0,0,.12)}.rf.go .fp{transform-box:fill-box;transform-origin:50% 100%;animation:fpole .35s ease-out both}.rf.go .ff{transform-box:fill-box;transform-origin:0 50%;animation:funf .4s .3s ease-out both,fwave 2.2s .75s ease-in-out infinite}
+@keyframes fpole{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes funf{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes fwave{0%,100%{transform:scaleX(1) skewY(0)}50%{transform:scaleX(.9) skewY(5deg)}}
+.rf.go~.rg{animation:rgin .4s ease-out both}@keyframes rgin{from{transform:scale(0)}to{transform:scale(1)}}
+html.cc,html.cc *{cursor:none!important}html.cc input[type=text],html.cc textarea{cursor:text!important}
+#cur{position:fixed;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--up);pointer-events:none;z-index:2147483647;opacity:0;transition:opacity .2s;will-change:transform;margin:0}#cur.on{opacity:1}
+#cur::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--up);opacity:.5;animation:curp 2.6s ease-in-out infinite;transition:inset .15s}
+#cur.hv::after{inset:-10px}#cur.dn{filter:brightness(.85)}
+@keyframes curp{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:.15}}
+@media (prefers-reduced-motion:reduce){#cur::after,.rf.go .ff,.rf.go .fp{animation:none}}#logout{position:fixed;right:16px;bottom:16px;z-index:30;width:auto;display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.82rem;border-radius:99px;background:var(--card2);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.35)}#logout .ri{width:1.2em;height:1.2em;margin:0}#logout:hover{border-color:var(--up);color:var(--up)}@media (max-width:899px){body:has(#input:not([hidden])) #logout{display:none}}@media (min-width:900px){#game:has(#cc[hidden])>.card:nth-child(2){grid-column:1/-1}#game:has(#cc[hidden]) .cw{height:340px;display:flex;align-items:center;justify-content:center}#game:has(#cc[hidden]) .cw #svg{height:100%;width:auto;max-width:100%}#game:has(#cc[hidden]) #cv{font-size:2.4rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock svg{width:62%;max-width:620px}#game:has(#cc[hidden]) .lock{font-size:1.05rem}}@media (min-width:900px){#game:has(#cc[hidden]) .lock path{stroke-width:1.1}#game:has(#cc[hidden]) #lkc{r:1.5px}}/* v114 layout fixe: seul le tweet varie */
+#game>.card:first-child{height:560px;overflow-y:auto;overscroll-behavior:contain}
+#game>.card:nth-child(2){height:560px}
+#game>.card:nth-child(2) .cw{flex:none}
+@media (min-width:900px){#game{grid-template-rows:560px auto}}@media (min-width:900px){#game>.card:nth-child(2) .cw{height:430px}#game>.card:nth-child(2) .cw #svg{height:100%;width:100%}}
+@media (max-width:899px){#game>.card:first-child{height:min(58vh,560px)}#game>.card:nth-child(2){height:auto}#game>.card:nth-child(2) .cw{min-height:200px}}
+/* v115 intro */
+#intro{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:radial-gradient(ellipse at 50% 38%,color-mix(in srgb,var(--up) 22%,#05080a) 0,#050506 62%);color:#fff;transition:opacity .7s ease,transform .7s ease,visibility .7s;overflow:hidden}
+#intro.out{opacity:0;transform:scale(1.06);visibility:hidden;pointer-events:none}
+#intro .ig{position:absolute;inset:-56px;will-change:transform;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;animation:igp 9s linear infinite}
+@keyframes igp{to{transform:translate3d(56px,56px,0)}}
+#intro svg.ic{position:relative;width:min(560px,86vw);height:auto;overflow:visible}
+#intro .ln{fill:none;stroke:var(--up);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:ild 2.1s .25s cubic-bezier(.6,.05,.25,1) forwards;filter:drop-shadow(0 0 8px var(--up))}
+#intro .ar{fill:var(--up);opacity:.12;opacity:0;animation:ifa 1s 1.6s forwards}
+@keyframes ild{to{stroke-dashoffset:0}}@keyframes ifa{to{opacity:.14}}
+#intro .dt{fill:#fff;opacity:0;transform-box:fill-box;transform-origin:center;animation:idt .6s 2.2s cubic-bezier(.2,1.6,.4,1) forwards}
+#intro .rg{fill:none;stroke:var(--up);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:irg 1.6s 2.3s ease-out infinite}
+@keyframes idt{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@keyframes irg{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(5)}}
+#intro .iw{position:relative;text-align:center;opacity:0;transform:translateY(16px);animation:iup .9s 1.5s ease forwards}
+#intro .iw b{display:block;font-size:clamp(2rem,7vw,3.4rem);font-weight:800;letter-spacing:-.04em;background:linear-gradient(90deg,#fff,var(--up),#fff);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ish 4s 2.4s linear infinite}
+#intro .iw span{display:block;margin-top:6px;color:#9aa;font-size:.95rem;letter-spacing:.04em}
+@keyframes iup{to{opacity:1;transform:none}}@keyframes ish{to{background-position:-220% 0}}
+#intro .il{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;opacity:0;transform:translateY(14px);animation:iup .8s 2.3s ease forwards}
+#intro .il button{width:auto;min-width:128px;padding:12px 22px;border-radius:99px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+#intro .il button:hover{transform:translateY(-3px);border-color:var(--up);background:color-mix(in srgb,var(--up) 22%,transparent);box-shadow:0 8px 28px color-mix(in srgb,var(--up) 35%,transparent)}
+#intro .il button.on{border-color:var(--up);background:color-mix(in srgb,var(--up) 26%,transparent)}
+#intro .ih{position:relative;color:#7b8;font-size:.78rem;opacity:0;animation:iup .8s 2.7s ease forwards}
+@media (prefers-reduced-motion:reduce){#intro *{animation-duration:.01s!important;animation-delay:0s!important}}
+/* v118 fluidité */
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+#cur,#cur::after{backface-visibility:hidden;transform-style:flat}#cur{transform:translate3d(-50px,-50px,0)}
+#cur::after{will-change:transform,opacity}
+.cw{contain:layout paint;transform:translateZ(0)}
+#game>.card,.side,#sh{backface-visibility:hidden}
+#intro .ln,#intro .dt,#intro .rg{will-change:transform,opacity,stroke-dashoffset}
+button,.side button{touch-action:manipulation}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+/* v119 tutoriel */
+#coach{position:fixed;inset:0;z-index:900;pointer-events:none}#coach[hidden]{display:none}
+#csp{position:fixed;border-radius:16px;box-shadow:0 0 0 9999px rgba(0,0,0,.72),0 0 0 2px var(--up),0 0 24px var(--up);transition:left .35s cubic-bezier(.3,.8,.3,1),top .35s cubic-bezier(.3,.8,.3,1),width .35s cubic-bezier(.3,.8,.3,1),height .35s cubic-bezier(.3,.8,.3,1),opacity .2s;pointer-events:none;animation:cpl 1.8s ease-in-out infinite}
+@keyframes cpl{50%{box-shadow:0 0 0 9999px rgba(0,0,0,.72),0 0 0 2px var(--up),0 0 40px var(--up)}}
+#ctip{position:fixed;pointer-events:auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 18px 50px rgba(0,0,0,.6);transition:left .35s cubic-bezier(.3,.8,.3,1),top .35s cubic-bezier(.3,.8,.3,1);animation:ctin .4s ease both}
+@keyframes ctin{from{opacity:0;transform:translateY(8px)}}
+#ctip .cs{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--up)}
+#ctip p{margin:6px 0 12px;font-size:.92rem;line-height:1.45}
+#ctip .cb{display:flex;gap:8px;justify-content:flex-end}#ctip .cb button{width:auto;padding:9px 16px;font-size:.85rem;border-radius:99px}#ctip .cb button[hidden]{display:none}
+#ctip .cb .ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+/* v120 cadrage sans défilement */
+#wel{display:none!important}
+@media (min-width:900px){
+main{padding-bottom:0!important;min-height:0}.ft0{position:fixed;bottom:6px;left:268px;right:0;margin:0!important;padding:0!important;text-align:center;font-size:.7rem;pointer-events:none;z-index:5}.ft0 button{pointer-events:auto}
+#game{height:max(560px,calc(100vh - 124px));grid-template-rows:minmax(0,1fr) auto;align-items:stretch;min-height:0}
+#game>.card:first-child{grid-row:1 / span 2;grid-column:1;height:auto;overflow-y:auto}
+#game>.card:nth-child(2){grid-column:2;grid-row:1;height:auto;display:flex;flex-direction:column;min-height:0}
+#game>.card:nth-child(2) .cw{flex:1 1 0;height:auto;min-height:0}
+#game>.card:nth-child(2) .cw #svg{height:100%;width:100%}
+#game>.card:nth-child(3){grid-column:2;grid-row:2}
+#game>.card:nth-child(3){padding:12px 18px 14px}#input .guess{font-size:2.1rem;line-height:1.1;margin:0}#input #s{margin:0}#input .fine{margin-top:0}#input .note{margin:4px 0 6px!important;font-size:.72rem}#input>.k{margin:0}#input #ok{padding:13px}
+#game>.card:nth-child(3){height:326px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#game>.card:nth-child(3) #input{display:flex;flex-direction:column;justify-content:center}
+#game>.card:nth-child(3) #out:not([hidden]){display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center}
+#out>.rbar,#out>.cmp,#out>#next,#out>.stk{grid-column:1/-1}#out>.ca{grid-column:1/-1;margin:0;order:8}#out>#next{order:9}#out>.ca{padding:6px 10px}
+#out>#msg{grid-column:1;margin:0;align-self:end}#out>#spd{grid-column:1;margin:0!important;align-self:start}
+#out>#pts{grid-column:2;grid-row:3 / span 2;font-size:2.3rem;margin:0;text-align:right}
+#out .cmp div{padding:7px 12px}#out .cmp b{font-size:1.05rem}#out #next{padding:13px}
+#game:has(#cc[hidden])>.card:nth-child(2){grid-column:1/-1;grid-row:1}
+#game:has(#cc[hidden])>.card:nth-child(3){grid-column:1/-1;grid-row:2}
+#game:has(#cc[hidden]) .cw{height:auto;flex:1 1 0;display:block}
+#game:has(#cc[hidden]) .cw #svg{height:100%;width:100%}
+}
+/* v121 bouton page d'accueil */
+#game>.card:nth-child(2){position:relative}
+#home,#home2{background:var(--up)!important;color:var(--on-up)!important;font-weight:800}#home{display:none;position:absolute;top:12px;right:14px;width:auto;padding:13px 26px;font-size:1.05rem;border-radius:99px;z-index:3;box-shadow:0 8px 24px color-mix(in srgb,var(--up) 40%,transparent)}
+#game:has(#out:not([hidden])) #home{display:block}#game:has(#out:not([hidden])) #ck{visibility:hidden}
+#home2{width:100%;padding:18px;font-size:1.15rem;margin-bottom:14px;box-shadow:0 8px 24px color-mix(in srgb,var(--up) 40%,transparent)}
+@media (max-width:899px){#home{top:10px;right:10px;padding:11px 18px;font-size:.95rem}}
 </style>
 <meta name="description" content="Devine l’ATH : un jeu gratuit où tu devines le market cap maximum (ATH) de vrais memecoins Solana sans voir le chart. Mode classique et ranked, en français, anglais et espagnol.">
 <link rel="canonical" href="https://devgglatube.github.io/devine-ath/">
@@ -315,7 +415,6 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Devine l’ATH","url":"https://devgglatube.github.io/devine-ath/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","es"]}</script>
 </head>
 <body>
-
 <div class="app">
 <aside class="side" id="menu" role="navigation">
   <div class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22E27A"/><path d="M6 22 L13 13 L18 18 L26 8" fill="none" stroke="#06150C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="logo">devine l’ATH</div><small class="tg">Lis le narratif, devine l’ATH.</small></div></div>
@@ -326,7 +425,8 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <div class="navh">Jouer</div>
     <button data-a="casual">Mode classique<small>Gratuit · sans limite de temps</small></button>
     <button data-a="ranked" id="mrk">Mode ranked<small id="msub"></small></button>
-    <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small></button>
+    <button data-a="daily" id="mdl">Défi du jour<small id="dsub"></small><span class="dchk" hidden aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+    <div class="navh">Progression</div>
     <button data-a="scores">Classement et scores</button>
     <button data-a="ranks">Rangs et profil</button>
     <div class="navh">Apprendre</div>
@@ -334,11 +434,14 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <button data-a="trust">Transparence<small>Score, sources des données, limites</small></button>
     <div class="navh">Bots</div>
     <button data-a="bot">Entraîner mon bot<small>Données et API pour tes bots</small></button>
-    <button data-a="rent">Louer mon bot<small>Gagne en prêtant ses prédictions</small></button>
+    <button data-a="rent">Louer mon bot<small>Gagne en louant ses prédictions</small></button>
+    <div class="navsp"></div>
+    <button data-a="settings">Paramètres<small>Langue et thème de couleur</small></button>
   </nav>
-  <div class="langs" id="langs"><span class="k">Langue</span><button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="es">ES</button></div>
 </aside>
 <main>
+<div class="card" id="flive" hidden></div>
+<button id="logout" hidden><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3"/><path d="M16 8l4 4-4 4M20 12H9"/></svg> Se déconnecter</button>
 <div class="top"><div class="pill" id="meta"></div></div>
 <div class="bar"><i id="pg"></i></div>
 
@@ -365,7 +468,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
   </article>
 
   <article class="card">
-    <div class="ch-head"><span class="k">Market cap</span><span class="k" id="ck"></span></div>
+    <div class="ch-head"><span class="k">Market cap</span><span class="k" id="ck"></span><button id="home" type="button">Page d’accueil</button></div>
     <div id="cv">???</div>
     <div class="cw" id="cw">
       <svg id="svg" viewBox="0 0 360 200" role="img" aria-label="Chart du market cap">
@@ -387,14 +490,19 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
       <div id="tm" hidden><div class="tbar"><i id="tb"></i></div><span id="ts"></span></div>
       <div class="k" style="text-align:center">Ton ATH (market cap max)</div>
       <div class="guess" id="g"></div>
-      <input type="range" id="s" min="0" max="1000" value="500" aria-label="Prédiction du market cap maximum">
+      <input type="range" id="s" min="0" max="100000" value="500" aria-label="Prédiction du market cap maximum">
+      <div class="fine" id="fine"><button data-f="0.5">÷2</button><button data-f="0.9">−10 %</button><button data-f="0.99">−1 %</button><input id="gin" type="text" inputmode="text" autocomplete="off" aria-label="Valeur exacte"><button data-f="1.01">+1 %</button><button data-f="1.1">+10 %</button><button data-f="2">×2</button></div>
+      <p class="note" style="margin:6px 0 10px;text-align:center">Tape une valeur exacte (ex. 450k ou 2,5M) ou affine avec les boutons.</p>
       <div class="ticks"><span>10 K$</span><span>1 M$</span><span>150 M$</span></div>
       <button id="ok">Valider ma prédiction</button>
     </div>
-    <div id="rdy" hidden><p id="rdd" hidden>Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.</p><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><div id="cnt"><label for="cn" class="k">Nombre de coins à prédire</label><b id="cnv"></b><input type="range" id="cn" min="3" max="25" step="1" value="10" aria-label="Nombre de coins à prédire"></div><p id="rdv" hidden>Entraînement : tu rejoues les coins que tu as le plus ratés, sans limite de temps. Aucun point n’est gagné.</p><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><button id="go">Lancer la manche</button></div>
+    <div id="rdy" hidden><p id="rdd" hidden>Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.</p><p id="rdr">Mode ranked : le chrono de 6 s démarre quand tu appuies.</p><div id="cnt"><label for="cn" class="k">Nombre de coins à prédire</label><b id="cnv"></b><input type="range" id="cn" min="3" max="25" step="1" value="10" aria-label="Nombre de coins à prédire"></div><p id="rdv" hidden>Entraînement : tu rejoues les coins que tu as le plus ratés, sans limite de temps. Aucun point n’est gagné.</p><p id="rdc">Mode classique : sans limite de temps, le coin s’affiche quand tu appuies.</p><p id="rdf" hidden>Partie entre amis : mêmes coins pour tous, chacun joue à son rythme et le classement se met à jour en direct.</p><button id="go">Lancer la manche</button><button id="frb" class="ghost"><svg class="ri fri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6 0 4.5 2 4.5 4.8"/></svg> Jouer avec des amis</button></div>
     <div id="out" hidden>
+      <div id="cur" aria-hidden="true"></div>
+<div class="rbar" id="rbar" aria-hidden="true"><div class="rtr"></div><span class="rg" id="rg"></span><span class="rf" id="rf"><svg viewBox="0 0 24 28"><path class="fp" d="M5 26V3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/><path class="ff" d="M5.6 4.2c3.4-1.6 6.2 1.6 9.6 0 1.6-.8 3-.9 4.2-.4v9.4c-1.2-.5-2.6-.4-4.2.4-3.4 1.6-6.2-1.6-9.6 0z" fill="var(--up)"/></svg></span><span class="rl rlg" id="rlg"></span><span class="rl rlf" id="rlf"></span></div>
       <div class="cmp"><div><span class="k">Ta prédiction</span><b id="mg"></b></div><div><span class="k">ATH réel</span><b id="ma"></b></div></div>
       <div class="verdict" id="msg"></div>
+      <div class="k" id="spd" style="margin:4px 2px 0"></div>
       <div class="stk" id="stk" hidden></div>
       <div class="pts" id="pts"></div>
       <div class="ca" id="ca" hidden><span class="k">CA</span><code id="cav"></code><button id="cac" class="alt" aria-label="Copier le CA">Copier</button><a id="cad" target="_blank" rel="noopener noreferrer">Dexscreener</a></div>
@@ -404,6 +512,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
 </section>
 
 <section id="end" class="card" hidden>
+  <button id="home2" type="button" class="homeb">Page d’accueil</button>
   <div class="k">Score final</div>
   <div class="big" id="total"></div>
   <p class="verdict" id="verdict"></p>
@@ -411,7 +520,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
   <div class="sum" id="sum"></div>
   <button id="again">Rejouer</button>
   <button id="missb" class="ghost" hidden>Rejouer mes coins les plus ratés</button>
-  <button id="share" class="ghost">Partager mon score</button>
+  <button id="flexd" class="ghost" hidden>🔥 Flex mes stats</button>
   <button id="imgb" class="ghost">Créer l’image de mon score</button>
   <input id="sharetext" readonly hidden aria-label="Texte à copier">
 </section>
@@ -489,6 +598,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Valide : le chart se dévoile et ton score du coin s’affiche. Enchaîne jusqu’à la fin de la partie.</p>
     <div class="k" style="margin-top:14px">Comment le score est calculé</div>
     <p class="note" style="margin-top:6px">Chaque coin vaut jusqu’à 1 000 points. Plus ta prédiction est proche de l’ATH réel, plus tu gagnes : pile juste = 1 000, à un facteur 10 près = 500, à un facteur 100 près = 0. L’erreur se mesure en multiples, pas en dollars.</p>
+    <p class="note" style="margin-top:6px">La vitesse compte : les points de chaque coin sont multipliés par un bonus de vitesse. Réponds en moins de 3 secondes pour garder 100 % des points ; plus tu prends de temps, plus le bonus baisse, jusqu’à 60 % à partir de 30 secondes.</p>
     <p class="note" style="margin-top:6px">La série compte les coins d’affilée où ta prédiction est à moins de ×3 de l’ATH. Elle sert à mesurer ta régularité : elle ne rapporte aucun point.</p>
     <p class="note" style="margin-top:6px">Après une partie, tu peux rejouer les coins que tu as le plus ratés (écart de plus de ×5) en mode entraînement : sans limite de temps, et sans points.</p>
     </div>
@@ -515,7 +625,6 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <div class="k" style="margin-top:14px">Entraîner un bot</div>
     <p class="note" style="margin-top:6px">Ton bot peut jouer à ta place pour apprendre : il demande un coin (sans l’ATH), donne sa prédiction et reçoit l’ATH réel avec son score. Ses parties ne comptent pas au classement. Ouvre « Entraîner mon bot » pour le code et le dataset.</p>
     </div>
-    <div class="pl-slot"></div>
     <p class="note" style="margin-top:6px">Le jeu est un exercice de prédiction, pas un conseil financier.</p>
   </div>
 <div id="rent-v" hidden>
@@ -594,6 +703,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <p class="note" style="margin-top:6px">Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.</p>
     <div class="k" style="margin-top:16px">Le calcul du score</div>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Points par coin = 1 000 × (1 − |log10(prédiction ÷ ATH réel)| ÷ 2), jamais en dessous de 0.</p>
+    <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Ce score est ensuite multiplié par un bonus de vitesse : ×1 jusqu’à 3 secondes, puis dégressif jusqu’à ×0,6 à partir de 30 secondes.</p>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Donc pile juste = 1 000, un écart d’un facteur 10 = 500, un facteur 100 ou plus = 0.</p>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">En ranked : les RP gagnés ou perdus valent (performance − 55 %) × 200, entre −150 et +100, avec des pertes majorées de 30 % par rang.</p>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Les mises sont en points du jeu, jamais en argent réel : 0, 50, 100, 200, 350 puis 600 points selon le rang.</p>
@@ -604,7 +714,7 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Un robot ajoute de nouveaux coins toutes les heures ; la page est republiée avec ces données toutes les 4 heures.</p>
     <p class="note" id="trust-n" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px"></p>
     <p class="note" style="margin-top:6px">Limite : l’ATH est calculé à partir de la courbe disponible et peut différer légèrement d’un autre site.</p>
-    <p class="note" style="margin-top:6px">Vérifie toi-même : les coins, leurs courbes et leurs ATH sont publics. <a href="https://github.com/devgglatube/devine-ath" target="_blank" rel="noopener noreferrer">Voir les données sur GitHub</a></p>
+    <p class="note" style="margin-top:6px">Vérifie par toi-même : les coins, leurs courbes et leurs ATH sont publics. <a href="https://github.com/devgglatube/devine-ath" target="_blank" rel="noopener noreferrer">Voir les données sur GitHub</a></p>
     <div class="k" style="margin-top:16px">Ce que le site ne fait pas</div>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Il ne passe aucun ordre de trading et ne demande jamais de clé privée ni de phrase secrète.</p>
     <p class="note" style="margin:4px 0 0 0;padding-left:14px;text-indent:-14px">Il ne donne pas de conseil financier et ne promet aucun gain : c’est un exercice de prédiction.</p>
@@ -631,9 +741,26 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
     <p class="note" style="margin-top:6px">Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.</p>
     <p class="note" style="margin-top:6px">Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.</p>
   </div>
+<div id="daily-v" hidden></div>
+<div id="fr-v" hidden></div>
+<div id="set-v" hidden>
+    <div class="k">Langue</div>
+    <div class="langs" id="langs"><button data-l="fr">Français</button><button data-l="en">English</button><button data-l="es">Español</button></div>
+    <div class="k" style="margin-top:18px">Apparence</div>
+    <div class="langs" id="modes"><button data-md="dark">Sombre</button><button data-md="light">Clair</button></div>
+    <div class="k" style="margin-top:18px">Échelle du curseur</div>
+    <div class="langs" id="scales"><button data-sc="lin">Linéaire</button><button data-sc="log">Logarithmique</button></div>
+    <p class="note" style="margin:6px 0 0">Linéaire : les graduations sont régulières, mais les petits market caps se règlent finement avec les flèches du clavier. Logarithmique : plus de précision sur les petits coins.</p>
+    <div class="k" style="margin-top:18px">Sons</div>
+    <div class="langs" id="sounds"><button data-sn="1">Activés</button><button data-sn="0">Coupés</button></div>
+    <div class="k" style="margin-top:18px">Tutoriel</div>
+    <div class="langs" id="tutob"><button data-tt="1">Revoir le tutoriel</button></div>
+    <div class="k" style="margin-top:18px">Thème de couleur</div>
+    <div class="themes" id="themes"></div>
+  </div>
 <div id="ac-v" hidden></div>
   <div id="rk-v" hidden>
-    <label class="k" for="pn">Pseudo</label><input id="pn" maxlength="14" autocomplete="off">
+    <label class="k" for="pn">Pseudo</label><div class="pnr"><span id="pnic"></span><input id="pn" maxlength="14" autocomplete="off"></div>
     <div class="k" id="rp-t"></div><div class="bar" style="margin-top:8px"><i id="rp-b"></i></div>
     <ul id="ladder"></ul>
     <div class="k" style="margin-top:14px">Ton biais de prédiction</div><div class="stat" id="bias"></div>
@@ -645,6 +772,16 @@ input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 6px rgba(0,21
 </main>
 </div>
 
+<div id="intro" role="dialog" aria-label="Langue">
+<div class="ig"></div>
+<svg class="ic" viewBox="0 0 400 150" aria-hidden="true"><path class="ar" d="M10 130 L60 100 L95 112 L140 70 L180 84 L230 40 L270 58 L330 18 L330 140 L10 140Z"/><path class="ln" d="M10 130 L60 100 L95 112 L140 70 L180 84 L230 40 L270 58 L330 18"/><circle class="rg" cx="330" cy="18" r="6"/><circle class="dt" cx="330" cy="18" r="6"/></svg>
+<div class="iw"><b>Devine l’ATH</b><span>Lis le narratif, devine l’ATH.</span></div>
+<div class="il" id="ilang"><button data-l="fr">Français</button><button data-l="en">English</button><button data-l="es">Español</button></div>
+<div class="ih" id="ihint">Choisis ta langue pour commencer</div>
+</div>
+<script>(function(){var it=document.getElementById("intro");if(!it)return;function c(){it.classList.add("out");setTimeout(function(){if(it.parentNode)it.parentNode.removeChild(it)},800)}
+it.querySelector("#ilang").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-l]");if(!b)return;try{localStorage.setItem("dath.lang",b.dataset.l)}catch(x){}setTimeout(c,300)});
+})();</script>
 <script>
 // Coins de démo (Solana, valeurs approximatives), utilisés tant que coins.json est absent.
 let COINS=[
@@ -657,7 +794,9 @@ const $=id=>document.getElementById(id);
 // ===== Langues : le français est la source, T() traduit à l’affichage =====
 const LANGS={fr:"Français",en:"English",es:"Español"};
 let LANG="en";
+let INTRO_DONE=false,DREADY=false,TUT=false;let LSAVED=false;try{LSAVED=!!localStorage.getItem("dath.lang")}catch(e){}
 try{const s=localStorage.getItem("dath.lang"),n=(navigator.language||"").slice(0,2).toLowerCase();LANG=LANGS[s]?s:LANGS[n]?n:"en"}catch(e){}
+LANG="en";
 const DICT={
 en:{
 "devine l’ATH":"guess the ATH","Connexion":"Sign in","Connecté":"Signed in","Menu":"Menu","Mode classique":"Classic mode","Gratuit · sans limite de temps":"Free · no time limit","Mode ranked":"Ranked mode",
@@ -723,13 +862,13 @@ es:{
 }};
 Object.assign(DICT.en,{"Comment ça marche": "How it works", "Règles, score et rangs expliqués": "Rules, score and ranks explained", "Le principe": "The idea", "On te montre la courbe de market cap d’un memecoin, sans le sommet. Tu devines son ATH (le plus haut market cap jamais atteint) avec le curseur, puis tu vois la vraie valeur et ton score.": "You see a memecoin’s market cap chart, without the peak. You guess its ATH (the highest market cap it ever reached) with the slider, then you see the real value and your score.", "Comment jouer": "How to play", "Regarde le coin : nom, holders, chaîne, date de lancement et description.": "Look at the coin: name, holders, chain, launch date and description.", "Bouge le curseur pour placer ta prédiction, de 10 K$ à 150 M$ (échelle logarithmique : chaque graduation multiplie la valeur).": "Move the slider to place your guess, from $10K to $150M (logarithmic scale: each step multiplies the value).", "Valide : le chart se dévoile et ton score du coin s’affiche. Enchaîne jusqu’à la fin de la partie.": "Confirm: the chart is revealed and your score for the coin appears. Keep going until the game ends.", "Comment le score est calculé": "How the score is calculated", "Chaque coin vaut jusqu’à 1 000 points. Plus ta prédiction est proche de l’ATH réel, plus tu gagnes : pile juste = 1 000, à un facteur 10 près = 500, à un facteur 100 près = 0. L’erreur se mesure en multiples, pas en dollars.": "Each coin is worth up to 1,000 points. The closer your guess is to the real ATH, the more you earn: spot on = 1,000, off by a factor of 10 = 500, off by a factor of 100 = 0. Error is measured in multiples, not dollars.", "Mode classique et mode ranked": "Classic mode and ranked mode", "Classique : gratuit, sans limite de temps, pour s’entraîner et apprendre à lire les courbes.": "Classic: free, no time limit, to practise and learn to read charts.", "Ranked : tu paies une mise en points, tu as 6 secondes par coin, et tu gagnes ou perds des RP (rank points) selon ta performance. Tu pars avec 500 points.": "Ranked: you pay a stake in points, you get 6 seconds per coin, and you win or lose RP (rank points) based on your performance. You start with 500 points.", "Au-dessus de 55 % de performance tu gagnes des RP, en dessous tu en perds, et les pertes grossissent avec ton rang.": "Above 55% performance you gain RP, below it you lose RP, and losses grow with your rank.", "Quitter une partie ranked en cours te fait perdre ta mise.": "Leaving a ranked game in progress loses your stake.", "Rangs": "Ranks", "Six rangs, du plus bas au plus haut : Exit Liquidity, Paper Hands, Degen, Sniper, KOL et Drainer. Plus ton rang monte, plus la mise est chère. KOL et Drainer demandent aussi une place dans le top 500 et le top 100 du classement en ligne. Le détail est dans « Rangs et profil ».": "Six ranks, from lowest to highest: Exit Liquidity, Paper Hands, Degen, Sniper, KOL and Drainer. The higher your rank, the higher the stake. KOL and Drainer also need a spot in the top 500 and top 100 of the online leaderboard. Details are in “Ranks and profile”.", "Classement et sauvegarde": "Leaderboard and saving", "Tes parties et tes stats sont gardées sur cet appareil. Pour apparaître au classement en ligne, ouvre le jeu depuis son lien en étant connecté à claude.ai.": "Your games and stats are kept on this device. To appear on the online leaderboard, open the game from its link while signed in to claude.ai.", "Entraîner un bot": "Train a bot", "Ton bot peut jouer à ta place pour apprendre : il demande un coin (sans l’ATH), donne sa prédiction et reçoit l’ATH réel avec son score. Ses parties ne comptent pas au classement. Ouvre « Entraîner mon bot » pour le code et le dataset.": "Your bot can play for you to learn: it asks for a coin (without the ATH), gives its guess and gets the real ATH with its score. Its games do not count on the leaderboard. Open “Train my bot” for the code and dataset.", "Le jeu est un exercice de prédiction, pas un conseil financier.": "The game is a prediction exercise, not financial advice."});Object.assign(DICT.es,{"Comment ça marche": "Cómo funciona", "Règles, score et rangs expliqués": "Reglas, puntuación y rangos explicados", "Le principe": "La idea", "On te montre la courbe de market cap d’un memecoin, sans le sommet. Tu devines son ATH (le plus haut market cap jamais atteint) avec le curseur, puis tu vois la vraie valeur et ton score.": "Te mostramos la curva de market cap de un memecoin, sin el máximo. Adivinas su ATH (el market cap más alto que alcanzó) con el control deslizante y ves el valor real y tu puntuación.", "Comment jouer": "Cómo jugar", "Regarde le coin : nom, holders, chaîne, date de lancement et description.": "Mira la moneda: nombre, holders, cadena, fecha de lanzamiento y descripción.", "Bouge le curseur pour placer ta prédiction, de 10 K$ à 150 M$ (échelle logarithmique : chaque graduation multiplie la valeur).": "Mueve el control para colocar tu predicción, de 10 K$ a 150 M$ (escala logarítmica: cada paso multiplica el valor).", "Valide : le chart se dévoile et ton score du coin s’affiche. Enchaîne jusqu’à la fin de la partie.": "Valida: se revela el gráfico y aparece tu puntuación de la moneda. Sigue hasta el final de la partida.", "Comment le score est calculé": "Cómo se calcula la puntuación", "Chaque coin vaut jusqu’à 1 000 points. Plus ta prédiction est proche de l’ATH réel, plus tu gagnes : pile juste = 1 000, à un facteur 10 près = 500, à un facteur 100 près = 0. L’erreur se mesure en multiples, pas en dollars.": "Cada moneda vale hasta 1.000 puntos. Cuanto más cerca esté tu predicción del ATH real, más ganas: exacto = 1.000, a un factor 10 = 500, a un factor 100 = 0. El error se mide en múltiplos, no en dólares.", "Mode classique et mode ranked": "Modo clásico y modo ranked", "Classique : gratuit, sans limite de temps, pour s’entraîner et apprendre à lire les courbes.": "Clásico: gratis, sin límite de tiempo, para practicar y aprender a leer las curvas.", "Ranked : tu paies une mise en points, tu as 6 secondes par coin, et tu gagnes ou perds des RP (rank points) selon ta performance. Tu pars avec 500 points.": "Ranked: pagas una apuesta en puntos, tienes 6 segundos por moneda y ganas o pierdes RP (puntos de rango) según tu rendimiento. Empiezas con 500 puntos.", "Au-dessus de 55 % de performance tu gagnes des RP, en dessous tu en perds, et les pertes grossissent avec ton rang.": "Por encima del 55 % de rendimiento ganas RP, por debajo pierdes, y las pérdidas crecen con tu rango.", "Quitter une partie ranked en cours te fait perdre ta mise.": "Abandonar una partida ranked en curso hace perder la apuesta.", "Rangs": "Rangos", "Six rangs, du plus bas au plus haut : Exit Liquidity, Paper Hands, Degen, Sniper, KOL et Drainer. Plus ton rang monte, plus la mise est chère. KOL et Drainer demandent aussi une place dans le top 500 et le top 100 du classement en ligne. Le détail est dans « Rangs et profil ».": "Seis rangos, del más bajo al más alto: Exit Liquidity, Paper Hands, Degen, Sniper, KOL y Drainer. Cuanto más sube tu rango, más cara es la apuesta. KOL y Drainer exigen además un puesto en el top 500 y el top 100 de la clasificación en línea. El detalle está en «Rangos y perfil».", "Classement et sauvegarde": "Clasificación y guardado", "Tes parties et tes stats sont gardées sur cet appareil. Pour apparaître au classement en ligne, ouvre le jeu depuis son lien en étant connecté à claude.ai.": "Tus partidas y estadísticas se guardan en este dispositivo. Para aparecer en la clasificación en línea, abre el juego desde su enlace con tu sesión de claude.ai.", "Entraîner un bot": "Entrenar un bot", "Ton bot peut jouer à ta place pour apprendre : il demande un coin (sans l’ATH), donne sa prédiction et reçoit l’ATH réel avec son score. Ses parties ne comptent pas au classement. Ouvre « Entraîner mon bot » pour le code et le dataset.": "Tu bot puede jugar por ti para aprender: pide una moneda (sin el ATH), da su predicción y recibe el ATH real con su puntuación. Sus partidas no cuentan en la clasificación. Abre «Entrenar mi bot» para el código y el dataset.", "Le jeu est un exercice de prédiction, pas un conseil financier.": "El juego es un ejercicio de predicción, no un consejo financiero."});
 Object.assign(DICT.en,{"Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.": "Your bot can play here to learn: it asks for a coin (without the ATH), answers with its guess, and gets the real ATH and its score. Bot games do not count on the leaderboard.", "Le principe en 4 étapes": "The idea in 4 steps", "Ton bot demande un coin : tu lui donnes les données visibles (courbe de market cap, holders, chaîne, lancement), jamais l’ATH.": "Your bot asks for a coin: you give it the visible data (market cap chart, holders, chain, launch), never the ATH.", "Il répond avec sa prédiction d’ATH, en dollars de market cap.": "It answers with its ATH guess, in market cap dollars.", "Le jeu lui renvoie l’ATH réel et un score de 0 à 1 000, selon l’écart en multiples (x2, x10…).": "The game sends back the real ATH and a score from 0 to 1,000, based on the gap in multiples (x2, x10…).", "Ton bot ajuste sa stratégie et rejoue : tes stats et la courbe de progression montrent s’il s’améliore.": "Your bot adjusts its strategy and plays again: your stats and progress curve show whether it improves.", "Les forfaits": "The plans", "Gratuit": "Free", "pour toujours": "forever", "Disponible maintenant": "Available now", "Dataset JSON complet des coins": "Full JSON dataset of the coins", "Code d’exemple pour ton bot": "Example code for your bot", "Parties de bot illimitées en local": "Unlimited bot games locally", "Stats sur cet appareil": "Stats on this device", "par mois": "per month", "Bientôt": "Coming soon", "3 bots suivis séparément": "3 bots tracked separately", "Jeu de test caché, sans fuite de l’ATH": "Hidden test set, no ATH leak", "Rapport détaillé : où ton bot se trompe": "Detailed report: where your bot goes wrong", "Classement public des bots": "Public bot leaderboard", "Équipe": "Team", "15 bots et historique des versions": "15 bots and version history", "Clé API pour tes tests automatiques": "API key for your automated tests", "Coins en direct, notés après confirmation de l’ATH": "Live coins, scored once the ATH is confirmed", "Support prioritaire": "Priority support", "Crédits": "Credits", "les 1 000 parties": "per 1,000 games", "S’ajoutent à n’importe quel forfait": "Add to any plan", "Sans date d’expiration": "No expiry date", "Pour les pics d’entraînement": "For training peaks", "Seul le forfait Gratuit est ouvert. Les forfaits payants arrivent plus tard : les prix sont indicatifs et peuvent changer, et rien n’est encaissé pour l’instant.": "Only the Free plan is open. Paid plans come later: prices are indicative and may change, and nothing is charged for now.", "Stats de tes bots": "Your bots’ stats", "Pour le bot (console du navigateur ou userscript)": "For the bot (browser console or userscript)"});Object.assign(DICT.es,{"Ton bot peut jouer ici pour apprendre : il demande un coin (sans l’ATH), répond avec sa prédiction, et reçoit l’ATH réel et son score. Les parties de bot ne comptent pas au classement.": "Tu bot puede jugar aquí para aprender: pide una moneda (sin el ATH), responde con su predicción y recibe el ATH real y su puntuación. Las partidas de bot no cuentan en la clasificación.", "Le principe en 4 étapes": "La idea en 4 pasos", "Ton bot demande un coin : tu lui donnes les données visibles (courbe de market cap, holders, chaîne, lancement), jamais l’ATH.": "Tu bot pide una moneda: le das los datos visibles (curva de market cap, holders, cadena, lanzamiento), nunca el ATH.", "Il répond avec sa prédiction d’ATH, en dollars de market cap.": "Responde con su predicción de ATH, en dólares de market cap.", "Le jeu lui renvoie l’ATH réel et un score de 0 à 1 000, selon l’écart en multiples (x2, x10…).": "El juego le devuelve el ATH real y una puntuación de 0 a 1.000, según la diferencia en múltiplos (x2, x10…).", "Ton bot ajuste sa stratégie et rejoue : tes stats et la courbe de progression montrent s’il s’améliore.": "Tu bot ajusta su estrategia y vuelve a jugar: tus estadísticas y la curva de progreso muestran si mejora.", "Les forfaits": "Los planes", "Gratuit": "Gratis", "pour toujours": "para siempre", "Disponible maintenant": "Disponible ahora", "Dataset JSON complet des coins": "Dataset JSON completo de las monedas", "Code d’exemple pour ton bot": "Código de ejemplo para tu bot", "Parties de bot illimitées en local": "Partidas de bot ilimitadas en local", "Stats sur cet appareil": "Estadísticas en este dispositivo", "par mois": "al mes", "Bientôt": "Próximamente", "3 bots suivis séparément": "3 bots seguidos por separado", "Jeu de test caché, sans fuite de l’ATH": "Conjunto de prueba oculto, sin filtrar el ATH", "Rapport détaillé : où ton bot se trompe": "Informe detallado: dónde falla tu bot", "Classement public des bots": "Clasificación pública de bots", "Équipe": "Equipo", "15 bots et historique des versions": "15 bots e historial de versiones", "Clé API pour tes tests automatiques": "Clave API para tus pruebas automáticas", "Coins en direct, notés après confirmation de l’ATH": "Monedas en directo, puntuadas al confirmar el ATH", "Support prioritaire": "Soporte prioritario", "Crédits": "Créditos", "les 1 000 parties": "por 1.000 partidas", "S’ajoutent à n’importe quel forfait": "Se suman a cualquier plan", "Sans date d’expiration": "Sin fecha de caducidad", "Pour les pics d’entraînement": "Para picos de entrenamiento", "Seul le forfait Gratuit est ouvert. Les forfaits payants arrivent plus tard : les prix sont indicatifs et peuvent changer, et rien n’est encaissé pour l’instant.": "Solo el plan Gratis está abierto. Los planes de pago llegarán más tarde: los precios son orientativos y pueden cambiar, y por ahora no se cobra nada.", "Stats de tes bots": "Estadísticas de tus bots", "Pour le bot (console du navigateur ou userscript)": "Para el bot (consola del navegador o userscript)"});
-Object.assign(DICT.en,{"Tu as un bot qui devine bien les ATH ? Loue-le à d’autres traders : ils utilisent ses prédictions, tu touches une part des revenus, et ton code reste chez toi.": "Got a bot that guesses ATHs well? Rent it to other traders: they use its predictions, you earn a share of the revenue, and your code stays with you.", "Comment ça marchera": "How it will work", "Ton bot prouve son niveau sur le jeu : assez de parties et un bon score moyen.": "Your bot proves its level in the game: enough games and a good average score.", "Tu mets ton bot en location et tu fixes ton prix mensuel.": "You list your bot for rent and set your monthly price.", "Les locataires reçoivent ses prédictions d’ATH. Ils ne voient jamais ton code ni ta stratégie.": "Renters receive its ATH predictions. They never see your code or your strategy.", "Chaque mois, la plateforme garde 20 % de commission et te reverse le reste.": "Each month, the platform keeps a 20% commission and pays you the rest.", "Ton bot est-il prêt ?": "Is your bot ready?", "Critères de départ, mesurés sur tes parties de bot. Ils pourront évoluer.": "Starting criteria, measured on your bot games. They may change.", "Exemple chiffré": "Worked example", "Prix fixé": "Price set", "par locataire et par mois": "per renter per month", "Commission": "Commission", "prélevée par la plateforme": "taken by the platform", "Ce que tu touches": "What you earn", "avec 20 locataires, par mois": "with 20 renters, per month", "Simple exemple de calcul : 20 × 15 € = 300 €, moins 60 € de commission. Ce n’est pas une promesse de revenu.": "Simple calculation example: 20 × €15 = €300, minus €60 commission. This is not a promise of income.", "Règles de confiance": "Trust rules", "Jamais de clé privée ni d’accès à ton wallet : seules les prédictions circulent.": "No private key and no wallet access, ever: only predictions are shared.", "Tes résultats sont affichés tels quels, sans promesse de gains pour les locataires.": "Your results are shown as they are, with no promise of gains for renters.", "Le code et la stratégie de ton bot restent privés, rien n’est publié sans ton accord.": "Your bot’s code and strategy stay private, nothing is published without your consent.", "Une prédiction n’est pas un conseil financier : chacun décide de ses trades.": "A prediction is not financial advice: everyone makes their own trading decisions.", "Bientôt": "Coming soon", "La location n’est pas encore ouverte : aucun paiement ni inscription possible pour l’instant. Cette page montre le fonctionnement prévu et ta progression.": "Renting is not open yet: no payment or sign-up is possible for now. This page shows the planned process and your progress.", "Louer mon bot": "Rent my bot", "Gagne en prêtant ses prédictions": "Earn by lending its predictions", "Au moins 100 parties de bot : {0} / 100": "At least 100 bot games: {0} / 100", "Score moyen de 60 % ou plus sur les 50 dernières : {0} %": "Average score of 60% or more over the last 50: {0}%", "Ton bot remplit les critères de départ.": "Your bot meets the starting criteria.", "Continue à entraîner ton bot pour remplir les critères.": "Keep training your bot to meet the criteria."});Object.assign(DICT.es,{"Tu as un bot qui devine bien les ATH ? Loue-le à d’autres traders : ils utilisent ses prédictions, tu touches une part des revenus, et ton code reste chez toi.": "¿Tienes un bot que adivina bien los ATH? Alquílalo a otros traders: usan sus predicciones, tú recibes una parte de los ingresos y tu código se queda contigo.", "Comment ça marchera": "Cómo funcionará", "Ton bot prouve son niveau sur le jeu : assez de parties et un bon score moyen.": "Tu bot demuestra su nivel en el juego: suficientes partidas y una buena puntuación media.", "Tu mets ton bot en location et tu fixes ton prix mensuel.": "Pones tu bot en alquiler y fijas tu precio mensual.", "Les locataires reçoivent ses prédictions d’ATH. Ils ne voient jamais ton code ni ta stratégie.": "Los inquilinos reciben sus predicciones de ATH. Nunca ven tu código ni tu estrategia.", "Chaque mois, la plateforme garde 20 % de commission et te reverse le reste.": "Cada mes, la plataforma se queda con un 20 % de comisión y te abona el resto.", "Ton bot est-il prêt ?": "¿Está listo tu bot?", "Critères de départ, mesurés sur tes parties de bot. Ils pourront évoluer.": "Criterios iniciales, medidos en tus partidas de bot. Podrán cambiar.", "Exemple chiffré": "Ejemplo con cifras", "Prix fixé": "Precio fijado", "par locataire et par mois": "por inquilino y mes", "Commission": "Comisión", "prélevée par la plateforme": "cobrada por la plataforma", "Ce que tu touches": "Lo que cobras", "avec 20 locataires, par mois": "con 20 inquilinos, al mes", "Simple exemple de calcul : 20 × 15 € = 300 €, moins 60 € de commission. Ce n’est pas une promesse de revenu.": "Simple ejemplo de cálculo: 20 × 15 € = 300 €, menos 60 € de comisión. No es una promesa de ingresos.", "Règles de confiance": "Reglas de confianza", "Jamais de clé privée ni d’accès à ton wallet : seules les prédictions circulent.": "Nunca claves privadas ni acceso a tu wallet: solo circulan las predicciones.", "Tes résultats sont affichés tels quels, sans promesse de gains pour les locataires.": "Tus resultados se muestran tal cual, sin promesa de ganancias para los inquilinos.", "Le code et la stratégie de ton bot restent privés, rien n’est publié sans ton accord.": "El código y la estrategia de tu bot siguen siendo privados, nada se publica sin tu consentimiento.", "Une prédiction n’est pas un conseil financier : chacun décide de ses trades.": "Una predicción no es un consejo financiero: cada uno decide sus operaciones.", "Bientôt": "Próximamente", "La location n’est pas encore ouverte : aucun paiement ni inscription possible pour l’instant. Cette page montre le fonctionnement prévu et ta progression.": "El alquiler aún no está abierto: por ahora no es posible pagar ni inscribirse. Esta página muestra el funcionamiento previsto y tu progreso.", "Louer mon bot": "Alquilar mi bot", "Gagne en prêtant ses prédictions": "Gana prestando sus predicciones", "Au moins 100 parties de bot : {0} / 100": "Al menos 100 partidas de bot: {0} / 100", "Score moyen de 60 % ou plus sur les 50 dernières : {0} %": "Puntuación media del 60 % o más en las últimas 50: {0} %", "Ton bot remplit les critères de départ.": "Tu bot cumple los criterios iniciales.", "Continue à entraîner ton bot pour remplir les critères.": "Sigue entrenando tu bot para cumplir los criterios."});
+Object.assign(DICT.en,{"Tu as un bot qui devine bien les ATH ? Loue-le à d’autres traders : ils utilisent ses prédictions, tu touches une part des revenus, et ton code reste chez toi.": "Got a bot that guesses ATHs well? Rent it to other traders: they use its predictions, you earn a share of the revenue, and your code stays with you.", "Comment ça marchera": "How it will work", "Ton bot prouve son niveau sur le jeu : assez de parties et un bon score moyen.": "Your bot proves its level in the game: enough games and a good average score.", "Tu mets ton bot en location et tu fixes ton prix mensuel.": "You list your bot for rent and set your monthly price.", "Les locataires reçoivent ses prédictions d’ATH. Ils ne voient jamais ton code ni ta stratégie.": "Renters receive its ATH predictions. They never see your code or your strategy.", "Chaque mois, la plateforme garde 20 % de commission et te reverse le reste.": "Each month, the platform keeps a 20% commission and pays you the rest.", "Ton bot est-il prêt ?": "Is your bot ready?", "Critères de départ, mesurés sur tes parties de bot. Ils pourront évoluer.": "Starting criteria, measured on your bot games. They may change.", "Exemple chiffré": "Worked example", "Prix fixé": "Price set", "par locataire et par mois": "per renter per month", "Commission": "Commission", "prélevée par la plateforme": "taken by the platform", "Ce que tu touches": "What you earn", "avec 20 locataires, par mois": "with 20 renters, per month", "Simple exemple de calcul : 20 × 15 € = 300 €, moins 60 € de commission. Ce n’est pas une promesse de revenu.": "Simple calculation example: 20 × €15 = €300, minus €60 commission. This is not a promise of income.", "Règles de confiance": "Trust rules", "Jamais de clé privée ni d’accès à ton wallet : seules les prédictions circulent.": "No private key and no wallet access, ever: only predictions are shared.", "Tes résultats sont affichés tels quels, sans promesse de gains pour les locataires.": "Your results are shown as they are, with no promise of gains for renters.", "Le code et la stratégie de ton bot restent privés, rien n’est publié sans ton accord.": "Your bot’s code and strategy stay private, nothing is published without your consent.", "Une prédiction n’est pas un conseil financier : chacun décide de ses trades.": "A prediction is not financial advice: everyone makes their own trading decisions.", "Bientôt": "Coming soon", "La location n’est pas encore ouverte : aucun paiement ni inscription possible pour l’instant. Cette page montre le fonctionnement prévu et ta progression.": "Renting is not open yet: no payment or sign-up is possible for now. This page shows the planned process and your progress.", "Louer mon bot": "Rent my bot", "Gagne en louant ses prédictions": "Earn by lending its predictions", "Au moins 100 parties de bot : {0} / 100": "At least 100 bot games: {0} / 100", "Score moyen de 60 % ou plus sur les 50 dernières : {0} %": "Average score of 60% or more over the last 50: {0}%", "Ton bot remplit les critères de départ.": "Your bot meets the starting criteria.", "Continue à entraîner ton bot pour remplir les critères.": "Keep training your bot to meet the criteria."});Object.assign(DICT.es,{"Tu as un bot qui devine bien les ATH ? Loue-le à d’autres traders : ils utilisent ses prédictions, tu touches une part des revenus, et ton code reste chez toi.": "¿Tienes un bot que adivina bien los ATH? Alquílalo a otros traders: usan sus predicciones, tú recibes una parte de los ingresos y tu código se queda contigo.", "Comment ça marchera": "Cómo funcionará", "Ton bot prouve son niveau sur le jeu : assez de parties et un bon score moyen.": "Tu bot demuestra su nivel en el juego: suficientes partidas y una buena puntuación media.", "Tu mets ton bot en location et tu fixes ton prix mensuel.": "Pones tu bot en alquiler y fijas tu precio mensual.", "Les locataires reçoivent ses prédictions d’ATH. Ils ne voient jamais ton code ni ta stratégie.": "Los inquilinos reciben sus predicciones de ATH. Nunca ven tu código ni tu estrategia.", "Chaque mois, la plateforme garde 20 % de commission et te reverse le reste.": "Cada mes, la plataforma se queda con un 20 % de comisión y te abona el resto.", "Ton bot est-il prêt ?": "¿Está listo tu bot?", "Critères de départ, mesurés sur tes parties de bot. Ils pourront évoluer.": "Criterios iniciales, medidos en tus partidas de bot. Podrán cambiar.", "Exemple chiffré": "Ejemplo con cifras", "Prix fixé": "Precio fijado", "par locataire et par mois": "por inquilino y mes", "Commission": "Comisión", "prélevée par la plateforme": "cobrada por la plataforma", "Ce que tu touches": "Lo que cobras", "avec 20 locataires, par mois": "con 20 inquilinos, al mes", "Simple exemple de calcul : 20 × 15 € = 300 €, moins 60 € de commission. Ce n’est pas une promesse de revenu.": "Simple ejemplo de cálculo: 20 × 15 € = 300 €, menos 60 € de comisión. No es una promesa de ingresos.", "Règles de confiance": "Reglas de confianza", "Jamais de clé privée ni d’accès à ton wallet : seules les prédictions circulent.": "Nunca claves privadas ni acceso a tu wallet: solo circulan las predicciones.", "Tes résultats sont affichés tels quels, sans promesse de gains pour les locataires.": "Tus resultados se muestran tal cual, sin promesa de ganancias para los inquilinos.", "Le code et la stratégie de ton bot restent privés, rien n’est publié sans ton accord.": "El código y la estrategia de tu bot siguen siendo privados, nada se publica sin tu consentimiento.", "Une prédiction n’est pas un conseil financier : chacun décide de ses trades.": "Una predicción no es un consejo financiero: cada uno decide sus operaciones.", "Bientôt": "Próximamente", "La location n’est pas encore ouverte : aucun paiement ni inscription possible pour l’instant. Cette page montre le fonctionnement prévu et ta progression.": "El alquiler aún no está abierto: por ahora no es posible pagar ni inscribirse. Esta página muestra el funcionamiento previsto y tu progreso.", "Louer mon bot": "Alquilar mi bot", "Gagne en louant ses prédictions": "Gana prestando sus predicciones", "Au moins 100 parties de bot : {0} / 100": "Al menos 100 partidas de bot: {0} / 100", "Score moyen de 60 % ou plus sur les 50 dernières : {0} %": "Puntuación media del 60 % o más en las últimas 50: {0} %", "Ton bot remplit les critères de départ.": "Tu bot cumple los criterios iniciales.", "Continue à entraîner ton bot pour remplir les critères.": "Sigue entrenando tu bot para cumplir los criterios."});
 Object.assign(DICT.en,{"Le but": "The goal", "Le but : valoriser la crédibilité de ton bot en lui donnant un score. Plus son score est élevé et régulier, plus on peut lui faire confiance avant de le laisser trader sur Axiom et Pump.fun. Le jeu ne passe jamais d’ordre : il note les prédictions, et ton bot trade ensuite de son côté, avec tes propres outils.": "The goal: build your bot’s credibility by giving it a score. The higher and steadier its score, the more it can be trusted before you let it trade on Axiom and Pump.fun. The game never places orders: it scores predictions, and your bot then trades on its own side, with your own tools.", "Les bots loués sont faits pour trader sur Axiom et Pump.fun. Le locataire reçoit les prédictions d’ATH et trade lui-même sur ces plateformes : la plateforme n’exécute aucun trade.": "Rented bots are built to trade on Axiom and Pump.fun. The renter receives the ATH predictions and trades on those platforms themselves: the platform executes no trades.", "Le but du jeu : entraîner les débutants à mieux valoriser les narratifs. Chaque coin porte une histoire (un mème, un personnage, l’actualité), et deviner jusqu’où elle peut le faire monter t’apprend à la juger. Les bots s’y exercent aussi, pour mieux trader sur Axiom et Pump.fun.": "The goal of the game: train beginners to better value narratives. Every coin carries a story (a meme, a character, the news), and guessing how high it can lift the coin teaches you to judge it. Bots practise here too, to trade better on Axiom and Pump.fun."});Object.assign(DICT.es,{"Le but": "El objetivo", "Le but : valoriser la crédibilité de ton bot en lui donnant un score. Plus son score est élevé et régulier, plus on peut lui faire confiance avant de le laisser trader sur Axiom et Pump.fun. Le jeu ne passe jamais d’ordre : il note les prédictions, et ton bot trade ensuite de son côté, avec tes propres outils.": "El objetivo: reforzar la credibilidad de tu bot dándole una puntuación. Cuanto más alta y estable sea, más se puede confiar en él antes de dejarlo operar en Axiom y Pump.fun. El juego nunca coloca órdenes: puntúa las predicciones y tu bot opera después por su cuenta, con tus propias herramientas.", "Les bots loués sont faits pour trader sur Axiom et Pump.fun. Le locataire reçoit les prédictions d’ATH et trade lui-même sur ces plateformes : la plateforme n’exécute aucun trade.": "Los bots alquilados están hechos para operar en Axiom y Pump.fun. El inquilino recibe las predicciones de ATH y opera él mismo en esas plataformas: la plataforma no ejecuta ninguna operación.", "Le but du jeu : entraîner les débutants à mieux valoriser les narratifs. Chaque coin porte une histoire (un mème, un personnage, l’actualité), et deviner jusqu’où elle peut le faire monter t’apprend à la juger. Les bots s’y exercent aussi, pour mieux trader sur Axiom et Pump.fun.": "El objetivo del juego: entrenar a los principiantes a valorar mejor las narrativas. Cada moneda lleva una historia (un meme, un personaje, la actualidad), y adivinar hasta dónde puede subirla te enseña a juzgarla. Los bots también practican aquí, para operar mejor en Axiom y Pump.fun."});
 Object.assign(DICT.en,{"Ton bot reste sur ton propre serveur : la plateforme lui envoie les coins et ne transmet aux locataires que ses prédictions, jamais son code ni son modèle.": "Your bot stays on your own server: the platform sends it the coins and passes only its predictions to renters, never its code or model."});Object.assign(DICT.es,{"Ton bot reste sur ton propre serveur : la plateforme lui envoie les coins et ne transmet aux locataires que ses prédictions, jamais son code ni son modèle.": "Tu bot se queda en tu propio servidor: la plataforma le envía las monedas y solo transmite sus predicciones a los inquilinos, nunca su código ni su modelo."});
 Object.assign(DICT.en,{"Idéal pour tester ton bot avant de payer": "Ideal to test your bot before paying", "Pensé pour prouver la crédibilité de ton bot avant de le louer": "Built to prove your bot’s credibility before renting it", "Pour les vendeurs de signaux et les petites équipes": "For signal sellers and small teams", "1 crédit = 1 partie de bot": "1 credit = 1 bot game", "Comprendre ton score de crédibilité": "Understanding your credibility score", "Chaque partie de bot donne un score de 0 à 1 000. La moyenne des dernières parties et sa régularité forment la crédibilité du bot : un bon bot est précis et stable, pas seulement chanceux une fois.": "Each bot game gives a score from 0 to 1,000. The average of recent games and how steady it is make up the bot’s credibility: a good bot is accurate and stable, not just lucky once.", "Conseils d’entraînement": "Training tips", "Entraîne-toi sur beaucoup de coins différents : lancements récents, coins morts, gros pumps.": "Train on many different coins: recent launches, dead coins, big pumps.", "Compare tes versions (v1, v2, v3) et ne garde que celle qui progresse.": "Compare your versions (v1, v2, v3) and keep only the one that improves.", "Ne te fie pas à un seul bon résultat : vise au moins 100 parties.": "Don’t rely on one good result: aim for at least 100 games.", "Exemple : l’ATH réel est 1 M$. Si tu devines 1 M$, tu gagnes 1 000 points ; si tu devines 100 K$ (÷10), 500 points ; si tu devines 10 K$ (÷100), 0 point.": "Example: the real ATH is $1M. Guess $1M and you earn 1,000 points; guess $100K (÷10) and you earn 500; guess $10K (÷100) and you earn 0.", "Repères pour lire un narratif": "Pointers for reading a narrative", "Un narratif fort est simple à raconter : un personnage, un mème ou une actualité que tout le monde reconnaît.": "A strong narrative is easy to tell: a character, meme or news story everyone recognises.", "Regarde si la communauté parle déjà du coin et si l’histoire peut se répéter, pas seulement se lire une fois.": "Check whether the community is already talking about the coin and whether the story can be retold, not just read once.", "Méfie-toi d’un coin dont l’histoire n’existe que pour vendre : la description et les tweets t’aident à juger.": "Be wary of a coin whose story exists only to sell: the description and tweets help you judge.", "Tu gardes 80 % du prix de location, la plateforme prélève 20 % de commission.": "You keep 80% of the rental price, the platform takes a 20% commission.", "Louer sans copier : comment ça marche techniquement": "Renting without copying: how it works technically", "Ton bot reste sur ton serveur et expose une adresse (un webhook) que la plateforme appelle.": "Your bot stays on your server and exposes an address (a webhook) that the platform calls.", "La plateforme sert d’intermédiaire : les locataires ne connaissent jamais cette adresse.": "The platform acts as go-between: renters never know this address.", "Elle limite le nombre de requêtes par locataire, pour qu’on ne puisse pas copier ton bot en collectant ses réponses.": "It limits requests per renter, so nobody can copy your bot by collecting its answers.", "Tu peux couper l’accès d’un locataire à tout moment.": "You can cut off a renter’s access at any time.", "Limite : un locataire peut toujours partager les prédictions qu’il reçoit. C’est pourquoi les conditions d’utilisation interdiront la revente.": "Limit: a renter can always share the predictions they receive. That is why the terms of use will forbid resale.", "Abrégé": "Short", "Classique": "Standard", "Développé": "Detailed"});Object.assign(DICT.es,{"Idéal pour tester ton bot avant de payer": "Ideal para probar tu bot antes de pagar", "Pensé pour prouver la crédibilité de ton bot avant de le louer": "Pensado para demostrar la credibilidad de tu bot antes de alquilarlo", "Pour les vendeurs de signaux et les petites équipes": "Para vendedores de señales y equipos pequeños", "1 crédit = 1 partie de bot": "1 crédito = 1 partida de bot", "Comprendre ton score de crédibilité": "Entender tu puntuación de credibilidad", "Chaque partie de bot donne un score de 0 à 1 000. La moyenne des dernières parties et sa régularité forment la crédibilité du bot : un bon bot est précis et stable, pas seulement chanceux une fois.": "Cada partida de bot da una puntuación de 0 a 1.000. La media de las últimas partidas y su regularidad forman la credibilidad del bot: un buen bot es preciso y estable, no solo afortunado una vez.", "Conseils d’entraînement": "Consejos de entrenamiento", "Entraîne-toi sur beaucoup de coins différents : lancements récents, coins morts, gros pumps.": "Entrena con muchas monedas distintas: lanzamientos recientes, monedas muertas, grandes pumps.", "Compare tes versions (v1, v2, v3) et ne garde que celle qui progresse.": "Compara tus versiones (v1, v2, v3) y quédate solo con la que mejora.", "Ne te fie pas à un seul bon résultat : vise au moins 100 parties.": "No te fíes de un solo buen resultado: apunta a al menos 100 partidas.", "Exemple : l’ATH réel est 1 M$. Si tu devines 1 M$, tu gagnes 1 000 points ; si tu devines 100 K$ (÷10), 500 points ; si tu devines 10 K$ (÷100), 0 point.": "Ejemplo: el ATH real es 1 M$. Si adivinas 1 M$, ganas 1.000 puntos; si adivinas 100 K$ (÷10), 500; si adivinas 10 K$ (÷100), 0.", "Repères pour lire un narratif": "Pistas para leer una narrativa", "Un narratif fort est simple à raconter : un personnage, un mème ou une actualité que tout le monde reconnaît.": "Una narrativa fuerte es fácil de contar: un personaje, un meme o una noticia que todos reconocen.", "Regarde si la communauté parle déjà du coin et si l’histoire peut se répéter, pas seulement se lire une fois.": "Mira si la comunidad ya habla de la moneda y si la historia puede repetirse, no solo leerse una vez.", "Méfie-toi d’un coin dont l’histoire n’existe que pour vendre : la description et les tweets t’aident à juger.": "Desconfía de una moneda cuya historia solo existe para vender: la descripción y los tuits te ayudan a juzgar.", "Tu gardes 80 % du prix de location, la plateforme prélève 20 % de commission.": "Te quedas con el 80 % del precio del alquiler, la plataforma cobra un 20 % de comisión.", "Louer sans copier : comment ça marche techniquement": "Alquilar sin copiar: cómo funciona técnicamente", "Ton bot reste sur ton serveur et expose une adresse (un webhook) que la plateforme appelle.": "Tu bot se queda en tu servidor y expone una dirección (un webhook) que la plataforma llama.", "La plateforme sert d’intermédiaire : les locataires ne connaissent jamais cette adresse.": "La plataforma hace de intermediaria: los inquilinos nunca conocen esa dirección.", "Elle limite le nombre de requêtes par locataire, pour qu’on ne puisse pas copier ton bot en collectant ses réponses.": "Limita las solicitudes por inquilino, para que nadie pueda copiar tu bot recopilando sus respuestas.", "Tu peux couper l’accès d’un locataire à tout moment.": "Puedes cortar el acceso de un inquilino en cualquier momento.", "Limite : un locataire peut toujours partager les prédictions qu’il reçoit. C’est pourquoi les conditions d’utilisation interdiront la revente.": "Límite: un inquilino siempre puede compartir las predicciones que recibe. Por eso las condiciones de uso prohibirán la reventa.", "Abrégé": "Resumido", "Classique": "Clásico", "Développé": "Detallado"});
 Object.assign(DICT.en,{"Abrégé": "Short", "L’essentiel en quelques lignes.": "The essentials in a few lines.", "Classique": "Standard", "Les explications utiles, les étapes et les exemples.": "The useful explanations, steps and examples.", "Développé": "Detailed", "Tout le détail, avec exemples, conseils et fonctionnement technique.": "Every detail, with examples, tips and technical workings.", "Comment veux-tu lire cette page ?": "How do you want to read this page?", "Tu pourras changer de niveau à tout moment en haut de la page.": "You can switch level at any time at the top of the page.", "Niveau de détail": "Level of detail"});Object.assign(DICT.es,{"Abrégé": "Resumido", "L’essentiel en quelques lignes.": "Lo esencial en pocas líneas.", "Classique": "Clásico", "Les explications utiles, les étapes et les exemples.": "Las explicaciones útiles, los pasos y los ejemplos.", "Développé": "Detallado", "Tout le détail, avec exemples, conseils et fonctionnement technique.": "Todo el detalle, con ejemplos, consejos y funcionamiento técnico.", "Comment veux-tu lire cette page ?": "¿Cómo quieres leer esta página?", "Tu pourras changer de niveau à tout moment en haut de la page.": "Podrás cambiar de nivel en cualquier momento en la parte superior de la página.", "Niveau de détail": "Nivel de detalle"});
 Object.assign(DICT.en,{"Lis le narratif, devine l’ATH.": "Read the narrative, guess the ATH.", "Jouer": "Play", "Apprendre": "Learn", "Bots": "Bots"});Object.assign(DICT.es,{"Lis le narratif, devine l’ATH.": "Lee la narrativa, adivina el ATH.", "Jouer": "Jugar", "Apprendre": "Aprender", "Bots": "Bots"});
-Object.assign(DICT.en,{"Tout ce qu’il faut savoir pour juger le jeu : comment le score est calculé, d’où viennent les données, ce que le site fait et ne fait pas.": "Everything you need to judge the game: how the score is calculated, where the data comes from, and what the site does and does not do.", "Qui est derrière": "Who is behind it", "Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.": "Guess the ATH is an independent training game. It is not affiliated with Axiom, Pump.fun or any of the coins shown.", "Le calcul du score": "How the score is calculated", "Points par coin = 1 000 × (1 − |log10(prédiction ÷ ATH réel)| ÷ 2), jamais en dessous de 0.": "Points per coin = 1,000 × (1 − |log10(guess ÷ real ATH)| ÷ 2), never below 0.", "Donc pile juste = 1 000, un écart d’un facteur 10 = 500, un facteur 100 ou plus = 0.": "So spot on = 1,000, a factor-10 gap = 500, a factor of 100 or more = 0.", "En ranked : les RP gagnés ou perdus valent (performance − 55 %) × 200, entre −150 et +100, avec des pertes majorées de 30 % par rang.": "In ranked: RP won or lost equal (performance − 55%) × 200, between −150 and +100, with losses increased by 30% per rank.", "Les mises sont en points du jeu, jamais en argent réel : 0, 50, 100, 200, 350 puis 600 points selon le rang.": "Stakes are in game points, never real money: 0, 50, 100, 200, 350 then 600 points depending on rank.", "D’où viennent les données": "Where the data comes from", "Courbes de market cap et ATH : GeckoTerminal (réseau Solana).": "Market cap charts and ATH: GeckoTerminal (Solana network).", "Paires de trading, tweets et comptes X associés : DexScreener et FxTwitter.": "Trading pairs, linked tweets and X accounts: DexScreener and FxTwitter.", "Logos : GeckoTerminal, DexScreener et Pump.fun. Fees partagés : lecture de la blockchain Solana.": "Logos: GeckoTerminal, DexScreener and Pump.fun. Shared fees: read from the Solana blockchain.", "Un robot ajoute de nouveaux coins toutes les heures ; la page est republiée avec ces données toutes les 4 heures.": "A robot adds new coins every hour; the page is republished with this data every 4 hours.", "Limite : l’ATH est calculé à partir de la courbe disponible et peut différer légèrement d’un autre site.": "Limit: the ATH is computed from the available chart and may differ slightly from another site.", "Ce que le site ne fait pas": "What the site does not do", "Il ne passe aucun ordre de trading et ne demande jamais de clé privée ni de phrase secrète.": "It never places a trade and never asks for a private key or seed phrase.", "Il ne donne pas de conseil financier et ne promet aucun gain : c’est un exercice de prédiction.": "It gives no financial advice and promises no gains: it is a prediction exercise.", "Il n’encaisse aucun paiement pour l’instant : les forfaits payants sont marqués « Bientôt ».": "It takes no payments for now: paid plans are marked “Coming soon”.", "Tes données": "Your data", "Tes parties et tes stats restent sur ton appareil. Si tu ouvres le jeu depuis claude.ai, ton pseudo, tes points, tes RP, ton meilleur score et ton nombre de parties alimentent le classement en ligne.": "Your games and stats stay on your device. If you open the game from claude.ai, your nickname, points, RP, best score and number of games feed the online leaderboard.", "Questions fréquentes": "Frequently asked questions", "Est-ce un jeu d’argent ? Non : on joue avec des points, jamais avec de l’argent réel.": "Is it gambling? No: you play with points, never with real money.", "Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.": "Do my bot’s games count on the leaderboard? No, they only measure its credibility.", "Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.": "Why is a coin sometimes hard to read? Coins come from every ATH level, from $10K to $150M, so you train on varied cases.", "Transparence": "Transparency", "Score, sources des données, limites": "Score, data sources, limits"});Object.assign(DICT.es,{"Tout ce qu’il faut savoir pour juger le jeu : comment le score est calculé, d’où viennent les données, ce que le site fait et ne fait pas.": "Todo lo necesario para juzgar el juego: cómo se calcula la puntuación, de dónde vienen los datos y qué hace y qué no hace el sitio.", "Qui est derrière": "Quién está detrás", "Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.": "Adivina el ATH es un juego de entrenamiento independiente. No está afiliado a Axiom, Pump.fun ni a ninguna de las monedas mostradas.", "Le calcul du score": "Cómo se calcula la puntuación", "Points par coin = 1 000 × (1 − |log10(prédiction ÷ ATH réel)| ÷ 2), jamais en dessous de 0.": "Puntos por moneda = 1.000 × (1 − |log10(predicción ÷ ATH real)| ÷ 2), nunca por debajo de 0.", "Donc pile juste = 1 000, un écart d’un facteur 10 = 500, un facteur 100 ou plus = 0.": "Es decir, exacto = 1.000, una diferencia de factor 10 = 500, un factor 100 o más = 0.", "En ranked : les RP gagnés ou perdus valent (performance − 55 %) × 200, entre −150 et +100, avec des pertes majorées de 30 % par rang.": "En ranked: los RP ganados o perdidos valen (rendimiento − 55 %) × 200, entre −150 y +100, con pérdidas aumentadas un 30 % por rango.", "Les mises sont en points du jeu, jamais en argent réel : 0, 50, 100, 200, 350 puis 600 points selon le rang.": "Las apuestas son en puntos del juego, nunca en dinero real: 0, 50, 100, 200, 350 y luego 600 puntos según el rango.", "D’où viennent les données": "De dónde vienen los datos", "Courbes de market cap et ATH : GeckoTerminal (réseau Solana).": "Curvas de market cap y ATH: GeckoTerminal (red Solana).", "Paires de trading, tweets et comptes X associés : DexScreener et FxTwitter.": "Pares de trading, tuits y cuentas de X asociados: DexScreener y FxTwitter.", "Logos : GeckoTerminal, DexScreener et Pump.fun. Fees partagés : lecture de la blockchain Solana.": "Logos: GeckoTerminal, DexScreener y Pump.fun. Fees compartidos: lectura de la blockchain de Solana.", "Un robot ajoute de nouveaux coins toutes les heures ; la page est republiée avec ces données toutes les 4 heures.": "Un robot añade nuevas monedas cada hora; la página se republica con esos datos cada 4 horas.", "Limite : l’ATH est calculé à partir de la courbe disponible et peut différer légèrement d’un autre site.": "Límite: el ATH se calcula a partir de la curva disponible y puede diferir ligeramente de otro sitio.", "Ce que le site ne fait pas": "Lo que el sitio no hace", "Il ne passe aucun ordre de trading et ne demande jamais de clé privée ni de phrase secrète.": "No coloca ninguna orden de trading y nunca pide una clave privada ni una frase secreta.", "Il ne donne pas de conseil financier et ne promet aucun gain : c’est un exercice de prédiction.": "No da consejos financieros ni promete ganancias: es un ejercicio de predicción.", "Il n’encaisse aucun paiement pour l’instant : les forfaits payants sont marqués « Bientôt ».": "Por ahora no cobra ningún pago: los planes de pago están marcados como «Próximamente».", "Tes données": "Tus datos", "Tes parties et tes stats restent sur ton appareil. Si tu ouvres le jeu depuis claude.ai, ton pseudo, tes points, tes RP, ton meilleur score et ton nombre de parties alimentent le classement en ligne.": "Tus partidas y estadísticas se quedan en tu dispositivo. Si abres el juego desde claude.ai, tu apodo, tus puntos, tus RP, tu mejor puntuación y tu número de partidas alimentan la clasificación en línea.", "Questions fréquentes": "Preguntas frecuentes", "Est-ce un jeu d’argent ? Non : on joue avec des points, jamais avec de l’argent réel.": "¿Es un juego de azar? No: se juega con puntos, nunca con dinero real.", "Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.": "¿Las partidas de mi bot cuentan en la clasificación? No, solo sirven para medir su credibilidad.", "Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.": "¿Por qué a veces una moneda es difícil de leer? Las monedas vienen de todos los niveles de ATH, de 10 K$ a 150 M$, para entrenar con casos variados.", "Transparence": "Transparencia", "Score, sources des données, limites": "Puntuación, fuentes de datos, límites"});
+Object.assign(DICT.en,{"Tout ce qu’il faut savoir pour juger le jeu : comment le score est calculé, d’où viennent les données, ce que le site fait et ne fait pas.": "Everything you need to judge the game: how the score is calculated, where the data comes from, and what the site does and does not do.", "Qui est derrière": "Who is behind it", "Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.": "Guess the ATH is an independent training game. It is not affiliated with Axiom, Pump.fun or any of the coins shown.", "Le calcul du score": "How the score is calculated", "Points par coin = 1 000 × (1 − |log10(prédiction ÷ ATH réel)| ÷ 2), jamais en dessous de 0.": "Points per coin = 1,000 × (1 − |log10(guess ÷ real ATH)| ÷ 2), never below 0.", "Donc pile juste = 1 000, un écart d’un facteur 10 = 500, un facteur 100 ou plus = 0.": "So spot on = 1,000, a factor-10 gap = 500, a factor of 100 or more = 0.", "En ranked : les RP gagnés ou perdus valent (performance − 55 %) × 200, entre −150 et +100, avec des pertes majorées de 30 % par rang.": "In ranked: RP won or lost equal (performance − 55%) × 200, between −150 and +100, with losses increased by 30% per rank.", "Les mises sont en points du jeu, jamais en argent réel : 0, 50, 100, 200, 350 puis 600 points selon le rang.": "Stakes are in game points, never real money: 0, 50, 100, 200, 350 then 600 points depending on rank.", "D’où viennent les données": "Where the data comes from", "Courbes de market cap et ATH : GeckoTerminal (réseau Solana).": "Market cap charts and ATH: GeckoTerminal (Solana network).", "Paires de trading, tweets et comptes X associés : DexScreener et FxTwitter.": "Trading pairs, linked tweets and X accounts: DexScreener and FxTwitter.", "Logos : GeckoTerminal, DexScreener et Pump.fun. Fees partagés : lecture de la blockchain Solana.": "Logos: GeckoTerminal, DexScreener and Pump.fun. Shared fees: read from the Solana blockchain.", "Un robot ajoute de nouveaux coins toutes les heures ; la page est republiée avec ces données toutes les 4 heures.": "A robot adds new coins every hour; the page is republished with this data every 4 hours.", "Limite : l’ATH est calculé à partir de la courbe disponible et peut différer légèrement d’un autre site.": "Limit: the ATH is computed from the available chart and may differ slightly from another site.", "Ce que le site ne fait pas": "What the site does not do", "Il ne passe aucun ordre de trading et ne demande jamais de clé privée ni de phrase secrète.": "It never places a trade and never asks for a private key or seed phrase.", "Il ne donne pas de conseil financier et ne promet aucun gain : c’est un exercice de prédiction.": "It gives no financial advice and promises no gains: it is a prediction exercise.", "Il n’encaisse aucun paiement pour l’instant : les forfaits payants sont marqués « Bientôt ».": "It takes no payments for now: paid plans are marked “Coming soon”.", "Tes données": "Your data", "Tes parties et tes stats restent sur ton appareil. Si tu ouvres le jeu depuis claude.ai, ton pseudo, tes points, tes RP, ton meilleur score et ton nombre de parties alimentent le classement en ligne.": "Your games and stats stay on your device. If you open the game from claude.ai, your nickname, points, RP, best score and number of games feed the online leaderboard.", "Questions fréquentes": "Frequently asked questions", "Est-ce un jeu d’argent ? Non : on joue avec des points, jamais avec de l’argent réel.": "Is it gambling? No: you play with points, never with real money.", "Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.": "Do my bot’s games count on the leaderboard? No, they only measure its credibility.", "Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.": "Why is a coin sometimes hard to read? Coins come from every ATH level, from $10K to $150M, so you train on varied cases.", "Transparence": "Transparency", "Score, sources des données, limites": "Score, data sources, limits"});Object.assign(DICT.es,{"Tout ce qu’il faut savoir pour juger le jeu : comment le score est calculé, d’où viennent les données, ce que le site fait et ne fait pas.": "Todo lo necesario para juzgar el juego: cómo se calcula la puntuación, de dónde vienen los datos y qué hace y qué no hace el sitio.", "Qui est derrière": "Quién está detrás", "Devine l’ATH est un jeu d’entraînement indépendant. Il n’est pas affilié à Axiom, à Pump.fun ni à aucun des coins affichés.": "Adivina el ATH es un juego de entrenamiento independiente. No está afiliado a Axiom, Pump.fun ni a ninguna de las monedas mostradas.", "Le calcul du score": "Cómo se calcula la puntuación", "Points par coin = 1 000 × (1 − |log10(prédiction ÷ ATH réel)| ÷ 2), jamais en dessous de 0.": "Puntos por moneda = 1.000 × (1 − |log10(predicción ÷ ATH real)| ÷ 2), nunca por debajo de 0.", "Donc pile juste = 1 000, un écart d’un facteur 10 = 500, un facteur 100 ou plus = 0.": "Es decir, exacto = 1.000, una diferencia de factor 10 = 500, un factor 100 o más = 0.", "En ranked : les RP gagnés ou perdus valent (performance − 55 %) × 200, entre −150 et +100, avec des pertes majorées de 30 % par rang.": "En ranked: los RP ganados o perdidos valen (rendimiento − 55 %) × 200, entre −150 y +100, con pérdidas aumentadas un 30 % por rango.", "Les mises sont en points du jeu, jamais en argent réel : 0, 50, 100, 200, 350 puis 600 points selon le rang.": "Las apuestas son en puntos del juego, nunca en dinero real: 0, 50, 100, 200, 350 y luego 600 puntos según el rango.", "D’où viennent les données": "De dónde vienen los datos", "Courbes de market cap et ATH : GeckoTerminal (réseau Solana).": "Curvas de market cap y ATH: GeckoTerminal (red Solana).", "Paires de trading, tweets et comptes X associés : DexScreener et FxTwitter.": "Pares de trading, tuits y cuentas de X asociados: DexScreener y FxTwitter.", "Logos : GeckoTerminal, DexScreener et Pump.fun. Fees partagés : lecture de la blockchain Solana.": "Logos: GeckoTerminal, DexScreener y Pump.fun. Fees compartidos: lectura de la blockchain de Solana.", "Un robot ajoute de nouveaux coins toutes les heures ; la page est republiée avec ces données toutes les 4 heures.": "Un robot añade nuevas monedas cada hora; la página se republica con esos datos cada 4 horas.", "Limite : l’ATH est calculé à partir de la courbe disponible et peut différer légèrement d’un autre site.": "Límite: el ATH se calcula a partir de la curva disponible y puede diferir ligeramente de otro sitio.", "Ce que le site ne fait pas": "Lo que el sitio no hace", "Il ne passe aucun ordre de trading et ne demande jamais de clé privée ni de phrase secrète.": "No coloca ninguna orden de trading y nunca pide una clave privada ni una frase secreta.", "Il ne donne pas de conseil financier et ne promet aucun gain : c’est un exercice de prédiction.": "No da consejos financieros ni promete ganancias: es un ejercicio de predicción.", "Il n’encaisse aucun paiement pour l’instant : les forfaits payants sont marqués « Bientôt ».": "Por ahora no se cobra ningún pago: los planes de pago están marcados como «Próximamente».", "Tes données": "Tus datos", "Tes parties et tes stats restent sur ton appareil. Si tu ouvres le jeu depuis claude.ai, ton pseudo, tes points, tes RP, ton meilleur score et ton nombre de parties alimentent le classement en ligne.": "Tus partidas y estadísticas se quedan en tu dispositivo. Si abres el juego desde claude.ai, tu apodo, tus puntos, tus RP, tu mejor puntuación y tu número de partidas alimentan la clasificación en línea.", "Questions fréquentes": "Preguntas frecuentes", "Est-ce un jeu d’argent ? Non : on joue avec des points, jamais avec de l’argent réel.": "¿Es un juego de azar? No: se juega con puntos, nunca con dinero real.", "Les parties de mon bot comptent-elles au classement ? Non, elles servent seulement à mesurer sa crédibilité.": "¿Las partidas de mi bot cuentan en la clasificación? No, solo sirven para medir su credibilidad.", "Pourquoi un coin est-il parfois difficile à lire ? Les coins viennent de tous les niveaux d’ATH, de 10 K$ à 150 M$, pour s’entraîner sur des cas variés.": "¿Por qué a veces una moneda es difícil de leer? Las monedas vienen de todos los niveles de ATH, de 10 K$ a 150 M$, para entrenar con casos variados.", "Transparence": "Transparencia", "Score, sources des données, limites": "Puntuación, fuentes de datos, límites"});
 Object.assign(DICT.en,{"Bientôt": "Coming soon", "Location de bot": "Bot rental", "du prix pour toi": "of the price for you", "Tu fixes le prix, la plateforme garde 20 %.": "You set the price, the platform keeps 20%.", "Parrainage": "Referral", "1 mois": "1 month", "offert, à confirmer": "free, to be confirmed", "Invite un trader : vous gagnez chacun un mois d’abonnement.": "Invite a trader: you each earn a month of subscription.", "Certification": "Certification", "une fois par bot": "once per bot", "Badge vérifiable pour prouver la crédibilité de ton bot.": "Verifiable badge to prove your bot’s credibility.", "API et données": "API and data", "Sur devis": "On quote", "pour les équipes": "for teams", "Jeux de données annotés et accès API pour entraîner d’autres modèles.": "Annotated datasets and API access to train other models.", "Moyens de rémunération prévus": "Planned ways to earn", "Rien n’est encore ouvert : ces pistes sont prévues, leurs montants et conditions peuvent changer.": "Nothing is open yet: these are planned, and amounts and terms may change.", "Comment le projet se finance": "How the project is funded", "Aujourd’hui rien n’est encaissé. Sont prévus : des abonnements, des crédits, des certifications de bots et une commission sur la location de bots.": "Nothing is charged today. Planned: subscriptions, credits, bot certifications and a commission on bot rentals."});Object.assign(DICT.es,{"Bientôt": "Próximamente", "Location de bot": "Alquiler de bot", "du prix pour toi": "del precio para ti", "Tu fixes le prix, la plateforme garde 20 %.": "Tú fijas el precio, la plataforma se queda con el 20 %.", "Parrainage": "Patrocinio", "1 mois": "1 mes", "offert, à confirmer": "gratis, por confirmar", "Invite un trader : vous gagnez chacun un mois d’abonnement.": "Invita a un trader: ambos ganáis un mes de suscripción.", "Certification": "Certificación", "une fois par bot": "una vez por bot", "Badge vérifiable pour prouver la crédibilité de ton bot.": "Insignia verificable para demostrar la credibilidad de tu bot.", "API et données": "API y datos", "Sur devis": "A medida", "pour les équipes": "para equipos", "Jeux de données annotés et accès API pour entraîner d’autres modèles.": "Conjuntos de datos anotados y acceso API para entrenar otros modelos.", "Moyens de rémunération prévus": "Formas de ingresos previstas", "Rien n’est encore ouvert : ces pistes sont prévues, leurs montants et conditions peuvent changer.": "Todavía no hay nada abierto: son planes y los importes y condiciones pueden cambiar.", "Comment le projet se finance": "Cómo se financia el proyecto", "Aujourd’hui rien n’est encaissé. Sont prévus : des abonnements, des crédits, des certifications de bots et une commission sur la location de bots.": "Hoy no se cobra nada. Están previstos: suscripciones, créditos, certificaciones de bots y una comisión por el alquiler de bots."});
 Object.assign(DICT.en,{"Défi du jour": "Daily challenge", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Daily challenge: 5 identical coins for everyone, renewed every day at midnight UTC. Points are earned only once a day, and your streak counts consecutive days.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Done today: {0} / 5,000 · streak {1}", "5 coins identiques pour tous · série {0}": "5 identical coins for everyone · streak {0}", "Série du défi : {0} jour(s)": "Challenge streak: {0} day(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Challenge already played today: no points this time."});Object.assign(DICT.es,{"Défi du jour": "Desafío del día", "Défi du jour : 5 coins identiques pour tous, renouvelés chaque jour à minuit UTC. Les points ne sont gagnés qu’une fois par jour, et ta série compte les jours consécutifs.": "Desafío del día: 5 monedas idénticas para todos, renovadas cada día a medianoche UTC. Los puntos solo se ganan una vez al día y tu racha cuenta los días consecutivos.", "Fait aujourd’hui : {0} / 5 000 · série {1}": "Hecho hoy: {0} / 5.000 · racha {1}", "5 coins identiques pour tous · série {0}": "5 monedas idénticas para todos · racha {0}", "Série du défi : {0} jour(s)": "Racha del desafío: {0} día(s)", "Défi déjà joué aujourd’hui : pas de points cette fois.": "Desafío ya jugado hoy: sin puntos esta vez."});
 Object.assign(DICT.en,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Daily challenge: 5 identical coins for everyone, no time limit. Points count only once a day."});Object.assign(DICT.es,{"Défi du jour : 5 coins identiques pour tous, sans limite de temps. Les points ne comptent qu’une fois par jour.": "Desafío del día: 5 monedas idénticas para todos, sin límite de tiempo. Los puntos cuentan solo una vez al día."});
@@ -749,7 +888,7 @@ Object.assign(DICT.en,{"Après une partie, tu peux rejouer les coins que tu as l
 Object.assign(DICT.en,{"Entraînement": "Practice", "Rejoue tes coins les plus ratés, sans points.": "Replay your worst misses, without points.", "Simulateur de location": "Rental simulator", "Calcule ta part de 80 % sur la page « Louer mon bot » (la location n’est pas ouverte).": "Work out your 80% share on the “Rent my bot” page (rental is not open).", "Prédiction toujours à portée": "Guess always within reach", "Sur mobile, la zone de prédiction reste en bas de l’écran.": "On mobile, the guess area stays at the bottom of the screen.", "Série de précision": "Accuracy streak", "Compte les coins d’affilée à moins de ×3 de l’ATH, sans points.": "Counts coins in a row within ×3 of the ATH, no points.", "Engagements du site et statut de chaque fonction : disponible ou bientôt.": "The site’s commitments and the status of each feature: available or coming soon.", "Menu mobile": "Mobile menu", "Le menu se replie et le jeu s’affiche tout de suite.": "The menu folds away and the game shows right away.", "Image du score": "Score image", "Enregistre et partage une image de ton score.": "Save and share an image of your score.", "Précision, régularité et volume, avec la formule affichée.": "Accuracy, consistency and volume, with the formula shown.", "Dernières nouveautés": "Latest updates", "Rien n’est retiré en silence : si une règle du score ou du classement change, elle est annoncée ici.": "Nothing is removed silently: if a score or leaderboard rule changes, it is announced here."});Object.assign(DICT.es,{"Entraînement": "Entrenamiento", "Rejoue tes coins les plus ratés, sans points.": "Repite tus mayores fallos, sin puntos.", "Simulateur de location": "Simulador de alquiler", "Calcule ta part de 80 % sur la page « Louer mon bot » (la location n’est pas ouverte).": "Calcula tu parte del 80 % en la página «Alquilar mi bot» (el alquiler no está abierto).", "Prédiction toujours à portée": "Predicción siempre a mano", "Sur mobile, la zone de prédiction reste en bas de l’écran.": "En móvil, la zona de predicción se queda abajo en la pantalla.", "Série de précision": "Racha de precisión", "Compte les coins d’affilée à moins de ×3 de l’ATH, sans points.": "Cuenta las monedas seguidas a menos de ×3 del ATH, sin puntos.", "Engagements du site et statut de chaque fonction : disponible ou bientôt.": "Compromisos del sitio y estado de cada función: disponible o próximamente.", "Menu mobile": "Menú móvil", "Le menu se replie et le jeu s’affiche tout de suite.": "El menú se pliega y el juego se muestra enseguida.", "Image du score": "Imagen de la puntuación", "Enregistre et partage une image de ton score.": "Guarda y comparte una imagen de tu puntuación.", "Précision, régularité et volume, avec la formule affichée.": "Precisión, regularidad y volumen, con la fórmula a la vista.", "Dernières nouveautés": "Últimas novedades", "Rien n’est retiré en silence : si une règle du score ou du classement change, elle est annoncée ici.": "Nada se retira en silencio: si cambia una regla de la puntuación o la clasificación, se anuncia aquí."});
 Object.assign(DICT.en,{"Ton biais de prédiction": "Your prediction bias", "Joue encore {0} coin(s) pour voir si tu vois plutôt trop haut ou trop bas.": "Play {0} more coin(s) to see whether you tend to guess too high or too low.", "Bien calibré : sur tes {0} derniers coins, tes prédictions sont en moyenne au bon niveau.": "Well calibrated: over your last {0} coins, your guesses are on average at the right level.", "Tu vois plutôt trop haut : en médiane, ×{0} au-dessus de l’ATH (sur {1} coins).": "You tend to guess too high: median ×{0} above the ATH (over {1} coins).", "Tu vois plutôt trop bas : en médiane, ×{0} en dessous de l’ATH (sur {1} coins).": "You tend to guess too low: median ×{0} below the ATH (over {1} coins)."});Object.assign(DICT.es,{"Ton biais de prédiction": "Tu sesgo de predicción", "Joue encore {0} coin(s) pour voir si tu vois plutôt trop haut ou trop bas.": "Juega {0} moneda(s) más para ver si tiendes a apostar demasiado alto o demasiado bajo.", "Bien calibré : sur tes {0} derniers coins, tes prédictions sont en moyenne au bon niveau.": "Bien calibrado: en tus últimas {0} monedas, tus predicciones están de media en el nivel correcto.", "Tu vois plutôt trop haut : en médiane, ×{0} au-dessus de l’ATH (sur {1} coins).": "Tiendes a apostar demasiado alto: en mediana, ×{0} por encima del ATH (en {1} monedas).", "Tu vois plutôt trop bas : en médiane, ×{0} en dessous de l’ATH (sur {1} coins).": "Tiendes a apostar demasiado bajo: en mediana, ×{0} por debajo del ATH (en {1} monedas)."});
 Object.assign(DICT.en,{"Dans « Rangs et profil » : vois-tu plutôt trop haut ou trop bas ?": "In “Ranks and profile”: do you tend to guess too high or too low?"});Object.assign(DICT.es,{"Dans « Rangs et profil » : vois-tu plutôt trop haut ou trop bas ?": "En «Rangos y perfil»: ¿tiendes a apostar demasiado alto o demasiado bajo?"});
-Object.assign(DICT.en,{"Vérifie toi-même : les coins, leurs courbes et leurs ATH sont publics.": "Check for yourself: the coins, their charts and their ATHs are public.", "Voir les données sur GitHub": "See the data on GitHub"});Object.assign(DICT.es,{"Vérifie toi-même : les coins, leurs courbes et leurs ATH sont publics.": "Compruébalo tú mismo: las monedas, sus gráficos y sus ATH son públicos.", "Voir les données sur GitHub": "Ver los datos en GitHub"});
+Object.assign(DICT.en,{"Vérifie par toi-même : les coins, leurs courbes et leurs ATH sont publics.": "Check for yourself: the coins, their charts and their ATHs are public.", "Voir les données sur GitHub": "See the data on GitHub"});Object.assign(DICT.es,{"Vérifie par toi-même : les coins, leurs courbes et leurs ATH sont publics.": "Compruébalo tú mismo: las monedas, sus gráficos y sus ATH son públicos.", "Voir les données sur GitHub": "Ver los datos en GitHub"});
 const T=(s,...a)=>{const r=LANG==="fr"?s:(DICT[LANG]&&DICT[LANG][s])||s;return r.replace(/\{(\d)\}/g,(_,i)=>a[i])};
 // retrouver la clé française depuis n’importe quelle langue (pour retraduire le texte déjà affiché)
 const REV={};for(const l in DICT)for(const k in DICT[l])REV[DICT[l][k]]=k;
@@ -768,7 +907,15 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 let deck,i,total,skip,busy,mode="casual",timer=0,zero=false,gen=0,streak=0,bestStreak=0;
 
 const fmt=v=>v>=1e9?(v/1e9).toFixed(1).replace(".",decSep())+(LANG==="fr"?" Md$":" B$"):v>=1e6?(v/1e6).toFixed(v>=1e7?0:1).replace(".",decSep())+" M$":v>=1e3?Math.round(v/1e3)+" K$":Math.round(v)+" $";
-const val=()=>Math.pow(10,LO+($("s").value/1000)*SPAN);
+let SCL="log";try{SCL=localStorage.getItem("dath.scale2")==="lin"?"lin":"log"}catch(e){}
+const LOV=Math.pow(10,LO),HIV=150e6,SMAX=100000;
+let manual=null;
+const val=()=>{if(manual!=null)return manual;const f=$("s").value/SMAX;return SCL==="lin"?LOV+f*(HIV-LOV):Math.pow(10,LO+f*SPAN)};
+const fmtP=v=>v>=1e9?(v/1e9).toFixed(2).replace(".",decSep())+(LANG==="fr"?" Md$":" B$"):v>=1e6?(v/1e6).toFixed(2).replace(".",decSep())+" M$":v>=1e3?(v/1e3).toFixed(v>=1e5?0:1).replace(".",decSep())+" K$":Math.round(v)+" $";
+function parseV(t){t=String(t||"").toLowerCase().replace(/[\s$]/g,"").replace(",",".");const m=t.match(/^([0-9]*\.?[0-9]+)(k|m|md|b)?$/);if(!m)return null;let v=parseFloat(m[1]);const u=m[2];if(u==="k")v*=1e3;else if(u==="m")v*=1e6;else if(u==="md"||u==="b")v*=1e9;else if(v<1e3)v*=1e6;return v}
+const setManual=v=>{manual=Math.max(5e3,Math.min(5e8,v));$("s").value=Math.round(Math.max(0,Math.min(SMAX,posOf(manual))));upd()};
+const posOf=v=>SMAX*(SCL==="lin"?(v-LOV)/(HIV-LOV):(Math.log10(v)-LO)/SPAN);
+function sclTicks(){const t=document.querySelector("#input .ticks");if(t)t.innerHTML="<span>10 K$</span><span>"+(SCL==="lin"?"75 M$":"1 M$")+"</span><span>150 M$</span>"}
 const num=n=>n.toLocaleString({fr:"fr-FR",en:"en-US",es:"es-ES"}[LANG]);
 const esc=t=>String(t).replace(/[&<>"']/g,c=>"&#"+c.charCodeAt(0)+";");
 const avatar=k=>"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><rect width="96" height="96" fill="#22E27A"/><text x="48" y="60" font-size="34" font-weight="800" text-anchor="middle" fill="#06150C" font-family="sans-serif">'+k.t.slice(0,2)+'</text></svg>');
@@ -796,17 +943,21 @@ function pick(n){n=n||ROUNDS;
 let roundLog=[];
 const dayKey=(o=0)=>new Date(Date.now()-o*864e5).toISOString().slice(0,10);
 const hash32=x=>{let h=2166136261;for(let c=0;c<x.length;c++){h^=x.charCodeAt(c);h=Math.imul(h,16777619)}return h>>>0};
-function dailyDeck(){const d=dayKey();return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
+function dailyDeck(){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};
+  if(D.dk===d&&Array.isArray(D.keys)){const L=D.keys.map(x=>COINS.find(k=>seenKey(k)===x)).filter(Boolean);if(L.length===5)return L}
+  const L=dailyPick(d);D.dk=d;D.keys=L.map(seenKey);save();return L}
+function dailyPick(d){return COINS.map(k=>[hash32(d+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1])}
 function dailySub(){const D=S.daily||{},alive=D.last===dayKey()||D.last===dayKey(1);
-  return D.last===dayKey()?T("Fait aujourd’hui : {0} / 5 000 · série {1}",num(D.s||0),D.st||0):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
+  return D.started===dayKey()||D.last===dayKey()?T("Terminé · reviens demain"):T("5 coins identiques pour tous · série {0}",alive?(D.st||0):0)}
 // coins les plus ratés (écart de plus de ×5) : on les garde pour s’entraîner dessus, sans points
 const missKeys=()=>{const have=new Set(COINS.map(seenKey));return(S.miss||[]).filter(x=>have.has(x))};
 function reviewDeck(){return missKeys().sort(()=>Math.random()-.5).slice(0,8).map(x=>COINS.find(k=>seenKey(k)===x))}
 function noteMiss(k,rr){const key=seenKey(k);let L=(S.miss||[]).filter(x=>x!==key);if(rr>5)L.unshift(key);S.miss=L.slice(0,40)}
 function start(m){
   roundLog=[];streak=0;bestStreak=0;mode=m||"casual";sheet(0);gen++;navOn();
-  deck=mode==="daily"?dailyDeck():mode==="review"?reviewDeck():pick(mode==="ranked"?ROUNDS:casualN());
-  i=0;total=0;$("end").hidden=true;$("game").hidden=false;show();
+  if(mode==="daily"){const D=S.daily=S.daily||{st:0,best:0};D.started=dayKey();save()}
+  deck=mode==="friends"?friendDeck():mode==="daily"?dailyDeck():mode==="review"?reviewDeck():pick(mode==="ranked"?ROUNDS:casualN());
+  i=0;total=0;if(mode==="friends"){FR.r=0;FR.s=0;FR.d=false;frPres()}$("end").hidden=true;$("game").hidden=false;show();
 }
 function fillInfo(k){
   const prs=Array.isArray(k.pr)?k.pr:[];$("pr").hidden=!prs.length;$("prl").textContent="";
@@ -829,24 +980,24 @@ function show(){
   $("cw").className="cw";$("cv").textContent="???";$("cv").className="";$("ck").textContent="";
   $("line").style.strokeDasharray="";$("line").removeAttribute("d");$("area").removeAttribute("d");
   $("head").setAttribute("cx",-10);$("peak").setAttribute("hidden","");$("cr").setAttribute("width",0);
-  $("out").hidden=true;$("s").value=500;upd();
+  $("out").hidden=true;manual=null;$("s").value=0;sclTicks();upd();
   const gate=i===0;$("cc").hidden=gate;$("input").hidden=gate;$("rdy").hidden=!gate;$("tm").hidden=true;
   $("cnt").hidden=!(mode==="casual"&&i===0);if(!$("cnt").hidden){$("cn").value=deck.length;$("cnv").textContent=deck.length}
-  $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode!=="casual";$("rdd").hidden=mode!=="daily";$("rdv").hidden=mode!=="review";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
+  $("rdr").hidden=mode!=="ranked";$("rdc").hidden=mode!=="casual";$("rdd").hidden=mode!=="daily";$("rdf").hidden=mode!=="friends";$("frb").hidden=!(mode==="casual"||mode==="friends");$("rdv").hidden=mode!=="review";$("go").textContent=T("Lancer la manche {0}/{1}",i+1,deck.length);
   if(!gate){startTimer();try{$("s").focus({preventScroll:true})}catch(e){}}
 }
-function upd(){$("g").textContent=fmt(val())}
+function upd(){$("g").textContent=fmtP(val());const gi=$("gin");if(gi&&document.activeElement!==gi)gi.value=fmtP(val())}
 
 function animate(ch,ath,done){
   const my=gen,W=360,H=200,P=16,T=62,mx=Math.max(...ch);
   const x=j=>P+(W-2*P)*j/(ch.length-1), y=v=>H-P-(H-P-T)*v/mx;
   const d=ch.map((v,j)=>(j?"L":"M")+x(j).toFixed(1)+" "+y(v).toFixed(1)).join("");
   const line=$("line"),area=$("area"),mi=ch.indexOf(mx),px=x(mi),py=y(mx);let planted=false;
-  const plant=()=>{planted=true;$("peak").removeAttribute("hidden");$("peak").setAttribute("transform","translate("+px+" "+py+")");$("pl").textContent="ATH "+fmt(ath);$("pl").setAttribute("x",Math.max(-px+44,Math.min(W-px-44,0)));try{navigator.vibrate&&navigator.vibrate(25)}catch(e){}};
+  const plant=()=>{planted=true;sfx("flag");$("peak").removeAttribute("hidden");$("peak").setAttribute("transform","translate("+px+" "+py+")");$("pl").textContent="ATH "+fmt(ath);$("pl").setAttribute("x",Math.max(-px+44,Math.min(W-px-44,0)));try{navigator.vibrate&&navigator.vibrate(25)}catch(e){}};
   line.setAttribute("d",d);area.setAttribute("d",d+"L"+x(ch.length-1)+" "+(H-P)+"L"+x(0)+" "+(H-P)+"Z");
   const len=line.getTotalLength();
   line.style.strokeDasharray=len;line.style.strokeDashoffset=len;
-  const dur=3000,t0=performance.now();
+  const dur=3000,t0=performance.now();sfx("whoosh");
   const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
   (function f(now){
     if(my!==gen)return;
@@ -863,9 +1014,30 @@ function animate(ch,ath,done){
     done();
   })(t0);
 }
+let SND=1;try{SND=localStorage.getItem("dath.snd")==="0"?0:1}catch(e){}
+let AC=null;
+function sfx(kind){
+  if(!SND)return;
+  try{
+    if(!AC){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;AC=new C()}
+    if(AC.state==="suspended")AC.resume();
+    const t=AC.currentTime;
+    const tone=(f,d,at,type,vol,f2)=>{const o=AC.createOscillator(),g=AC.createGain();o.type=type||"sine";o.frequency.setValueAtTime(f,t+at);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+at+d);
+      g.gain.setValueAtTime(0.0001,t+at);g.gain.exponentialRampToValueAtTime(vol||.12,t+at+.012);g.gain.exponentialRampToValueAtTime(.0001,t+at+d);o.connect(g);g.connect(AC.destination);o.start(t+at);o.stop(t+at+d+.02)};
+    if(kind==="tap")tone(520,.06,0,"triangle",.07,780);
+    else if(kind==="tick")tone(900+Math.random()*60,.03,0,"square",.025);
+    else if(kind==="flag"){tone(220,.18,0,"sine",.16,90);tone(660,.1,.12,"triangle",.1,990)}
+    else if(kind==="whoosh"){tone(180,.5,0,"sawtooth",.025,1400)}
+    else if(kind==="good"){tone(523,.12,0,"triangle",.11);tone(659,.12,.09,"triangle",.11);tone(784,.22,.18,"triangle",.11)}
+    else if(kind==="ok"){tone(440,.12,0,"triangle",.1);tone(523,.2,.1,"triangle",.1)}
+    else if(kind==="bad"){tone(300,.25,0,"sawtooth",.07,150)}
+    else if(kind==="rank"){[523,659,784,1047].forEach((f,k)=>tone(f,.2,k*.1,"triangle",.11));tone(1319,.4,.42,"sine",.1)}
+  }catch(e){}
+}
+document.addEventListener("pointerdown",e=>{if(e.target.closest&&e.target.closest("button,a,[data-a]"))sfx("tap")},true);
 function countUp(el,to,ms,pre){
-  const t0=performance.now();
-  (function f(n){const p=Math.min(1,(n-t0)/ms);el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
+  const t0=performance.now();let lt=0;
+  (function f(n){const p=Math.min(1,(n-t0)/ms);if(n-lt>70&&p<1){lt=n;sfx("tick")}el.textContent=pre+num(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)})(t0);
 }
 let CAMAP={},IMGMAP={},DESC={},WTAG={},TW={};
 // rug pull : effondrement quasi total ou chute brutale juste après le sommet (une mort lente reste un coin « nul » valable)
@@ -973,20 +1145,23 @@ function renderTweet(k){
 }
 // signaux du tweet pour les bots (sans les images)
 const twData=k=>{const e=TW[k.t+"|"+k.n];return e&&(e.k==="tweet"||e.k==="profile")&&e.ah?{kind:e.k,handle:e.ah,verified:e.vf||0,followers:e.fo==null?null:e.fo,joined:e.jd||null,text:twTx(k,e),time:e.ts||null,likes:e.lk==null?null:e.lk,retweets:e.rt==null?null:e.rt,replies:e.rp==null?null:e.rp,views:e.vw==null?null:e.vw,bookmarks:e.bm==null?null:e.bm}:null};
+// bonus de vitesse : ×1 jusqu’à 3 s, puis dégressif jusqu’à ×0,6 à partir de 30 s
+const speedF=ms=>{const t=ms/1000;return +(0.6+0.4*Math.max(0,Math.min(1,1-(t-3)/27))).toFixed(3)};
 function validate(){
   if(busy)return;busy=true;stopTimer();
   const k=deck[i],g=val();
-  const pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)));zero=false;
-  total+=pts;roundLog.push({n:k.n,t:k.t,g,a:k.ath,p:pts});
+  const ms=Date.now()-tShow,tf=speedF(ms),pts=zero?0:Math.max(0,Math.round(1000*(1-Math.abs(Math.log10(g/k.ath))/2)*tf));zero=false;
+  total+=pts;roundLog.push({n:k.n,t:k.t,g,a:k.ath,p:pts,ms,tf});if(mode==="friends"){FR.r=roundLog.length;FR.s=total;frPres()}
   {const rr=g>k.ath?g/k.ath:k.ath/g;if(rr<=3){streak++;if(streak>bestStreak)bestStreak=streak}else streak=0;roundLog[roundLog.length-1].ok=rr<=3;noteMiss(k,rr);S.er=(S.er||[]).concat(+Math.log10(g/k.ath).toFixed(3)).slice(-100);S.rd=S.rd||{};const o=S.rd[mode]=S.rd[mode]||{n:0,x:0};o.n++;if(rr<1.1)o.x++;save()}
   $("input").hidden=true;$("rdy").hidden=true;$("cw").className="cw open";
   animate(k.ch||fake(k.ath),k.ath,()=>{
     $("mg").textContent=fmt(g);$("ma").textContent=fmt(k.ath);
+    {const pc=v=>Math.max(0,Math.min(100,posOf(Math.max(LOV,Math.min(HIV,v)))/SMAX*100));$("rg").style.left=pc(g)+"%";$("rf").style.left=pc(k.ath)+"%";$("rf").classList.remove("go");void $("rf").offsetWidth;$("rf").classList.add("go");$("rlg").textContent=T("Toi");$("rlf").textContent="ATH";const a=pc(g),b=pc(k.ath);$("rlg").style.left=a+"%";$("rlf").style.left=b+"%";const near=Math.abs(a-b)<9;$("rlg").style.transform=near&&a<=b?"translateX(-100%)":"translateX(-50%)";$("rlf").style.transform=near&&a<=b?"translateX(0)":near?"translateX(-50%)":"translateX(-50%)";$("rlg").style.top=near&&a>b?"22px":"";}
     const r=g>k.ath?g/k.ath:k.ath/g;
     $("msg").textContent=r<1.1?T("Quasiment pile !"):T(g>k.ath?"Tu étais ×{0} trop haut":"Tu étais ×{0} trop bas",r.toFixed(1).replace(".",decSep()));
-    $("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
+    sfx(pts>=800?"good":pts>=400?"ok":"bad");$("next").textContent=T(i+1<deck.length?"Manche suivante":"Voir mon score");
     $("stk").hidden=streak<2;if(streak>=2)$("stk").textContent=T("Série : {0} d’affilée à moins de ×3 de l’ATH",streak);
-    $("out").hidden=false;countUp($("pts"),pts,900,"+");
+    $("spd").textContent=T("Vitesse : {0} s · bonus ×{1}",(ms/1000).toFixed(1).replace(".",decSep()),tf.toFixed(2).replace(".",decSep()));$("out").hidden=false;countUp($("pts"),pts,900,"+");
     const ca=caOf(k);$("ca").hidden=!ca;if(ca){$("cav").textContent=ca;$("cav").title=ca;$("cad").href="https://dexscreener.com/solana/"+ca;$("cac").onclick=()=>copyTxt(ca,T("CA copié."))}
     meta();
     $("pg").style.width=((i+1)/deck.length*100)+"%";
@@ -1000,12 +1175,15 @@ function drawRecap(){
   const okn=R.filter(x=>x.ok).length;let rec="";
   if(bestStreak>(S.bs||0)){const had=S.bs||0;S.bs=bestStreak;save();if(had&&bestStreak>=2)rec=" · "+T("Nouveau record !")}else if(S.bs)rec=" · "+T("Record personnel : {0}",S.bs);
   const st="<div class='r st'><b>"+esc(T("Précision : {0}/{1} à moins de ×3 de l’ATH",okn,R.length))+"</b><span>"+esc(T("Meilleure série : {0}",bestStreak))+esc(rec)+"</span></div>";
-  box.innerHTML="<div class='k'>"+T("Détail de la partie")+"</div>"+st+R.map(row).join("");box.hidden=false;
+  const tm=R.map(x=>x.ms||0).filter(Boolean),at=tm.length?tm.reduce((a,b)=>a+b,0)/tm.length:0;
+  const tr=at?"<div class='r st'><b>"+esc(T("Temps moyen par prédiction : {0}",(at/1000).toFixed(1).replace(".",decSep())+" s"))+"</b></div>":"";
+  box.innerHTML="<div class='k'>"+T("Détail de la partie")+"</div>"+st+tr+R.map(row).join("");box.hidden=false;
 }
 function next(){
   i++;
   if(i<deck.length){show();return}
-  $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;
+  if(mode==="friends"){FR.d=true;frPres()}
+  $("game").hidden=true;$("end").hidden=false;$("sharetext").hidden=true;$("flexd").hidden=mode!=="daily";
   countUp($("total"),total,1200,"");settle();drawRecap();$("missb").hidden=mode==="review"||missKeys().length<3;
   const p=total/(deck.length*1000);
   $("verdict").textContent=T(p>.8?"Tu sens le marché.":p>.5?"Pas mal, tu es dans le bon ordre de grandeur.":"Les memecoins restent imprévisibles. Retente ta chance.");
@@ -1023,6 +1201,17 @@ const TIME=6000, TIMEOUT_ZERO=false; // TIMEOUT_ZERO=true : 0 point si les 6 s s
 let S={name:"Anon",pts:500,rp:0,best:0,games:0,scores:[]},tab="board";
 try{Object.assign(S,JSON.parse(localStorage.getItem("dath.v1")||"{}"))}catch(e){}
 const save=()=>{try{localStorage.setItem("dath.v1",JSON.stringify(S))}catch(e){}};
+const RIP=[
+'<path d="M12 3C8 8 5.5 11.2 5.5 14.5a6.5 6.5 0 0 0 13 0C18.5 11.2 16 8 12 3z"/><path d="M12 11v5m-2.5-2.2L12 16.5l2.5-2.7"/>',
+'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
+'<rect x="4" y="4" width="16" height="16" rx="3.5"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"/>',
+'<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/>',
+'<path d="M4 10v4h3l8 4V6L7 10z"/><path d="M18.5 9.5a4 4 0 0 1 0 5M7 14l1.5 6h2.5L10 15.5"/>',
+'<path d="M12 3a8 8 0 0 0-8 8c0 2.6 1.2 4.4 3 5.5V20h10v-3.5c1.8-1.1 3-2.9 3-5.5a8 8 0 0 0-8-8z"/><circle cx="9" cy="11.5" r="1.8" fill="currentColor"/><circle cx="15" cy="11.5" r="1.8" fill="currentColor"/><path d="M10 20v-2.5M12 20v-2.5M14 20v-2.5"/>'];
+const RI=RIP.map((d,k)=>'<svg class="ri" viewBox="0 0 24 24" fill="none" stroke="'+RANKS[k][2]+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:'+RANKS[k][2]+'">'+d+'</svg>');
+const TROPHY='<svg class="tro" viewBox="0 0 24 24" fill="none" stroke="#FFC53D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Champion</title><path d="M7 4h10v5a5 5 0 0 1-10 0z" fill="rgba(255,197,61,.22)"/><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3M12 14v4M8 21h8M9.5 18h5"/></svg>';
+const isChamp=pos=>pos===1&&((board[0]&&board[0].rp)||0)>0;
+const NM=(k,n,t)=>'<span class="nm">'+RI[k]+'<span>'+esc(n)+'</span>'+(t?TROPHY:'')+'</span>';
 const rankIdx=rp=>RANKS.reduce((b,r,j)=>rp>=r[1]?j:b,0);
 // rang affiché : seuil de RP, plus la place dans le classement quand il est connu (pos = null hors ligne)
 function rankOf(rp,pos){let j=rankIdx(rp);while(j>0&&TOP[j]&&pos!=null&&pos>TOP[j])j--;return j}
@@ -1040,9 +1229,10 @@ async function push(){
   pushing=false;
   if(pushAgain){pushAgain=false;push()}
 }
+let loggedOut=false,unsubBoard=null;try{loggedOut=localStorage.getItem("dath.out")==="1"}catch(e){}
 async function goOnline(){
   try{
-    if(online)return;const C=window.claude;if(!C||!C.use)return;
+    if(online||loggedOut)return;const C=window.claude;if(!C||!C.use)return;
     const [db,user]=await Promise.all([C.use("db"),C.use("user")]);
     if(!db||!user)return;
     const id=await user.id();if(!id)return;
@@ -1051,7 +1241,7 @@ async function goOnline(){
     const snap=await DB.doc("players/"+UID).get();
     if(snap.exists&&idle){const r=snap.data();S.name=r.name||S.name;if(typeof r.rp==="number")S.rp=r.rp;if(typeof r.pts==="number")S.pts=r.pts;S.best=r.best||0;S.games=r.games||0;save()}
     online=true;
-    DB.collection("players").orderBy("rp","desc").limit(500).onSnapshot(s=>{
+    unsubBoard=DB.collection("players").orderBy("rp","desc").limit(500).onSnapshot(s=>{
       board=s.docs.map(d=>Object.assign({id:d.id},d.data()));boardReady=true;refresh();
       if(!$("sh").hidden)sheet(shown);
     },()=>{boardReady=false});
@@ -1059,18 +1249,19 @@ async function goOnline(){
   }catch(e){online=false}
 }
 
-function acct(){const b=$("acct");b.classList.toggle("on",online);$("acl").textContent=online?"● "+(S.name||T("Connecté")):T("Connexion")}
+function acct(){lgBtn();const b=$("acct");b.classList.toggle("on",online);$("acl").textContent=online?"● "+(S.name||T("Connecté")):T("Connexion")}
 $("acct").addEventListener("click",()=>sheet("account"));
 function meta(){const c=(i+1)+"/"+deck.length+" · <b>"+num(total)+"</b>";$("meta").innerHTML=mode==="review"?'<i class="tag tg2">'+T("ENTRAÎNEMENT")+"</i> "+c:mode==="ranked"?'<i class="tag">RANKED</i> '+c:T("Manche")+" "+c}
 function refresh(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j];
-  $("mn").textContent=S.name;$("mr").textContent=r[0];$("mr").style.color=r[2];
+  $("mn").innerHTML=NM(j,S.name,isChamp(myPos()));$("mn").title=r[0];$("mr").textContent=r[0];$("mr").style.color=r[2];
   $("mp").textContent=num(S.pts)+" pts · "+num(S.rp)+" RP";
   $("mnet").textContent=T(online?(canWrite?"En ligne":"En ligne (lecture seule)"):"Hors ligne");$("mnet").className="net "+(online?"on":"off");
-  const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();
+  const C=costNow();$("mrk").disabled=S.pts<C;acct();$("dsub").textContent=dailySub();{const D=S.daily||{},dn=D.started===dayKey()||D.last===dayKey();$("mdl").querySelector(".dchk").hidden=!dn;$("mdl").classList.toggle("done",dn)}
   $("msub").textContent=S.pts>=C?(C?T("Mise {0} pts ({1}) · 6 s par manche · 10 manches",C,r[0]):T("Gratuit ({0}) · 6 s par manche · 10 manches",r[0])):T("Il te faut {0} pts (gagne-en en classique)",C);
 }
-function startTimer(){
+let tShow=Date.now();
+function startTimer(){tShow=Date.now();
   stopTimer();$("tm").hidden=mode!=="ranked";if(mode!=="ranked")return;
   const t0=performance.now();
   (function f(n){const l=Math.max(0,TIME-(n-t0));$("tb").style.width=(l/TIME*100)+"%";$("ts").textContent=(l/1000).toFixed(1)+" s";
@@ -1079,6 +1270,7 @@ function startTimer(){
 function stopTimer(){cancelAnimationFrame(timer);timer=0}
 let armedAt=0;
 function launch(m){
+  if(m==="daily"&&((S.daily||{}).started===dayKey()||(S.daily||{}).last===dayKey())){sheet("daily");return}
   const inGame=!$("game").hidden&&deck&&!busy;
   if(m==="ranked"&&S.pts<costNow())return;
   if(inGame&&mode==="ranked"&&paid&&Date.now()-armedAt>4000){armedAt=Date.now();toast(T("Quitter une partie ranked te fait perdre ta mise. Appuie encore pour confirmer."));return}
@@ -1086,9 +1278,11 @@ function launch(m){
   start(m);
 }
 function settle(){
+  if(mode==="friends"){$("sum").innerHTML="<div>"+T("Partie entre amis terminée : aucun point gagné. Regarde le classement en haut de la page.")+"</div>";$("again").textContent=T("Rejouer");save();refresh();return}
+  if(TUT){TUT=false;$("sum").innerHTML="<div>"+T("Tutoriel terminé : aucun point gagné. À toi de jouer !")+"</div>";$("again").textContent=T("Rejouer");refresh();return}
   if(mode==="review"){$("sum").innerHTML="<div>"+T("Entraînement terminé : aucun point gagné et ton classement ne change pas.")+"</div>";$("again").textContent=T("Rejouer");save();refresh();return}
   const p=total/(deck.length*1000);let gp=Math.round(p*(mode==="ranked"?(stake?stake*1.5:100):deck.length*50)),first=true;
-  if(mode==="daily"){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};first=D.last!==d;if(first){D.st=D.last===dayKey(1)?(D.st||0)+1:1;D.last=d;D.s=Math.round(p*5000);D.best=Math.max(D.best||0,D.s)}else gp=0}
+  if(mode==="daily"){const d=dayKey(),D=S.daily=S.daily||{st:0,best:0};first=D.last!==d;if(first){D.st=D.last===dayKey(1)?(D.st||0)+1:1;D.last=d;D.s=Math.round(p*5000);D.best=Math.max(D.best||0,D.s);{const ms=roundLog.map(x=>x.ms||0),avg=ms.length?ms.reduce((a,b)=>a+b,0)/ms.length:0;D.today={d,s:D.s,n:deck.length,ok:roundLog.filter(x=>x.ok).length,avg,rounds:roundLog.map(x=>({n:x.n,t:x.t,g:x.g,a:x.a,p:x.p,ms:x.ms||0}))};D.hist=(D.hist||[]).filter(h=>h.d!==d).concat({d,s:D.s,avg,ok:D.today.ok,n:D.today.n}).slice(-60)}}else gp=0}
   let h="<div>"+T("Points gagnés")+" <b class='pos'>+"+gp+" pts</b></div>";S.pts+=gp;
   if(mode==="daily")h+=first?"<div>"+T("Série du défi : {0} jour(s)",S.daily.st)+"</div>":"<div>"+T("Défi déjà joué aujourd’hui : pas de points cette fois.")+"</div>";
   S.games=(S.games||0)+1;const sc=Math.round(p*5000);if(mode==="ranked"&&sc>(S.best||0))S.best=sc;
@@ -1097,7 +1291,7 @@ function settle(){
     const o=rankOf(old,estPos(old));
     S.rp=Math.max(0,old+d);const n=rankOf(S.rp,estPos(S.rp));
     h+="<div>Rank points <b class='"+(d>=0?"pos":"neg")+"'>"+(d>=0?"+":"")+d+" RP</b></div>";
-    if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RANKS[n][0])+"</div>";
+    if(n>o)sfx("rank");if(n>o)h+="<div class='up'>"+T("Nouveau rang : {0} !",RI[n]+" "+RANKS[n][0])+"</div>";else if(n<o)h+="<div class='neg'>"+T("Rang perdu : {0}",RI[n]+" "+RANKS[n][0])+"</div>";
   }
   S.scores.push({m:mode,s:sc,t:Date.now()});S.scores=S.scores.slice(-300);save();push();
   $("sum").innerHTML=h;
@@ -1117,9 +1311,9 @@ let abandoned=false;
 function sheet(w){
   if(!w&&abandoned){abandoned=false;shown=0;start("casual");return}
   $("ask-v").hidden=true;shown=w;$("sh").hidden=!w;document.body.classList.toggle("onpage",!!w);navOn();if(w)window.scrollTo(0,0);if(!w)return;
-  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":w==="help"?"Comment ça marche":w==="rent"?"Louer mon bot":w==="trust"?"Transparence":w==="account"?"Mon compte":"Rangs et profil");
-  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";$("ac-v").hidden=w!=="account";$("help-v").hidden=w!=="help";$("lvl").hidden=$("lvk").hidden=!(w==="help"||w==="bot"||w==="rent");setLvl(S.lvl||2);$("rent-v").hidden=w!=="rent";$("trust-v").hidden=w!=="trust";
-  w==="help"?0:w==="trust"?drawTrust():w==="rent"?drawRent():w==="scores"?drawScores():w==="bot"?drawBot():w==="account"?drawAccount():drawRanks();
+  $("sh-t").textContent=T(w==="scores"?"Classement et scores":w==="bot"?"Entraîner mon bot":w==="help"?"Comment ça marche":w==="rent"?"Louer mon bot":w==="trust"?"Transparence":w==="account"?"Mon compte":w==="settings"?"Paramètres":w==="daily"?"Défi du jour":w==="friends"?"Jouer entre amis":"Rangs et profil");
+  $("sc-v").hidden=w!=="scores";$("rk-v").hidden=w!=="ranks";$("bot-v").hidden=w!=="bot";$("ac-v").hidden=w!=="account";$("set-v").hidden=w!=="settings";$("daily-v").hidden=w!=="daily";$("fr-v").hidden=w!=="friends";$("help-v").hidden=w!=="help";$("lvl").hidden=$("lvk").hidden=!(w==="help"||w==="bot"||w==="rent");setLvl(S.lvl||2);$("rent-v").hidden=w!=="rent";$("trust-v").hidden=w!=="trust";
+  w==="help"?0:w==="trust"?drawTrust():w==="rent"?drawRent():w==="scores"?drawScores():w==="bot"?drawBot():w==="account"?drawAccount():w==="settings"?drawSettings():w==="daily"?drawDaily():w==="friends"?drawFriends():drawRanks();
 }
 
 const CATS={help:"Comment ça marche",bot:"Entraîner mon bot",rent:"Louer mon bot"};
@@ -1127,7 +1321,7 @@ let askFor=null;
 function askLvl(a){
   askFor=a;shown=a;$("sh").hidden=false;document.body.classList.add("onpage");navOn();window.scrollTo(0,0);
   $("sh-t").textContent=T(CATS[a]);
-  ["sc-v","rk-v","bot-v","ac-v","help-v","rent-v","trust-v","lvl","lvk"].forEach(id=>$(id).hidden=true);
+  ["sc-v","rk-v","bot-v","ac-v","set-v","daily-v","fr-v","help-v","rent-v","trust-v","lvl","lvk"].forEach(id=>$(id).hidden=true);
   $("ask-v").hidden=false;document.querySelectorAll("#ask-v [data-pick]").forEach(b=>b.classList.toggle("on",+b.dataset.pick===(S.lvl||2)));
 }
 $("ask-v").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b||!askFor)return;setLvl(+b.dataset.pick);const a=askFor;askFor=null;sheet(a)});
@@ -1162,9 +1356,10 @@ function scoreImage(){
   x.fillStyle="#8B8B96";x.font="600 30px "+F;x.fillText(T("Exercice de prédiction, pas un conseil financier."),72,1000);
   return c.toDataURL("image/png");
 }
+$("flexd").addEventListener("click",()=>{const n=deck.length,ok=roundLog.filter(x=>x.ok).length;const ms=roundLog.map(x=>x.ms||0);FX.snap={p:total/(n*1000),total,n,ok,avg:ms.length?ms.reduce((a,b)=>a+b,0)/ms.length:0,st:(S.daily&&S.daily.st)||1};fxOpen("daily")});
 $("imgb").addEventListener("click",()=>{try{$("imgp").src=scoreImage();$("imgov").hidden=false}catch(e){toast(T("Image impossible sur cet appareil."))}});
 $("imgx").addEventListener("click",()=>{$("imgov").hidden=true});$("imgov").addEventListener("click",e=>{if(e.target.id==="imgov")$("imgov").hidden=true});
-function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+esc(p.name||"Anon")+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
+function rowBoard(p,pos){return"<tr"+(p.id===UID?' class="me"':"")+"><td>"+pos+"</td><td class='n'>"+NM(rankOf(p.rp||0,pos),p.name||"Anon",isChamp(pos))+"<span class='rk' style='color:"+RANKS[rankOf(p.rp||0,pos)][2]+"'>"+RANKS[rankOf(p.rp||0,pos)][0]+"</span></td><td class='v'>"+num(p.rp||0)+" RP</td></tr>"}
 function drawScores(){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
   if(tab==="board"){
@@ -1233,25 +1428,83 @@ function drawRent(){
 }
 function drawRanks(){
   const ps=myPos(),j=rankOf(S.rp,ps),nx=RANKS[j+1];
-  $("pn").value=S.name;
+  $("pn").value=S.name;$("pnic").innerHTML=RI[j];
   $("rp-t").innerHTML="<b style='color:"+RANKS[j][2]+"'>"+RANKS[j][0]+"</b> · "+num(S.rp)+" RP"+(ps&&ps<=500?" · "+T("place {0}",ps):"")+" · "+(nx?T("prochain rang à {0} RP",num(nx[1])):T("rang max"));
   {const E=(S.er||[]).slice().sort((a,b)=>a-b),n=E.length,bx=$("bias");
     if(n<10)bx.textContent=T("Joue encore {0} coin(s) pour voir si tu vois plutôt trop haut ou trop bas.",10-n);
     else{const m=n%2?E[(n-1)/2]:(E[n/2-1]+E[n/2])/2,f=Math.pow(10,Math.abs(m)).toFixed(1).replace(".",decSep());
       bx.textContent=Math.abs(m)<.15?T("Bien calibré : sur tes {0} derniers coins, tes prédictions sont en moyenne au bon niveau.",n):T(m>0?"Tu vois plutôt trop haut : en médiane, ×{0} au-dessus de l’ATH (sur {1} coins).":"Tu vois plutôt trop bas : en médiane, ×{0} en dessous de l’ATH (sur {1} coins).",f,n)}}
   $("rp-b").style.width=(nx?Math.max(0,Math.min(100,(S.rp-RANKS[j][1])/(nx[1]-RANKS[j][1])*100)):100)+"%";
-  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
+  $("ladder").innerHTML=RANKS.map((r,k)=>"<li class='"+(k===j?"me":"")+"'><i style='background:"+r[2]+"'></i><b>"+RI[k]+" "+r[0]+"</b><span>"+(k?num(r[1])+" RP"+(TOP[k]?" · "+T("top {0}",TOP[k]):""):T("départ"))+" · "+(COSTS[k]?T("mise {0}",COSTS[k]):T("gratuit"))+"</span></li>").join("");
 }
 
 const LOGINS=[["pump.fun","#22E27A","P"],["FOMO","#FF8A3D","F"],["Google","#8AB4F8","G"],["Phantom","#AB9FF2","👻"]];
 function statOf(m){const L=(S.scores||[]).filter(x=>x.m===m),d=(S.rd||{})[m]||{n:0,x:0};
   return{g:L.length,n:d.n,x:d.x,avg:L.length?L.reduce((a,x)=>a+x.s,0)/L.length/50:null,best:L.length?Math.max(...L.map(x=>x.s))/50:null}}
+Object.assign(DICT.en,{"Performance du défi":"Challenge performance","Score":"Score","Coins":"Coins","À ×3":"Within ×3","Série":"Streak","Défi du jour":"Daily challenge","Quasi pile":"Spot-on","Exercice de prédiction, pas un conseil financier.":"Prediction exercise, not financial advice.","Flex mes stats":"Flex my stats","Flex tes stats":"Flex your stats","Ajoute une image ou une vidéo en fond":"Add an image or a video as background","Choisir un fichier":"Choose a file","Précision moyenne":"Average accuracy","Télécharger":"Download","Fermer":"Close","Enregistrement de la vidéo…":"Recording video…","Vidéo prête.":"Video ready.","Image prête.":"Image ready.","Fichier non supporté.":"Unsupported file.","Retirer le fond":"Remove background","Meilleure partie":"Best game"});
+Object.assign(DICT.es,{"Performance du défi":"Rendimiento del reto","Score":"Puntuación","Coins":"Monedas","À ×3":"A ×3","Série":"Racha","Défi du jour":"Reto del día","Quasi pile":"Casi exacto","Exercice de prédiction, pas un conseil financier.":"Ejercicio de predicción, no consejo financiero.","Flex mes stats":"Presume tus stats","Flex tes stats":"Presume tus stats","Ajoute une image ou une vidéo en fond":"Añade una imagen o un vídeo de fondo","Choisir un fichier":"Elegir un archivo","Précision moyenne":"Precisión media","Télécharger":"Descargar","Fermer":"Cerrar","Enregistrement de la vidéo…":"Grabando vídeo…","Vidéo prête.":"Vídeo listo.","Image prête.":"Imagen lista.","Fichier non supporté.":"Archivo no compatible.","Retirer le fond":"Quitar el fondo","Meilleure partie":"Mejor partida"});
+const FX={mode:"ranked",media:null,kind:null,vid:null,raf:0,icon:null,iconK:-1};
+function fxIcon(j,cb){if(FX.iconK===j&&FX.icon)return;FX.iconK=j;const im=new Image();im.onload=()=>{FX.icon=im;if(cb)cb()};im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(RI[j].replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" '))}
+function fxStats(){const j=rankOf(S.rp,myPos()),pc=v=>v==null?"—":Math.round(v)+" %";
+  if(FX.mode==="daily"&&FX.snap){const q=FX.snap;return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:Math.round(q.p*100)+" %",lbl:T("Performance du défi"),cells:[[T("Score"),num(q.total)],[T("À ×3"),q.ok==null?"—":q.ok+"/"+q.n],[T("Temps moyen"),q.avg?(q.avg/1000).toFixed(1).replace(".",decSep())+" s":"—"],[T("Série"),String(q.st)]]}}
+  const t=statOf(FX.mode);
+  return{j,name:S.name,rank:RANKS[j][0],color:RANKS[j][2],big:pc(t.avg),cells:[[T("Parties"),String(t.g)],[T("Meilleure partie"),pc(t.best)],[T("Quasi pile"),String(t.x)],["RP",num(S.rp)]]}}
+function fxDraw(cv){const AC=(getComputedStyle(document.documentElement).getPropertyValue("--up")||"#22E27A").trim(),c=cv.getContext("2d"),W=cv.width,H=cv.height,d=fxStats();
+  c.fillStyle="#07090c";c.fillRect(0,0,W,H);
+  const m=FX.media;
+  if(m){const w=FX.kind==="video"?m.videoWidth:m.naturalWidth,h=FX.kind==="video"?m.videoHeight:m.naturalHeight;
+    if(w&&h){const s=Math.max(W/w,H/h);c.drawImage(m,(W-w*s)/2,(H-h*s)/2,w*s,h*s)}}
+  else{const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#000");g.addColorStop(1,"#0b0f14");c.fillStyle=g;c.fillRect(0,0,W,H);
+    c.globalAlpha=1;c.strokeStyle=AC;c.lineWidth=8;c.lineJoin="round";c.beginPath();c.moveTo(60,H*.55);c.lineTo(W*.3,H*.42);c.lineTo(W*.5,H*.5);c.lineTo(W*.75,H*.3);c.lineTo(W-60,H*.2);c.stroke()}
+  const ov=c.createLinearGradient(0,0,0,H);ov.addColorStop(0,"rgba(0,0,0,.65)");ov.addColorStop(.45,"rgba(0,0,0,.25)");ov.addColorStop(1,"rgba(0,0,0,.8)");c.fillStyle=ov;c.fillRect(0,0,W,H);
+  c.textBaseline="alphabetic";c.fillStyle=AC;c.beginPath();c.roundRect(60,60,56,56,16);c.fill();
+  c.strokeStyle="#000";c.lineWidth=6;c.lineCap="round";c.lineJoin="round";c.beginPath();c.moveTo(72,102);c.lineTo(86,84);c.lineTo(96,94);c.lineTo(108,76);c.stroke();
+  c.fillStyle="#fff";c.font="700 40px system-ui,sans-serif";c.fillText("devine l’ATH",132,102);
+  c.textAlign="right";c.fillStyle="rgba(255,255,255,.75)";c.font="700 32px system-ui,sans-serif";c.fillText(FX.mode==="ranked"?"RANKED":FX.mode==="daily"?T("Défi du jour").toUpperCase():T("Mode classique").toUpperCase(),W-60,102);c.textAlign="left";
+  if(FX.icon)c.drawImage(FX.icon,60,H-760,96,96);
+  c.fillStyle="#fff";c.font="800 64px system-ui,sans-serif";c.fillText(d.name,176,H-700);
+  c.fillStyle=d.color;c.font="800 36px system-ui,sans-serif";c.fillText(d.rank,176,H-654);
+  c.fillStyle="rgba(255,255,255,.7)";c.font="600 34px system-ui,sans-serif";c.fillText(d.lbl||T("Précision moyenne"),60,H-520);
+  c.fillStyle=AC;c.font="900 190px system-ui,sans-serif";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=24;c.fillText(d.big,56,H-350);c.shadowBlur=0;
+  const cw=(W-120-3*16)/4,y=H-290;
+  d.cells.forEach((x,k)=>{const px=60+k*(cw+16);c.fillStyle="rgba(0,0,0,.55)";c.beginPath();c.roundRect(px,y,cw,170,22);c.fill();
+    c.fillStyle="rgba(255,255,255,.65)";c.font="600 24px system-ui,sans-serif";c.fillText(x[0].length>14?x[0].slice(0,13)+"…":x[0],px+18,y+48);
+    c.fillStyle="#fff";c.font="800 52px system-ui,sans-serif";c.fillText(x[1],px+18,y+126)});
+}
+function fxLoop(){const cv=$("fx-cv");if(!cv)return;fxDraw(cv);FX.raf=requestAnimationFrame(fxLoop)}
+function fxClose(){cancelAnimationFrame(FX.raf);const o=$("fx-o");if(o)o.remove();if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null}
+async function fxSave(blob,name){try{const dl=window.claude&&await window.claude.use("downloads");if(dl){await dl.save({filename:name,data:blob});return}}catch(e){if(e&&e.code==="declined")return}
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
+function fxOpen(m){fxClose();if(m==="daily")FX.mode="daily";else if(FX.mode==="daily")FX.mode="ranked";const o=document.createElement("div");o.id="fx-o";
+  o.innerHTML="<div class='fx-b'><canvas id='fx-cv' width='1080' height='1350'></canvas><div class='fx-c'><div class='tabs' id='fx-m'><button data-m='ranked'>Ranked</button><button data-m='casual'>"+T("Mode classique")+"</button></div><p class='note'>"+T("Ajoute une image ou une vidéo en fond")+"</p><input id='fx-f' type='file' accept='image/*,video/*' hidden><button id='fx-pick' class='alt'>"+T("Choisir un fichier")+"</button><button id='fx-rm' class='ghost' hidden>"+T("Retirer le fond")+"</button><button id='fx-dl'>"+T("Télécharger")+"</button><button id='fx-x' class='ghost'>"+T("Fermer")+"</button></div></div>";
+  document.body.appendChild(o);
+  if(FX.mode==="daily")$("fx-m").hidden=true;
+  const j=rankOf(S.rp,myPos());FX.iconK=-1;fxIcon(j);
+  const mb=()=>o.querySelectorAll("#fx-m button").forEach(b=>b.classList.toggle("on",b.dataset.m===FX.mode));mb();
+  $("fx-m").onclick=e=>{const b=e.target.closest("[data-m]");if(b){FX.mode=b.dataset.m;mb()}};
+  $("fx-pick").onclick=()=>$("fx-f").click();
+  $("fx-rm").onclick=()=>{if(FX.media&&FX.media.src)URL.revokeObjectURL(FX.media.src);FX.media=null;FX.kind=null;$("fx-rm").hidden=true};
+  $("fx-x").onclick=fxClose;o.addEventListener("click",e=>{if(e.target===o)fxClose()});
+  $("fx-f").onchange=e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);
+    if(f.type.startsWith("image/")){const im=new Image();im.onload=()=>{FX.media=im;FX.kind="image";$("fx-rm").hidden=false};im.src=u}
+    else if(f.type.startsWith("video/")){const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.src=u;v.onloadeddata=()=>{FX.media=v;FX.kind="video";v.play().catch(()=>{});$("fx-rm").hidden=false}}
+    else toast(T("Fichier non supporté."));e.target.value=""};
+  $("fx-dl").onclick=()=>{const cv=$("fx-cv");
+    if(FX.kind==="video"&&window.MediaRecorder&&cv.captureStream){const v=FX.media;v.currentTime=0;v.play().catch(()=>{});const st=cv.captureStream(30),ch=[];let mr;
+      try{mr=new MediaRecorder(st,{mimeType:MediaRecorder.isTypeSupported("video/mp4")?"video/mp4":"video/webm"})}catch(_){mr=new MediaRecorder(st)}
+      mr.ondataavailable=x=>{if(x.data.size)ch.push(x.data)};
+      mr.onstop=()=>{const ext=(mr.mimeType||"").includes("mp4")?"mp4":"webm";fxSave(new Blob(ch,{type:mr.mimeType||"video/webm"}),"devine-ath-flex."+ext);toast(T("Vidéo prête."));$("fx-dl").disabled=false};
+      $("fx-dl").disabled=true;toast(T("Enregistrement de la vidéo…"));mr.start();setTimeout(()=>mr.stop(),Math.min(10,Math.max(3,v.duration||6))*1000)}
+    else cv.toBlob(b=>{fxSave(b,"devine-ath-flex.png");toast(T("Image prête."))},"image/png")};
+  fxLoop()}
+$("ac-v").addEventListener("click",e=>{if(e.target.closest("#flexb"))fxOpen()});
 function drawAccount(){
   const j=rankOf(S.rp,myPos()),r=RANKS[j],pc=v=>v==null?"—":Math.round(v)+" %";
-  let h="<div class='ac-h'><b>"+esc(S.name)+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
-  h+="<div class='k'>"+T("Se connecter")+"</div><div class='lg'>"+LOGINS.map(([n,c,l],k)=>"<button data-lg='"+k+"'><i style='background:"+c+"'>"+l+"</i>"+esc(T("Continuer avec {0}",n))+"</button>").join("")+"</div>";
+  let h="<div class='ac-h'><b>"+NM(j,S.name,isChamp(myPos()))+"</b><span style='color:"+r[2]+"'>"+esc(r[0])+"</span><span class='k'>"+num(S.pts)+" pts · "+num(S.rp)+" RP</span></div>";
+  if(isChamp(myPos()))h+="<div class='champ'>"+TROPHY+"<div><b>"+T("Champion")+"</b><span>"+T("Trophée unique : n°1 du classement. Il passe au prochain meilleur score.")+"</span></div></div>";
+  if(!online)h+="<div class='k'>"+T("Se connecter")+"</div>"+(loggedOut?"<button id='reco' class='alt' style='margin:8px 0'>"+T("Se reconnecter")+"</button>":"")+"<div class='lg'>"+LOGINS.map(([n,c,l],k)=>"<button data-lg='"+k+"'><i style='background:"+c+"'>"+l+"</i>"+esc(T("Continuer avec {0}",n))+"</button>").join("")+"</div>";
   h+="<p class='note'>"+T(online?"Classement en ligne actif : ton score est partagé.":"Classement en ligne indisponible ici. Ta progression est gardée sur cet appareil.")+"</p>";
-  h+="<div class='k' style='margin-top:18px'>"+T("Statistiques")+"</div><div class='stg'>";
+  h+="<div class='k' style='margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:10px'><span>"+T("Statistiques")+"</span><button id='flexb' class='alt' style='padding:8px 16px;width:auto;flex:none'>🔥 "+T("Flex mes stats")+"</button></div><div class='stg'>";
   [["casual","Classique"],["ranked","Ranked"]].forEach(([m,l])=>{const t=statOf(m);
     h+="<div><h3>"+T(l)+"</h3>"+(t.g||t.n?"<p>"+T("Parties")+"<b>"+t.g+"</b></p><p>"+T("Manches")+"<b>"+t.n+"</b></p><p>"+T("Précision moyenne")+"<b>"+pc(t.avg)+"</b></p><p>"+T("Meilleure partie")+"<b>"+pc(t.best)+"</b></p><p>"+T("Quasi pile (±10 %)")+"<b>"+t.x+"</b></p>":"<p>"+T("Pas encore de parties")+"</p>")+"</div>"});
   h+="</div>";
@@ -1284,7 +1537,14 @@ function simUpd(){const pr=+$("sim-p").value,n=+$("sim-n").value,g=pr*n,c=Math.r
   $("sim-pv").textContent=m(pr);$("sim-nv").textContent=num(n);
   $("sim-g").textContent=m(g);$("sim-c").textContent="− "+m(c);$("sim-t").textContent=m(t)}
 $("sim-p").addEventListener("input",simUpd);$("sim-n").addEventListener("input",simUpd);
-$("s").addEventListener("input",upd);
+$("s").addEventListener("input",()=>{manual=null;upd()});
+{const fine=$("fine");let rep=0,tm=0;
+ const step=f=>setManual(val()*f),stop=()=>{clearTimeout(tm);clearInterval(rep)};
+ fine.addEventListener("pointerdown",e=>{const b=e.target.closest("[data-f]");if(!b)return;e.preventDefault();const f=+b.dataset.f;step(f);if(f!==0.5&&f!==2){tm=setTimeout(()=>{rep=setInterval(()=>step(f),70)},380)}});
+ ["pointerup","pointerleave","pointercancel"].forEach(ev=>fine.addEventListener(ev,stop));
+ fine.addEventListener("keydown",e=>{const b=e.target.closest("[data-f]");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();e.stopPropagation();step(+b.dataset.f)}});
+ const gi=$("gin");const apply=()=>{const v=parseV(gi.value);if(v!=null)setManual(v);else upd()};
+ gi.addEventListener("keydown",e=>{e.stopPropagation();if(e.key==="Enter"){e.preventDefault();apply();gi.blur()}});gi.addEventListener("blur",apply);gi.addEventListener("focus",()=>gi.select())}
 $("ok").addEventListener("click",validate);
 $("cn").addEventListener("input",()=>{const n=+$("cn").value;$("cnv").textContent=n;try{localStorage.setItem("dath.n",String(n))}catch(e){}
   if(mode!=="ranked"&&i===0&&!busy){deck=pick(n);show()}});
@@ -1315,12 +1575,183 @@ $("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){
 $("sh").addEventListener("click",e=>{if(e.target.id==="sh"||e.target.closest("#sx"))sheet(0)});
 $("pn").addEventListener("input",e=>{S.name=e.target.value.trim().slice(0,14)||"Anon";save();refresh()});
 $("pn").addEventListener("change",()=>push());
-$("share").addEventListener("click",async()=>{
-  const t=T("J’ai fait {0} / {1} sur Devine l’ATH",num(total),num(deck.length*1000))+(mode==="ranked"?T(" (ranked, {0})",RANKS[rankOf(S.rp,myPos())][0]):"")+T(". Tu fais mieux ?");
-  try{await navigator.clipboard.writeText(t);$("share").textContent=T("Copié ✓")}
-  catch(e){const f=$("sharetext");f.value=t;f.hidden=false;f.focus();f.select()}
-  setTimeout(()=>$("share").textContent=T("Partager mon score"),2000);
+
+Object.assign(DICT.en,{"Champion":"Champion","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Unique trophy: #1 on the leaderboard. It passes to the next best score.","Terminé · reviens demain":"Done · come back tomorrow","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Daily challenge already played. Come back tomorrow for a new one!","Défi du jour commencé · reviens demain":"Daily challenge started · come back tomorrow","Progression":"Progress","Paramètres":"Settings","Langue et thème de couleur":"Language and color theme","Apparence":"Appearance","Sombre":"Dark","Clair":"Light","Thème de couleur":"Color theme","Vert":"Green","Bleu":"Blue","Violet":"Purple","Orange":"Orange","Rose":"Pink","Jaune":"Yellow","Rouge":"Red"});
+Object.assign(DICT.es,{"Champion":"Campeón","Trophée unique : n°1 du classement. Il passe au prochain meilleur score.":"Trofeo único: n.º 1 de la clasificación. Pasa al siguiente mejor puntaje.","Terminé · reviens demain":"Hecho · vuelve mañana","Défi du jour déjà joué. Reviens demain pour un nouveau défi !":"Reto del día ya jugado. ¡Vuelve mañana para uno nuevo!","Défi du jour commencé · reviens demain":"Reto del día empezado · vuelve mañana","Progression":"Progreso","Paramètres":"Ajustes","Langue et thème de couleur":"Idioma y tema de color","Apparence":"Apariencia","Sombre":"Oscuro","Clair":"Claro","Thème de couleur":"Tema de color","Vert":"Verde","Bleu":"Azul","Violet":"Violeta","Orange":"Naranja","Rose":"Rosa","Jaune":"Amarillo","Rouge":"Rojo"});
+Object.assign(DICT.en,{"Sons":"Sounds","Activés":"On","Coupés":"Off"});Object.assign(DICT.es,{"Sons":"Sonidos","Activés":"Activados","Coupés":"Desactivados"});
+Object.assign(DICT.en,{"Devine l’ATH":"Guess the ATH","Lis le narratif, devine l’ATH.":"Read the narrative, guess the ATH.","Choisis ta langue pour commencer":"Choose your language to start"});Object.assign(DICT.es,{"Devine l’ATH":"Adivina el ATH","Lis le narratif, devine l’ATH.":"Lee la narrativa, adivina el ATH.","Choisis ta langue pour commencer":"Elige tu idioma para empezar"});
+Object.assign(DICT.en,{"Page d’accueil":"Home","Tutoriel":"Tutorial","Revoir le tutoriel":"Replay the tutorial","Suivant":"Next","Terminer":"Finish","Passer le tuto":"Skip tutorial","Étape {0}/{1}":"Step {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial done: no points earned. Your turn!",
+"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"Welcome! Let’s make a first prediction together. Press “Start the round”.",
+"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Here’s your coin. Read its name, narrative and tweet: they’re your only clues.",
+"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"The chart is hidden. Guess how high the market cap climbed: that’s its ATH (the highest it reached).",
+"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +.":"Move the slider to place your guess. You can also type an exact value or use the − / + buttons.",
+"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».":"The closer to the ATH and the faster you answer, the more points you earn. Press “Submit my guess”.",
+"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.":"Watch the curve unfold: the flag marks the real ATH.",
+"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !":"Here’s your score: your guess, the real ATH, the gap and your speed bonus. You know how to play!"});
+Object.assign(DICT.es,{"Page d’accueil":"Inicio","Tutoriel":"Tutorial","Revoir le tutoriel":"Repetir el tutorial","Suivant":"Siguiente","Terminer":"Terminar","Passer le tuto":"Saltar el tutorial","Étape {0}/{1}":"Paso {0}/{1}","Tutoriel terminé : aucun point gagné. À toi de jouer !":"Tutorial terminado: no se gana ningún punto. ¡Te toca!",
+"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».":"¡Bienvenido! Hagamos una primera predicción juntos. Pulsa «Empezar la ronda».",
+"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices.":"Aquí está tu moneda. Lee su nombre, su narrativa y su tuit: son tus únicas pistas.",
+"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint).":"El gráfico está oculto. Adivina hasta dónde subió el market cap: ese es su ATH (el máximo alcanzado).",
+"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +.":"Mueve el control para colocar tu predicción. También puedes escribir un valor exacto o usar los botones − / +.",
+"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».":"Cuanto más cerca del ATH y más rápido respondas, más puntos ganas. Pulsa «Confirmar mi predicción».",
+"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.":"Mira cómo se revela la curva: la bandera marca el ATH real.",
+"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !":"Esta es tu puntuación: tu predicción, el ATH real, la diferencia y tu bonus de velocidad. ¡Ya sabes jugar!"});
+const THEMES=[["Vert","#00D26A"],["Bleu","#3B9CFF"],["Violet","#A78BFA"],["Orange","#FF8A3D"],["Rose","#FF4FA3"],["Jaune","#FFC53D"],["Rouge","#F0435A"]];
+let TH=0,MD="dark";try{TH=Math.max(0,Math.min(THEMES.length-1,+localStorage.getItem("dath.theme")||0));MD=localStorage.getItem("dath.mode")==="light"?"light":"dark"}catch(e){}
+function applyTheme(){const r=document.documentElement,c=THEMES[TH][1];r.style.setProperty("--up",c);r.style.setProperty("--on-up",MD==="light"?"#fff":"#000");r.dataset.mode=MD;
+  try{localStorage.setItem("dath.theme",String(TH));localStorage.setItem("dath.mode",MD)}catch(e){}
+  const t=$("themes");if(t)t.querySelectorAll("button").forEach((b,k)=>b.classList.toggle("on",k===TH));const m=$("modes");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.md===MD))}
+function drawSettings(){$("themes").innerHTML=THEMES.map((t,k)=>"<button data-th='"+k+"'><i style='background:"+t[1]+"'></i>"+T(t[0])+"</button>").join("");applyTheme()}
+$("themes").addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(b){TH=+b.dataset.th;applyTheme()}});
+$("modes").addEventListener("click",e=>{const b=e.target.closest("[data-md]");if(b){MD=b.dataset.md;applyTheme()}});
+applyTheme();
+function applySnd(){try{localStorage.setItem("dath.snd",String(SND))}catch(e){}const m=$("sounds");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",+b.dataset.sn===SND))}
+$("sounds").addEventListener("click",e=>{const b=e.target.closest("[data-sn]");if(b){SND=+b.dataset.sn;applySnd();sfx("good")}});
+applySnd();
+function applyScale(){try{localStorage.setItem("dath.scale2",SCL)}catch(e){}const m=$("scales");if(m)m.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.sc===SCL));sclTicks()}
+$("scales").addEventListener("click",e=>{const b=e.target.closest("[data-sc]");if(!b)return;const v=Math.max(LOV,Math.min(HIV,val()));SCL=b.dataset.sc;$("s").value=Math.max(0,Math.min(SMAX,Math.round(posOf(v))));applyScale();upd()});
+applyScale();
+
+Object.assign(DICT.en,{"Temps moyen par prédiction : {0}":"Average time per guess: {0}","Ton défi du jour":"Your daily challenge","Prochain défi dans":"Next challenge in","Temps de réponse moyen":"Average guess time","Plus rapide":"Fastest","Plus lent":"Slowest","Détail des coins":"Coin details","Tes stats sur les défis":"Your challenge stats","Série actuelle":"Current streak","Meilleur score":"Best score","Défis joués":"Challenges played","Score moyen":"Average score","Temps moyen":"Average time","Derniers défis":"Recent challenges","jour(s)":"day(s)","Défi commencé mais non terminé : il ne compte pas aujourd’hui. Reviens demain !":"Challenge started but not finished: it does not count today. Come back tomorrow!","Précision ×3":"Within ×3","Flex mes stats du défi":"Flex my challenge stats","Les 5 coins changent chaque jour à minuit UTC.":"The 5 coins change every day at midnight UTC.","ta prédiction {0}, ATH {1}":"your guess {0}, ATH {1}"});
+Object.assign(DICT.es,{"Temps moyen par prédiction : {0}":"Tiempo medio por predicción: {0}","Ton défi du jour":"Tu reto del día","Prochain défi dans":"Próximo reto en","Temps de réponse moyen":"Tiempo medio de predicción","Plus rapide":"Más rápido","Plus lent":"Más lento","Détail des coins":"Detalle de las monedas","Tes stats sur les défis":"Tus stats de retos","Série actuelle":"Racha actual","Meilleur score":"Mejor puntuación","Défis joués":"Retos jugados","Score moyen":"Puntuación media","Temps moyen":"Tiempo medio","Derniers défis":"Últimos retos","jour(s)":"día(s)","Défi commencé mais non terminé : il ne compte pas aujourd’hui. Reviens demain !":"Reto empezado pero no terminado: hoy no cuenta. ¡Vuelve mañana!","Précision ×3":"A ×3","Flex mes stats du défi":"Presume tu reto","Les 5 coins changent chaque jour à minuit UTC.":"Las 5 monedas cambian cada día a medianoche UTC.","ta prédiction {0}, ATH {1}":"tu predicción {0}, ATH {1}"});
+let dTick=0;
+function dailyToday(){const D=S.daily||{};if(D.today&&D.today.d===dayKey())return D.today;if(D.last===dayKey()&&typeof D.s==="number")return{d:dayKey(),s:D.s,n:5,ok:null,avg:0,rounds:[],legacy:true};return null}
+function drawDaily(){
+  const D=S.daily||{},td=dailyToday(),box=$("daily-v"),sec=ms=>(ms/1000).toFixed(1).replace(".",decSep())+" s";
+  const H=D.hist||[],avgS=H.length?H.reduce((a,x)=>a+x.s,0)/H.length:0,avgT=H.length?H.reduce((a,x)=>a+x.avg,0)/H.length:0;
+  let h="";
+  if(td){const rs=td.rounds,ms=rs.length?rs.map(x=>x.ms):[0];
+    h+="<div class='k'>"+T("Ton défi du jour")+"</div><div class='dbig'>"+num(td.s)+" <small>/ 5 000</small></div><div class='stg dgrid'><div><p>"+T("Performance du défi")+"<b>"+Math.round(td.s/50)+" %</b></p><p>"+T("Précision ×3")+"<b>"+(td.ok==null?"—":td.ok+"/"+td.n)+"</b></p><p>"+T("Temps de réponse moyen")+"<b>"+(td.avg?sec(td.avg):"—")+"</b></p><p>"+T("Plus rapide")+" / "+T("Plus lent")+"<b>"+(td.avg?sec(Math.min(...ms))+" / "+sec(Math.max(...ms)):"—")+"</b></p></div></div>";
+    h+="<div class='k' style='margin-top:18px'>"+T("Détail des coins")+"</div><div class='rc'>"+rs.map(x=>{const r=x.g>x.a?x.g/x.a:x.a/x.g;return"<div class='r'><b>"+esc(dec(x.n))+"</b><span>"+esc(T("ta prédiction {0}, ATH {1}",fmt(x.g),fmt(x.a)))+" · "+sec(x.ms)+"</span><span class='pt'>+"+num(x.p)+"</span></div>"}).join("")+"</div>";
+  }else h+="<p class='note'>"+T("Défi commencé mais non terminé : il ne compte pas aujourd’hui. Reviens demain !")+"</p>";
+  h+="<div class='dnext'><span class='k'>"+T("Prochain défi dans")+"</span><b id='dcd'></b></div><p class='note' style='margin:6px 0 0'>"+T("Les 5 coins changent chaque jour à minuit UTC.")+"</p>";
+  h+="<div class='k' style='margin-top:18px'>"+T("Tes stats sur les défis")+"</div><div class='stg dgrid'><div><p>"+T("Série actuelle")+"<b>"+(D.st||0)+" "+T("jour(s)")+"</b></p><p>"+T("Meilleur score")+"<b>"+num(D.best||0)+"</b></p><p>"+T("Défis joués")+"<b>"+H.length+"</b></p><p>"+T("Score moyen")+"<b>"+num(Math.round(avgS))+"</b></p><p>"+T("Temps moyen")+"<b>"+(H.length?sec(avgT):"—")+"</b></p></div></div>";
+  if(H.length>1){const L=H.slice(-14);h+="<div class='k' style='margin-top:18px'>"+T("Derniers défis")+"</div><div class='dbars'>"+L.map(x=>"<i title='"+x.d+" · "+num(x.s)+"' style='height:"+Math.max(6,Math.round(x.s/5000*100))+"%'></i>").join("")+"</div>"}
+  if(td)h+="<button id='dflex' class='alt' style='margin-top:18px'>🔥 "+T("Flex mes stats du défi")+"</button>";
+  box.innerHTML=h;
+  const tick=()=>{const e=$("dcd");if(!e||$("daily-v").hidden){clearInterval(dTick);return}const n=new Date(),nx=Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()+1),d=Math.max(0,nx-n.getTime()),p=v=>String(v).padStart(2,"0");e.textContent=p(Math.floor(d/36e5))+":"+p(Math.floor(d%36e5/6e4))+":"+p(Math.floor(d%6e4/1e3));if(d<=0){clearInterval(dTick);refresh()}};
+  clearInterval(dTick);tick();dTick=setInterval(tick,1000);
+}
+$("daily-v").addEventListener("click",e=>{if(e.target.closest("#dflex")){const q=dailyToday();if(!q)return;FX.snap={p:q.s/5000,total:q.s,n:q.n,ok:q.ok,avg:q.avg,st:S.daily.st||1};fxOpen("daily")}});
+
+Object.assign(DICT.en,{"Se déconnecter":"Sign out","Se reconnecter":"Sign back in","Déconnecté. Tes stats restent sur cet appareil.":"Signed out. Your stats stay on this device.","Valeur exacte":"Exact value","Tape une valeur exacte (ex. 450k ou 2,5M) ou affine avec les boutons.":"Type an exact value (e.g. 450k or 2.5M) or fine-tune with the buttons.","Échelle du curseur":"Slider scale","Linéaire":"Linear","Logarithmique":"Logarithmic","Linéaire : les graduations sont régulières, mais les petits market caps se règlent finement avec les flèches du clavier. Logarithmique : plus de précision sur les petits coins.":"Linear: evenly spaced marks, but small market caps are fine-tuned with the keyboard arrows. Logarithmic: more precision on small coins.","Vitesse : {0} s · bonus ×{1}":"Speed: {0} s · bonus ×{1}","La vitesse compte : les points de chaque coin sont multipliés par un bonus de vitesse. Réponds en moins de 3 secondes pour garder 100 % des points ; plus tu prends de temps, plus le bonus baisse, jusqu’à 60 % à partir de 30 secondes.":"Speed matters: each coin’s points are multiplied by a speed bonus. Answer within 3 seconds to keep 100% of the points; the longer you take, the lower the bonus, down to 60% from 30 seconds on.","Ce score est ensuite multiplié par un bonus de vitesse : ×1 jusqu’à 3 secondes, puis dégressif jusqu’à ×0,6 à partir de 30 secondes.":"This score is then multiplied by a speed bonus: ×1 up to 3 seconds, then decreasing to ×0.6 from 30 seconds on.","Jouer entre amis":"Play with friends","Jouer avec des amis":"Play with friends","Partie entre amis : mêmes coins pour tous, chacun joue à son rythme et le classement se met à jour en direct.":"Friends game: same coins for everyone, everyone plays at their own pace and the ranking updates live.","Créer une partie":"Create a game","Nombre de coins":"Number of coins","Rejoindre avec un code":"Join with a code","Code de la partie":"Game code","Rejoindre":"Join","Ton code":"Your code","Copier le code":"Copy code","Code copié.":"Code copied.","Donne ce code à tes amis : ils ouvrent le jeu, touchent « Jouer avec des amis » puis entrent le code. Ils doivent avoir accès à cette page.":"Give this code to your friends: they open the game, tap “Play with friends” and enter the code. They need access to this page.","Joueurs dans le salon":"Players in the room","Commencer la partie":"Start the game","Quitter le salon":"Leave the room","Code invalide.":"Invalid code.","Le jeu à plusieurs n’est pas disponible ici : ouvre le jeu depuis son lien en étant connecté à claude.ai.":"Multiplayer is not available here: open the game from its link while signed in to claude.ai.","Connexion au salon…":"Connecting to the room…","Salon impossible à rejoindre.":"Could not join the room.","Amis":"Friends","Terminé":"Done","Toi":"You","Partie entre amis terminée : aucun point gagné. Regarde le classement en haut de la page.":"Friends game over: no points earned. Check the ranking at the top of the page.","coins":"coins"});
+Object.assign(DICT.es,{"Se déconnecter":"Cerrar sesión","Se reconnecter":"Volver a conectar","Déconnecté. Tes stats restent sur cet appareil.":"Sesión cerrada. Tus stats se quedan en este dispositivo.","Valeur exacte":"Valor exacto","Tape une valeur exacte (ex. 450k ou 2,5M) ou affine avec les boutons.":"Escribe un valor exacto (p. ej. 450k o 2,5M) o ajusta con los botones.","Échelle du curseur":"Escala del control","Linéaire":"Lineal","Logarithmique":"Logarítmica","Linéaire : les graduations sont régulières, mais les petits market caps se règlent finement avec les flèches du clavier. Logarithmique : plus de précision sur les petits coins.":"Lineal: marcas regulares, pero los market caps pequeños se ajustan con las flechas del teclado. Logarítmica: más precisión en las monedas pequeñas.","Vitesse : {0} s · bonus ×{1}":"Velocidad: {0} s · bonus ×{1}","La vitesse compte : les points de chaque coin sont multipliés par un bonus de vitesse. Réponds en moins de 3 secondes pour garder 100 % des points ; plus tu prends de temps, plus le bonus baisse, jusqu’à 60 % à partir de 30 secondes.":"La velocidad cuenta: los puntos de cada moneda se multiplican por un bonus de velocidad. Responde en menos de 3 segundos para conservar el 100 % de los puntos; cuanto más tardes, más baja el bonus, hasta el 60 % a partir de 30 segundos.","Ce score est ensuite multiplié par un bonus de vitesse : ×1 jusqu’à 3 secondes, puis dégressif jusqu’à ×0,6 à partir de 30 secondes.":"Esta puntuación se multiplica después por un bonus de velocidad: ×1 hasta 3 segundos, luego decreciente hasta ×0,6 a partir de 30 segundos.","Jouer entre amis":"Jugar con amigos","Jouer avec des amis":"Jugar con amigos","Partie entre amis : mêmes coins pour tous, chacun joue à son rythme et le classement se met à jour en direct.":"Partida con amigos: mismas monedas para todos, cada uno juega a su ritmo y la clasificación se actualiza en directo.","Créer une partie":"Crear una partida","Nombre de coins":"Número de monedas","Rejoindre avec un code":"Unirse con un código","Code de la partie":"Código de la partida","Rejoindre":"Unirse","Ton code":"Tu código","Copier le code":"Copiar código","Code copié.":"Código copiado.","Donne ce code à tes amis : ils ouvrent le jeu, touchent « Jouer avec des amis » puis entrent le code. Ils doivent avoir accès à cette page.":"Da este código a tus amigos: abren el juego, tocan «Jugar con amigos» e introducen el código. Deben tener acceso a esta página.","Joueurs dans le salon":"Jugadores en la sala","Commencer la partie":"Empezar la partida","Quitter le salon":"Salir de la sala","Code invalide.":"Código no válido.","Le jeu à plusieurs n’est pas disponible ici : ouvre le jeu depuis son lien en étant connecté à claude.ai.":"El modo multijugador no está disponible aquí: abre el juego desde su enlace con tu sesión de claude.ai.","Connexion au salon…":"Conectando a la sala…","Salon impossible à rejoindre.":"No se pudo entrar en la sala.","Amis":"Amigos","Terminé":"Terminado","Toi":"Tú","Partie entre amis terminée : aucun point gagné. Regarde le classement en haut de la page.":"Partida con amigos terminada: sin puntos. Mira la clasificación arriba.","coins":"monedas"});
+const FRI='<svg class="ri fri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6 0 4.5 2 4.5 4.8"/></svg>';
+const FR={room:null,code:null,n:10,r:0,s:0,d:false,off:null,sel:10,busy:false};
+const frRand=()=>{const A="abcdefghjkmnpqrstuvwxyz23456789";let c="";for(let j=0;j<4;j++)c+=A[Math.floor(Math.random()*A.length)];return c};
+const frCode=v=>{v=String(v||"").toLowerCase().trim().replace(/\s+/g,"");const m=v.match(/^([a-z0-9]{4})-?(\d{1,2})$/);if(!m)return null;const n=Math.max(3,Math.min(25,+m[2]));return m[1]+"-"+n};
+function friendDeck(){const c=FR.code||"aaaa-5";return COINS.map(k=>[hash32(c+"|"+seenKey(k)),k]).sort((a,b)=>a[0]-b[0]).slice(0,FR.n).map(x=>x[1])}
+function frPres(){if(!FR.room)return;try{FR.room.presence({n:String(S.name||"Anon").slice(0,14),k:rankOf(S.rp,myPos()),r:FR.r,s:FR.s,d:FR.d,m:FR.n})}catch(e){}}
+function frPeers(){if(!FR.room)return[];return FR.room.peers().filter(p=>p.kind==="viewer"&&p.presence&&p.presence.n!=null).slice().sort((a,b)=>(b.presence.s||0)-(a.presence.s||0))}
+function frRows(){return frPeers().map((p,x)=>{const q=p.presence,k=Math.max(0,Math.min(5,+q.k||0)),me=p.isMe&&p.sameTab;return"<div class='fr-r"+(me?" me":"")+"'><span class='fr-p'>"+(x+1)+"</span>"+NM(k,String(q.n))+"<span class='fr-s'>"+(q.d?T("Terminé")+" · ":(q.r||0)+"/"+FR.n+" · ")+num(+q.s||0)+" pts</span></div>"}).join("")}
+function frRender(){
+  const L=$("flive");
+  if(!FR.room){L.hidden=true}else{L.hidden=(mode!=="friends"&&$("sh").hidden===false)||false;L.innerHTML="<div class='fr-h'><b>"+FRI+" "+T("Amis")+"</b><span class='k'>"+esc(FR.code)+"</span></div>"+frRows();L.hidden=!(mode==="friends"&&(!$("game").hidden||!$("end").hidden))}
+  if(!$("fr-v").hidden&&shown==="friends"){const e=$("frl");if(e)e.innerHTML=frRows()}
+}
+async function frJoin(code){
+  const c=frCode(code);if(!c){toast(T("Code invalide."));return false}
+  let rm=null;try{rm=window.claude&&await window.claude.use("room")}catch(e){}
+  if(!rm){toast(T("Le jeu à plusieurs n’est pas disponible ici : ouvre le jeu depuis son lien en étant connecté à claude.ai."));return false}
+  await frLeave();
+  try{FR.room=await rm.join("dath-"+c)}catch(e){FR.room=null;toast(T("Salon impossible à rejoindre."));return false}
+  FR.code=c;FR.n=+c.split("-")[1];FR.r=0;FR.s=0;FR.d=false;frPres();
+  FR.off=FR.room.onPeers(()=>frRender(),()=>{});frRender();return true}
+async function frLeave(){if(FR.off){try{FR.off()}catch(e){}FR.off=null}if(FR.room){try{await FR.room.leave()}catch(e){}}FR.room=null;FR.code=null;$("flive").hidden=true}
+function drawFriends(){
+  const B=$("fr-v");
+  if(FR.room){
+    B.innerHTML="<div class='k'>"+T("Ton code")+"</div><div class='fr-code'><b>"+esc(FR.code)+"</b><button id='frcp' class='alt'>"+T("Copier le code")+"</button></div><p class='note' style='margin:6px 0 14px'>"+T("Donne ce code à tes amis : ils ouvrent le jeu, touchent « Jouer avec des amis » puis entrent le code. Ils doivent avoir accès à cette page.")+"</p><div class='k'>"+T("Joueurs dans le salon")+" · "+FR.n+" "+T("coins")+"</div><div id='frl' class='fr-list'>"+frRows()+"</div><button id='frgo' style='margin-top:14px'>"+T("Commencer la partie")+"</button><button id='frlv' class='ghost'>"+T("Quitter le salon")+"</button>";
+  }else{
+    B.innerHTML="<div class='k'>"+T("Créer une partie")+"</div><div class='tabs' id='frn'>"+[5,10,15].map(n=>"<button data-n='"+n+"' class='"+(FR.sel===n?"on":"")+"'>"+n+" "+T("coins")+"</button>").join("")+"</div><button id='frmk'>"+T("Créer une partie")+"</button><div class='k' style='margin-top:20px'>"+T("Rejoindre avec un code")+"</div><div class='fr-join'><input id='frin' maxlength='7' autocomplete='off' placeholder='"+T("Code de la partie")+"' aria-label='"+T("Code de la partie")+"'><button id='frjn' class='alt'>"+T("Rejoindre")+"</button></div>";
+  }
+}
+$("fr-v").addEventListener("click",async e=>{
+  const t=e.target.closest("button");if(!t||FR.busy)return;
+  if(t.dataset.n){FR.sel=+t.dataset.n;drawFriends();return}
+  FR.busy=true;
+  try{
+    if(t.id==="frmk"){if(await frJoin(frRand()+"-"+FR.sel))drawFriends()}
+    else if(t.id==="frjn"){if(await frJoin($("frin").value))drawFriends()}
+    else if(t.id==="frlv"){await frLeave();drawFriends()}
+    else if(t.id==="frcp"){try{await navigator.clipboard.writeText(FR.code);toast(T("Code copié."))}catch(_){toast(FR.code)}}
+    else if(t.id==="frgo"){mode="friends";FR.r=0;FR.s=0;FR.d=false;launch("friends")}
+  }finally{FR.busy=false}
 });
+$("frb").addEventListener("click",()=>sheet("friends"));
+
+
+// ----- tutoriel guidé : première prédiction -----
+const TUTO_STEPS=[
+ {sel:"#go",t:"Bienvenue ! Faisons une première prédiction ensemble. Appuie sur « Lancer la manche ».",wait:()=>!$("rdy").hidden===false},
+ {sel:"#cc",t:"Voici ton coin. Lis son nom, son narratif et son tweet : ce sont tes seuls indices."},
+ {sel:"#cw",t:"Le graphique est caché. Devine jusqu’où le market cap a grimpé : c’est son ATH (le plus haut atteint)."},
+ {sel:"#s",t:"Déplace le curseur pour placer ta prédiction. Tu peux aussi taper une valeur exacte ou utiliser les boutons − / +."},
+ {sel:"#ok",t:"Plus tu es proche de l’ATH et plus tu réponds vite, plus tu gagnes de points. Appuie sur « Valider ma prédiction ».",wait:()=>$("input").hidden},
+ {sel:"#cw",t:"Regarde la courbe se dévoiler : le drapeau marque l’ATH réel.",wait:()=>!$("out").hidden,nonext:1},
+ {sel:"#out",t:"Voici ton score : ta prédiction, l’ATH réel, l’écart et ton bonus de vitesse. Tu sais jouer !",last:1}];
+let TU={on:false,k:0,tm:0};
+function tutoDone(){try{return localStorage.getItem("dath.tuto2")==="1"}catch(e){return false}}
+function tryTuto(){if(!INTRO_DONE||!DREADY||TU.on||tutoDone())return;tutoStart()}
+function tutoStart(){
+  if(TU.on)return;sheet(0);start("casual");deck=deck.slice(0,1);$("cn").value=1;$("cnv").textContent=1;meta();$("go").textContent=T("Lancer la manche {0}/{1}",1,1);TUT=true;
+  TU.on=true;TU.k=0;let c=$("coach");if(!c){c=document.createElement("div");c.id="coach";c.innerHTML="<div id='csp'></div><div id='ctip'><div class='cs'></div><p></p><div class='cb'><button class='ghost' id='cskip'></button><button id='cnx'></button></div></div>";document.body.appendChild(c);
+    $("cskip").addEventListener("click",()=>tutoEnd(false));$("cnx").addEventListener("click",()=>{if(TUTO_STEPS[TU.k]&&TUTO_STEPS[TU.k].last){goHome();return}sfx("tap");TU.k++;tutoShow()})}
+  c.hidden=false;tutoShow();clearInterval(TU.tm);TU.tm=setInterval(tutoTick,150);addEventListener("resize",tutoPlace)}
+function tutoEnd(done){clearInterval(TU.tm);TU.on=false;removeEventListener("resize",tutoPlace);const c=$("coach");if(c)c.hidden=true;
+  try{localStorage.setItem("dath.tuto2","1")}catch(e){}
+  if(!done){TUT=false;if(!$("rdy").hidden&&i===0)start("casual")}else sfx("rank")}
+function tutoShow(){
+  const st=TUTO_STEPS[TU.k];if(!st){tutoEnd(true);return}
+  const tip=$("ctip");tip.querySelector("p").textContent=T(st.t);tip.querySelector(".cs").textContent=T("Étape {0}/{1}",TU.k+1,TUTO_STEPS.length);
+  $("cskip").textContent=T("Passer le tuto");$("cnx").textContent=T(st.last?"Page d’accueil":"Suivant");$("cnx").hidden=[0,4,5].includes(TU.k);
+  $("cskip").hidden=!!st.last;
+  const el=document.querySelector(st.sel);if(el){try{el.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){}}
+  tutoPlace();if(TU.k>0)sfx("tick")}
+function tutoTick(){
+  if(!TU.on)return;const st=TUTO_STEPS[TU.k];if(!st)return;
+  if(TU.k===0&&!$("rdy").hidden===false){TU.k=1;tutoShow();return}
+  if(TU.k===3&&TU.moved){TU.moved=false;TU.k=4;tutoShow();return}
+  if(TU.k===4&&$("input").hidden){TU.k=5;tutoShow();return}
+  if(TU.k===5&&!$("out").hidden){TU.k=6;tutoShow();return}
+  tutoPlace()}
+$("s").addEventListener("input",()=>{if(TU.on&&TU.k===3)TU.moved=true});
+function tutoPlace(){
+  if(!TU.on)return;const st=TUTO_STEPS[TU.k];if(!st)return;const el=document.querySelector(st.sel),sp=$("csp"),tip=$("ctip");
+  if(!el||el.offsetParent===null&&getComputedStyle(el).position!=="fixed"){sp.style.opacity=0;return}
+  let r=el.getBoundingClientRect();const vh=innerHeight,vw=innerWidth;
+  const top=Math.max(4,r.top-6),bot=Math.min(vh-4,r.bottom+6),lf=Math.max(4,r.left-6),rt=Math.min(vw-4,r.right+6);
+  sp.style.opacity=1;sp.style.cssText+=";left:"+lf+"px;top:"+top+"px;width:"+(rt-lf)+"px;height:"+Math.max(10,bot-top)+"px";
+  const tw=Math.min(340,vw-24),th=tip.offsetHeight||150;tip.style.width=tw+"px";
+  let x=Math.max(12,Math.min(vw-tw-12,lf+(rt-lf)/2-tw/2)),y;
+  if(vh-bot>=th+14)y=bot+12;else if(top>=th+14)y=top-th-12;else y=vh-th-12;
+  tip.style.left=x+"px";tip.style.top=y+"px"}
+function goHome(){sfx("tap");if(TU.on){tutoEnd(true)}TUT=false;launch("casual")}
+$("home").addEventListener("click",goHome);$("home2").addEventListener("click",goHome);
+$("tutob").addEventListener("click",()=>{try{localStorage.removeItem("dath.tuto2")}catch(e){}INTRO_DONE=true;DREADY=true;tutoStart()});
+
+// curseur personnalisé : petit point de la couleur du thème, très légère animation
+{const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+ if(fine){const c=$("cur");document.body.appendChild(c);document.documentElement.classList.add("cc");
+  let on=false;
+  const mv=e=>{c.style.transform="translate3d("+e.clientX+"px,"+e.clientY+"px,0)";if(!on){on=true;c.classList.add("on")}};
+  addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;mv(e)},{passive:true});
+  addEventListener("mousemove",mv,{passive:true});
+  document.documentElement.addEventListener("mouseleave",()=>{on=false;c.classList.remove("on")});
+  addEventListener("blur",()=>{on=false;c.classList.remove("on")});
+  addEventListener("mousedown",()=>c.classList.add("dn"));addEventListener("mouseup",()=>c.classList.remove("dn"));
+  document.addEventListener("mouseover",e=>{const t=e.target;c.classList.toggle("hv",!!(t&&t.closest&&t.closest("button,a,input,.acct,[data-a]")))},{passive:true})}
+ else{const c=$("cur");if(c)c.remove()}}
+
+// déconnexion : coupe le lien avec le classement en ligne sur cet appareil
+function lgBtn(){const b=$("logout");if(b)b.hidden=!online}
+async function logout(){
+  loggedOut=true;try{localStorage.setItem("dath.out","1")}catch(e){}
+  try{if(unsubBoard)unsubBoard()}catch(e){}unsubBoard=null;
+  online=false;DB=null;UID=null;board=[];boardReady=false;
+  refresh();lgBtn();if(!$("sh").hidden)sheet(shown);toast(T("Déconnecté. Tes stats restent sur cet appareil."))}
+$("logout").addEventListener("click",logout);
+$("ac-v").addEventListener("click",async e=>{if(e.target.closest("#reco")){loggedOut=false;try{localStorage.removeItem("dath.out")}catch(_){}await goOnline();refresh();lgBtn();if(!$("sh").hidden)sheet(shown)}});
 
 function applyLang(){
   try{localStorage.setItem("dath.lang",LANG)}catch(e){}
@@ -1331,6 +1762,11 @@ function applyLang(){
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;applyLang()});
 applyLang();
+(function(){const it=$("intro");if(!it)return;let saved=LSAVED;
+  const mark=()=>it.querySelectorAll("#ilang button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG));mark();
+  let closed=false;const close=()=>{if(closed)return;closed=true;it.classList.add("out");setTimeout(()=>{it.remove();INTRO_DONE=true;tryTuto()},800)};
+  $("ilang").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;e.stopPropagation();LANG=b.dataset.l;saved=true;applyLang();mark();sfx("good");setTimeout(close,260)});
+})();
 refresh();
 goOnline();
 // Charge coins.json s’il existe (créé par fetch-coins.mjs), sinon garde les coins de démo.
@@ -1347,8 +1783,7 @@ Promise.all([getJ("coins.json","coins.json"),getJ("coins-img.json","artifact/coi
   if(ca&&typeof ca==="object")CAMAP=ca;
   if(wt&&typeof wt==="object")WTAG=wt;
   if(tw&&typeof tw==="object"&&!Array.isArray(tw))TW=tw;
-}).finally(()=>{start("casual");showWel()});
+}).finally(()=>{start("casual");showWel();DREADY=true;tryTuto()});
 </script>
-
 </body>
 </html>
