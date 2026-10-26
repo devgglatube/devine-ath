@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devgglatube.github.io/devine-ath/sitemap.xml
