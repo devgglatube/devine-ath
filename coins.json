@@ -6905,5 +6905,39 @@
     ]
    ]
   }
+ },
+ {
+  "id": "6Bny7KN57FFP3zqtm35cWpg8f68u6Bo9aB5HN1N7XFMg",
+  "n": "INU",
+  "t": "INU",
+  "img": "",
+  "ho": 0,
+  "c": "Solana",
+  "l": "25 octobre 2026",
+  "d": "",
+  "ath": 1442784,
+  "ch": [
+   195758,
+   736858,
+   698248,
+   730064,
+   858962,
+   1442784,
+   1125493,
+   820903,
+   952099,
+   815063,
+   338878,
+   654927,
+   620694
+  ],
+  "b": 3,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "9aRKvyDvZWbmQkCXXDKE3MiNVeZ3TpmJ7oNLodgA4KdK"
+   }
+  ]
  }
 ]
