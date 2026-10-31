@@ -9030,5 +9030,96 @@
     "a": "6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp"
    }
   ]
+ },
+ {
+  "id": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+  "n": "three.ws",
+  "t": "three",
+  "img": "https://coin-images.coingecko.com/coins/images/102173088/large/Generated_Image_April_29__2026_-_11_39AM.jpg?1777732999",
+  "ho": 15314,
+  "c": "Solana",
+  "l": "29 avril 2026",
+  "d": "three.ws is a platform that enables AI agents to exist as fully rendered 3D avatars that can be embedded across the web. It allows integration with different language models, so agents can be interact",
+  "ath": 16377578,
+  "ch": [
+   66961,
+   154074,
+   323643,
+   246270,
+   330084,
+   239987,
+   170194,
+   298569,
+   235980,
+   336913,
+   4205660,
+   16377578,
+   3967192,
+   3646622,
+   4100748,
+   3236658,
+   3256114,
+   4717688,
+   3657102,
+   1880243,
+   1814481,
+   1475045,
+   1090822,
+   1515505,
+   2574740,
+   2134291,
+   1833450,
+   1528700,
+   1279419,
+   1615641,
+   1547239,
+   2152069,
+   1640985,
+   1650462,
+   1691560,
+   1415684,
+   1827028,
+   2507787,
+   1582995,
+   1433096,
+   1162848,
+   988722,
+   625700,
+   779373,
+   976421,
+   840667,
+   689757,
+   751101,
+   715230,
+   595750,
+   597052,
+   492882,
+   463444,
+   462458,
+   458873,
+   446035,
+   353794,
+   294402,
+   272209,
+   545213
+  ],
+  "b": 4,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "71zpR8ZGSo4tEgWf8AmyuPcx3fzYjqwTDSAuhwQxBmSd",
+     10000
+    ]
+   ]
+  }
  }
 ]
