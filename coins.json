@@ -10151,5 +10151,45 @@
     "a": "5QwrYS9notyAX982C14kkTxMjqPaEh2Tj296LET2dnxz"
    }
   ]
+ },
+ {
+  "id": "5BmEAbTCap66inGyX7iLVwfuqxDUABuxE3gwQCi2Phf8",
+  "n": "真诚才是必杀技",
+  "t": "真诚",
+  "img": "https://assets.geckoterminal.com/a0dizkuvdfcm55dkjz4fq8vjc4og",
+  "ho": 0,
+  "c": "Solana",
+  "l": "9 novembre 2026",
+  "d": "",
+  "ath": 409964,
+  "ch": [
+   49788,
+   88890,
+   90297,
+   118268,
+   147835,
+   105255,
+   213521,
+   173583,
+   250838,
+   236031,
+   275893,
+   267168,
+   223955,
+   117143,
+   217771,
+   189619,
+   182595,
+   409964,
+   226738
+  ],
+  "b": 2,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "E6MLGRRHHi9Ava7w5QUPy18ynBXyoNLrsA44SoE4PEUL"
+   }
+  ]
  }
 ]
