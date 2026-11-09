@@ -10044,5 +10044,40 @@
     "a": "3M9sVgL4u6ATKaiExf3XhQqNfMB6ijvzk3meMcQaen1w"
    }
   ]
+ },
+ {
+  "id": "5NYXLmt2GgVSu6cJbA7FcTGpyF1JST1zBTEFdUsUvwde",
+  "n": "牛逼",
+  "t": "牛逼",
+  "img": "https://assets.geckoterminal.com/dbbp4v2mw13sgk6pe5r705hrfwsw",
+  "ho": 0,
+  "c": "Solana",
+  "l": "9 novembre 2026",
+  "d": "",
+  "ath": 55566246,
+  "ch": [
+   307857,
+   370411,
+   424176,
+   456123,
+   500599,
+   509054,
+   505066,
+   520286,
+   521947,
+   523686,
+   532790,
+   514009,
+   511246,
+   55566246
+  ],
+  "b": 5,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "EYAmeiXFrBaxTCWMoWDPouy49FcWdzTZKkVCvP1E2JSC"
+   }
+  ]
  }
 ]
