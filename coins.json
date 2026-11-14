@@ -11216,5 +11216,44 @@
     "a": "FJk9sajdc2Q4heRPPu3yLzkmf2ZByZkpiHQLv9e2bn5A"
    }
   ]
+ },
+ {
+  "id": "HsdxxrrYcx9ipuvjnrZpJj4GswiJXCd8r5xPjPQY6H3n",
+  "n": "CryingCatXsol",
+  "t": "GCAT",
+  "img": "https://assets.geckoterminal.com/9k6tjjxzdgh536dqnpzoimjb3yzt",
+  "ho": 0,
+  "c": "Solana",
+  "l": "14 novembre 2026",
+  "d": "Crying Cat $GCAT coming Solana",
+  "ath": 77463304,
+  "ch": [
+   17063,
+   20495,
+   23081,
+   26334,
+   29680,
+   33615,
+   35746,
+   40245,
+   42596,
+   47100,
+   50309,
+   53402,
+   54702,
+   57365,
+   59819,
+   61010,
+   62919,
+   77463304
+  ],
+  "b": 5,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "93F4ZsUTthbPjiHXjw4CC3asPhzGg8U5YQDFTX673tJT"
+   }
+  ]
  }
 ]
