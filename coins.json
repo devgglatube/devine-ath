@@ -11141,44 +11141,6 @@
   ]
  },
  {
-  "id": "84mnft4qg1ySJU4nsanWKj6KSe6DA9P1UbW4wuRuyxcZ",
-  "n": "Catcoin",
-  "t": "CAT",
-  "img": "https://assets.geckoterminal.com/j14xuurwn687g91x1eb17rfsisci",
-  "ho": 0,
-  "c": "Solana",
-  "l": "14 novembre 2026",
-  "d": "https://solscan.io/token/J9DTop9MMZaMArnJm1vGhoyBPN2QRh1Sbs1Z7g6qpump#metadata",
-  "ath": 347241,
-  "ch": [
-   72643,
-   106413,
-   84715,
-   165644,
-   179236,
-   150425,
-   223452,
-   237297,
-   347241,
-   168994,
-   79581,
-   63265,
-   76246,
-   88382,
-   87518,
-   93948,
-   91832
-  ],
-  "b": 2,
-  "pr": [
-   {
-    "d": "meteoradbc",
-    "q": "SOL",
-    "a": "9JEMZ9AvViqiW64QocKxRnUzag2PwMCiQLZ7oxWoVQyg"
-   }
-  ]
- },
- {
   "id": "5ZDiuBxCLuAjjxSKiBdumQJ36P7Jd9mh5HFLY94Ppump",
   "n": "Chunkee The Manatee",
   "t": "Chunkee",
@@ -11257,6 +11219,55 @@
     "d": "pumpswap",
     "q": "SOL",
     "a": "31o4hw3nLKD7U4S3N46GLS5HKEx3kEWyDW1Ys6gEtUS9"
+   }
+  ]
+ },
+ {
+  "id": "CYJw33QHZ49oEgvK4YpE7Vowu9ACZWEoNsNPcDKepump",
+  "n": "Effective Accelerationism",
+  "t": "e/acc",
+  "img": "https://assets.geckoterminal.com/cgk4wm9lixznm7lg8v47jk159g9k",
+  "ho": 0,
+  "c": "Solana",
+  "l": "14 novembre 2026",
+  "d": "What funding bro? All I get is X payouts and use that money to buy more coffee to dunk on Doomers.\n\nThere is no e/acc complex of NGOs, it's literally just posters united against a bunch of institution",
+  "ath": 21787,
+  "ch": [
+   3245,
+   3531,
+   5693,
+   15289,
+   13091,
+   13186,
+   11381,
+   21574,
+   21598,
+   21681,
+   21543,
+   21760,
+   21787,
+   21589,
+   21368,
+   21317,
+   21393,
+   21171,
+   21137,
+   21081,
+   21082,
+   21185,
+   21181,
+   21303,
+   21354,
+   21225,
+   21122,
+   21204
+  ],
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "5zQzaLtvYrpBzbxxmxkrkNoSKx25B2vMDCajHLVu3mNh"
    }
   ]
  }
