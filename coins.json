@@ -10586,96 +10586,6 @@
   ]
  },
  {
-  "id": "LaZV2Qz2mzRVwN6xGcZJkG76ziquRmSU2TBy4gxpump",
-  "n": "Autism Coin",
-  "t": "AUTISM",
-  "img": "https://assets.geckoterminal.com/172t02pc859ic8wezkkbw0td3iam",
-  "ho": 0,
-  "c": "Solana",
-  "l": "13 novembre 2026",
-  "d": "",
-  "ath": 242585,
-  "ch": [
-   29638,
-   43862,
-   83707,
-   126773,
-   111679,
-   130080,
-   148788,
-   166537,
-   177601,
-   242585,
-   156088,
-   135928,
-   128013,
-   85171,
-   72360,
-   69757,
-   37075,
-   32983,
-   35173,
-   43292,
-   57788,
-   42823,
-   37559,
-   32437,
-   30357,
-   36479,
-   34454,
-   32397,
-   32710,
-   33062,
-   32690,
-   29782,
-   27673,
-   31153,
-   29500,
-   32048,
-   28048,
-   26447,
-   25751,
-   28945,
-   34578,
-   30860,
-   32199,
-   29230,
-   28899,
-   28973,
-   22471,
-   23111,
-   23809,
-   22719,
-   20512,
-   19046,
-   19473,
-   17129,
-   12888,
-   12347,
-   10276,
-   9875,
-   10919,
-   10736
-  ],
-  "b": 1,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "DWP8DXn6ZooBJyFD1bTRuEWgtHVvpGLjiwokkix1kafE"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "DpPy7dfboxGCFnKHJbbh3Pm18jLRutgbJXAKSVaMaPyF",
-     10000
-    ]
-   ]
-  }
- },
- {
   "id": "DWWkB77tLR3cLZFmhBQjVjKwk8uZE2oDxF6AqTNSSzNX",
   "n": "MOOMOO",
   "t": "牛X",
@@ -10939,53 +10849,6 @@
   ]
  },
  {
-  "id": "DmjAMfGitYb5NwVrWwJLfFe5GWijYddDk4MTFhmYpump",
-  "n": "RingerSwap",
-  "t": "RINGER",
-  "img": "https://assets.geckoterminal.com/u2yk96y7ew525jhbisg0kdcgliap",
-  "ho": 0,
-  "c": "Solana",
-  "l": "13 novembre 2026",
-  "d": "Trade any token. Hold it privately. Ringer pairs Jupiter's routing with Helius Privacy Rings: you get a strong price on any Solana token, and a private balance whose token and amount are encrypted.",
-  "ath": 32359,
-  "ch": [
-   7894,
-   10775,
-   11010,
-   12689,
-   11818,
-   15803,
-   13084,
-   14924,
-   15473,
-   10973,
-   7132,
-   11188,
-   11097,
-   7588,
-   8647,
-   10255,
-   10161,
-   8624,
-   9515,
-   9320,
-   10069,
-   9357,
-   8686,
-   9389,
-   12297,
-   32359
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "2aB5Ezm2xkPbFKjtBYHJFhScQ9gpqJXmz38dww5ws5rk"
-   }
-  ]
- },
- {
   "id": "FJfoKVpXD1Zp8zHkcC8CT6EJTdvSdFUnx6e6Mny74Mio",
   "n": "Real World Asses",
   "t": "RWA",
@@ -11086,52 +10949,6 @@
     "d": "pumpswap",
     "q": "SOL",
     "a": "BHKyty1uDDxSwAkhkefn8ZwNQZjfQrmC672D2UW874dD"
-   }
-  ]
- },
- {
-  "id": "6sbXpr6f5jAxTAckJAdR1H4uH2tXV77gsq17AT6gxf9s",
-  "n": "サクラ",
-  "t": "Sakura",
-  "img": "https://assets.geckoterminal.com/nlbplgaio9fepejzduo52m4qx27l",
-  "ho": 0,
-  "c": "Solana",
-  "l": "13 novembre 2026",
-  "d": "",
-  "ath": 1336186,
-  "ch": [
-   134907,
-   196825,
-   108196,
-   124660,
-   139334,
-   297299,
-   322984,
-   289925,
-   386084,
-   473033,
-   812495,
-   729804,
-   779079,
-   701303,
-   732277,
-   874946,
-   1336186,
-   589295,
-   914212,
-   788120,
-   1003048,
-   726344,
-   544474,
-   363747,
-   690262
-  ],
-  "b": 3,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "F1cjmTMErv4JEZvipAs1ZaxZKf3BwgG7STEFsWXfRzjT"
    }
   ]
  },
@@ -11257,65 +11074,6 @@
   ]
  },
  {
-  "id": "3Z3B8TDg9p7XFbp8gmB5gEP32RKEDwBQz2z7yMeRpump",
-  "n": "cat with cap",
-  "t": "LUKE",
-  "img": "https://assets.geckoterminal.com/5my9qt1apewrtqc66h5mc0ectpzv",
-  "ho": 0,
-  "c": "Solana",
-  "l": "13 novembre 2026",
-  "d": "",
-  "ath": 17145,
-  "ch": [
-   8387,
-   10777,
-   17145,
-   7893,
-   2711,
-   2486,
-   2402,
-   2401,
-   2392,
-   2392,
-   2366,
-   2357,
-   2358,
-   2355,
-   2343,
-   2335,
-   2346,
-   2338,
-   2307,
-   2279,
-   2248,
-   2189,
-   2175,
-   2172,
-   2154
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "7f4C6RKscgtHPJo3MJsz4xEzKg17QV5q2hGNZZPVNVit"
-   }
-  ],
-  "fs": {
-   "s": 1,
-   "sh": [
-    [
-     "8H5xVTHiBMM1TNFEbYfL6mU2tYPYjBeUoEaqYu2E7ZmV",
-     5000
-    ],
-    [
-     "9hxpeBdw6v15uDLrfgMcVrLmi2hHxcXRTaKEUui92TjR",
-     5000
-    ]
-   ]
-  }
- },
- {
   "id": "DtN3ccEL1VVQMn57crD3F15pCbYV7mpsV37AMsBCiZn",
   "n": "Welcome to my DMs✊",
   "t": "YoungBull",
@@ -11390,6 +11148,196 @@
     "q": "SOL",
     "a": "D8ECAwLgbGAQeXxC8UQ1wBPMLapYKRSqPvWmD17vLNui"
    }
+  ],
+  "bz": 0
+ },
+ {
+  "id": "8J29rqSBLkeG4C4oenctL1dA4Bp6pZKXYL4woB7Tpump",
+  "n": "Destroy Dick December",
+  "t": "DDD",
+  "img": "https://assets.geckoterminal.com/10hr47uaztu94uzpljyidt2dbxd5",
+  "ho": 0,
+  "c": "Solana",
+  "l": "13 novembre 2026",
+  "d": "December is coming up almost time to DESTROY UR DICK ",
+  "ath": 15452,
+  "ch": [
+   11174,
+   14854,
+   15452,
+   12657,
+   7642,
+   6277,
+   4860,
+   2355,
+   2353,
+   2342,
+   2311,
+   2276,
+   2262,
+   2257,
+   2265,
+   2275,
+   2273,
+   2266,
+   2248,
+   2233,
+   2218,
+   2207,
+   2151,
+   2142
+  ],
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "EunEFWnrcUYzaE3nhymA7desvoFRuaYRQHEvdXpa66rJ"
+   }
   ]
+ },
+ {
+  "id": "pdcSEvDqUReA3UJ5NKbZpSjTrg4BxcrTTpLFaY3pump",
+  "n": "GameStop",
+  "t": "GME",
+  "img": "https://assets.geckoterminal.com/p0f7mrejz4ufkfcxr60uowpzc9zb",
+  "ho": 0,
+  "c": "Solana",
+  "l": "13 novembre 2026",
+  "d": "GameStop",
+  "ath": 22819,
+  "ch": [
+   22819,
+   12930,
+   5610,
+   4099,
+   3666,
+   3445,
+   3399,
+   3434,
+   3390,
+   3369,
+   3360,
+   3228,
+   3192,
+   3167,
+   3450,
+   3468,
+   3082,
+   3094,
+   3085,
+   3094,
+   3091,
+   3100,
+   3128,
+   3072,
+   3061,
+   3033,
+   3040,
+   3047,
+   3076,
+   3084,
+   3016,
+   3012
+  ],
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "GMEx",
+    "a": "DTu6rwaAi1E2Jug7c5T5RoJ7b1MpJvLu7hE2Bj7iBDXK"
+   }
+  ]
+ },
+ {
+  "id": "NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump",
+  "n": "パンチ",
+  "t": "Punch",
+  "img": "https://coin-images.coingecko.com/coins/images/102171922/large/resized-custom_%281%29.jpg?1770780738",
+  "ho": 24130,
+  "c": "Solana",
+  "l": "5 février 2026",
+  "d": "A baby Japanese macaque born just recently, who was abandoned right after birth and somehow survived thanks to six months of hand-rearing (artificial feeding) at a Japanese zoo. His name is Punch. The",
+  "ath": 3356357,
+  "ch": [
+   2274205,
+   3356357,
+   1974546,
+   1992891,
+   1934776,
+   1716979,
+   1411932,
+   1458613,
+   1172643,
+   1370206,
+   1312217,
+   1146103,
+   1242494,
+   1057900,
+   1147539,
+   1226118,
+   1198989,
+   875782,
+   810438,
+   856292,
+   851662,
+   782386,
+   1033191,
+   940618,
+   694583,
+   777196,
+   723576,
+   739884,
+   791981,
+   698034,
+   629852,
+   685458,
+   755746,
+   877788,
+   744320,
+   653729,
+   580228,
+   487818,
+   416538,
+   427956,
+   396979,
+   465511,
+   418047,
+   415509,
+   362920,
+   358810,
+   348875,
+   308282,
+   298624,
+   268692,
+   334526,
+   370577,
+   302173,
+   316237,
+   285412,
+   279450,
+   323445,
+   271509,
+   237895,
+   236192
+  ],
+  "b": 3,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "A6KHMiFzn9AM7VKBtVP4fZNY9bCo2jP63R9dphaW1vrq"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "Bf2WTmxKznX1ceZCfLbVE9hbGcMXd1Zv4KLkfdTqWhMP",
+     10000
+    ]
+   ]
+  }
  }
 ]
