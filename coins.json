@@ -11255,5 +11255,141 @@
     "a": "93F4ZsUTthbPjiHXjw4CC3asPhzGg8U5YQDFTX673tJT"
    }
   ]
+ },
+ {
+  "id": "3Z3B8TDg9p7XFbp8gmB5gEP32RKEDwBQz2z7yMeRpump",
+  "n": "cat with cap",
+  "t": "LUKE",
+  "img": "https://assets.geckoterminal.com/5my9qt1apewrtqc66h5mc0ectpzv",
+  "ho": 0,
+  "c": "Solana",
+  "l": "13 novembre 2026",
+  "d": "",
+  "ath": 17145,
+  "ch": [
+   8387,
+   10777,
+   17145,
+   7893,
+   2711,
+   2486,
+   2402,
+   2401,
+   2392,
+   2392,
+   2366,
+   2357,
+   2358,
+   2355,
+   2343,
+   2335,
+   2346,
+   2338,
+   2307,
+   2279,
+   2248,
+   2189,
+   2175,
+   2172,
+   2154
+  ],
+  "b": 0,
+  "pr": [
+   {
+    "d": "pumpfun",
+    "q": "SOL",
+    "a": "7f4C6RKscgtHPJo3MJsz4xEzKg17QV5q2hGNZZPVNVit"
+   }
+  ],
+  "fs": {
+   "s": 1,
+   "sh": [
+    [
+     "8H5xVTHiBMM1TNFEbYfL6mU2tYPYjBeUoEaqYu2E7ZmV",
+     5000
+    ],
+    [
+     "9hxpeBdw6v15uDLrfgMcVrLmi2hHxcXRTaKEUui92TjR",
+     5000
+    ]
+   ]
+  }
+ },
+ {
+  "id": "DtN3ccEL1VVQMn57crD3F15pCbYV7mpsV37AMsBCiZn",
+  "n": "Welcome to my DMs✊",
+  "t": "YoungBull",
+  "img": "https://assets.geckoterminal.com/p48vlrhrkvqdh367xexdhqp9j2q6",
+  "ho": 0,
+  "c": "Solana",
+  "l": "14 novembre 2026",
+  "d": "https://solscan.io/token/FBwLNTQwVwZK4jQak7aGVYiLe7WPg7JCsJfKSADKpump#metadata",
+  "ath": 950693,
+  "ch": [
+   69089,
+   154913,
+   200091,
+   222545,
+   253174,
+   454159,
+   447649,
+   617153,
+   537245,
+   395049,
+   612462,
+   950693,
+   381694,
+   450887
+  ],
+  "b": 2,
+  "pr": [
+   {
+    "d": "meteoradbc",
+    "q": "SOL",
+    "a": "C8vRuUuPr3Wsaqoa54XNVTehnZWgchXZRSnddb5TD6hB"
+   }
+  ]
+ },
+ {
+  "id": "KDccQa1JkmHDmxViX7Y2uCrf5eJzkW4wyXQbzR7a5WC",
+  "n": "Cyber Security Inu",
+  "t": "CSI",
+  "img": "https://assets.geckoterminal.com/mci7wkm5bynjw7ed1j6hbnzkiof3",
+  "ho": 0,
+  "c": "Solana",
+  "l": "13 novembre 2026",
+  "d": "Deployed using https://j7tracker.io\nCreated on https://maxcoinsol.lol",
+  "ath": 177503,
+  "ch": [
+   83902,
+   96235,
+   108093,
+   118080,
+   129051,
+   141298,
+   150030,
+   156879,
+   167413,
+   171484,
+   173279,
+   174040,
+   177503,
+   169310,
+   167671,
+   163915,
+   160682,
+   160583,
+   30355,
+   25700,
+   13613
+  ],
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "D8ECAwLgbGAQeXxC8UQ1wBPMLapYKRSqPvWmD17vLNui"
+   }
+  ]
  }
 ]
