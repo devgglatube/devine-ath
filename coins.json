@@ -10529,63 +10529,6 @@
   ]
  },
  {
-  "id": "9uVnsrTKCnMGGV1NForqMpTb6WbXBhfMYJCKJqdLJqJM",
-  "n": "01101001 01101110 01110101",
-  "t": "Inu",
-  "img": "https://assets.geckoterminal.com/os52nsxaqq4508xzo2cptjlx1b8t",
-  "ho": 0,
-  "c": "Solana",
-  "l": "12 novembre 2026",
-  "d": "",
-  "ath": 21013,
-  "ch": [
-   10644,
-   21013,
-   9595,
-   6972,
-   4083,
-   3842,
-   3527,
-   3179,
-   2969,
-   2695,
-   2688,
-   2674,
-   2687,
-   2549,
-   2567,
-   2530,
-   2525,
-   2517,
-   2437,
-   2349,
-   2325,
-   2335,
-   2353,
-   2346,
-   2337,
-   2336,
-   2329,
-   2327,
-   2320,
-   2321,
-   2326,
-   2296,
-   2235,
-   2224,
-   2265,
-   2285
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "SOL",
-    "a": "AEg7CpfFny6bkYEZURJKimbdKuVz3X7C2JQF4kYYUp8y"
-   }
-  ]
- },
- {
   "id": "DWWkB77tLR3cLZFmhBQjVjKwk8uZE2oDxF6AqTNSSzNX",
   "n": "MOOMOO",
   "t": "牛X",
@@ -11035,45 +10978,6 @@
   ]
  },
  {
-  "id": "HsdxxrrYcx9ipuvjnrZpJj4GswiJXCd8r5xPjPQY6H3n",
-  "n": "CryingCatXsol",
-  "t": "GCAT",
-  "img": "https://assets.geckoterminal.com/9k6tjjxzdgh536dqnpzoimjb3yzt",
-  "ho": 0,
-  "c": "Solana",
-  "l": "14 novembre 2026",
-  "d": "Crying Cat $GCAT coming Solana",
-  "ath": 77463304,
-  "ch": [
-   17063,
-   20495,
-   23081,
-   26334,
-   29680,
-   33615,
-   35746,
-   40245,
-   42596,
-   47100,
-   50309,
-   53402,
-   54702,
-   57365,
-   59819,
-   61010,
-   62919,
-   77463304
-  ],
-  "b": 5,
-  "pr": [
-   {
-    "d": "pumpswap",
-    "q": "SOL",
-    "a": "93F4ZsUTthbPjiHXjw4CC3asPhzGg8U5YQDFTX673tJT"
-   }
-  ]
- },
- {
   "id": "DtN3ccEL1VVQMn57crD3F15pCbYV7mpsV37AMsBCiZn",
   "n": "Welcome to my DMs✊",
   "t": "YoungBull",
@@ -11197,59 +11101,6 @@
   ]
  },
  {
-  "id": "pdcSEvDqUReA3UJ5NKbZpSjTrg4BxcrTTpLFaY3pump",
-  "n": "GameStop",
-  "t": "GME",
-  "img": "https://assets.geckoterminal.com/p0f7mrejz4ufkfcxr60uowpzc9zb",
-  "ho": 0,
-  "c": "Solana",
-  "l": "13 novembre 2026",
-  "d": "GameStop",
-  "ath": 22819,
-  "ch": [
-   22819,
-   12930,
-   5610,
-   4099,
-   3666,
-   3445,
-   3399,
-   3434,
-   3390,
-   3369,
-   3360,
-   3228,
-   3192,
-   3167,
-   3450,
-   3468,
-   3082,
-   3094,
-   3085,
-   3094,
-   3091,
-   3100,
-   3128,
-   3072,
-   3061,
-   3033,
-   3040,
-   3047,
-   3076,
-   3084,
-   3016,
-   3012
-  ],
-  "b": 0,
-  "pr": [
-   {
-    "d": "pumpfun",
-    "q": "GMEx",
-    "a": "DTu6rwaAi1E2Jug7c5T5RoJ7b1MpJvLu7hE2Bj7iBDXK"
-   }
-  ]
- },
- {
   "id": "NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump",
   "n": "パンチ",
   "t": "Punch",
@@ -11339,5 +11190,57 @@
     ]
    ]
   }
+ },
+ {
+  "id": "8NKxDyQeuSPpKQVMS9v3CJoghDDs95Z1yXdUqzTS2Shc",
+  "n": "ZenoraNetwork",
+  "t": "ZNR",
+  "img": "https://assets.geckoterminal.com/32w5w1o9ilwmqzxz8sndk27wjpfs",
+  "ho": 0,
+  "c": "Solana",
+  "l": "14 novembre 2026",
+  "d": "🌐 EVM Layer-1, built by its people\n⛏️ Miner is LIVE",
+  "ath": 66767,
+  "ch": [
+   18169,
+   20982,
+   23517,
+   26240,
+   26580,
+   29487,
+   32358,
+   34971,
+   34765,
+   35502,
+   36912,
+   37042,
+   39234,
+   40781,
+   41817,
+   44400,
+   45592,
+   47715,
+   50355,
+   51551,
+   53436,
+   55495,
+   56505,
+   58059,
+   58142,
+   59817,
+   61905,
+   62760,
+   64094,
+   65624,
+   66767
+  ],
+  "b": 1,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "B8AfVfxfQLewQEfihRdXiKn1MesGwHiH1KJuqV4i1j8d"
+   }
+  ]
  }
 ]
