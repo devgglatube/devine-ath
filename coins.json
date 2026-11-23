@@ -11824,5 +11824,54 @@
     "a": "GagvYX2AHaoyMzEbGLE678K971crQQYV4JAoS8Hx1WYx"
    }
   ]
+ },
+ {
+  "id": "6Cf9hLLnhhRr5ZaK1rEaSHiTBd7WoCaxLM1F4NFKxUW",
+  "n": "Just A Fly On A Wall",
+  "t": "Fly",
+  "img": "https://assets.geckoterminal.com/ui7i5tsujienwqqnv9gaqyswq66t",
+  "ho": 0,
+  "c": "Solana",
+  "l": "23 novembre 2026",
+  "d": "Created on https://rapidlaunch.io\nCreated on https://x.com/JustFlyOnAWall",
+  "ath": 88727,
+  "ch": [
+   65732,
+   77979,
+   77817,
+   80800,
+   78473,
+   81560,
+   82225,
+   82163,
+   79807,
+   88727,
+   85050,
+   83559,
+   83241,
+   83357,
+   83239,
+   85268,
+   84470,
+   83608,
+   83928,
+   83326,
+   83131,
+   83288,
+   82719,
+   83047,
+   82407,
+   72670,
+   24696
+  ],
+  "b": 1,
+  "bz": 0,
+  "pr": [
+   {
+    "d": "pumpswap",
+    "q": "SOL",
+    "a": "54AWrt1Kw1p8gpriF4adKTvnQQhA3TJpvSZzTKPCxaL8"
+   }
+  ]
  }
 ]
